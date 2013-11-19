@@ -16,9 +16,13 @@ DATA                                 -1              DATA
 000_WWJets2LMad                     baseW*effW*triggW*puW               WW
 001_GluGluToWWTo4L                  baseW*effW*triggW*puW               WW  ggWW
 #
-019_TTTo2L2Nu2B                     baseW*effW*triggW*puW*(sameflav*1.16865+(!sameflav)*1.14237)        Top
-011_TtWFullDR                       baseW*effW*triggW*puW*(sameflav*1.16865+(!sameflav)*1.14237)        Top
-012_TbartWFullDR                    baseW*effW*triggW*puW*(sameflav*1.16865+(!sameflav)*1.14237)        Top
+019_TTTo2L2Nu2B                     baseW*effW*triggW*puW*(sameflav*1.00000+(!sameflav)*1.00000)        Top
+011_TtWFullDR                       baseW*effW*triggW*puW*(sameflav*1.00000+(!sameflav)*1.00000)        Top
+012_TbartWFullDR                    baseW*effW*triggW*puW*(sameflav*1.00000+(!sameflav)*1.00000)        Top
+#
+# 019_TTTo2L2Nu2B                     baseW*effW*triggW*puW*(sameflav*1.16865+(!sameflav)*1.14237)        Top
+# 011_TtWFullDR                       baseW*effW*triggW*puW*(sameflav*1.16865+(!sameflav)*1.14237)        Top
+# 012_TbartWFullDR                    baseW*effW*triggW*puW*(sameflav*1.16865+(!sameflav)*1.14237)        Top
 #
 036_DY10toLLMad                           baseW*effW*triggW*puW*((mctruth==1)*1.8)        DYee
 037_DY50toLLMad                           baseW*effW*triggW*puW*((mctruth==1)*1.8)        DYee

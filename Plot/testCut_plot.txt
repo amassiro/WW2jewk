@@ -28,7 +28,7 @@ sameflav      &&  ch1*ch2<0 && pt1>20 && pt2>10  && mjj>200     &&  trigger==1. 
 #
 #  @WW level
 #
-#  && mjj>700
+#  && mjj>500   --> >700 is too tight!
 #  && detajj>2.0
 #  <---- no ---->  && mll>70  -----> needed!!!
 #  && (!sameflav || pfmet > 80.0)
@@ -38,9 +38,9 @@ sameflav      &&  ch1*ch2<0 && pt1>20 && pt2>10  && mjj>200     &&  trigger==1. 
 #  && jetpt2>50
 #  && njetvbf==0
 #
-1             &&  ch1*ch2<0 && pt1>20 && pt2>10  && mjj>700  && detajj>2.0  && jetpt1>50   && jetpt2>50   && njetvbf==0   && mll>70   &&  trigger==1.   && zveto==1  && bveto_mu==1 && nextra==0 &&    bveto_ip==1  &&  nbjettche==0  && mpmet>20.    && pfmet>20   &&   (!sameflav || pfmet > 80.0)  &&   njet>=2      
-sameflav      &&  ch1*ch2<0 && pt1>20 && pt2>10  && mjj>700  && detajj>2.0  && jetpt1>50   && jetpt2>50   && njetvbf==0   && mll>70   &&  trigger==1.   && zveto==1  && bveto_mu==1 && nextra==0 &&    bveto_ip==1  &&  nbjettche==0  && mpmet>20.    && pfmet>20   &&   (!sameflav || pfmet > 80.0)  &&   njet>=2     
-(!sameflav)   &&  ch1*ch2<0 && pt1>20 && pt2>10  && mjj>700  && detajj>2.0  && jetpt1>50   && jetpt2>50   && njetvbf==0   && mll>70   &&  trigger==1.   && zveto==1  && bveto_mu==1 && nextra==0 &&    bveto_ip==1  &&  nbjettche==0  && mpmet>20.    && pfmet>20   &&   (!sameflav || pfmet > 80.0)  &&   njet>=2     
+1             &&  ch1*ch2<0 && pt1>20 && pt2>10  && mjj>500  && detajj>2.0  && jetpt1>50   && jetpt2>50   && njetvbf==0   && mll>70   &&  trigger==1.   && zveto==1  && bveto_mu==1 && nextra==0 &&    bveto_ip==1  &&  nbjettche==0  && mpmet>20.    && pfmet>20   &&   (!sameflav || pfmet > 80.0)  &&   njet>=2      
+sameflav      &&  ch1*ch2<0 && pt1>20 && pt2>10  && mjj>500  && detajj>2.0  && jetpt1>50   && jetpt2>50   && njetvbf==0   && mll>70   &&  trigger==1.   && zveto==1  && bveto_mu==1 && nextra==0 &&    bveto_ip==1  &&  nbjettche==0  && mpmet>20.    && pfmet>20   &&   (!sameflav || pfmet > 80.0)  &&   njet>=2     
+(!sameflav)   &&  ch1*ch2<0 && pt1>20 && pt2>10  && mjj>500  && detajj>2.0  && jetpt1>50   && jetpt2>50   && njetvbf==0   && mll>70   &&  trigger==1.   && zveto==1  && bveto_mu==1 && nextra==0 &&    bveto_ip==1  &&  nbjettche==0  && mpmet>20.    && pfmet>20   &&   (!sameflav || pfmet > 80.0)  &&   njet>=2     
 #
 ##################
 #
