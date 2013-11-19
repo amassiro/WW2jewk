@@ -6,4 +6,10 @@ WW electroweak
 * latinos framework
 
 
+# Plot
+
+In "plot" folder:
+
+    ./bin/MCDATAComparisonPLOTTool.exe test/WW2jewk/Plot/testMCDATAComparisonPLOTTool_ForNote.cfg
+    r00t AMPlotMacroCreator_Moriond.cxx
 
