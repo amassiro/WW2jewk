@@ -8,5 +8,9 @@ mth             m_{T}^{ll-E_{T}^{miss}}                       6          0      
 mll             m_{ll}                                        7          0       0       -999         -999
 drll            #DeltaR_{ll}                                  8          0       0       -999         -999
 njet            njets                                         9          0       0       -999         -999
-events          events                                       10          0       0       -999         -999
+pfmet           pfmet                                        10          0       0       -999         -999
+jetbjpb1        jetbjpb1                                     11          0       0       -999         -999
+jetbjpb2        jetbjpb2                                     12          0       0       -999         -999
+ptll            pt_{ll}                                      13          0       0       -999         -999
+events          events                                       14          0       0       -999         -999
 # 
