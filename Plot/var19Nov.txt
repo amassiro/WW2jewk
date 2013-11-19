@@ -1,0 +1,12 @@
+pt1             p_{T}^{l1}                                    0          0       0       -999         -999
+pt2             p_{T}^{l2}                                    1          0       0       -999         -999
+jetpt1          p_{T}^{j1}                                    2          0       0       -999         -999
+jetpt2          p_{T}^{j2}                                    3          0       0       -999         -999
+mjj             m_{jj}                                        4          0       0       -999         -999
+detajj          #Delta#eta_{jj}                               5          0       0       -999         -999
+mth             m_{T}^{ll-E_{T}^{miss}}                       6          0       0       -999         -999
+mll             m_{ll}                                        7          0       0       -999         -999
+drll            #DeltaR_{ll}                                  8          0       0       -999         -999
+njet            njets                                         9          0       0       -999         -999
+events          events                                       10          0       0       -999         -999
+# 
