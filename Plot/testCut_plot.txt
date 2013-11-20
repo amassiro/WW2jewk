@@ -13,6 +13,8 @@
 ####   2 jet bin   ####
 #######################
 #
+# - check the files folder to see pre-selections!
+#
 ##################
 #
 #  @WW level

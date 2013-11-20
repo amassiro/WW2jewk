@@ -69,6 +69,12 @@ log(mjj)     5     8     20        logM_{jet-jet}
 #
 #########################################################
 #
+abs(eta1-(jeteta1+jeteta2)/2)/detajj     0      2        10     centrality1
+abs(eta2-(jeteta1+jeteta2)/2)/detajj     0      2        10     centrality1
+abs(yll-(jeteta1+jeteta2)/2)/detajj      0      2        10     centralityll
+#
+#########################################################
+#
 1                0    2      2     events
 #
 #########################################################

@@ -15,5 +15,8 @@ ptll            pt_{ll}                                      13          0      
 njet            njet                                         14          0       0       -999         -999
 logmjj          logm_{jj}                                    15          0       0       -999         -999
 dphijj          #Delta#phi_{jj}                              16          0       0       -999         -999
-events          events                                       17          0       0       -999         -999
+zepl1           #eta_{lep1}-centrality                       17          0       0       -999         -999
+zepl2           #eta_{lep2}-centrality                       18          0       0       -999         -999
+zepll           #eta_{leplep}-centrality                     19          0       0       -999         -999
+events          events                                       20          0       0       -999         -999
 # 
