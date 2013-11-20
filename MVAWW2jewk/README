@@ -1,0 +1,69 @@
+~~~~~~~~~~~~~~~~~~~~~~
+~~~~ MVA Variable ~~~~
+~~~~~~~~~~~~~~~~~~~~~~
+
+MVA for discrimination background vs signal
+
+-> for different mass bins
+-> trees (and variables) are a sub-set of the variables used for "MassLike" variable
+
+///==== Latino tree ====
+
+1) filter standard trees (go up to WW level)  -> use "output_Latinos_tree_2012_2orMoreJet2012" or "output_Latinos_tree_2012_234jet"
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+2) Train mva
+
+   ./bin/MVATrainingWW2jewk.exe test/WW2jewk/MVAWW2jewk/cfg/WWewk.cfg 
+ 
+and test
+
+   r00t test/TMVAGui.C\(\"outMVA_WWewk.root\"\)
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+3) Add mva value to ntuples (local ... and latinos @cmsneu)
+
+   ./bin/MVAAddVariableWW2jewk.exe test/WW2jewk/MVAWW2jewk/cfg-add/WW2jewk.cfg 
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+4) Draw distributions
+
+  ./bin/MCDATAComparisonPLOTTool.exe test/WW2jewk/Plot/testMCDATAComparisonPLOTTool_MVA.cfg
+  r00t AMPlotMacroCreator_Moriond.cxx
+
+  
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

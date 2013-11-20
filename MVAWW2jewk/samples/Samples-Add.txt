@@ -1,0 +1,63 @@
+####################################################################
+#### name_sample            xsection        name_human_readable ####
+####################################################################
+#
+#
+################################################################################################################################
+DATA                                 -1              DATA
+################################################################################################################################
+#
+#
+#
+#
+####################################################################################
+#
+052_WW2JetsPhantom                  baseW*effW*triggW*puW*(numbLHE==0)*(mjj>100)     WW2j
+000_WWJets2LMad                     baseW*effW*triggW*puW               WW
+001_GluGluToWWTo4L                  baseW*effW*triggW*puW               WW  ggWW
+#
+019_TTTo2L2Nu2B                     baseW*effW*triggW*puW*(sameflav*1.00000+(!sameflav)*1.00000)        Top
+011_TtWFullDR                       baseW*effW*triggW*puW*(sameflav*1.00000+(!sameflav)*1.00000)        Top
+012_TbartWFullDR                    baseW*effW*triggW*puW*(sameflav*1.00000+(!sameflav)*1.00000)        Top
+#
+# 019_TTTo2L2Nu2B                     baseW*effW*triggW*puW*(sameflav*1.16865+(!sameflav)*1.14237)        Top
+# 011_TtWFullDR                       baseW*effW*triggW*puW*(sameflav*1.16865+(!sameflav)*1.14237)        Top
+# 012_TbartWFullDR                    baseW*effW*triggW*puW*(sameflav*1.16865+(!sameflav)*1.14237)        Top
+#
+036_DY10toLLMad                           baseW*effW*triggW*puW*((mctruth==1)*1.8)        DYee
+037_DY50toLLMad                           baseW*effW*triggW*puW*((mctruth==1)*1.8)        DYee
+#
+#
+#
+DYtt_19.5fb                         effW*triggW*baseW*puW          DYtautau ZJets
+#
+#
+074_WZJetsMad                             baseW*effW*triggW*puW             VV  
+075_ZZJetsMad                             baseW*effW*triggW*puW             VV
+078_WZTo2L2QMad                           baseW*effW*triggW*puW             VV
+079_ZZTo2L2QMad                           baseW*effW*triggW*puW             VV
+# 
+082_WGstarToElNuMad                       baseW*effW*triggW*puW             Vg
+083_WGstarToMuNuMad                       baseW*effW*triggW*puW             Vg
+084_WGstarToTauNuMad                      baseW*effW*triggW*puW             Vg
+085_WgammaToLNuG                          baseW*effW*triggW*puW             Vg
+#
+LooseLoose_19.5fb                           fakeW/19.5                         WJets
+#
+088_WWGJets            baseW*effW*triggW*puW      VVV
+089_WZZJets            baseW*effW*triggW*puW      VVV
+090_ZZZJets            baseW*effW*triggW*puW      VVV
+091_WWZJets            baseW*effW*triggW*puW      VVV
+092_WWWJets            baseW*effW*triggW*puW      VVV
+#
+#
+################################################################################################
+#
+1125_ggToH125toWWTo2LAndTau2Nu            baseW*effW*triggW*puW*kfW                        ggH-125
+2125_vbfToH125toWWTo2LAndTau2Nu           baseW*effW*triggW*puW*kfW                        qqH-125
+3125_wzttH125ToWW                         baseW*effW*triggW*puW*(mctruth==24)              ZH-125
+3125_wzttH125ToWW                         baseW*effW*triggW*puW*(mctruth==26)              WH-125
+3125_wzttH125ToWW                         baseW*effW*triggW*puW*(mctruth==121)             ttH-125
+#
+#
+
