@@ -3,14 +3,21 @@
 
 void AMPlotMacroCreator_Moriond() {
  
- TString fileVar = Form("var19Nov.txt");
- TString date    = Form("19Nov_WWewk_Moriond_forAN");
- TString file    = Form("out_test_Latinos_19Nov2013_2300_RunABCD-WWewk.root");
+//  TString fileVar = Form("var19Nov.txt");
+//  TString date    = Form("19Nov_WWewk_Moriond_forAN");
+//  TString file    = Form("out_test_Latinos_19Nov2013_2300_RunABCD-WWewk.root");
+
+ //---- MVA ----
+ TString fileVar = Form("var20Nov.txt");
+ TString date    = Form("20Nov_WWewk_Moriond_forAN");
+ TString file    = Form("out_test_Latinos_20Nov2013_2300_RunABCD-WWewk.root");
  
  TString hmass   = Form("125");
  TString lumi    = Form("19.468");
 
- for (int iCut = 0; iCut < 3; iCut++) {
+ for (int iCut = 0; iCut < 3*1; iCut++) {
+  
+//  for (int iCut = 0; iCut < 3*2; iCut++) {
      
   TString CommandToExec = Form("rm -r %s_%d",date.Data(),iCut);
   gSystem->Exec(CommandToExec);  
@@ -303,7 +310,7 @@ void AMPlotMacroCreator_Moriond() {
    
    myfile << std::endl;
    myfile << std::endl;
-   myfile << " hs->set_addSignalOnBackground(0); // 1 = signal over background , 0 = signal on its own" << std::endl;
+   myfile << " hs->set_addSignalOnBackground(1); // 1 = signal over background , 0 = signal on its own" << std::endl;
    myfile << std::endl;
    myfile << " ///==== draw ====" << std::endl;
    myfile << std::endl;   

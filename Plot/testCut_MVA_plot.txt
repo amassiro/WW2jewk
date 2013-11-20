@@ -1,0 +1,30 @@
+###################################
+#### Cut for Analysis workflow ####
+###################################
+############################
+# mumu #    channel == 0
+# mue #     channel == 3
+# emu #     channel == 2
+# ee #      channel == 1
+# all #
+#
+#
+#######################
+####   2 jet bin   ####
+#######################
+#
+# - check the files folder to see pre-selections!
+#
+##################
+#
+#  @WW level
+#
+#
+1             &&  ch1*ch2<0 && pt1>20 && pt2>10  && mjj>200  && detajj>1.0  && jetpt1>30   && jetpt2>30   && njetvbf==0   && mll>70   &&  trigger==1.   && zveto==1  && bveto_mu==1 && nextra==0 &&    bveto_ip==1  &&  nbjettche==0  && mpmet>20.    && pfmet>20   &&   (!sameflav || pfmet > 80.0)  &&   njet>=2      
+sameflav      &&  ch1*ch2<0 && pt1>20 && pt2>10  && mjj>200  && detajj>1.0  && jetpt1>30   && jetpt2>30   && njetvbf==0   && mll>70   &&  trigger==1.   && zveto==1  && bveto_mu==1 && nextra==0 &&    bveto_ip==1  &&  nbjettche==0  && mpmet>20.    && pfmet>20   &&   (!sameflav || pfmet > 80.0)  &&   njet>=2     
+(!sameflav)   &&  ch1*ch2<0 && pt1>20 && pt2>10  && mjj>200  && detajj>1.0  && jetpt1>30   && jetpt2>30   && njetvbf==0   && mll>70   &&  trigger==1.   && zveto==1  && bveto_mu==1 && nextra==0 &&    bveto_ip==1  &&  nbjettche==0  && mpmet>20.    && pfmet>20   &&   (!sameflav || pfmet > 80.0)  &&   njet>=2     
+#
+##################
+#
+#
+

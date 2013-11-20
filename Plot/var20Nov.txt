@@ -1,0 +1,20 @@
+pt1             p_{T}^{l1}                                    0          0       0       -999         -999
+pt2             p_{T}^{l2}                                    1          0       0       -999         -999
+jetpt1          p_{T}^{j1}                                    2          0       0       -999         -999
+jetpt2          p_{T}^{j2}                                    3          0       0       -999         -999
+mjj             m_{jj}                                        4          0       0       -999         -999
+detajj          #Delta#eta_{jj}                               5          0       0       -999         -999
+#
+MLP             MLP                                           6          0       0       -999         -999
+BDTG            BDTG                                          7          0       0       -999         -999
+BDT             BDT                                           8          0       0       -999         -999
+#
+ptll            pt_{ll}                                       9          0       0       -999         -999
+njet            njet                                         10          0       0       -999         -999
+logmjj          logm_{jj}                                    11          0       0       -999         -999
+dphijj          #Delta#phi_{jj}                              12          0       0       -999         -999
+zepl1           #eta_{lep1}-centrality                       13          0       0       -999         -999
+zepl2           #eta_{lep2}-centrality                       14          0       0       -999         -999
+zepll           #eta_{leplep}-centrality                     15          0       0       -999         -999
+events          events                                       16          0       0       -999         -999
+# 
