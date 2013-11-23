@@ -253,7 +253,7 @@ void Plot_AM_WW2jewk_Propaganda_Moriond() {
    
 //    hs->setBlindBinSx(10);
    hs->setBlindBinSx(0);
-   hs->setBlindBinDx(0);
+   hs->setBlindBinDx(10);
    
    hs->setCutSx(-999,">");
    hs->setCutDx(-999,"<");
