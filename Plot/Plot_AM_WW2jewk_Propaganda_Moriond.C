@@ -84,7 +84,7 @@ void Plot_AM_WW2jewk_Propaganda_Moriond() {
  
  PlotVHqqHggH* hs = new PlotVHqqHggH();
  
- hs->setLabel("mass");
+ hs->setLabel("mva");
  
  //  hs->setLumi(20);
  //  hs->setLumi(200);
@@ -303,7 +303,7 @@ void Plot_AM_WW2jewk_Propaganda_Moriond() {
   
  TCanvas* c1bis = new TCanvas("bkgSub","bkgSub",500,500);
  
- hs->setUnits ("GeV");
+//  hs->setUnits ("GeV");
  double vedges[] = {-1.0,-0.9,-0.8,-0.7,-0.6,-0.5,-0.4,-0.3,-0.2,-0.1,0.0,0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9,1.0};
 //  double vedges[] = {-1.0, -0.5, 0.0, 0.2, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0};
  std::vector<double> vEdges (vedges, vedges + sizeof(vedges) / sizeof(double) );

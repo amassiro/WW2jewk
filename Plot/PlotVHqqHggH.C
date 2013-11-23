@@ -3217,7 +3217,8 @@ class PlotVHqqHggH {
 //                              temp_vectTHstackSig.at(iSig) ->GetYaxis () -> SetRangeUser(minY - 5 ,maxY*1.5 + 5);
 //                              temp_vectTHstackSig.at(iSig) ->GetYaxis () -> SetRangeUser(-50 ,300); //--- for time evolution
 //                              temp_vectTHstackSig.at(iSig) ->GetYaxis () -> SetRangeUser(-10 ,45); //--- for time evolution
-                             temp_vectTHstackSig.at(iSig) ->GetYaxis () -> SetRangeUser(-100 ,300); //--- for hww paper
+//                              temp_vectTHstackSig.at(iSig) ->GetYaxis () -> SetRangeUser(-100 ,300); //--- for hww paper
+                             temp_vectTHstackSig.at(iSig) ->GetYaxis () -> SetRangeUser(-20 ,30); //--- for WWewk
                             }
                             else {
                                 temp_vectTHstackSig.at(iSig) ->GetYaxis () -> SetRangeUser(0 ,temp_vectTHstackSig.at(temp_vectTHstackSig.size()-1)->GetMaximum() * 1.5 + 5);
@@ -3291,8 +3292,9 @@ class PlotVHqqHggH {
                 std::cout << " y2 = " << maxY+15 << std::endl;
 
                 //              TLegend* legendSigMinusBkg = new TLegend(summed->GetXaxis()->GetBinLowEdge(1) + (summed->GetXaxis()->GetBinLowEdge(_nbins+1) - summed->GetXaxis()->GetBinLowEdge(1)) * 1. / 3. , maxY+5, summed->GetXaxis()->GetBinLowEdge(1) + (summed->GetXaxis()->GetBinLowEdge(_nbins+1) - summed->GetXaxis()->GetBinLowEdge(1)) * 2. / 3. ,  maxY+15);
-                TLegend* legendSigMinusBkg = new TLegend(0.60, 0.40, 0.90, 0.70);
-
+//                 TLegend* legendSigMinusBkg = new TLegend(0.60, 0.40, 0.90, 0.70);
+                TLegend* legendSigMinusBkg = new TLegend(0.20, 0.70, 0.50, 0.90);
+                
                 legendSigMinusBkg->SetBorderSize(     0);
                 legendSigMinusBkg->SetFillColor (     0);
                 legendSigMinusBkg->SetTextAlign (    12);
