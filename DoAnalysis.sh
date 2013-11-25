@@ -20,61 +20,61 @@ chmod +x skim2j.sh
 # now estimation of number of events
 ./bin/MCDATAComparisonPLOTTool_ManyWP.exe test/WW2jewk/DYRinout/testMCDATAComparisonPLOTTool_DYRinout_AllHiggsMassPoints.cfg
 
-rm test/WW2jewk/DYRinout/result-value-shape.txt
-rm test/WW2jewk/DYRinout/result-value-ee-shape.txt
-rm test/WW2jewk/DYRinout/result-value-mumu-shape.txt
-rm test/WW2jewk/DYRinout/result-syst-shape.txt
-rm test/WW2jewk/DYRinout/result-syst-ee-shape.txt
-rm test/WW2jewk/DYRinout/result-syst-mumu-shape.txt
-rm test/WW2jewk/DYRinout/result-syst-stat-shape.txt
-rm test/WW2jewk/DYRinout/result-syst-stat-ee-shape.txt
-rm test/WW2jewk/DYRinout/result-syst-stat-mumu-shape.txt
-rm test/WW2jewk/DYRinout/result-syst-stat-MC-shape.txt
-rm test/WW2jewk/DYRinout/result-syst-stat-MC-ee-shape.txt
-rm test/WW2jewk/DYRinout/result-syst-stat-MC-mumu-shape.txt
-rm test/WW2jewk/DYRinout/result-syst-method-shape.txt
-rm test/WW2jewk/DYRinout/result-syst-method-ee-shape.txt
-rm test/WW2jewk/DYRinout/result-syst-method-mumu-shape.txt
-rm test/WW2jewk/DYRinout/result-syst-method-MC-shape.txt
-rm test/WW2jewk/DYRinout/result-syst-method-MC-ee-shape.txt
-rm test/WW2jewk/DYRinout/result-syst-method-MC-mumu-shape.txt
-rm test/WW2jewk/DYRinout/result-SF-shape.txt
-rm test/WW2jewk/DYRinout/result-SF-ee-shape.txt
-rm test/WW2jewk/DYRinout/result-SF-mumu-shape.txt
-rm test/WW2jewk/DYRinout/result-SF-MC-shape.txt
-rm test/WW2jewk/DYRinout/result-SF-MC-ee-shape.txt
-rm test/WW2jewk/DYRinout/result-SF-MC-mumu-shape.txt
-rm test/WW2jewk/DYRinout/result-R-shape.txt
+rm test/WW2jewk/DYRinout/result-value.txt
+rm test/WW2jewk/DYRinout/result-value-ee.txt
+rm test/WW2jewk/DYRinout/result-value-mumu.txt
+rm test/WW2jewk/DYRinout/result-syst.txt
+rm test/WW2jewk/DYRinout/result-syst-ee.txt
+rm test/WW2jewk/DYRinout/result-syst-mumu.txt
+rm test/WW2jewk/DYRinout/result-syst-stat.txt
+rm test/WW2jewk/DYRinout/result-syst-stat-ee.txt
+rm test/WW2jewk/DYRinout/result-syst-stat-mumu.txt
+rm test/WW2jewk/DYRinout/result-syst-stat-MC.txt
+rm test/WW2jewk/DYRinout/result-syst-stat-MC-ee.txt
+rm test/WW2jewk/DYRinout/result-syst-stat-MC-mumu.txt
+rm test/WW2jewk/DYRinout/result-syst-method.txt
+rm test/WW2jewk/DYRinout/result-syst-method-ee.txt
+rm test/WW2jewk/DYRinout/result-syst-method-mumu.txt
+rm test/WW2jewk/DYRinout/result-syst-method-MC.txt
+rm test/WW2jewk/DYRinout/result-syst-method-MC-ee.txt
+rm test/WW2jewk/DYRinout/result-syst-method-MC-mumu.txt
+rm test/WW2jewk/DYRinout/result-SF.txt
+rm test/WW2jewk/DYRinout/result-SF-ee.txt
+rm test/WW2jewk/DYRinout/result-SF-mumu.txt
+rm test/WW2jewk/DYRinout/result-SF-MC.txt
+rm test/WW2jewk/DYRinout/result-SF-MC-ee.txt
+rm test/WW2jewk/DYRinout/result-SF-MC-mumu.txt
+rm test/WW2jewk/DYRinout/result-R.txt
 
-echo DY     > test/WW2jewk/DYRinout/result-value-shape.txt
-echo DYee   > test/WW2jewk/DYRinout/result-value-ee-shape.txt
-echo DYmumu > test/WW2jewk/DYRinout/result-value-mumu-shape.txt
-echo DY     > test/WW2jewk/DYRinout/result-syst-shape.txt
-echo DYee   > test/WW2jewk/DYRinout/result-syst-ee-shape.txt
-echo DYmumu > test/WW2jewk/DYRinout/result-syst-mumu-shape.txt
-echo DY     > test/WW2jewk/DYRinout/result-syst-stat-shape.txt
-echo DYee   > test/WW2jewk/DYRinout/result-syst-stat-ee-shape.txt
-echo DYmumu > test/WW2jewk/DYRinout/result-syst-stat-mumu-shape.txt
-echo DY     > test/WW2jewk/DYRinout/result-syst-stat-MC-shape.txt
-echo DYee   > test/WW2jewk/DYRinout/result-syst-stat-MC-ee-shape.txt
-echo DYmumu > test/WW2jewk/DYRinout/result-syst-stat-MC-mumu-shape.txt
-echo DY     > test/WW2jewk/DYRinout/result-syst-method-shape.txt
-echo DYee   > test/WW2jewk/DYRinout/result-syst-method-ee-shape.txt
-echo DYmumu > test/WW2jewk/DYRinout/result-syst-method-mumu-shape.txt
-echo DY     > test/WW2jewk/DYRinout/result-syst-method-MC-shape.txt
-echo DYee   > test/WW2jewk/DYRinout/result-syst-method-MC-ee-shape.txt
-echo DYmumu > test/WW2jewk/DYRinout/result-syst-method-MC-mumu-shape.txt
-echo DY     > test/WW2jewk/DYRinout/result-SF-shape.txt
-echo DY     > test/WW2jewk/DYRinout/result-SF-ee-shape.txt
-echo DY     > test/WW2jewk/DYRinout/result-SF-mumu-shape.txt
-echo DY     > test/WW2jewk/DYRinout/result-SF-MC-shape.txt
-echo DY     > test/WW2jewk/DYRinout/result-SF-MC-ee-shape.txt
-echo DY     > test/WW2jewk/DYRinout/result-SF-MC-mumu-shape.txt
-echo DY     > test/WW2jewk/DYRinout/result-R-shape.txt
+echo DY     > test/WW2jewk/DYRinout/result-value.txt
+echo DYee   > test/WW2jewk/DYRinout/result-value-ee.txt
+echo DYmumu > test/WW2jewk/DYRinout/result-value-mumu.txt
+echo DY     > test/WW2jewk/DYRinout/result-syst.txt
+echo DYee   > test/WW2jewk/DYRinout/result-syst-ee.txt
+echo DYmumu > test/WW2jewk/DYRinout/result-syst-mumu.txt
+echo DY     > test/WW2jewk/DYRinout/result-syst-stat.txt
+echo DYee   > test/WW2jewk/DYRinout/result-syst-stat-ee.txt
+echo DYmumu > test/WW2jewk/DYRinout/result-syst-stat-mumu.txt
+echo DY     > test/WW2jewk/DYRinout/result-syst-stat-MC.txt
+echo DYee   > test/WW2jewk/DYRinout/result-syst-stat-MC-ee.txt
+echo DYmumu > test/WW2jewk/DYRinout/result-syst-stat-MC-mumu.txt
+echo DY     > test/WW2jewk/DYRinout/result-syst-method.txt
+echo DYee   > test/WW2jewk/DYRinout/result-syst-method-ee.txt
+echo DYmumu > test/WW2jewk/DYRinout/result-syst-method-mumu.txt
+echo DY     > test/WW2jewk/DYRinout/result-syst-method-MC.txt
+echo DYee   > test/WW2jewk/DYRinout/result-syst-method-MC-ee.txt
+echo DYmumu > test/WW2jewk/DYRinout/result-syst-method-MC-mumu.txt
+echo DY     > test/WW2jewk/DYRinout/result-SF.txt
+echo DY     > test/WW2jewk/DYRinout/result-SF-ee.txt
+echo DY     > test/WW2jewk/DYRinout/result-SF-mumu.txt
+echo DY     > test/WW2jewk/DYRinout/result-SF-MC.txt
+echo DY     > test/WW2jewk/DYRinout/result-SF-MC-ee.txt
+echo DY     > test/WW2jewk/DYRinout/result-SF-MC-mumu.txt
+echo DY     > test/WW2jewk/DYRinout/result-R.txt
 
 
-for ((i=1; i<2; i++)) do  echo "r00t test/WW2jewk/DYRinout/GetDY-Result-forDataCard.cxx\(\\\"out_DYRinout_Latinos_2jet_WW2jewk_20Nov2000-ForResult.root\\\",$i,2,\\"-shape\\"\)" ; done
-for ((i=1; i<2; i++)) do  r00t test/WW2jewk/DYRinout/GetDY-Result-forDataCard.cxx\(\"out_DYRinout_Latinos_2jet_WW2jewk_20Nov2000-ForResult.root\",$i,2,\"-shape\"\) ; done
+for ((i=1; i<2; i++)) do  echo "r00t test/WW2jewk/DYRinout/GetDY-Result-forDataCard.cxx\(\\\"out_DYRinout_Latinos_2jet_WW2jewk_20Nov2000-ForResult.root\\\",$i,2,\\"\\"\)" ; done
+for ((i=1; i<2; i++)) do  r00t test/WW2jewk/DYRinout/GetDY-Result-forDataCard.cxx\(\"out_DYRinout_Latinos_2jet_WW2jewk_20Nov2000-ForResult.root\",$i,2,\"\"\) ; done
 
 
 
@@ -116,29 +116,22 @@ rm test/WW2jewk/ttbar/result-eff-cut-of.txt
 for ((i=0; i<1; i++)) do root -l test/WW2jewk/ttbar/GetTop-Macro-forDataCard.cxx\($i,\"of\"\,\"cut\",true\)  ; done
 rm TopCard_2j-cut-of_new.txt
 for ((i=0; i<1; i++)) do cat test/WW2jewk/ttbar/result-cut-of-0.txt >>  TopCard_2j-cut-of_new.txt  ; done
-r00t test/CorrectTop.cxx\(\"TopCard_2j-cut-of_new.txt\",4\)
 rm TopCard_2j-cut-of-ScaleFactor_new.txt
 for ((i=0; i<1; i++)) do cat test/WW2jewk/ttbar/result-SF-cut-of-0.txt >>  TopCard_2j-cut-of-ScaleFactor_new.txt  ; done
-r00t test/CorrectTop.cxx\(\"TopCard_2j-cut-of-ScaleFactor_new.txt\",4\)
-
 
 rm test/WW2jewk/ttbar/result-eff-cut-sf.txt
 for ((i=0; i<1; i++)) do root -l test/WW2jewk/ttbar/GetTop-Macro-forDataCard.cxx\($i,\"sf\"\,\"cut\",true\)  ; done 
 rm TopCard_2j-cut-sf_new.txt
 for ((i=0; i<1; i++)) do cat test/WW2jewk/ttbar/result-cut-sf-0.txt >>  TopCard_2j-cut-sf_new.txt  ; done
-r00t test/CorrectTop.cxx\(\"TopCard_2j-cut-sf_new.txt\",4\)
 rm TopCard_2j-cut-sf-ScaleFactor_new.txt
 for ((i=0; i<1; i++)) do cat test/WW2jewk/ttbar/result-SF-cut-sf-0.txt >>  TopCard_2j-cut-sf-ScaleFactor_new.txt  ; done
-r00t test/CorrectTop.cxx\(\"TopCard_2j-cut-sf-ScaleFactor_new.txt\",4\)
 
 rm test/WW2jewk/ttbar/result-eff-cut-sfof.txt
 for ((i=0; i<1; i++)) do root -l test/WW2jewk/ttbar/GetTop-Macro-forDataCard.cxx\($i,\"sfof\"\,\"cut\",true\)  ; done
 rm TopCard_2j-cut-sfof_new.txt
 for ((i=0; i<1; i++)) do cat test/WW2jewk/ttbar/result-cut-sfof-0.txt >>  TopCard_2j-cut-sfof_new.txt  ; done
-r00t test/CorrectTop.cxx\(\"TopCard_2j-cut-sfof_new.txt\",4\)
 rm TopCard_2j-cut-sfof-ScaleFactor_new.txt
 for ((i=0; i<1; i++)) do cat test/WW2jewk/ttbar/result-SF-cut-sfof-0.txt >>  TopCard_2j-cut-sfof-ScaleFactor_new.txt  ; done
-r00t test/CorrectTop.cxx\(\"TopCard_2j-cut-sfof-ScaleFactor_new.txt\",4\)
 
 
 
@@ -190,4 +183,25 @@ r00t test/CorrectTop.cxx\(\"TopCard_2j-shape-sfof-ScaleFactor_new.txt\",4\)
 
 # prepare data driven #
 r00t test/createDDAnalysisWW2jewk.cxx\(\"-shape\"\)
+r00t test/createDDAnalysisWW2jewk.cxx
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
