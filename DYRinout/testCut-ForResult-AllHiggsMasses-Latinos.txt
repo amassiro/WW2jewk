@@ -1,0 +1,83 @@
+############################################
+#### Cut for SideBand studies Drell-Yan ####
+############################################
+#
+########################################
+#
+#
+########################################
+#
+# Summer12 WP 1       110  --->  the only point!
+#
+# 1-A-CR
+# 1-B-CR
+# 1-A-SR
+# 1-B-SR
+#
+(!(mll<106.1876 && mll>76.1876))  &&        mll>70  &&    (pfmet > 40.0             && pfmet <  80.0          ) &&      pt1>20   &&      pt2>10     &&      ch1*ch2<0 && pt1>20 && pt2>10     &&    trigger==1.  && pfmet>20.   && mpmet>20. && bveto_mu==1 && nextra==0 && bveto_ip==1 &&  nbjettche==0   &&   njet>=2     && mjj>200  && detajj>1.0  && jetpt1>30   && jetpt2>30    && njetvbf==0  &&   BDTG_weights_testVariables_MVAWW2jewk > 0.85                        
+(mll<106.1876 && mll>76.1876)     &&                      (pfmet > 40.0             && pfmet <  80.0          )                                     &&      ch1*ch2<0 && pt1>20 && pt2>10     &&    trigger==1.  && pfmet>20.   && mpmet>20. && bveto_mu==1 && nextra==0 && bveto_ip==1 &&  nbjettche==0   &&   njet>=2     && mjj>200  && detajj>1.0  && jetpt1>30   && jetpt2>30    && njetvbf==0  &&   BDTG_weights_testVariables_MVAWW2jewk > 0.85                         
+(!(mll<106.1876 && mll>76.1876))  &&        mll>70  &&    (pfmet >  80.0                                      ) &&      pt1>20   &&      pt2>10     &&      ch1*ch2<0 && pt1>20 && pt2>10     &&    trigger==1.  && pfmet>20.   && mpmet>20. && bveto_mu==1 && nextra==0 && bveto_ip==1 &&  nbjettche==0   &&   njet>=2     && mjj>200  && detajj>1.0  && jetpt1>30   && jetpt2>30    && njetvbf==0  &&   BDTG_weights_testVariables_MVAWW2jewk > 0.85                         
+(mll<106.1876 && mll>76.1876)     &&                      (pfmet >  80.0                                      )                                     &&      ch1*ch2<0 && pt1>20 && pt2>10     &&    trigger==1.  && pfmet>20.   && mpmet>20. && bveto_mu==1 && nextra==0 && bveto_ip==1 &&  nbjettche==0   &&   njet>=2     && mjj>200  && detajj>1.0  && jetpt1>30   && jetpt2>30    && njetvbf==0  &&   BDTG_weights_testVariables_MVAWW2jewk > 0.85                         
+(!(mll<106.1876 && mll>76.1876))  &&        mll>70  &&    (pfmet > 40.0             && pfmet <  60.0          ) &&      pt1>20   &&      pt2>10     &&      ch1*ch2<0 && pt1>20 && pt2>10     &&    trigger==1.  && pfmet>20.   && mpmet>20. && bveto_mu==1 && nextra==0 && bveto_ip==1 &&  nbjettche==0   &&   njet>=2     && mjj>200  && detajj>1.0  && jetpt1>30   && jetpt2>30    && njetvbf==0  &&   BDTG_weights_testVariables_MVAWW2jewk > 0.85                         
+(mll<106.1876 && mll>76.1876)     &&                      (pfmet > 40.0             && pfmet <  60.0          )                                     &&      ch1*ch2<0 && pt1>20 && pt2>10     &&    trigger==1.  && pfmet>20.   && mpmet>20. && bveto_mu==1 && nextra==0 && bveto_ip==1 &&  nbjettche==0   &&   njet>=2     && mjj>200  && detajj>1.0  && jetpt1>30   && jetpt2>30    && njetvbf==0  &&   BDTG_weights_testVariables_MVAWW2jewk > 0.85                         
+(!(mll<106.1876 && mll>76.1876))  &&        mll>70  &&    (pfmet >  60.0            && pfmet <  80.0          ) &&      pt1>20   &&      pt2>10     &&      ch1*ch2<0 && pt1>20 && pt2>10     &&    trigger==1.  && pfmet>20.   && mpmet>20. && bveto_mu==1 && nextra==0 && bveto_ip==1 &&  nbjettche==0   &&   njet>=2     && mjj>200  && detajj>1.0  && jetpt1>30   && jetpt2>30    && njetvbf==0  &&   BDTG_weights_testVariables_MVAWW2jewk > 0.85                         
+(mll<106.1876 && mll>76.1876)     &&                      (pfmet >  60.0            && pfmet <  80.0          )                                     &&      ch1*ch2<0 && pt1>20 && pt2>10     &&    trigger==1.  && pfmet>20.   && mpmet>20. && bveto_mu==1 && nextra==0 && bveto_ip==1 &&  nbjettche==0   &&   njet>=2     && mjj>200  && detajj>1.0  && jetpt1>30   && jetpt2>30    && njetvbf==0  &&   BDTG_weights_testVariables_MVAWW2jewk > 0.85                         
+#  
+#########################################
+#
+# Summer12 WP Jolly     for K calculation
+#
+# 2-A-CR
+# 2-B-CR
+# 2-A-SR
+# 2-B-SR
+#
+(!(mll<106.1876 && mll>76.1876))  &&         (pfmet > 40.0             && pfmet <  80.0          )         &&      ch1*ch2<0 && pt1>20 && pt2>10     &&    trigger==1.  && pfmet>20. && mll>70             && mpmet>20.  && bveto_mu==1 && nextra==0 && bveto_ip==1 && nbjettche==0      && njet>=2   && njetvbf==0     && mjj>100          
+(mll<106.1876 && mll>76.1876)     &&         (pfmet > 40.0             && pfmet <  80.0          )         &&      ch1*ch2<0 && pt1>20 && pt2>10     &&    trigger==1.  && pfmet>20. && mll>70             && mpmet>20.  && bveto_mu==1 && nextra==0 && bveto_ip==1 && nbjettche==0      && njet>=2   && njetvbf==0     && mjj>100           
+(!(mll<106.1876 && mll>76.1876))  &&         (pfmet >  80.0                                      )         &&      ch1*ch2<0 && pt1>20 && pt2>10     &&    trigger==1.  && pfmet>20. && mll>70             && mpmet>20.  && bveto_mu==1 && nextra==0 && bveto_ip==1 && nbjettche==0      && njet>=2   && njetvbf==0     && mjj>100           
+(mll<106.1876 && mll>76.1876)     &&         (pfmet >  80.0                                      )         &&      ch1*ch2<0 && pt1>20 && pt2>10     &&    trigger==1.  && pfmet>20. && mll>70             && mpmet>20.  && bveto_mu==1 && nextra==0 && bveto_ip==1 && nbjettche==0      && njet>=2   && njetvbf==0     && mjj>100           
+#
+# fake #
+#
+(!(mll<106.1876 && mll>76.1876))  &&         (pfmet > 20.0             && pfmet <  35.0          )         &&      ch1*ch2<0 && pt1>20 && pt2>10     &&    trigger==1.  && pfmet>20. && mll>70             && mpmet>20.  && bveto_mu==1 && nextra==0 && bveto_ip==1 && nbjettche==0      && njet>=2   && njetvbf==0     && mjj>100           
+(mll<106.1876 && mll>76.1876)     &&         (pfmet > 20.0             && pfmet <  35.0          )         &&      ch1*ch2<0 && pt1>20 && pt2>10     &&    trigger==1.  && pfmet>20. && mll>70             && mpmet>20.  && bveto_mu==1 && nextra==0 && bveto_ip==1 && nbjettche==0      && njet>=2   && njetvbf==0     && mjj>100            
+(!(mll<106.1876 && mll>76.1876))  &&         (pfmet >  35.0            && pfmet <  45.0          )         &&      ch1*ch2<0 && pt1>20 && pt2>10     &&    trigger==1.  && pfmet>20. && mll>70             && mpmet>20.  && bveto_mu==1 && nextra==0 && bveto_ip==1 && nbjettche==0      && njet>=2   && njetvbf==0     && mjj>100            
+(mll<106.1876 && mll>76.1876)     &&         (pfmet >  35.0            && pfmet <  45.0          )         &&      ch1*ch2<0 && pt1>20 && pt2>10     &&    trigger==1.  && pfmet>20. && mll>70             && mpmet>20.  && bveto_mu==1 && nextra==0 && bveto_ip==1 && nbjettche==0      && njet>=2   && njetvbf==0     && mjj>100            
+#
+#
+#
+#
+########################################
+#
+# Summer12 WP 29      @WW level
+#
+# 3-A-CR
+# 3-B-CR
+# 3-A-SR
+# 3-B-SR
+#
+(!(mll<106.1876 && mll>76.1876))  &&         (pfmet > 40.0             && pfmet <  80.0          )         &&      ch1*ch2<0 && pt1>20 && pt2>10     &&    trigger==1.  && pfmet>20. && mll>70             && mpmet>20. && bveto_mu==1 && nextra==0 && bveto_ip==1 &&  nbjettche==0  && njet>=2   && njetvbf==0  && mjj>100  
+(mll<106.1876 && mll>76.1876)     &&         (pfmet > 40.0             && pfmet <  80.0          )         &&      ch1*ch2<0 && pt1>20 && pt2>10     &&    trigger==1.  && pfmet>20. && mll>70             && mpmet>20. && bveto_mu==1 && nextra==0 && bveto_ip==1 &&  nbjettche==0  && njet>=2   && njetvbf==0  && mjj>100  
+(!(mll<106.1876 && mll>76.1876))  &&         (pfmet >  80.0                                      )         &&      ch1*ch2<0 && pt1>20 && pt2>10     &&    trigger==1.  && pfmet>20. && mll>70             && mpmet>20. && bveto_mu==1 && nextra==0 && bveto_ip==1 &&  nbjettche==0  && njet>=2   && njetvbf==0  && mjj>100  
+(mll<106.1876 && mll>76.1876)     &&         (pfmet >  80.0                                      )         &&      ch1*ch2<0 && pt1>20 && pt2>10     &&    trigger==1.  && pfmet>20. && mll>70             && mpmet>20. && bveto_mu==1 && nextra==0 && bveto_ip==1 &&  nbjettche==0  && njet>=2   && njetvbf==0  && mjj>100  
+(!(mll<106.1876 && mll>76.1876))  &&         (pfmet > 40.0             && pfmet <  60.0          )         &&      ch1*ch2<0 && pt1>20 && pt2>10     &&    trigger==1.  && pfmet>20. && mll>70             && mpmet>20. && bveto_mu==1 && nextra==0 && bveto_ip==1 &&  nbjettche==0  && njet>=2   && njetvbf==0  && mjj>100  
+(mll<106.1876 && mll>76.1876)     &&         (pfmet > 40.0             && pfmet <  60.0          )         &&      ch1*ch2<0 && pt1>20 && pt2>10     &&    trigger==1.  && pfmet>20. && mll>70             && mpmet>20. && bveto_mu==1 && nextra==0 && bveto_ip==1 &&  nbjettche==0  && njet>=2   && njetvbf==0  && mjj>100  
+(!(mll<106.1876 && mll>76.1876))  &&         (pfmet >  60.0            && pfmet <  80.0          )         &&      ch1*ch2<0 && pt1>20 && pt2>10     &&    trigger==1.  && pfmet>20. && mll>70             && mpmet>20. && bveto_mu==1 && nextra==0 && bveto_ip==1 &&  nbjettche==0  && njet>=2   && njetvbf==0  && mjj>100  
+(mll<106.1876 && mll>76.1876)     &&         (pfmet >  60.0            && pfmet <  80.0          )         &&      ch1*ch2<0 && pt1>20 && pt2>10     &&    trigger==1.  && pfmet>20. && mll>70             && mpmet>20. && bveto_mu==1 && nextra==0 && bveto_ip==1 &&  nbjettche==0  && njet>=2   && njetvbf==0  && mjj>100  
+#
+#
+########################################
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#

@@ -1,0 +1,31 @@
+####################################################################
+#### name_sample            xsection        name_human_readable ####
+####################################################################
+#
+#
+################################################################################################################################
+DATA                                -1              DATA
+################################################################################################################################
+#
+#
+#
+036_DY10toLLMad                       baseW*effW*triggW*puW*(mctruth==1)         DYee     
+037_DY50toLLMad                       baseW*effW*triggW*puW*(mctruth==1)         DYee     
+#
+036_DY10toLLMad                       baseW*effW*triggW*puW*(mctruth==0)         DYmumu     
+037_DY50toLLMad                       baseW*effW*triggW*puW*(mctruth==0)         DYmumu   
+#
+036_DY10toLLMad                       baseW*effW*triggW*puW*(mctruth==2)         DYtautau     
+037_DY50toLLMad                       baseW*effW*triggW*puW*(mctruth==2)         DYtautau 
+#
+#
+#   
+#
+074_WZJetsMad                             baseW*effW*triggW*puW             ZV  
+075_ZZJetsMad                             baseW*effW*triggW*puW             ZV  
+078_WZTo2L2QMad                           baseW*effW*triggW*puW             ZV  
+079_ZZTo2L2QMad                           baseW*effW*triggW*puW             ZV  
+#
+#
+#
+#
