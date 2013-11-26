@@ -1,0 +1,56 @@
+####################################################################
+#### name_sample            xsection        name_human_readable ####
+####################################################################
+#
+#
+################################################################
+DATA                           -1              DATA
+################################################################
+#
+#
+#
+052_WW2JetsPhantom                  baseW*effW*triggW*puW*(numbLHE==0)*(mjj>100)   VV-DY-Fake  WW2j
+000_WWJets2LMad                     baseW*effW*triggW*puW         VV-DY-Fake      WW
+001_GluGluToWWTo4L                  baseW*effW*triggW*puW         VV-DY-Fake      WW  ggWW
+#
+019_TTTo2L2Nu2B                     baseW*effW*triggW*puW*(sameflav*1.00000+(!sameflav)*1.00000)        top
+011_TtWFullDR                       baseW*effW*triggW*puW*(sameflav*1.00000+(!sameflav)*1.00000)        top
+012_TbartWFullDR                    baseW*effW*triggW*puW*(sameflav*1.00000+(!sameflav)*1.00000)        top
+#
+036_DY10toLLMad                           baseW*effW*triggW*puW*((mctruth==1)*1.8)    VV-DY-Fake    DYee
+037_DY50toLLMad                           baseW*effW*triggW*puW*((mctruth==1)*1.8)    VV-DY-Fake    DYee
+#
+#
+#
+DYtt_19.5fb                         effW*triggW*baseW*puW     VV-DY-Fake     DYtautau ZJets
+#
+#
+074_WZJetsMad                             baseW*effW*triggW*puW      VV-DY-Fake       VV  
+075_ZZJetsMad                             baseW*effW*triggW*puW      VV-DY-Fake       VV
+078_WZTo2L2QMad                           baseW*effW*triggW*puW      VV-DY-Fake       VV
+079_ZZTo2L2QMad                           baseW*effW*triggW*puW      VV-DY-Fake       VV
+# 
+082_WGstarToElNuMad                       baseW*effW*triggW*puW      VV-DY-Fake       Vg
+083_WGstarToMuNuMad                       baseW*effW*triggW*puW      VV-DY-Fake       Vg
+084_WGstarToTauNuMad                      baseW*effW*triggW*puW      VV-DY-Fake       Vg
+085_WgammaToLNuG                          baseW*effW*triggW*puW      VV-DY-Fake       Vg
+#
+LooseLoose_19.5fb                           fakeW/19.5               VV-DY-Fake           WJets
+#
+088_WWGJets            baseW*effW*triggW*puW   VV-DY-Fake   VVV
+089_WZZJets            baseW*effW*triggW*puW   VV-DY-Fake   VVV
+090_ZZZJets            baseW*effW*triggW*puW   VV-DY-Fake   VVV
+091_WWZJets            baseW*effW*triggW*puW   VV-DY-Fake   VVV
+092_WWWJets            baseW*effW*triggW*puW   VV-DY-Fake   VVV
+#
+#
+################################################################################################
+#
+1125_ggToH125toWWTo2LAndTau2Nu            baseW*effW*triggW*puW*kfW                        ggH-125
+2125_vbfToH125toWWTo2LAndTau2Nu           baseW*effW*triggW*puW*kfW                        qqH-125
+3125_wzttH125ToWW                         baseW*effW*triggW*puW*(mctruth==24)              ZH-125
+3125_wzttH125ToWW                         baseW*effW*triggW*puW*(mctruth==26)              WH-125
+3125_wzttH125ToWW                         baseW*effW*triggW*puW*(mctruth==121)             ttH-125
+#
+#
+#
