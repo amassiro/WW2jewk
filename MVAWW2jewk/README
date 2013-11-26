@@ -15,6 +15,8 @@ MVA for discrimination background vs signal
 
 2) Train mva
 
+   rm -r output_Latinos_tree_2012_2orMoreJet2012_MVA
+   cp -r output_Latinos_tree_2012_2orMoreJet2012 output_Latinos_tree_2012_2orMoreJet2012_MVA
    ./bin/MVATrainingWW2jewk.exe test/WW2jewk/MVAWW2jewk/cfg/WWewk.cfg 
  
 and test
@@ -25,8 +27,17 @@ and test
 
 3) Add mva value to ntuples (local ... and latinos @cmsneu)
 
+   rm -r output_Latinos_tree_2012_2orMoreJet2012_MVA_added
+   mkdir output_Latinos_tree_2012_2orMoreJet2012_MVA_added
    ./bin/MVAAddVariableWW2jewk.exe test/WW2jewk/MVAWW2jewk/cfg-add/WW2jewk.cfg 
 
+   rm -r output_Latinos_tree_2012_2orMoreJet2012_DY_MVA
+   cp -r output_Latinos_tree_2012_2jet_DY output_Latinos_tree_2012_2orMoreJet2012_DY_MVA
+   rm -r output_Latinos_tree_2012_2orMoreJet2012_DY_MVA_added
+   mkdir output_Latinos_tree_2012_2orMoreJet2012_DY_MVA_added
+   ./bin/MVAAddVariableWW2jewk.exe test/WW2jewk/MVAWW2jewk/cfg-add/WW2jewk-DY.cfg 
+
+   
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
