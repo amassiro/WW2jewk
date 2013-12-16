@@ -7,17 +7,22 @@ void AMPlotMacroCreator_Moriond() {
 //  TString date    = Form("19Nov_WWewk_Moriond_forAN");
 //  TString file    = Form("out_test_Latinos_19Nov2013_2300_RunABCD-WWewk.root");
 
- //---- MVA ----
- TString fileVar = Form("var20Nov.txt");
- TString date    = Form("20Nov_WWewk_Moriond_forAN");
- TString file    = Form("out_test_Latinos_20Nov2013_2300_RunABCD-WWewk.root");
+//  //---- MVA ----
+//  TString fileVar = Form("var20Nov.txt");
+//  TString date    = Form("20Nov_WWewk_Moriond_forAN");
+//  TString file    = Form("out_test_Latinos_20Nov2013_2300_RunABCD-WWewk.root");
+ 
+ //---- test new variables ----
+ TString fileVar = Form("var26Dec.txt");
+ TString date    = Form("16Dec_WWewk_Moriond_forAN");
+ TString file    = Form("out_test_Latinos_16Dec2013_2300_RunABCD-WWewk.root");
  
  TString hmass   = Form("125");
  TString lumi    = Form("19.468");
 
- for (int iCut = 0; iCut < 3*1; iCut++) {
+//  for (int iCut = 0; iCut < 3*1; iCut++) {
   
-//  for (int iCut = 0; iCut < 3*2; iCut++) {
+ for (int iCut = 0; iCut < 3*2; iCut++) {
      
   TString CommandToExec = Form("rm -r %s_%d",date.Data(),iCut);
   gSystem->Exec(CommandToExec);  
@@ -139,7 +144,7 @@ void AMPlotMacroCreator_Moriond() {
    myfile << " vectNameSig.push_back (\"WWewk\");" << std::endl;
    myfile << " vectColourSig.push_back(633);" << std::endl;
    myfile << " vectScaleSig.push_back(1.0000);" << std::endl;
-   myfile << " vectNormalizationSig.push_back(2.256);" << std::endl;
+   myfile << " vectNormalizationSig.push_back(1.0000);" << std::endl;
        
    myfile << std::endl;
    myfile << " ///==== signal (end)  ====" << std::endl;
@@ -230,8 +235,8 @@ void AMPlotMacroCreator_Moriond() {
    myfile << " vectTHBkg.push_back ( (TH1F*) f->Get(name) );" << std::endl;
    myfile << " vectNameBkg.push_back (\"top\");" << std::endl;
    myfile << " vectColourBkg.push_back(400);" << std::endl;
-   myfile << " vectSystBkg.push_back(0.07);" << std::endl;
-   myfile << " vectScaleBkg.push_back(0.5369313);" << std::endl; // 5.439168 / 10.1301 = MC / expected
+   myfile << " vectSystBkg.push_back(0.20);" << std::endl;
+   myfile << " vectScaleBkg.push_back(1.0500);" << std::endl; // Scale factor from Data driven estimation
    myfile << " vectNormalizationBkg.push_back(5.654);" << std::endl;
       
    myfile << " name = Form(\"%sDYee%s\",cutNameBefore.Data(),cutNameAfter.Data());" << std::endl;
@@ -239,7 +244,7 @@ void AMPlotMacroCreator_Moriond() {
    myfile << " vectNameBkg.push_back (\"DY+jets\");" << std::endl;
    myfile << " vectColourBkg.push_back(418);" << std::endl;
    myfile << " vectSystBkg.push_back(0.11);" << std::endl; // +50%
-   myfile << " vectScaleBkg.push_back(1.00);" << std::endl;
+   myfile << " vectScaleBkg.push_back(1.0000);" << std::endl;
    myfile << std::endl;
    
    myfile << " name = Form(\"%sDYmumu%s\",cutNameBefore.Data(),cutNameAfter.Data());" << std::endl;
@@ -247,7 +252,7 @@ void AMPlotMacroCreator_Moriond() {
    myfile << " vectNameBkg.push_back (\"DY+jets\");" << std::endl;
    myfile << " vectColourBkg.push_back(418);" << std::endl;
    myfile << " vectSystBkg.push_back(0.11);" << std::endl; // +50%
-   myfile << " vectScaleBkg.push_back(1.00);" << std::endl;
+   myfile << " vectScaleBkg.push_back(1.0000);" << std::endl;
    myfile << std::endl;
    
    myfile << " name = Form(\"%sDYtautau%s\",cutNameBefore.Data(),cutNameAfter.Data());" << std::endl;
@@ -255,7 +260,7 @@ void AMPlotMacroCreator_Moriond() {
    myfile << " vectNameBkg.push_back (\"DY+jets\");" << std::endl;
    myfile << " vectColourBkg.push_back(418);" << std::endl;
    myfile << " vectSystBkg.push_back(0.00);" << std::endl; // +50%
-   myfile << " vectScaleBkg.push_back(1.000);" << std::endl;
+   myfile << " vectScaleBkg.push_back(1.0000);" << std::endl;
    //    myfile << " vectScaleBkg.push_back(1.472*0.9);" << std::endl;
    myfile << std::endl;
    
@@ -265,8 +270,8 @@ void AMPlotMacroCreator_Moriond() {
    myfile << " vectTHBkg.push_back ( (TH1F*) f->Get(name) );" << std::endl;
    myfile << " vectNameBkg.push_back (\"WW\");" << std::endl;
    myfile << " vectColourBkg.push_back(851);" << std::endl;
-   myfile << " vectSystBkg.push_back(0.50);" << std::endl;    //--- 50% error
-   myfile << " vectScaleBkg.push_back(2.0000);" << std::endl; //--- x2 !
+   myfile << " vectSystBkg.push_back(0.20);" << std::endl; 
+   myfile << " vectScaleBkg.push_back(1.0000);" << std::endl;
    myfile << " vectNormalizationBkg.push_back(2.256);" << std::endl;
    
    myfile << std::endl;
@@ -296,6 +301,7 @@ void AMPlotMacroCreator_Moriond() {
    myfile << " hs->set_vectNameBkg   (vectNameBkg);    " << std::endl;
    myfile << " hs->set_vectColourBkg (vectColourBkg);  " << std::endl;
    myfile << " hs->set_vectSystBkg   (vectSystBkg);    " << std::endl;
+//    myfile << " hs->set_vectScaleBkg  (vectScaleBkg);   " << std::endl;
    myfile << " //  hs->set_vectScaleBkg  (vectScaleBkg);   " << std::endl;
    
    myfile << std::endl;  
@@ -387,11 +393,13 @@ void AMPlotMacroCreator_Moriond() {
 //    myfile << " c6->Print(\"" << date.Data() << "_" << iCut << "/" <<  vVar_simple.at(iVar).c_str() << "_cut_opt_SoB_left.pdf\");" << std::endl;
 //    myfile << " c6->Print(\"" << date.Data() << "_" << iCut << "/" <<  vVar_simple.at(iVar).c_str() << "_cut_opt_SoB_left.png\");" << std::endl;
 //    myfile << std::endl;
-//    
+//
+   
    myfile << " TCanvas* c7 = new TCanvas(\"" <<  vVar_simple.at(iVar).c_str() << "_norm_bkg\",\"" <<  vVar_simple.at(iVar).c_str() << "_norm_bkg\",400,400);" << std::endl;
    myfile << " hs->DrawNormalizedBkgSummed(c7);" << std::endl;
    myfile << " c7->Print(\"" << date.Data() << "_" << iCut << "/" <<  vVar_simple.at(iVar).c_str() << "_norm_bkg.pdf\");" << std::endl;
    myfile << " c7->Print(\"" << date.Data() << "_" << iCut << "/" <<  vVar_simple.at(iVar).c_str() << "_norm_bkg.png\");" << std::endl;
+
 //    
 //    myfile << " TCanvas* c8 = new TCanvas(\"" <<  vVar_simple.at(iVar).c_str() << "_sob_bkg\",\"" <<  vVar_simple.at(iVar).c_str() << "_sob_bkg\",400,400);" << std::endl;
 //    myfile << " hs->DrawNormalizedSoBBkgSummed(c8);" << std::endl;
