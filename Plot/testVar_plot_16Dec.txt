@@ -7,13 +7,77 @@
 #
 # m^2 = 2 * pt1*pt2 * (Ch deta - cos dphi )
 #
+# jet-(closest lepton)
 #
-acos(cos(jetphi1-phi2))<acos(cos(jetphi1-phi1))*sqrt(2*jetpt1*pt2*(cosh(jeteta1-eta2)-cos(jetphi1-phi2)))+acos(cos(jetphi1-phi2))>=acos(cos(jetphi1-phi1))*sqrt(2*jetpt1*pt1*(cosh(jeteta1-eta1)-cos(jetphi1-phi1)))     0    300     20      mlj1
 #
-acos(cos(jetphi2-phi2))<acos(cos(jetphi2-phi1))*sqrt(2*jetpt2*pt2*(cosh(jeteta2-eta2)-cos(jetphi2-phi2)))+acos(cos(jetphi2-phi2))>=acos(cos(jetphi2-phi1))*sqrt(2*jetpt2*pt1*(cosh(jeteta2-eta1)-cos(jetphi2-phi1)))     0    300     20      mlj2
+(acos(cos(jetphi1-phi2))<acos(cos(jetphi1-phi1)))*sqrt(2*jetpt1*pt2*(cosh(jeteta1-eta2)-cos(jetphi1-phi2)))+(acos(cos(jetphi1-phi2))>=acos(cos(jetphi1-phi1)))*sqrt(2*jetpt1*pt1*(cosh(jeteta1-eta1)-cos(jetphi1-phi1)))     0    300     20      mlj1
+#
+(acos(cos(jetphi2-phi2))<acos(cos(jetphi2-phi1)))*sqrt(2*jetpt2*pt2*(cosh(jeteta2-eta2)-cos(jetphi2-phi2)))+(acos(cos(jetphi2-phi2))>=acos(cos(jetphi2-phi1)))*sqrt(2*jetpt2*pt1*(cosh(jeteta2-eta1)-cos(jetphi2-phi1)))     0    300     20      mlj2
 #
 #
 ##########################################################
+#
+# jet-(closest lepton * 2)
+#
+(acos(cos(jetphi1-phi2))<acos(cos(jetphi1-phi1)))*sqrt(2*jetpt1*2*pt2*(cosh(jeteta1-eta2)-cos(jetphi1-phi2)))+(acos(cos(jetphi1-phi2))>=acos(cos(jetphi1-phi1)))*sqrt(2*jetpt1*2*pt1*(cosh(jeteta1-eta1)-cos(jetphi1-phi1)))     0    300     20      m2lj1
+#
+(acos(cos(jetphi2-phi2))<acos(cos(jetphi2-phi1)))*sqrt(2*jetpt2*2*pt2*(cosh(jeteta2-eta2)-cos(jetphi2-phi2)))+(acos(cos(jetphi2-phi2))>=acos(cos(jetphi2-phi1)))*sqrt(2*jetpt2*2*pt1*(cosh(jeteta2-eta1)-cos(jetphi2-phi1)))     0    300     20      m2lj2
+#
+##########################################################
+#
+# not mass-less
+#
+# jet(5GeV)-(closest 2*lepton[80GeV])
+#
+# m^2 = E^2 - p^2
+#
+# sqrt ((2*p2+jetp1+80)^2 - (2*p2+jetp1)^2)
+# sqrt ((2*pt2*cosh(eta2)+jetpt2*cosh(jeteta1)+80)^2 - (2*p2+jetp1)^2)
+# 
+#
+# x: jetpt1*sin(jetphi1)
+# y: jetpt1*sin(jetphi1)
+# z: jetpt1*(1-exp(-2*jeteta1))/(2.*exp(-jeteta1))
+# 
+# sqrt ((2*pt2*cosh(eta2)+jetpt2*cosh(jeteta1)+80)^2 - ( 
+# (2*pt2*sin(phi2)+jetpt1*sin(jetphi1))*(2*pt2*sin(phi2)+jetpt1*sin(jetphi1)) + 
+# (2*pt2*cos(phi2)+jetpt1*cos(jetphi1))*(2*pt2*cos(phi2)+jetpt1*cos(jetphi1)) +
+# (2*pt2*(1-exp(-2*eta2))/(2.*exp(-eta2))+jetpt1*(1-exp(-2*jeteta1))/(2.*exp(-jeteta1)))*(2*pt2*(1-exp(-2*eta2))/(2.*exp(-eta2))+jetpt1*(1-exp(-2*jeteta1))/(2.*exp(-jeteta1)))
+#
+#  ) )
+#
+#
+# (acos(cos(jetphi1-phi2))<acos(cos(jetphi1-phi1)))*sqrt((2*pt2*cosh(eta2)+jetpt2*cosh(jeteta1)+80)^2-((2*pt2*sin(phi2)+jetpt1*sin(jetphi1))*(2*pt2*sin(phi2)+jetpt1*sin(jetphi1))+(2*pt2*cos(phi2)+jetpt1*cos(jetphi1))*(2*pt2*cos(phi2)+jetpt1*cos(jetphi1))+(2*pt2*(1-exp(-2*eta2))/(2.*exp(-eta2))+jetpt1*(1-exp(-2*jeteta1))/(2.*exp(-jeteta1)))*(2*pt2*(1-exp(-2*eta2))/(2.*exp(-eta2))+jetpt1*(1-exp(-2*jeteta1))/(2.*exp(-jeteta1)))))+
+# (acos(cos(jetphi1-phi2))>=acos(cos(jetphi1-phi1)))*sqrt((2*pt1*cosh(eta1)+jetpt1*cosh(jeteta1)+80)^2-((2*pt1*sin(phi1)+jetpt1*sin(jetphi1))*(2*pt1*sin(phi1)+jetpt1*sin(jetphi1))+(2*pt1*cos(phi1)+jetpt1*cos(jetphi1))*(2*pt1*cos(phi1)+jetpt1*cos(jetphi1))+(2*pt1*(1-exp(-2*eta1))/(2.*exp(-eta1))+jetpt1*(1-exp(-2*jeteta1))/(2.*exp(-jeteta1)))*(2*pt1*(1-exp(-2*eta1))/(2.*exp(-eta1))+jetpt1*(1-exp(-2*jeteta1))/(2.*exp(-jeteta1)))))
+#
+#
+(acos(cos(jetphi1-phi2))<acos(cos(jetphi1-phi1)))*sqrt((2*pt2*cosh(eta2)+jetpt2*cosh(jeteta1)+0.000)*(2*pt2*cosh(eta2)+jetpt2*cosh(jeteta1)+0.000)-((2*pt2*sin(phi2)+jetpt1*sin(jetphi1))*(2*pt2*sin(phi2)+jetpt1*sin(jetphi1))+(2*pt2*cos(phi2)+jetpt1*cos(jetphi1))*(2*pt2*cos(phi2)+jetpt1*cos(jetphi1))+(2*pt2*(1-exp(-2*eta2))/(2.*exp(-eta2))+jetpt1*(1-exp(-2*jeteta1))/(2.*exp(-jeteta1)))*(2*pt2*(1-exp(-2*eta2))/(2.*exp(-eta2))+jetpt1*(1-exp(-2*jeteta1))/(2.*exp(-jeteta1)))))+(acos(cos(jetphi1-phi2))>=acos(cos(jetphi1-phi1)))*sqrt((2*pt1*cosh(eta1)+jetpt1*cosh(jeteta1)+0.000)*(2*pt1*cosh(eta1)+jetpt1*cosh(jeteta1)+0.000)-((2*pt1*sin(phi1)+jetpt1*sin(jetphi1))*(2*pt1*sin(phi1)+jetpt1*sin(jetphi1))+(2*pt1*cos(phi1)+jetpt1*cos(jetphi1))*(2*pt1*cos(phi1)+jetpt1*cos(jetphi1))+(2*pt1*(1-exp(-2*eta1))/(2.*exp(-eta1))+jetpt1*(1-exp(-2*jeteta1))/(2.*exp(-jeteta1)))*(2*pt1*(1-exp(-2*eta1))/(2.*exp(-eta1))+jetpt1*(1-exp(-2*jeteta1))/(2.*exp(-jeteta1)))))     0    300     20      massive-M2lj1
+#
+(acos(cos(jetphi2-phi2))<acos(cos(jetphi2-phi1)))*sqrt((2*pt2*cosh(eta2)+jetpt2*cosh(jeteta2)+0.000)*(2*pt2*cosh(eta2)+jetpt2*cosh(jeteta2)+0.000)-((2*pt2*sin(phi2)+jetpt2*sin(jetphi2))*(2*pt2*sin(phi2)+jetpt2*sin(jetphi2))+(2*pt2*cos(phi2)+jetpt2*cos(jetphi2))*(2*pt2*cos(phi2)+jetpt2*cos(jetphi2))+(2*pt2*(1-exp(-2*eta2))/(2.*exp(-eta2))+jetpt2*(1-exp(-2*jeteta2))/(2.*exp(-jeteta2)))*(2*pt2*(1-exp(-2*eta2))/(2.*exp(-eta2))+jetpt2*(1-exp(-2*jeteta2))/(2.*exp(-jeteta2)))))+(acos(cos(jetphi2-phi2))>=acos(cos(jetphi2-phi1)))*sqrt((2*pt1*cosh(eta1)+jetpt2*cosh(jeteta2)+0.000)*(2*pt1*cosh(eta1)+jetpt2*cosh(jeteta2)+0.000)-((2*pt1*sin(phi1)+jetpt2*sin(jetphi2))*(2*pt1*sin(phi1)+jetpt2*sin(jetphi2))+(2*pt1*cos(phi1)+jetpt2*cos(jetphi2))*(2*pt1*cos(phi1)+jetpt2*cos(jetphi2))+(2*pt1*(1-exp(-2*eta1))/(2.*exp(-eta1))+jetpt2*(1-exp(-2*jeteta2))/(2.*exp(-jeteta2)))*(2*pt1*(1-exp(-2*eta1))/(2.*exp(-eta1))+jetpt2*(1-exp(-2*jeteta2))/(2.*exp(-jeteta2)))))     0    300     20      massive-M2lj1
+#
+##########################################################
+#
+# not mass-less
+#
+# jet(5GeV)-(closest lepton[80GeV])
+#
+# m^2 = E^2 - p^2
+#
+#
+(acos(cos(jetphi1-phi2))<acos(cos(jetphi1-phi1)))*sqrt((pt2*cosh(eta2)+jetpt2*cosh(jeteta1)+80.39)*(pt2*cosh(eta2)+jetpt2*cosh(jeteta1)+80.39)-((pt2*sin(phi2)+jetpt1*sin(jetphi1))*(pt2*sin(phi2)+jetpt1*sin(jetphi1))+(pt2*cos(phi2)+jetpt1*cos(jetphi1))*(pt2*cos(phi2)+jetpt1*cos(jetphi1))+(pt2*(1-exp(-2*eta2))/(2.*exp(-eta2))+jetpt1*(1-exp(-2*jeteta1))/(2.*exp(-jeteta1)))*(pt2*(1-exp(-2*eta2))/(2.*exp(-eta2))+jetpt1*(1-exp(-2*jeteta1))/(2.*exp(-jeteta1)))))+(acos(cos(jetphi1-phi2))>=acos(cos(jetphi1-phi1)))*sqrt((pt1*cosh(eta1)+jetpt1*cosh(jeteta1)+80.39)*(pt1*cosh(eta1)+jetpt1*cosh(jeteta1)+80.39)-((pt1*sin(phi1)+jetpt1*sin(jetphi1))*(pt1*sin(phi1)+jetpt1*sin(jetphi1))+(pt1*cos(phi1)+jetpt1*cos(jetphi1))*(pt1*cos(phi1)+jetpt1*cos(jetphi1))+(pt1*(1-exp(-2*eta1))/(2.*exp(-eta1))+jetpt1*(1-exp(-2*jeteta1))/(2.*exp(-jeteta1)))*(pt1*(1-exp(-2*eta1))/(2.*exp(-eta1))+jetpt1*(1-exp(-2*jeteta1))/(2.*exp(-jeteta1)))))     0    300     20      massive-Mlj1
+#
+(acos(cos(jetphi2-phi2))<acos(cos(jetphi2-phi1)))*sqrt((pt2*cosh(eta2)+jetpt2*cosh(jeteta2)+80.39)*(pt2*cosh(eta2)+jetpt2*cosh(jeteta2)+80.39)-((pt2*sin(phi2)+jetpt2*sin(jetphi2))*(pt2*sin(phi2)+jetpt2*sin(jetphi2))+(pt2*cos(phi2)+jetpt2*cos(jetphi2))*(pt2*cos(phi2)+jetpt2*cos(jetphi2))+(pt2*(1-exp(-2*eta2))/(2.*exp(-eta2))+jetpt2*(1-exp(-2*jeteta2))/(2.*exp(-jeteta2)))*(pt2*(1-exp(-2*eta2))/(2.*exp(-eta2))+jetpt2*(1-exp(-2*jeteta2))/(2.*exp(-jeteta2)))))+(acos(cos(jetphi2-phi2))>=acos(cos(jetphi2-phi1)))*sqrt((pt1*cosh(eta1)+jetpt2*cosh(jeteta2)+80.39)*(pt1*cosh(eta1)+jetpt2*cosh(jeteta2)+80.39)-((pt1*sin(phi1)+jetpt2*sin(jetphi2))*(pt1*sin(phi1)+jetpt2*sin(jetphi2))+(pt1*cos(phi1)+jetpt2*cos(jetphi2))*(pt1*cos(phi1)+jetpt2*cos(jetphi2))+(pt1*(1-exp(-2*eta1))/(2.*exp(-eta1))+jetpt2*(1-exp(-2*jeteta2))/(2.*exp(-jeteta2)))*(pt1*(1-exp(-2*eta1))/(2.*exp(-eta1))+jetpt2*(1-exp(-2*jeteta2))/(2.*exp(-jeteta2)))))     0    300     20      massive-Mlj1
+#
+##########################################################
+#
+# jet-(closest lepton)-met
+#
+# (acos(cos(jetphi1-phi2))<acos(cos(jetphi1-phi1)))*sqrt(2*jetpt1*2*pt2*(cosh(jeteta1-eta2)-cos(jetphi1-phi2)))+(acos(cos(jetphi1-phi2))>=acos(cos(jetphi1-phi1)))*sqrt(2*jetpt1*2*pt1*(cosh(jeteta1-eta1)-cos(jetphi1-phi1)))     0    300     20      m2lj1
+#
+# (acos(cos(jetphi2-phi2))<acos(cos(jetphi2-phi1)))*sqrt(2*jetpt2*2*pt2*(cosh(jeteta2-eta2)-cos(jetphi2-phi2)))+(acos(cos(jetphi2-phi2))>=acos(cos(jetphi2-phi1)))*sqrt(2*jetpt2*2*pt1*(cosh(jeteta2-eta1)-cos(jetphi2-phi1)))     0    300     20      m2lj2
+#
+##########################################################
+#
 # max number of variables 
 #
 #
