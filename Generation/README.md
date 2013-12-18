@@ -68,9 +68,8 @@ to
    tt
 
 
-awk '/\ \ 25\ \ /&&v++%2{sub(/\ \ 25\ \ \ \ 1/, "\ \ 35\ \ \ \ 1")}{print}' $NAMEFILELHE > /tmp/$TESTFOLDER/$NAMELHEMODIFIED
-
-
+    c++ -o Transform.exe `root-config --glibs --cflags` -lm Transform.cpp
+    ./Transform.exe  pwgevents-0001.lhe pwgevents-0001-shuffled.lhe
 
 
 Now hadronize & more 10k events in CMS
