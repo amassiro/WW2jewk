@@ -53,7 +53,7 @@ Only em events are produced: now shuffle!
 
 from
 
-   em
+   e+m-
 
 to
 
