@@ -23,10 +23,34 @@ Merge LHE:
 
     ls -d  gen_*/ --color=none | awk '{print "cd "$1"/gen2jmu-e+/; /home/amassiro/Interference/LHEActions/mergeLHEfiles  `find . -name \"phamom.dat\"`;  cd -; cd "$1"/gen2jmu-mu+/; /home/amassiro/Interference/LHEActions/mergeLHEfiles  `find . -name \"phamom.dat\"`;  cd -;"}'
 
+Dump:
+
+    ./ntupleMaker.exe   /data/amassiro/CMSSWLHE/WW2jetsPhantom/gen_126_lvlv_s1_ew/gen2jmu-e+/total.lhe EW_jjme.root
+    ./ntupleMaker.exe   /data/amassiro/CMSSWLHE/WW2jetsPhantom/gen_126_lvlv_s1_ew/gen2jmu-mu+/total.lhe EW_jjmm.root
+
+    ./ntupleMaker.exe   /data/amassiro/CMSSWLHE/WW2jetsPhantom/gen_126_lvlv_s1_qcd/gen2jmu-e+/total.lhe QCD_jjme.root
+    ./ntupleMaker.exe   /data/amassiro/CMSSWLHE/WW2jetsPhantom/gen_126_lvlv_s1_qcd/gen2jmu-mu+/total.lhe QCD_jjmm.root
+
+    ./ntupleMaker.exe   /data/amassiro/CMSSWLHE/WW2jetsPhantom/gen_126_lvlv_s1_ewqcd/gen2jmu-e+/total.lhe EWQCD_jjme.root
+    ./ntupleMaker.exe   /data/amassiro/CMSSWLHE/WW2jetsPhantom/gen_126_lvlv_s1_ewqcd/gen2jmu-mu+/total.lhe EWQCD_jjmm.root
 
 
+Get cross-section:
 
+    cat   /data/amassiro/CMSSWLHE/WW2jetsPhantom/gen_126_lvlv_s1_qcd/gen2jmu-e+/result | grep total 
+    cat   /data/amassiro/CMSSWLHE/WW2jetsPhantom/gen_126_lvlv_s1_qcd/gen2jmu-mu+/result | grep total 
+    cat   /data/amassiro/CMSSWLHE/WW2jetsPhantom/gen_126_lvlv_s1_ew/gen2jmu-e+/result | grep total 
+    cat   /data/amassiro/CMSSWLHE/WW2jetsPhantom/gen_126_lvlv_s1_ew/gen2jmu-mu+/result | grep total 
+    cat   /data/amassiro/CMSSWLHE/WW2jetsPhantom/gen_126_lvlv_s1_ewqcd/gen2jmu-e+/result | grep total 
+    cat   /data/amassiro/CMSSWLHE/WW2jetsPhantom/gen_126_lvlv_s1_ewqcd/gen2jmu-mu+/result | grep total 
 
-
-
+qcd
+    total cross section=  0.62100954917703377       +/-  4.38916672987245599E-004
+    total cross section=  0.31107029810623943       +/-  2.19922873754970909E-004
+ewk
+    total cross section=  2.68719361245196228E-002  +/-  1.89984045079834006E-005
+    total cross section=  1.35241401169139651E-002  +/-  9.56109888684092098E-006
+ew+qcd
+    total cross section=  0.64303443036305363       +/-  4.54530754262088578E-004
+    total cross section=  0.32257867984679178       +/-  2.28027278887301088E-004
 
