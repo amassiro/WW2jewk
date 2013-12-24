@@ -147,13 +147,20 @@ void fillNtuple (std::string fileNameLHE,  TNtuple & ntuple) {
   float jetpt2 = -99;
   if (v_f_quarks.size()>1) jetpt2 = v_f_quarks.at (1).Pt ();
 
+  float mjj = -999;
+  if (v_f_quarks.size()>1) {
+   TLorentzVector diJet = v_f_quarks.at (0) + v_f_quarks.at (1) ;
+   mjj = diJet.M();
+  }
+
   ntuple.Fill (
     jetpt1,
     jetpt2,
     v_f_leptons.at (0).Pt (),
     v_f_leptons.at (1).Pt (),
     dilepton_plus_dineutrinos.M(),
-    diLepton.M()
+    diLepton.M(),
+    mjj
     ) ;
 
  } // loop over events
@@ -179,7 +186,7 @@ int main (int argc, char **argv) {
  LHAPDF::initPDF (0) ;
 
 
- TNtuple ntu ("ntu", "ntu", "jetpt1:jetpt2:pt1:pt2:mWW:mll");
+ TNtuple ntu ("ntu", "ntu", "jetpt1:jetpt2:pt1:pt2:mWW:mll:mjj");
  fillNtuple (argv[1], ntu) ;
 
  TFile output (argv[2], "recreate") ;
