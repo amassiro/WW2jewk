@@ -45,12 +45,17 @@ Get cross-section:
     cat   /data/amassiro/CMSSWLHE/WW2jetsPhantom/gen_126_lvlv_s1_ewqcd/gen2jmu-mu+/result | grep total 
 
 qcd
+
     total cross section=  0.62100954917703377       +/-  4.38916672987245599E-004
     total cross section=  0.31107029810623943       +/-  2.19922873754970909E-004
+
 ewk
+
     total cross section=  2.68719361245196228E-002  +/-  1.89984045079834006E-005
     total cross section=  1.35241401169139651E-002  +/-  9.56109888684092098E-006
+
 ew+qcd
+
     total cross section=  0.64303443036305363       +/-  4.54530754262088578E-004
     total cross section=  0.32257867984679178       +/-  2.28027278887301088E-004
 
