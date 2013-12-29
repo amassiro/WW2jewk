@@ -199,7 +199,7 @@ int GetTop_Macro_forDataCard_Complete(int iWP, std::string suffix = "of", std::s
   v_commonCut_Higgs.push_back("njetvbf==0");
   v_commonCut_Higgs.push_back("mjj>200");
   v_commonCut_Higgs.push_back("detajj>1.0");
-  v_commonCut_Higgs.push_back("BDTG_weights_testVariables_MVAWW2jewk > 0.85");
+//   v_commonCut_Higgs.push_back("BDTG_weights_testVariables_MVAWW2jewk > 0.85");
  }
  
  if (whatAnalysis == "shape") {
