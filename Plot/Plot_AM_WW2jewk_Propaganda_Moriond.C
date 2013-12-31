@@ -55,9 +55,9 @@ TGraphAsymmErrors* FilterBins(std::vector<int> binsToSelect, TGraphAsymmErrors* 
 
 void Plot_AM_WW2jewk_Propaganda_Moriond() {
  
- //  TString folder = Form("sig/");
- //  TString nameChannel = Form ("of_2j/");
- //  TString cutNameBefore = Form("sig/%shisto_",nameChannel.Data());
+//   TString folder = Form("sig/");
+//   TString nameChannel = Form ("of_2j/");
+//   TString cutNameBefore = Form("sig/%shisto_",nameChannel.Data());
  
  TString folder = Form("init/");
  TString nameChannel = Form ("of_2j/");
@@ -80,6 +80,7 @@ void Plot_AM_WW2jewk_Propaganda_Moriond() {
  TFile* f[10];
  
  f[0] = new TFile("postFit-WW2jewk/WWewk-error.root");
+//  f[0] = new TFile("postFit-WW2jewk/WWewk-error-signal-injection.root"); --> not working in mkAutopsy.py
  
  
  PlotVHqqHggH* hs = new PlotVHqqHggH();
@@ -214,14 +215,14 @@ void Plot_AM_WW2jewk_Propaganda_Moriond() {
    vectNameBkg.push_back ("Top");
    vectColourBkg.push_back(400);
    vectSystBkg.push_back(0.07);
-   vectScaleBkg.push_back(0.8);
+   vectScaleBkg.push_back(0.85);
    vectNormalizationBkg.push_back(5.654);
    
    name = Form("%sDYTT%s",cutNameBefore.Data(),cutNameAfter.Data());
    vectTHBkg.push_back ( FilterBins(binsToSelect, (TH1F*) f[iFile]->Get(name)) );
    vectNameBkg.push_back ("DYTT");
    vectColourBkg.push_back(418);
-   vectSystBkg.push_back(0.11);
+   vectSystBkg.push_back(0.00);
    vectScaleBkg.push_back(1.0000);
    vectNormalizationBkg.push_back(0.377);
    
@@ -229,7 +230,7 @@ void Plot_AM_WW2jewk_Propaganda_Moriond() {
    vectTHBkg.push_back ( FilterBins(binsToSelect, (TH1F*) f[iFile]->Get(name)) );
    vectNameBkg.push_back ("WW");
    vectColourBkg.push_back(851);
-   vectSystBkg.push_back(0.50);
+   vectSystBkg.push_back(0.00);
    vectScaleBkg.push_back(1.0000);
    vectNormalizationBkg.push_back(2.256);
    
@@ -272,7 +273,7 @@ void Plot_AM_WW2jewk_Propaganda_Moriond() {
  hs->set_vectNameBkg   (vectNameBkg);    
  hs->set_vectColourBkg (vectColourBkg);  
  hs->set_vectSystBkg   (vectSystBkg);    
- // hs->set_vectScaleBkg  (vectScaleBkg);   
+ hs->set_vectScaleBkg  (vectScaleBkg);   
  
  hs->set_vectTHSig     (vectTHSig);      
  hs->set_vectNameSig   (vectNameSig);    

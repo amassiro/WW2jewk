@@ -17,6 +17,9 @@ DATA                           -1              DATA
 011_TtWFullDR                       baseW*effW*triggW*puW*(sameflav*1.00000+(!sameflav)*1.00000)        top
 012_TbartWFullDR                    baseW*effW*triggW*puW*(sameflav*1.00000+(!sameflav)*1.00000)        top
 #
+036_DY10toLLMad                           baseW*effW*triggW*puW*((mctruth==0)*1.8)    VV-DY-Fake    DYmm
+037_DY50toLLMad                           baseW*effW*triggW*puW*((mctruth==0)*1.8)    VV-DY-Fake    DYmm
+#
 036_DY10toLLMad                           baseW*effW*triggW*puW*((mctruth==1)*1.8)    VV-DY-Fake    DYee
 037_DY50toLLMad                           baseW*effW*triggW*puW*((mctruth==1)*1.8)    VV-DY-Fake    DYee
 #

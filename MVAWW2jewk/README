@@ -36,7 +36,7 @@ and test
    rm -r output_Latinos_tree_2012_2orMoreJet2012_DY_MVA_added
    mkdir output_Latinos_tree_2012_2orMoreJet2012_DY_MVA_added
    ./bin/MVAAddVariableWW2jewk.exe test/WW2jewk/MVAWW2jewk/cfg-add/WW2jewk-DY.cfg 
-
+   bash test/WW2jewk/DYRinout/dody.sh
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 

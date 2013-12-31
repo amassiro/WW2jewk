@@ -96,6 +96,8 @@ int GetTop_Macro_forDataCard(int iWP, std::string suffix = "of", std::string wha
  std::cout << " ============== " << std::endl;
  std::cout << std::endl;
  
+ std::cout << " whatAnalysis = " << whatAnalysis << std::endl;
+ 
  int _debug = 0;
  //  int _debug = 1;
 //  int _debug = 4;
@@ -126,10 +128,10 @@ int GetTop_Macro_forDataCard(int iWP, std::string suffix = "of", std::string wha
 //  v_commonCut_WW.push_back("(bveto_ip==1 && nbjettche==0)");
  v_commonCut_WW.push_back("bveto_ip==1");
  v_commonCut_WW.push_back("(!sameflav || pfmet > 80.0)");
+ v_commonCut_WW.push_back("(dphilljetjet<pi/180.*165. || !sameflav )");
  
- //---- >=2 jets and CJV
+ //---- >=2 jets
  v_commonCut_WW.push_back("njet >= 2");
- v_commonCut_WW.push_back("njetvbf==0");
  
  std::string commonCut_WW = Compact(v_commonCut_WW);
  std::cout << " commonCut_WW = " << commonCut_WW << std::endl;
@@ -153,12 +155,14 @@ int GetTop_Macro_forDataCard(int iWP, std::string suffix = "of", std::string wha
  }
  
  if (whatAnalysis == "cut") {
+  v_commonCut_Higgs.push_back("njetvbf==0");
   v_commonCut_Higgs.push_back("mjj>200");
   v_commonCut_Higgs.push_back("detajj>1.0");
   v_commonCut_Higgs.push_back("BDTG_weights_testVariables_MVAWW2jewk > 0.85");
  }
  
  if (whatAnalysis == "shape") {
+  v_commonCut_Higgs.push_back("njetvbf==0");
   v_commonCut_Higgs.push_back("mjj>200");
   v_commonCut_Higgs.push_back("detajj>1.0");
  }  

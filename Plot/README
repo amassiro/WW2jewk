@@ -22,6 +22,22 @@ chmod +x skim2orMoreJet.sh
 
 
 
+
+
+#####################################
+# for MVA: top enriched phase space #
+
+./bin/MCDATAComparisonPLOTTool.exe test/WW2jewk/Plot/testMCDATAComparisonPLOTTool_MVA.cfg
+r00t AMPlotMacroCreator_Moriond.cxx
+
+
+
+
+
+
+
+
+
 # create distributions
 ./bin/MCDATAComparisonPLOTTool.exe test/WW2jewk/Plot/testMCDATAComparisonPLOTTool_ForOptimization.cfg
 

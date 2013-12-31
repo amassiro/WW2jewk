@@ -149,26 +149,6 @@ for ((i=0; i<1; i++)) do cat test/WW2jewk/ttbar/result-SF-shape-of-0.txt >>  Top
 r00t test/CorrectTop.cxx\(\"TopCard_2j-shape-of-ScaleFactor_new.txt\",4\)
 
 
-rm test/WW2jewk/ttbar/result-eff-shape-sf.txt
-for ((i=0; i<1; i++)) do root -l test/WW2jewk/ttbar/GetTop-Macro-forDataCard.cxx\($i,\"sf\"\,\"shape\",true\)  ; done 
-rm TopCard_2j-shape-sf_new.txt
-for ((i=0; i<1; i++)) do cat test/WW2jewk/ttbar/result-shape-sf-0.txt >>  TopCard_2j-shape-sf_new.txt  ; done
-r00t test/CorrectTop.cxx\(\"TopCard_2j-shape-sf_new.txt\",4\)
-rm TopCard_2j-shape-sf-ScaleFactor_new.txt
-for ((i=0; i<1; i++)) do cat test/WW2jewk/ttbar/result-SF-shape-sf-0.txt >>  TopCard_2j-shape-sf-ScaleFactor_new.txt  ; done
-r00t test/CorrectTop.cxx\(\"TopCard_2j-shape-sf-ScaleFactor_new.txt\",4\)
-
-rm test/WW2jewk/ttbar/result-eff-shape-sfof.txt
-for ((i=0; i<1; i++)) do root -l test/WW2jewk/ttbar/GetTop-Macro-forDataCard.cxx\($i,\"sfof\"\,\"shape\",true\)  ; done
-rm TopCard_2j-shape-sfof_new.txt
-for ((i=0; i<1; i++)) do cat test/WW2jewk/ttbar/result-shape-sfof-0.txt >>  TopCard_2j-shape-sfof_new.txt  ; done
-r00t test/CorrectTop.cxx\(\"TopCard_2j-shape-sfof_new.txt\",4\)
-rm TopCard_2j-shape-sfof-ScaleFactor_new.txt
-for ((i=0; i<1; i++)) do cat test/WW2jewk/ttbar/result-SF-shape-sfof-0.txt >>  TopCard_2j-shape-sfof-ScaleFactor_new.txt  ; done
-r00t test/CorrectTop.cxx\(\"TopCard_2j-shape-sfof-ScaleFactor_new.txt\",4\)
-
-
-
 
 
 
@@ -198,6 +178,204 @@ r00t test/createDDAnalysisWW2jewk.cxx
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#---- pt dependence and 2 regions in tche ----
+
+
+# ---- cut based analysis
+# GetTop_Macro_forDataCard_Complete(int iWP, std::string suffix = "of", std::string whatAnalysis = "cut", bool doEnrichToGetEvents = false, int binCutPt = 0, int binTCHE = 0
+
+# pt 0 thce 0
+
+rm test/WW2jewk/ttbar/result-eff-cut-of-pt-0-tche-0.txt
+root -l test/WW2jewk/ttbar/GetTop-Macro-forDataCard-Complete.cxx\(0,\"of\"\,\"cut\",true,0,0\)
+rm TopCard_2j-cut-of_new-pt-0-tche-0.txt
+cat test/WW2jewk/ttbar/result-cut-of-pt-0-tche-0-0.txt >>  TopCard_2j-cut-of-pt-0-tche-0_new.txt
+rm TopCard_2j-cut-of-pt-0-tche-0-ScaleFactor_new.txt
+cat test/WW2jewk/ttbar/result-SF-cut-of-pt-0-tche-0-0.txt >>  TopCard_2j-cut-of-pt-0-tche-0-ScaleFactor_new.txt
+
+rm test/WW2jewk/ttbar/result-eff-cut-sf-pt-0-tche-0.txt
+root -l test/WW2jewk/ttbar/GetTop-Macro-forDataCard-Complete.cxx\(0,\"sf\"\,\"cut\",true,0,0\)
+rm TopCard_2j-cut-sf_new-pt-0-tche-0.txt
+cat test/WW2jewk/ttbar/result-cut-sf-pt-0-tche-0-0.txt >>  TopCard_2j-cut-sf-pt-0-tche-0_new.txt
+rm TopCard_2j-cut-sf-pt-0-tche-0-ScaleFactor_new.txt
+cat test/WW2jewk/ttbar/result-SF-cut-sf-pt-0-tche-0-0.txt >>  TopCard_2j-cut-sf-pt-0-tche-0-ScaleFactor_new.txt
+
+rm test/WW2jewk/ttbar/result-eff-cut-sfof-pt-0-tche-0.txt
+root -l test/WW2jewk/ttbar/GetTop-Macro-forDataCard-Complete.cxx\(0,\"sfof\"\,\"cut\",true,0,0\)
+rm TopCard_2j-cut-sfof_new-pt-0-tche-0.txt
+cat test/WW2jewk/ttbar/result-cut-sfof-pt-0-tche-0-0.txt >>  TopCard_2j-cut-sfof-pt-0-tche-0_new.txt
+rm TopCard_2j-cut-sfof-pt-0-tche-0-ScaleFactor_new.txt
+cat test/WW2jewk/ttbar/result-SF-cut-sfof-pt-0-tche-0-0.txt >>  TopCard_2j-cut-sfof-pt-0-tche-0-ScaleFactor_new.txt
+
+
+# pt 0 thce 1
+
+rm test/WW2jewk/ttbar/result-eff-cut-of-pt-0-tche-1.txt
+root -l test/WW2jewk/ttbar/GetTop-Macro-forDataCard-Complete.cxx\(0,\"of\"\,\"cut\",true,0,1\)
+rm TopCard_2j-cut-of_new-pt-0-tche-1.txt
+cat test/WW2jewk/ttbar/result-cut-of-pt-0-tche-1-0.txt >>  TopCard_2j-cut-of-pt-0-tche-1_new.txt
+rm TopCard_2j-cut-of-pt-0-tche-1-ScaleFactor_new.txt
+cat test/WW2jewk/ttbar/result-SF-cut-of-pt-0-tche-1-0.txt >>  TopCard_2j-cut-of-pt-0-tche-1-ScaleFactor_new.txt
+
+rm test/WW2jewk/ttbar/result-eff-cut-sf-pt-0-tche-1.txt
+root -l test/WW2jewk/ttbar/GetTop-Macro-forDataCard-Complete.cxx\(0,\"sf\"\,\"cut\",true,0,1\)
+rm TopCard_2j-cut-sf_new-pt-0-tche-1.txt
+cat test/WW2jewk/ttbar/result-cut-sf-pt-0-tche-1-0.txt >>  TopCard_2j-cut-sf-pt-0-tche-1_new.txt
+rm TopCard_2j-cut-sf-pt-0-tche-1-ScaleFactor_new.txt
+cat test/WW2jewk/ttbar/result-SF-cut-sf-pt-0-tche-1-0.txt >>  TopCard_2j-cut-sf-pt-0-tche-1-ScaleFactor_new.txt
+
+rm test/WW2jewk/ttbar/result-eff-cut-sfof-pt-0-tche-1.txt
+root -l test/WW2jewk/ttbar/GetTop-Macro-forDataCard-Complete.cxx\(0,\"sfof\"\,\"cut\",true,0,1\)
+rm TopCard_2j-cut-sfof_new-pt-0-tche-1.txt
+cat test/WW2jewk/ttbar/result-cut-sfof-pt-0-tche-1-0.txt >>  TopCard_2j-cut-sfof-pt-0-tche-1_new.txt
+rm TopCard_2j-cut-sfof-pt-0-tche-1-ScaleFactor_new.txt
+cat test/WW2jewk/ttbar/result-SF-cut-sfof-pt-0-tche-1-0.txt >>  TopCard_2j-cut-sfof-pt-0-tche-1-ScaleFactor_new.txt
+
+
+
+# pt 1 thce 0
+
+rm test/WW2jewk/ttbar/result-eff-cut-of-pt-1-tche-0.txt
+root -l test/WW2jewk/ttbar/GetTop-Macro-forDataCard-Complete.cxx\(0,\"of\"\,\"cut\",true,1,0\)
+rm TopCard_2j-cut-of_new-pt-1-tche-0.txt
+cat test/WW2jewk/ttbar/result-cut-of-pt-1-tche-0-0.txt >>  TopCard_2j-cut-of-pt-1-tche-0_new.txt
+rm TopCard_2j-cut-of-pt-1-tche-0-ScaleFactor_new.txt
+cat test/WW2jewk/ttbar/result-SF-cut-of-pt-1-tche-0-0.txt >>  TopCard_2j-cut-of-pt-1-tche-0-ScaleFactor_new.txt
+
+rm test/WW2jewk/ttbar/result-eff-cut-sf-pt-1-tche-0.txt
+root -l test/WW2jewk/ttbar/GetTop-Macro-forDataCard-Complete.cxx\(0,\"sf\"\,\"cut\",true,1,0\)
+rm TopCard_2j-cut-sf_new-pt-1-tche-0.txt
+cat test/WW2jewk/ttbar/result-cut-sf-pt-1-tche-0-0.txt >>  TopCard_2j-cut-sf-pt-1-tche-0_new.txt
+rm TopCard_2j-cut-sf-pt-1-tche-0-ScaleFactor_new.txt
+cat test/WW2jewk/ttbar/result-SF-cut-sf-pt-1-tche-0-0.txt >>  TopCard_2j-cut-sf-pt-1-tche-0-ScaleFactor_new.txt
+
+rm test/WW2jewk/ttbar/result-eff-cut-sfof-pt-1-tche-0.txt
+root -l test/WW2jewk/ttbar/GetTop-Macro-forDataCard-Complete.cxx\(0,\"sfof\"\,\"cut\",true,1,0\)
+rm TopCard_2j-cut-sfof_new-pt-1-tche-0.txt
+cat test/WW2jewk/ttbar/result-cut-sfof-pt-1-tche-0-0.txt >>  TopCard_2j-cut-sfof-pt-1-tche-0_new.txt
+rm TopCard_2j-cut-sfof-pt-1-tche-0-ScaleFactor_new.txt
+cat test/WW2jewk/ttbar/result-SF-cut-sfof-pt-1-tche-0-0.txt >>  TopCard_2j-cut-sfof-pt-1-tche-0-ScaleFactor_new.txt
+
+
+# pt 1 thce 1
+
+rm test/WW2jewk/ttbar/result-eff-cut-of-pt-1-tche-1.txt
+root -l test/WW2jewk/ttbar/GetTop-Macro-forDataCard-Complete.cxx\(0,\"of\"\,\"cut\",true,1,1\)
+rm TopCard_2j-cut-of_new-pt-1-tche-1.txt
+cat test/WW2jewk/ttbar/result-cut-of-pt-1-tche-1-0.txt >>  TopCard_2j-cut-of-pt-1-tche-1_new.txt
+rm TopCard_2j-cut-of-pt-1-tche-1-ScaleFactor_new.txt
+cat test/WW2jewk/ttbar/result-SF-cut-of-pt-1-tche-1-0.txt >>  TopCard_2j-cut-of-pt-1-tche-1-ScaleFactor_new.txt
+
+rm test/WW2jewk/ttbar/result-eff-cut-sf-pt-1-tche-1.txt
+root -l test/WW2jewk/ttbar/GetTop-Macro-forDataCard-Complete.cxx\(0,\"sf\"\,\"cut\",true,1,1\)
+rm TopCard_2j-cut-sf_new-pt-1-tche-1.txt
+cat test/WW2jewk/ttbar/result-cut-sf-pt-1-tche-1-0.txt >>  TopCard_2j-cut-sf-pt-1-tche-1_new.txt
+rm TopCard_2j-cut-sf-pt-1-tche-1-ScaleFactor_new.txt
+cat test/WW2jewk/ttbar/result-SF-cut-sf-pt-1-tche-1-0.txt >>  TopCard_2j-cut-sf-pt-1-tche-1-ScaleFactor_new.txt
+
+rm test/WW2jewk/ttbar/result-eff-cut-sfof-pt-1-tche-1.txt
+root -l test/WW2jewk/ttbar/GetTop-Macro-forDataCard-Complete.cxx\(0,\"sfof\"\,\"cut\",true,1,1\)
+rm TopCard_2j-cut-sfof_new-pt-1-tche-1.txt
+cat test/WW2jewk/ttbar/result-cut-sfof-pt-1-tche-1-0.txt >>  TopCard_2j-cut-sfof-pt-1-tche-1_new.txt
+rm TopCard_2j-cut-sfof-pt-1-tche-1-ScaleFactor_new.txt
+cat test/WW2jewk/ttbar/result-SF-cut-sfof-pt-1-tche-1-0.txt >>  TopCard_2j-cut-sfof-pt-1-tche-1-ScaleFactor_new.txt
+
+
+
+# pt 2 thce 0
+
+rm test/WW2jewk/ttbar/result-eff-cut-of-pt-2-tche-0.txt
+root -l test/WW2jewk/ttbar/GetTop-Macro-forDataCard-Complete.cxx\(0,\"of\"\,\"cut\",true,2,0\)
+rm TopCard_2j-cut-of_new-pt-2-tche-0.txt
+cat test/WW2jewk/ttbar/result-cut-of-pt-2-tche-0-0.txt >>  TopCard_2j-cut-of-pt-2-tche-0_new.txt
+rm TopCard_2j-cut-of-pt-2-tche-0-ScaleFactor_new.txt
+cat test/WW2jewk/ttbar/result-SF-cut-of-pt-2-tche-0-0.txt >>  TopCard_2j-cut-of-pt-2-tche-0-ScaleFactor_new.txt
+
+rm test/WW2jewk/ttbar/result-eff-cut-sf-pt-2-tche-0.txt
+root -l test/WW2jewk/ttbar/GetTop-Macro-forDataCard-Complete.cxx\(0,\"sf\"\,\"cut\",true,2,0\)
+rm TopCard_2j-cut-sf_new-pt-2-tche-0.txt
+cat test/WW2jewk/ttbar/result-cut-sf-pt-2-tche-0-0.txt >>  TopCard_2j-cut-sf-pt-2-tche-0_new.txt
+rm TopCard_2j-cut-sf-pt-2-tche-0-ScaleFactor_new.txt
+cat test/WW2jewk/ttbar/result-SF-cut-sf-pt-2-tche-0-0.txt >>  TopCard_2j-cut-sf-pt-2-tche-0-ScaleFactor_new.txt
+
+rm test/WW2jewk/ttbar/result-eff-cut-sfof-pt-2-tche-0.txt
+root -l test/WW2jewk/ttbar/GetTop-Macro-forDataCard-Complete.cxx\(0,\"sfof\"\,\"cut\",true,2,0\)
+rm TopCard_2j-cut-sfof_new-pt-2-tche-0.txt
+cat test/WW2jewk/ttbar/result-cut-sfof-pt-2-tche-0-0.txt >>  TopCard_2j-cut-sfof-pt-2-tche-0_new.txt
+rm TopCard_2j-cut-sfof-pt-2-tche-0-ScaleFactor_new.txt
+cat test/WW2jewk/ttbar/result-SF-cut-sfof-pt-2-tche-0-0.txt >>  TopCard_2j-cut-sfof-pt-2-tche-0-ScaleFactor_new.txt
+
+
+# pt 2 thce 1
+
+rm test/WW2jewk/ttbar/result-eff-cut-of-pt-2-tche-1.txt
+root -l test/WW2jewk/ttbar/GetTop-Macro-forDataCard-Complete.cxx\(0,\"of\"\,\"cut\",true,2,1\)
+rm TopCard_2j-cut-of_new-pt-2-tche-1.txt
+cat test/WW2jewk/ttbar/result-cut-of-pt-2-tche-1-0.txt >>  TopCard_2j-cut-of-pt-2-tche-1_new.txt
+rm TopCard_2j-cut-of-pt-2-tche-1-ScaleFactor_new.txt
+cat test/WW2jewk/ttbar/result-SF-cut-of-pt-2-tche-1-0.txt >>  TopCard_2j-cut-of-pt-2-tche-1-ScaleFactor_new.txt
+
+rm test/WW2jewk/ttbar/result-eff-cut-sf-pt-2-tche-1.txt
+root -l test/WW2jewk/ttbar/GetTop-Macro-forDataCard-Complete.cxx\(0,\"sf\"\,\"cut\",true,2,1\)
+rm TopCard_2j-cut-sf_new-pt-2-tche-1.txt
+cat test/WW2jewk/ttbar/result-cut-sf-pt-2-tche-1-0.txt >>  TopCard_2j-cut-sf-pt-2-tche-1_new.txt
+rm TopCard_2j-cut-sf-pt-2-tche-1-ScaleFactor_new.txt
+cat test/WW2jewk/ttbar/result-SF-cut-sf-pt-2-tche-1-0.txt >>  TopCard_2j-cut-sf-pt-2-tche-1-ScaleFactor_new.txt
+
+rm test/WW2jewk/ttbar/result-eff-cut-sfof-pt-2-tche-1.txt
+root -l test/WW2jewk/ttbar/GetTop-Macro-forDataCard-Complete.cxx\(0,\"sfof\"\,\"cut\",true,2,1\)
+rm TopCard_2j-cut-sfof_new-pt-2-tche-1.txt
+cat test/WW2jewk/ttbar/result-cut-sfof-pt-2-tche-1-0.txt >>  TopCard_2j-cut-sfof-pt-2-tche-1_new.txt
+rm TopCard_2j-cut-sfof-pt-2-tche-1-ScaleFactor_new.txt
+cat test/WW2jewk/ttbar/result-SF-cut-sfof-pt-2-tche-1-0.txt >>  TopCard_2j-cut-sfof-pt-2-tche-1-ScaleFactor_new.txt
+
+
+
+
+
+
+
+# ---- shape analysis
+
+rm test/WW2jewk/ttbar/result-eff-shape-of.txt
+for ((i=0; i<1; i++)) do root -l test/WW2jewk/ttbar/GetTop-Macro-forDataCard.cxx\($i,\"of\"\,\"shape\",true\)  ; done
+rm TopCard_2j-shape-of_new.txt
+for ((i=0; i<1; i++)) do cat test/WW2jewk/ttbar/result-shape-of-0.txt >>  TopCard_2j-shape-of_new.txt  ; done
+r00t test/CorrectTop.cxx\(\"TopCard_2j-shape-of_new.txt\",4\)
+rm TopCard_2j-shape-of-ScaleFactor_new.txt
+for ((i=0; i<1; i++)) do cat test/WW2jewk/ttbar/result-SF-shape-of-0.txt >>  TopCard_2j-shape-of-ScaleFactor_new.txt  ; done
+r00t test/CorrectTop.cxx\(\"TopCard_2j-shape-of-ScaleFactor_new.txt\",4\)
+
+
+
+
+
+
+
+
+
+
+
+# prepare data driven #
+r00t test/createDDAnalysisWW2jewkComplete.cxx\(\"-shape\"\)
+r00t test/createDDAnalysisWW2jewkComplete.cxx
 
 
 

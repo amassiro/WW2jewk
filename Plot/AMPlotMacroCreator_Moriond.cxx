@@ -8,14 +8,15 @@ void AMPlotMacroCreator_Moriond() {
 //  TString file    = Form("out_test_Latinos_19Nov2013_2300_RunABCD-WWewk.root");
 
 //  //---- MVA ----
-//  TString fileVar = Form("var20Nov.txt");
-//  TString date    = Form("20Nov_WWewk_Moriond_forAN");
-//  TString file    = Form("out_test_Latinos_20Nov2013_2300_RunABCD-WWewk.root");
+ TString fileVar = Form("var20Nov.txt");
+ TString date    = Form("20Nov_WWewk_Moriond_forAN");
+ TString file    = Form("out_test_Latinos_20Nov2013_2300_RunABCD-WWewk.root");
  
  //---- test new variables ----
- TString fileVar = Form("var26Dec.txt");
- TString date    = Form("16Dec_WWewk_Moriond_forAN");
- TString file    = Form("out_test_Latinos_16Dec2013_2300_RunABCD-WWewk.root");
+//  TString fileVar = Form("var26Dec.txt");
+//  TString date    = Form("16Dec_WWewk_Moriond_forAN");
+// //  TString file    = Form("out_test_Latinos_16Dec2013_2300_RunABCD-WWewk.root"); --> test new kinematic variables to suppress top
+//  TString file    = Form("out_test_Latinos_17Dec2013_2300_RunABCD-WWewk.root");
  
  TString hmass   = Form("125");
  TString lumi    = Form("19.468");
@@ -382,18 +383,18 @@ void AMPlotMacroCreator_Moriond() {
 //    myfile << " c4->Print(\"" << date.Data() << "_" << iCut << "/" <<  vVar_simple.at(iVar).c_str() << "_cut_opt_SoB_right.png\");" << std::endl;
 //    myfile << std::endl;
 //    
-//    myfile << " TCanvas* c5 = new TCanvas(\"" <<  vVar_simple.at(iVar).c_str() << "_cut_opt_left\",\"" <<  vVar_simple.at(iVar).c_str() << "_cut_opt_left\",400,400);" << std::endl;
-//    myfile << " hs->DrawIntegralLeft(c5);" << std::endl;
-//    myfile << " c5->Print(\"" << date.Data() << "_" << iCut << "/" <<  vVar_simple.at(iVar).c_str() << "_cut_opt_left.pdf\");" << std::endl;
-//    myfile << " c5->Print(\"" << date.Data() << "_" << iCut << "/" <<  vVar_simple.at(iVar).c_str() << "_cut_opt_left.png\");" << std::endl;
-//    myfile << std::endl;
-//    
-//    myfile << " TCanvas* c6 = new TCanvas(\"" <<  vVar_simple.at(iVar).c_str() << "_cut_opt_SoB_left\",\"" <<  vVar_simple.at(iVar).c_str() << "_cut_opt_SoB_left\",400,400);" << std::endl;
-//    myfile << " hs->DrawIntegralLeftSoB(c6);" << std::endl;
-//    myfile << " c6->Print(\"" << date.Data() << "_" << iCut << "/" <<  vVar_simple.at(iVar).c_str() << "_cut_opt_SoB_left.pdf\");" << std::endl;
-//    myfile << " c6->Print(\"" << date.Data() << "_" << iCut << "/" <<  vVar_simple.at(iVar).c_str() << "_cut_opt_SoB_left.png\");" << std::endl;
-//    myfile << std::endl;
-//
+   myfile << " TCanvas* c5 = new TCanvas(\"" <<  vVar_simple.at(iVar).c_str() << "_cut_opt_left\",\"" <<  vVar_simple.at(iVar).c_str() << "_cut_opt_left\",400,400);" << std::endl;
+   myfile << " hs->DrawIntegralLeft(c5);" << std::endl;
+   myfile << " c5->Print(\"" << date.Data() << "_" << iCut << "/" <<  vVar_simple.at(iVar).c_str() << "_cut_opt_left.pdf\");" << std::endl;
+   myfile << " c5->Print(\"" << date.Data() << "_" << iCut << "/" <<  vVar_simple.at(iVar).c_str() << "_cut_opt_left.png\");" << std::endl;
+   myfile << std::endl;
+   
+   myfile << " TCanvas* c6 = new TCanvas(\"" <<  vVar_simple.at(iVar).c_str() << "_cut_opt_SoB_left\",\"" <<  vVar_simple.at(iVar).c_str() << "_cut_opt_SoB_left\",400,400);" << std::endl;
+   myfile << " hs->DrawIntegralLeftSoB(c6);" << std::endl;
+   myfile << " c6->Print(\"" << date.Data() << "_" << iCut << "/" <<  vVar_simple.at(iVar).c_str() << "_cut_opt_SoB_left.pdf\");" << std::endl;
+   myfile << " c6->Print(\"" << date.Data() << "_" << iCut << "/" <<  vVar_simple.at(iVar).c_str() << "_cut_opt_SoB_left.png\");" << std::endl;
+   myfile << std::endl;
+
    
    myfile << " TCanvas* c7 = new TCanvas(\"" <<  vVar_simple.at(iVar).c_str() << "_norm_bkg\",\"" <<  vVar_simple.at(iVar).c_str() << "_norm_bkg\",400,400);" << std::endl;
    myfile << " hs->DrawNormalizedBkgSummed(c7);" << std::endl;
