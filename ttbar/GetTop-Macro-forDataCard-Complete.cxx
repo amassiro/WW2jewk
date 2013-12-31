@@ -782,8 +782,9 @@ int GetTop_Macro_forDataCard_Complete(int iWP, std::string suffix = "of", std::s
  for (int iBin=0; iBin<nBin_MAX; iBin++) {
   totalTop_Central        += (       Top.at(0)).at(iBin);
   totalTop_Central_DD     += (    DD_Top.at(0)).at(iBin);
-  err_totalTop_Central_DD += (err_DD_Top.at(0)).at(iBin);
+  err_totalTop_Central_DD += ((err_DD_Top.at(0)).at(iBin)*(err_DD_Top.at(0)).at(iBin));
  }
+ err_totalTop_Central_DD = sqrt(err_totalTop_Central_DD);
  
  double GlobalSF = 1.;
  double err_GlobalSF = 1.;
