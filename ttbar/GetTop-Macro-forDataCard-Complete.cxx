@@ -153,7 +153,8 @@ int GetTop_Macro_forDataCard_Complete(int iWP, std::string suffix = "of", std::s
  }
  if ( binCutPt == 1) {
   minpt = 60;
-  maxpt = 100;
+//   maxpt = 100;
+  maxpt = -1;
  }
  if ( binCutPt == 2) {
   minpt = 100;
