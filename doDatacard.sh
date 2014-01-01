@@ -1,3 +1,10 @@
+
+cd /home/amassiro/Latinos/CMSSW_5_3_11_patch6/src/HWWAnalysis/ShapeAnalysis/
+eval `scramv1 runtime -sh`
+source test/env.sh
+cd -
+
+
 cd WW2jewkSFcutTCHE21
 bash doIt.sh
 cd ..
