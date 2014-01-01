@@ -1,24 +1,36 @@
 cd WW2jewkSFcutTCHE21
 bash doIt.sh
 cd ..
+rm WW2jewkSFcutTCHE21.tgz
+pack.py -p WW2jewkSFcutTCHE21
 
 cd WW2jewkSFcutTCHE05
 bash doIt.sh
 cd ..
+rm WW2jewkSFcutTCHE05.tgz
+pack.py -p WW2jewkSFcutTCHE05
 
 cd WW2jewkDFshapeTCHE21
 bash doIt.sh
 cd ..
+rm WW2jewkDFshapeTCHE21.tgz
+pack.py -p WW2jewkDFshapeTCHE21
 
 cd WW2jewkDFshapeTCHE05
 bash doIt.sh
 cd ..
+rm WW2jewkDFshapeTCHE05.tgz
+pack.py -p WW2jewkDFshapeTCHE05
 
 cd WW2jewkDFcutTCHE05
 bash doIt.sh
 cd ..
+rm WW2jewkDFcutTCHE05.tgz
+pack.py -p WW2jewkDFcutTCHE05
 
 cd WW2jewkDFcutTCHE21
 bash doIt.sh
 cd ..
+rm WW2jewkDFcutTCHE21.tgz
+pack.py -p WW2jewkDFcutTCHE21
 
