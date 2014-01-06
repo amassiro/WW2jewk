@@ -851,8 +851,8 @@ int GetTop_Macro_forDataCard_Complete(int iWP, std::string suffix = "of", std::s
   std::cout << " err_Alpha  = " << err_Alpha    << std::endl;
    
   //---- add MC subtraction as an error --> 100% error on MC subtraction!!! ----
-  //---- ---> NB: scaled by alpha!!!
-  double additional_error_MC_sub = Alpha * (Ncontrol_Sub - Ncontrol) / (Ncontrol);
+  //---- ---> NB: scaled by alpha -> already in "err_Alpha" calculation
+  double additional_error_MC_sub = (Ncontrol_Sub - Ncontrol) / (Ncontrol);
   err_Alpha = Alpha * sqrt ( err_Alpha/Alpha*err_Alpha/Alpha + additional_error_MC_sub*additional_error_MC_sub ) ;
  }
  else {
