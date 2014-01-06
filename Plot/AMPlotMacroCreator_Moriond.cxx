@@ -8,22 +8,22 @@ void AMPlotMacroCreator_Moriond() {
 //  TString file    = Form("out_test_Latinos_19Nov2013_2300_RunABCD-WWewk.root");
 
 //  //---- MVA ----
- TString fileVar = Form("var20Nov.txt");
- TString date    = Form("20Nov_WWewk_Moriond_forAN");
- TString file    = Form("out_test_Latinos_20Nov2013_2300_RunABCD-WWewk.root");
+//  TString fileVar = Form("var20Nov.txt");
+//  TString date    = Form("20Nov_WWewk_Moriond_forAN");
+//  TString file    = Form("out_test_Latinos_20Nov2013_2300_RunABCD-WWewk.root");
  
  //---- test new variables ----
-//  TString fileVar = Form("var26Dec.txt");
-//  TString date    = Form("16Dec_WWewk_Moriond_forAN");
+ TString fileVar = Form("var26Dec.txt");
+ TString date    = Form("16Dec_WWewk_Moriond_forAN");
 // //  TString file    = Form("out_test_Latinos_16Dec2013_2300_RunABCD-WWewk.root"); --> test new kinematic variables to suppress top
-//  TString file    = Form("out_test_Latinos_17Dec2013_2300_RunABCD-WWewk.root");
+ TString file    = Form("out_test_Latinos_17Dec2013_2300_RunABCD-WWewk.root");
  
  TString hmass   = Form("125");
  TString lumi    = Form("19.468");
 
 //  for (int iCut = 0; iCut < 3*1; iCut++) {
   
- for (int iCut = 0; iCut < 3*2; iCut++) {
+ for (int iCut = 0; iCut < 3*3; iCut++) {
      
   TString CommandToExec = Form("rm -r %s_%d",date.Data(),iCut);
   gSystem->Exec(CommandToExec);  

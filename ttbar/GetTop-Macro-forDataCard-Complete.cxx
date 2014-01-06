@@ -248,7 +248,7 @@ int GetTop_Macro_forDataCard_Complete(int iWP, std::string suffix = "of", std::s
  
  std::vector <double> etaBins;
  etaBins.push_back (0.0);
-//  etaBins.push_back (0.5);
+ etaBins.push_back (0.5);
  etaBins.push_back (1.0);
  etaBins.push_back (1.5);
  //  etaBins.push_back (2.0);
@@ -298,8 +298,8 @@ int GetTop_Macro_forDataCard_Complete(int iWP, std::string suffix = "of", std::s
  
  
  //---- definition TCHE threshold ----
- //  binTCHE == 0 --> thresholdTCHE = 0.5 - 2.1;
- //  binTCHE == 1 --> thresholdTCHE = 0.5; 
+ //  binTCHE == 0 --> thresholdTCHE = 0.40 - 2.10;
+ //  binTCHE == 1 --> thresholdTCHE = 0.40; 
  
  std::vector <std::string> zoneCut; 
  if (binTCHE == 0) {
@@ -311,20 +311,20 @@ int GetTop_Macro_forDataCard_Complete(int iWP, std::string suffix = "of", std::s
 //   zoneCut.push_back("nbjettche==0");
 //   
   ///--- AB
-  zoneCut.push_back("(nbjettche==0 && jettche1>=0.50 && jettche2>=0.50) || (nbjettche==1 && (((abs(jeteta1)<abs(jeteta2))  && (jettche1>2.10)) || ((abs(jeteta1)>=abs(jeteta2)) && (jettche2>2.10))) )");
+  zoneCut.push_back("(nbjettche==0 && jettche1>=0.40 && jettche2>=0.40) || (nbjettche==1 && (((abs(jeteta1)<abs(jeteta2))  && (jettche1>2.10)) || ((abs(jeteta1)>=abs(jeteta2)) && (jettche2>2.10))) )");
   ///--- B
   zoneCut.push_back("                                                      (nbjettche==1 && (((abs(jeteta1)<abs(jeteta2))  && (jettche1>2.10)) || ((abs(jeteta1)>=abs(jeteta2)) && (jettche2>2.10))) )");
   ///--- A
-  zoneCut.push_back("(nbjettche==0 && jettche1>=0.50 && jettche2>=0.50)");
+  zoneCut.push_back("(nbjettche==0 && jettche1>=0.40 && jettche2>=0.40)");
  }
  
  if (binTCHE == 1) {
   ///--- AB
-  zoneCut.push_back("(nbjettche==0 && jettche1<0.50 && jettche2<0.50) || (nbjettche==1 && (((abs(jeteta1)<abs(jeteta2))  && (jettche1>2.10)) || ((abs(jeteta1)>=abs(jeteta2)) && (jettche2>2.10))) )");
+  zoneCut.push_back("(nbjettche==0 && jettche1<0.40 && jettche2<0.40) || (nbjettche==1 && (((abs(jeteta1)<abs(jeteta2))  && (jettche1>2.10)) || ((abs(jeteta1)>=abs(jeteta2)) && (jettche2>2.10))) )");
   ///--- B
   zoneCut.push_back("                                                    (nbjettche==1 && (((abs(jeteta1)<abs(jeteta2))  && (jettche1>2.10)) || ((abs(jeteta1)>=abs(jeteta2)) && (jettche2>2.10))) )");
   ///--- A
-  zoneCut.push_back("(nbjettche==0 && jettche1<0.50 && jettche2<0.50)");
+  zoneCut.push_back("(nbjettche==0 && jettche1<0.40 && jettche2<0.40)");
  }
  
  int nZone = zoneCut.size();
@@ -851,7 +851,8 @@ int GetTop_Macro_forDataCard_Complete(int iWP, std::string suffix = "of", std::s
   std::cout << " err_Alpha  = " << err_Alpha    << std::endl;
    
   //---- add MC subtraction as an error --> 100% error on MC subtraction!!! ----
-  double additional_error_MC_sub = (Ncontrol_Sub - Ncontrol) / (Ncontrol);
+  //---- ---> NB: scaled by alpha!!!
+  double additional_error_MC_sub = Alpha * (Ncontrol_Sub - Ncontrol) / (Ncontrol);
   err_Alpha = Alpha * sqrt ( err_Alpha/Alpha*err_Alpha/Alpha + additional_error_MC_sub*additional_error_MC_sub ) ;
  }
  else {

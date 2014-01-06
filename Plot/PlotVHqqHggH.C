@@ -3634,7 +3634,10 @@ class PlotVHqqHggH {
               if (iBkg == 0) {
                j++;
                j++;
-               DrawLegend(x0+pos[j]*wx, _globalYoffset - off[j]*_yoffset, _vectTHBkg.at(iBkg)         , "background" ,           "f" );
+               TH1F* temp_bkg = (TH1F*) _vectTHBkg.at(iBkg) -> Clone();
+               temp_bkg->SetFillColor(kBlue);
+               temp_bkg->SetLineColor(kBlue);
+               DrawLegend(x0+pos[j]*wx, _globalYoffset - off[j]*_yoffset, temp_bkg  , "background" ,           "f" );
                j++;
               }
              }
