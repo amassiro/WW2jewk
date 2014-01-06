@@ -298,8 +298,8 @@ int GetTop_Macro_forDataCard_Complete(int iWP, std::string suffix = "of", std::s
  
  
  //---- definition TCHE threshold ----
- //  binTCHE == 0 --> thresholdTCHE = 0.40 - 2.10;
- //  binTCHE == 1 --> thresholdTCHE = 0.40; 
+ //  binTCHE == 0 --> thresholdTCHE = 0.50 - 2.10;
+ //  binTCHE == 1 --> thresholdTCHE = 0.50; 
  
  std::vector <std::string> zoneCut; 
  if (binTCHE == 0) {
@@ -311,20 +311,20 @@ int GetTop_Macro_forDataCard_Complete(int iWP, std::string suffix = "of", std::s
 //   zoneCut.push_back("nbjettche==0");
 //   
   ///--- AB
-  zoneCut.push_back("(nbjettche==0 && jettche1>=0.40 && jettche2>=0.40) || (nbjettche==1 && (((abs(jeteta1)<abs(jeteta2))  && (jettche1>2.10)) || ((abs(jeteta1)>=abs(jeteta2)) && (jettche2>2.10))) )");
+  zoneCut.push_back("(nbjettche==0 && jettche1>=0.50 && jettche2>=0.50) || (nbjettche==1 && (((abs(jeteta1)<abs(jeteta2))  && (jettche1>2.10)) || ((abs(jeteta1)>=abs(jeteta2)) && (jettche2>2.10))) )");
   ///--- B
   zoneCut.push_back("                                                      (nbjettche==1 && (((abs(jeteta1)<abs(jeteta2))  && (jettche1>2.10)) || ((abs(jeteta1)>=abs(jeteta2)) && (jettche2>2.10))) )");
   ///--- A
-  zoneCut.push_back("(nbjettche==0 && jettche1>=0.40 && jettche2>=0.40)");
+  zoneCut.push_back("(nbjettche==0 && jettche1>=0.50 && jettche2>=0.50)");
  }
  
  if (binTCHE == 1) {
   ///--- AB
-  zoneCut.push_back("(nbjettche==0 && jettche1<0.40 && jettche2<0.40) || (nbjettche==1 && (((abs(jeteta1)<abs(jeteta2))  && (jettche1>2.10)) || ((abs(jeteta1)>=abs(jeteta2)) && (jettche2>2.10))) )");
+  zoneCut.push_back("(nbjettche==0 && jettche1<0.50 && jettche2<0.50) || (nbjettche==1 && (((abs(jeteta1)<abs(jeteta2))  && (jettche1>2.10)) || ((abs(jeteta1)>=abs(jeteta2)) && (jettche2>2.10))) )");
   ///--- B
   zoneCut.push_back("                                                    (nbjettche==1 && (((abs(jeteta1)<abs(jeteta2))  && (jettche1>2.10)) || ((abs(jeteta1)>=abs(jeteta2)) && (jettche2>2.10))) )");
   ///--- A
-  zoneCut.push_back("(nbjettche==0 && jettche1<0.40 && jettche2<0.40)");
+  zoneCut.push_back("(nbjettche==0 && jettche1<0.50 && jettche2<0.50)");
  }
  
  int nZone = zoneCut.size();

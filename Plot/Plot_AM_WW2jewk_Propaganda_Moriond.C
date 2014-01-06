@@ -79,9 +79,17 @@ void Plot_AM_WW2jewk_Propaganda_Moriond() {
 
  TFile* f[10];
  
- f[0] = new TFile("postFit-WW2jewk/WWewk-error.root");
+//  f[0] = new TFile("postFit-WW2jewk/WWewk-error.root");
 //  f[0] = new TFile("postFit-WW2jewk/WWewk-error-signal-injection.root"); --> not working in mkAutopsy.py
  
+ 
+//  scp amassiro@cmsneu.cern.ch:/home/amassiro/Latinos/Shape/playground/WW2jewkDFshapeTCHE05/postFit/WWewk-error-*.root postFit-WW2jewk-05/
+ f[0] = new TFile("postFit-WW2jewk-05/WWewk-error-signalInjection.root");
+//  f[0] = new TFile("postFit-WW2jewk-05/WWewk-error-data.root");
+ 
+ //  scp amassiro@cmsneu.cern.ch:/home/amassiro/Latinos/Shape/playground/WW2jewkDFshapeTCHE21/postFit/WWewk-error-*.root postFit-WW2jewk-21/
+//   f[0] = new TFile("postFit-WW2jewk-21/WWewk-error-signalInjection.root");
+//   f[0] = new TFile("postFit-WW2jewk-21/WWewk-error-data.root");
  
  PlotVHqqHggH* hs = new PlotVHqqHggH();
  
@@ -179,7 +187,15 @@ void Plot_AM_WW2jewk_Propaganda_Moriond() {
    
    name = Form("%sVV%s",cutNameBefore.Data(),cutNameAfter.Data());
    vectTHBkg.push_back ( FilterBins(binsToSelect, (TH1F*) f[iFile]->Get(name)) );
-   vectNameBkg.push_back ("WZ/ZZ");
+   vectNameBkg.push_back ("WZ/ZZ/VVV");
+   vectColourBkg.push_back(858);
+   vectSystBkg.push_back(0.00);
+   vectScaleBkg.push_back(1.0000);
+   vectNormalizationBkg.push_back(0.281);
+
+   name = Form("%sVVV%s",cutNameBefore.Data(),cutNameAfter.Data());
+   vectTHBkg.push_back ( FilterBins(binsToSelect, (TH1F*) f[iFile]->Get(name)) );
+   vectNameBkg.push_back ("WZ/ZZ/VVV");
    vectColourBkg.push_back(858);
    vectSystBkg.push_back(0.00);
    vectScaleBkg.push_back(1.0000);
@@ -202,21 +218,33 @@ void Plot_AM_WW2jewk_Propaganda_Moriond() {
    vectNormalizationBkg.push_back(1.000);
    
    name = Form("%sVgS%s",cutNameBefore.Data(),cutNameAfter.Data());
-   vectTHBkg.push_back ( FilterBins(binsToSelect, (TH1F*) f[iFile]->Get(name)) );
-   vectNameBkg.push_back ("V+#gamma/V+#gamma*");
-   vectColourBkg.push_back(616+2);
-   vectSystBkg.push_back(0.00);
-   vectScaleBkg.push_back(1.0000);
-   vectNormalizationBkg.push_back(1.000);
+   if (f[iFile]->GetListOfKeys()->Contains(name)) {
+    vectTHBkg.push_back ( FilterBins(binsToSelect, (TH1F*) f[iFile]->Get(name)) );
+    vectNameBkg.push_back ("V+#gamma/V+#gamma*");
+    vectColourBkg.push_back(616+2);
+    vectSystBkg.push_back(0.00);
+    vectScaleBkg.push_back(1.0000);
+    vectNormalizationBkg.push_back(1.000);
+   }
    
-   
-   name = Form("%sTop%s",cutNameBefore.Data(),cutNameAfter.Data());
+   name = Form("%sTopPt0%s",cutNameBefore.Data(),cutNameAfter.Data());
    vectTHBkg.push_back ( FilterBins(binsToSelect, (TH1F*) f[iFile]->Get(name)) );
-   vectNameBkg.push_back ("Top");
+//    vectNameBkg.push_back ("Top");
+   vectNameBkg.push_back ("TopPt0");
    vectColourBkg.push_back(400);
    vectSystBkg.push_back(0.07);
    vectScaleBkg.push_back(0.85);
    vectNormalizationBkg.push_back(5.654);
+
+   name = Form("%sTopPt1%s",cutNameBefore.Data(),cutNameAfter.Data());
+   vectTHBkg.push_back ( FilterBins(binsToSelect, (TH1F*) f[iFile]->Get(name)) );
+//    vectNameBkg.push_back ("Top");
+   vectNameBkg.push_back ("TopPt1");
+   vectColourBkg.push_back(400+2);
+   vectSystBkg.push_back(0.07);
+   vectScaleBkg.push_back(0.85);
+   vectNormalizationBkg.push_back(5.654);
+
    
    name = Form("%sDYTT%s",cutNameBefore.Data(),cutNameAfter.Data());
    vectTHBkg.push_back ( FilterBins(binsToSelect, (TH1F*) f[iFile]->Get(name)) );
@@ -241,14 +269,6 @@ void Plot_AM_WW2jewk_Propaganda_Moriond() {
    vectSystBkg.push_back(0.00);
    vectScaleBkg.push_back(1.0000);
    vectNormalizationBkg.push_back(2.256);
-   
-//    name = Form("%sVVV%s",cutNameBefore.Data(),cutNameAfter.Data());
-//    vectTHBkg.push_back ( FilterBins(binsToSelect, (TH1F*) f[iFile]->Get(name)) );
-//    vectNameBkg.push_back ("VVV");
-//    vectColourBkg.push_back(854);
-//    vectSystBkg.push_back(0.00);
-//    vectScaleBkg.push_back(1.0000);
-//    vectNormalizationBkg.push_back(2.256);
    
    ///==== background (end)  ====
    
