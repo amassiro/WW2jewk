@@ -129,7 +129,10 @@ int GetTop_Macro_forDataCard_Complete(int iWP, std::string suffix = "of", std::s
  
  v_commonCut_WW.push_back("trigger==1.");
  v_commonCut_WW.push_back("pfmet>20.");
- v_commonCut_WW.push_back("mll>70");
+ 
+ v_commonCut_WW.push_back("mll>50");
+ v_commonCut_WW.push_back("mll>30");
+ 
  v_commonCut_WW.push_back("(zveto==1||!sameflav)");
  v_commonCut_WW.push_back("mpmet>20.");
  v_commonCut_WW.push_back("bveto_mu==1");
@@ -138,6 +141,7 @@ int GetTop_Macro_forDataCard_Complete(int iWP, std::string suffix = "of", std::s
  v_commonCut_WW.push_back("bveto_ip==1");
  v_commonCut_WW.push_back("(!sameflav || pfmet > 60.0)");
  v_commonCut_WW.push_back("(dphilljetjet<pi/180.*165. || !sameflav )");
+ 
  
  //---- >=2 jets
  v_commonCut_WW.push_back("njet >= 2");
