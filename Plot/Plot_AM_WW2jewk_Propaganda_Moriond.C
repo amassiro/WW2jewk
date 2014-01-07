@@ -84,12 +84,12 @@ void Plot_AM_WW2jewk_Propaganda_Moriond() {
  
  
 //  scp amassiro@cmsneu.cern.ch:/home/amassiro/Latinos/Shape/playground/WW2jewkDFshapeTCHE05/postFit/WWewk-error-*.root postFit-WW2jewk-05/
- f[0] = new TFile("postFit-WW2jewk-05/WWewk-error-signalInjection.root");
-//  f[0] = new TFile("postFit-WW2jewk-05/WWewk-error-data.root");
+//   f[0] = new TFile("postFit-WW2jewk-05/WWewk-error-signalInjection.root");   bool doSignalInjection = true;
+ f[0] = new TFile("postFit-WW2jewk-05/WWewk-error-data.root");  bool doSignalInjection = false;
  
  //  scp amassiro@cmsneu.cern.ch:/home/amassiro/Latinos/Shape/playground/WW2jewkDFshapeTCHE21/postFit/WWewk-error-*.root postFit-WW2jewk-21/
-//   f[0] = new TFile("postFit-WW2jewk-21/WWewk-error-signalInjection.root");
-//   f[0] = new TFile("postFit-WW2jewk-21/WWewk-error-data.root");
+ //   f[0] = new TFile("postFit-WW2jewk-21/WWewk-error-signalInjection.root");  bool doSignalInjection = true;
+//    f[0] = new TFile("postFit-WW2jewk-21/WWewk-error-data.root");  bool doSignalInjection = false;
  
  PlotVHqqHggH* hs = new PlotVHqqHggH();
  
@@ -121,8 +121,8 @@ void Plot_AM_WW2jewk_Propaganda_Moriond() {
  
  std::vector<int> binsToSelect; 
  
- int NMAXX = 20;  
-//  int NMAXX = 9;  
+//  int NMAXX = 20;  
+ int NMAXX = 9+2;  //---- variable bin
  int NMAXY = 1;  
  
  int minNY = 0;
@@ -159,9 +159,6 @@ void Plot_AM_WW2jewk_Propaganda_Moriond() {
      
    
    ///==== signal (end)  ====
-   
-   name = Form("%sData%s",cutNameBefore.Data(),cutNameAfter.Data());
-   hs->setDataHist (FilterBins(binsToSelect, (TH1F*) f[iFile]->Get(name)));
    
    ///==== background (begin)  ====
    
@@ -272,6 +269,28 @@ void Plot_AM_WW2jewk_Propaganda_Moriond() {
    
    ///==== background (end)  ====
    
+   
+   
+   ///==== data (begin)  ====
+      
+   if (doSignalInjection == false) {
+    name = Form("%sData%s",cutNameBefore.Data(),cutNameAfter.Data());
+    hs->setDataHist (FilterBins(binsToSelect, (TH1F*) f[iFile]->Get(name)));
+   }
+   else {
+    TH1F* tempData = (TH1F*) vectTHBkg.at(0)->Clone();
+    for (int iBkg = 1; iBkg < vectTHBkg.size(); iBkg++) {
+     tempData->Add((TH1F*) vectTHBkg.at(iBkg)->Clone());
+    }
+    for (int iSig = 0; iSig < vectTHSig.size(); iSig++) {
+     tempData->Add((TH1F*) vectTHSig.at(iSig)->Clone());
+    }
+    hs->setDataHist (tempData);
+   }
+   
+   ///==== data (end)  ====
+   
+   
 //    hs->setBlindBinSx(10);
    hs->setBlindBinSx(0);
 //    hs->setBlindBinDx(10);
@@ -294,7 +313,7 @@ void Plot_AM_WW2jewk_Propaganda_Moriond() {
  hs->set_vectNameBkg   (vectNameBkg);    
  hs->set_vectColourBkg (vectColourBkg);  
  hs->set_vectSystBkg   (vectSystBkg);    
- hs->set_vectScaleBkg  (vectScaleBkg);   
+//  hs->set_vectScaleBkg  (vectScaleBkg);   
  
  hs->set_vectTHSig     (vectTHSig);      
  hs->set_vectNameSig   (vectNameSig);    
@@ -326,8 +345,9 @@ void Plot_AM_WW2jewk_Propaganda_Moriond() {
  TCanvas* c1bis = new TCanvas("bkgSub","bkgSub",500,500);
  
 //  hs->setUnits ("GeV");
- double vedges[] = {-1.0,-0.9,-0.8,-0.7,-0.6,-0.5,-0.4,-0.3,-0.2,-0.1,0.0,0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9,1.0};
+//  double vedges[] = {-1.0,-0.9,-0.8,-0.7,-0.6,-0.5,-0.4,-0.3,-0.2,-0.1,0.0,0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9,1.0};
 //  double vedges[] = {-1.0, -0.5, 0.0, 0.2, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0};
+ double vedges[] = {-1.0, -0.75, -0.5, -0.25, 0.0, 0.25, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0};
  std::vector<double> vEdges (vedges, vedges + sizeof(vedges) / sizeof(double) );
  hs->set_vectEdges(vEdges);
  hs->set_divide(0); //---- if 1 then divide by bin width

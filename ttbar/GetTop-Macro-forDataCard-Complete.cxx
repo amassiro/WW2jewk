@@ -200,7 +200,7 @@ int GetTop_Macro_forDataCard_Complete(int iWP, std::string suffix = "of", std::s
   v_commonCut_Higgs.push_back("njetvbf==0");
   v_commonCut_Higgs.push_back("mjj>200");
   v_commonCut_Higgs.push_back("detajj>1.0");
-  v_commonCut_Higgs.push_back("BDTG_weights_testVariables_MVAWW2jewk > 0.75");
+  v_commonCut_Higgs.push_back("BDTG_weights_testVariables_MVAWW2jewk > 0.70");
  }
  
  if (whatAnalysis == "shape") {
@@ -742,14 +742,12 @@ int GetTop_Macro_forDataCard_Complete(int iWP, std::string suffix = "of", std::s
  for (int iBin=0; iBin<nBin_MAX; iBin++) {
   if (eff_DATA.at(iBin) != 0) {
    if ( (eff_Top.at(iBin) != 0) && (eff_Top_Higgs.at(iBin != 0)) ) {
-    //---- error on eff @Higgs is too big
-    //---- removed propagationa and error itself!
     //---- done pt dependent
     
-//     double additional_error = eff_DATA.at(iBin) * (eff_Top_Higgs.at(iBin) - eff_Top.at(iBin)) / (eff_Top_Higgs.at(iBin) + eff_Top.at(iBin)) * 2.;
-//     eff_DATA.at(iBin)     = eff_DATA.at(iBin) * eff_Top_Higgs.at(iBin) / eff_Top.at(iBin);
-//     err_eff_DATA.at(iBin) = err_eff_DATA.at(iBin) * eff_Top_Higgs.at(iBin) / eff_Top.at(iBin); //---- scale the error according to new efficiency
-//     err_eff_DATA.at(iBin) = sqrt( err_eff_DATA.at(iBin)*err_eff_DATA.at(iBin) + additional_error*additional_error ); //---- add the "efficiency variation" as a systematic error on eff_DATA (thus an error on alpha!)
+    double additional_error = eff_DATA.at(iBin) * (eff_Top_Higgs.at(iBin) - eff_Top.at(iBin)) / (eff_Top_Higgs.at(iBin) + eff_Top.at(iBin)) * 2.;
+    eff_DATA.at(iBin)     = eff_DATA.at(iBin) * eff_Top_Higgs.at(iBin) / eff_Top.at(iBin);
+    err_eff_DATA.at(iBin) = err_eff_DATA.at(iBin) * eff_Top_Higgs.at(iBin) / eff_Top.at(iBin); //---- scale the error according to new efficiency
+    err_eff_DATA.at(iBin) = sqrt( err_eff_DATA.at(iBin)*err_eff_DATA.at(iBin) + additional_error/2.*additional_error/2. ); //---- add the "efficiency variation" as a systematic error on eff_DATA (thus an error on alpha!)
    }
   }
  }

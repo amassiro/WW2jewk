@@ -14,13 +14,4 @@ mkAutopsy.py datacards/hww-19.36fb.mH125.of_2j_shape.txt   --dump=postFit/WWewk-
 mkAutopsy.py datacards/hww-19.36fb.mH125.of_2j_shape.txt   --dump=postFit/WWewk-error-data.root
 cd ..
 
-cd WW2jewkDFcutTCHE05
-mkAutopsy.py datacards/hww-19.36fb.mH125.of_2j_shape.txt   --dump=postFit/WWewk-error-signalInjection.root --injectionSignal
-mkAutopsy.py datacards/hww-19.36fb.mH125.of_2j_shape.txt   --dump=postFit/WWewk-error-data.root
-cd ..
-
-cd WW2jewkDFcutTCHE21
-mkAutopsy.py datacards/hww-19.36fb.mH125.of_2j_shape.txt   --dump=postFit/WWewk-error-signalInjection.root --injectionSignal
-mkAutopsy.py datacards/hww-19.36fb.mH125.of_2j_shape.txt   --dump=postFit/WWewk-error-data.root
-cd ..
 
