@@ -131,7 +131,6 @@ int GetTop_Macro_forDataCard_Complete(int iWP, std::string suffix = "of", std::s
  v_commonCut_WW.push_back("pfmet>20.");
  
  v_commonCut_WW.push_back("mll>50");
- v_commonCut_WW.push_back("mll>30");
  
  v_commonCut_WW.push_back("(zveto==1||!sameflav)");
  v_commonCut_WW.push_back("mpmet>20.");
