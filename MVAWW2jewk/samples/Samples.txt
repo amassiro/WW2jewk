@@ -20,7 +20,8 @@
 002_WWto2L2NuMCatNLO      0.5         WW  bis
 006_WWJets2LPowheg        0.5         WW  bis
 #
-019_TTTo2L2Nu2B           1.         Top
+010_TTJetsMad             0.5        Top
+019_TTTo2L2Nu2B           0.5        Top
 011_TtWFullDR             1.         Top
 012_TbartWFullDR          1.         Top
 #

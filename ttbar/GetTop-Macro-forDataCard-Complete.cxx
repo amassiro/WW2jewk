@@ -138,7 +138,7 @@ int GetTop_Macro_forDataCard_Complete(int iWP, std::string suffix = "of", std::s
  v_commonCut_WW.push_back("nextra==0");
 //  v_commonCut_WW.push_back("(bveto_ip==1 && nbjettche==0)");
  v_commonCut_WW.push_back("bveto_ip==1");
- v_commonCut_WW.push_back("(!sameflav || pfmet > 60.0)");
+ v_commonCut_WW.push_back("(!sameflav || pfmet > 45.0)");
  v_commonCut_WW.push_back("(dphilljetjet<pi/180.*165. || !sameflav )");
  
  
@@ -200,16 +200,18 @@ int GetTop_Macro_forDataCard_Complete(int iWP, std::string suffix = "of", std::s
  }
  
  if (whatAnalysis == "cut") {
-  v_commonCut_Higgs.push_back("njetvbf==0");
-  v_commonCut_Higgs.push_back("mjj>200");
-  v_commonCut_Higgs.push_back("detajj>1.0");
+//   v_commonCut_Higgs.push_back("njetvbf==0");
+//   v_commonCut_Higgs.push_back("mjj>200");
+//   v_commonCut_Higgs.push_back("detajj>1.0");
+  v_commonCut_Higgs.push_back("mjj>150");
   v_commonCut_Higgs.push_back("BDTG_weights_testVariables_MVAWW2jewk > 0.70");
  }
  
  if (whatAnalysis == "shape") {
-  v_commonCut_Higgs.push_back("njetvbf==0");
-  v_commonCut_Higgs.push_back("mjj>200");
-  v_commonCut_Higgs.push_back("detajj>1.0");
+//   v_commonCut_Higgs.push_back("njetvbf==0");
+//   v_commonCut_Higgs.push_back("mjj>200");
+//   v_commonCut_Higgs.push_back("detajj>1.0");
+  v_commonCut_Higgs.push_back("mjj>150");
  }  
 
  //---- what kind of analysis (end) ----
@@ -301,8 +303,8 @@ int GetTop_Macro_forDataCard_Complete(int iWP, std::string suffix = "of", std::s
  
  
  //---- definition TCHE threshold ----
- //  binTCHE == 0 --> thresholdTCHE = 0.50 - 2.10;
- //  binTCHE == 1 --> thresholdTCHE = 0.50; 
+ //  binTCHE == 0 --> thresholdTCHE = 0.30 - 2.10;
+ //  binTCHE == 1 --> thresholdTCHE = 0.30; 
  
  std::vector <std::string> zoneCut; 
  if (binTCHE == 0) {
@@ -314,20 +316,20 @@ int GetTop_Macro_forDataCard_Complete(int iWP, std::string suffix = "of", std::s
 //   zoneCut.push_back("nbjettche==0");
 //   
   ///--- AB
-  zoneCut.push_back("(nbjettche==0 && jettche1>=0.50 && jettche2>=0.50) || (nbjettche==1 && (((abs(jeteta1)<abs(jeteta2))  && (jettche1>2.10)) || ((abs(jeteta1)>=abs(jeteta2)) && (jettche2>2.10))) )");
+  zoneCut.push_back("(nbjettche==0 && jettche1>=0.30 && jettche2>=0.30) || (nbjettche==1 && (((abs(jeteta1)<abs(jeteta2))  && (jettche1>2.10)) || ((abs(jeteta1)>=abs(jeteta2)) && (jettche2>2.10))) )");
   ///--- B
   zoneCut.push_back("                                                      (nbjettche==1 && (((abs(jeteta1)<abs(jeteta2))  && (jettche1>2.10)) || ((abs(jeteta1)>=abs(jeteta2)) && (jettche2>2.10))) )");
   ///--- A
-  zoneCut.push_back("(nbjettche==0 && jettche1>=0.50 && jettche2>=0.50)");
+  zoneCut.push_back("(nbjettche==0 && jettche1>=0.30 && jettche2>=0.30)");
  }
  
  if (binTCHE == 1) {
   ///--- AB
-  zoneCut.push_back("(nbjettche==0 && jettche1<0.50 && jettche2<0.50) || (nbjettche==1 && (((abs(jeteta1)<abs(jeteta2))  && (jettche1>2.10)) || ((abs(jeteta1)>=abs(jeteta2)) && (jettche2>2.10))) )");
+  zoneCut.push_back("(nbjettche==0 && jettche1<0.30 && jettche2<0.30) || (nbjettche==1 && (((abs(jeteta1)<abs(jeteta2))  && (jettche1>2.10)) || ((abs(jeteta1)>=abs(jeteta2)) && (jettche2>2.10))) )");
   ///--- B
   zoneCut.push_back("                                                    (nbjettche==1 && (((abs(jeteta1)<abs(jeteta2))  && (jettche1>2.10)) || ((abs(jeteta1)>=abs(jeteta2)) && (jettche2>2.10))) )");
   ///--- A
-  zoneCut.push_back("(nbjettche==0 && jettche1<0.50 && jettche2<0.50)");
+  zoneCut.push_back("(nbjettche==0 && jettche1<0.30 && jettche2<0.30)");
  }
  
  int nZone = zoneCut.size();
