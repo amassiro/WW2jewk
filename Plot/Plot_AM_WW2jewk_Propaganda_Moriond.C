@@ -55,13 +55,13 @@ TGraphAsymmErrors* FilterBins(std::vector<int> binsToSelect, TGraphAsymmErrors* 
 
 void Plot_AM_WW2jewk_Propaganda_Moriond() {
  
-//   TString folder = Form("sig/");
-//   TString nameChannel = Form ("of_2j/");
-//   TString cutNameBefore = Form("sig/%shisto_",nameChannel.Data());
+  TString folder = Form("sig/");
+  TString nameChannel = Form ("of_2j/");
+  TString cutNameBefore = Form("sig/%shisto_",nameChannel.Data());
  
- TString folder = Form("init/");
- TString nameChannel = Form ("of_2j/");
- TString cutNameBefore = Form("init/%shisto_",nameChannel.Data());
+//  TString folder = Form("init/");
+//  TString nameChannel = Form ("of_2j/");
+//  TString cutNameBefore = Form("init/%shisto_",nameChannel.Data());
  
  //  TString folder = Form("bkg/");
  //  TString nameChannel = Form ("of_vh2j/");
@@ -85,11 +85,11 @@ void Plot_AM_WW2jewk_Propaganda_Moriond() {
  
 //  scp amassiro@cmsneu.cern.ch:/home/amassiro/Latinos/Shape/playground/WW2jewkDFshapeTCHE05/postFit/WWewk-error-*.root postFit-WW2jewk-05/
 //   f[0] = new TFile("postFit-WW2jewk-05/WWewk-error-signalInjection.root");   bool doSignalInjection = true;
- f[0] = new TFile("postFit-WW2jewk-05/WWewk-error-data.root");  bool doSignalInjection = false;
+//  f[0] = new TFile("postFit-WW2jewk-05/WWewk-error-data.root");  bool doSignalInjection = false;
  
  //  scp amassiro@cmsneu.cern.ch:/home/amassiro/Latinos/Shape/playground/WW2jewkDFshapeTCHE21/postFit/WWewk-error-*.root postFit-WW2jewk-21/
  //   f[0] = new TFile("postFit-WW2jewk-21/WWewk-error-signalInjection.root");  bool doSignalInjection = true;
-//    f[0] = new TFile("postFit-WW2jewk-21/WWewk-error-data.root");  bool doSignalInjection = false;
+   f[0] = new TFile("postFit-WW2jewk-21/WWewk-error-data.root");  bool doSignalInjection = false;
  
  PlotVHqqHggH* hs = new PlotVHqqHggH();
  
@@ -122,7 +122,7 @@ void Plot_AM_WW2jewk_Propaganda_Moriond() {
  std::vector<int> binsToSelect; 
  
 //  int NMAXX = 20;  
- int NMAXX = 9+2;  //---- variable bin
+ int NMAXX = 9+2-3+1;  //---- variable bin
  int NMAXY = 1;  
  
  int minNY = 0;
@@ -347,7 +347,8 @@ void Plot_AM_WW2jewk_Propaganda_Moriond() {
 //  hs->setUnits ("GeV");
 //  double vedges[] = {-1.0,-0.9,-0.8,-0.7,-0.6,-0.5,-0.4,-0.3,-0.2,-0.1,0.0,0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9,1.0};
 //  double vedges[] = {-1.0, -0.5, 0.0, 0.2, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0};
- double vedges[] = {-1.0, -0.75, -0.5, -0.25, 0.0, 0.25, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0};
+//  double vedges[] = {-1.0, -0.75, -0.5, -0.25, 0.0, 0.25, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0};
+ double vedges[] = {-1.0, -0.75, -0.5, -0.25, 0.0, 0.30, 0.50, 0.70, 0.90, 1.0};
  std::vector<double> vEdges (vedges, vedges + sizeof(vedges) / sizeof(double) );
  hs->set_vectEdges(vEdges);
  hs->set_divide(0); //---- if 1 then divide by bin width
