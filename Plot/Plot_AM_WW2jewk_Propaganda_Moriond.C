@@ -56,11 +56,16 @@ TGraphAsymmErrors* FilterBins(std::vector<int> binsToSelect, TGraphAsymmErrors* 
 void Plot_AM_WW2jewk_Propaganda_Moriond() {
  
 //  int which = 0;
- int which = 1;
+//  int which = 1;
+//  int which = 2;
+ int which = 3;
  
  TString nameChannel;
- if   (which == 0) { nameChannel = Form ("of_2j/"); }
- else              { nameChannel = Form ("of_2jtche05/"); }
+ if   (which == 0)        { nameChannel = Form ("of_2j/"); }
+ else if (which == 1)     { nameChannel = Form ("of_2jtche05/"); }
+
+ if   (which == 2)        { nameChannel = Form ("of_2j/"); }
+ else if (which == 3)     { nameChannel = Form ("of_2jtche05/"); }
  
  
  std::cout << " which = " << which << std::endl;
@@ -105,6 +110,8 @@ void Plot_AM_WW2jewk_Propaganda_Moriond() {
 
  if      (which == 0)   { f[0] = new TFile("postFit-WW2jewk-21/WWewk-error-data.root");  doSignalInjection = false; }
  else if (which == 1)   { f[0] = new TFile("postFit-WW2jewk-05/WWewk-error-data.root");  doSignalInjection = false; }
+ else if (which == 2)   { f[0] = new TFile("postFit-WW2jewk-21/WWewk-error-signalInjection.root");  doSignalInjection = true; }
+ else if (which == 3)   { f[0] = new TFile("postFit-WW2jewk-05/WWewk-error-signalInjection.root");  doSignalInjection = true; }
  
  PlotVHqqHggH* hs = new PlotVHqqHggH();
  
@@ -262,6 +269,15 @@ void Plot_AM_WW2jewk_Propaganda_Moriond() {
    //    vectNameBkg.push_back ("Top");
    vectNameBkg.push_back ("TopPt2");
    vectColourBkg.push_back(400+2+2);
+   vectSystBkg.push_back(0.07);
+   vectScaleBkg.push_back(0.85);
+   vectNormalizationBkg.push_back(5.654);
+
+   name = Form("%sTopPt3%s",cutNameBefore.Data(),cutNameAfter.Data());
+   vectTHBkg.push_back ( FilterBins(binsToSelect, (TH1F*) f[iFile]->Get(name)) );
+   //    vectNameBkg.push_back ("Top");
+   vectNameBkg.push_back ("TopPt3");
+   vectColourBkg.push_back(400+2+2+2);
    vectSystBkg.push_back(0.07);
    vectScaleBkg.push_back(0.85);
    vectNormalizationBkg.push_back(5.654);
