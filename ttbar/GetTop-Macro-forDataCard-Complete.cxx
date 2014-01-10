@@ -150,19 +150,39 @@ int GetTop_Macro_forDataCard_Complete(int iWP, std::string suffix = "of", std::s
  double minpt = -1;
  double maxpt = -1;
  
+ // ---- cut based
+//  if ( binCutPt == 0) {
+//   minpt = 30;
+//   maxpt = 70;
+//  }
+//  if ( binCutPt == 1) {
+//   minpt = 70;
+// //   maxpt = 100;
+//   maxpt = -1;
+//  }
+//  if ( binCutPt == 2) {
+//   minpt = 100;
+//   maxpt = -1;
+//  }
+
  if ( binCutPt == 0) {
   minpt = 30;
-  maxpt = 60;
+  maxpt = 50;
  }
  if ( binCutPt == 1) {
-  minpt = 60;
-//   maxpt = 100;
-  maxpt = -1;
+  minpt = 50;
+  maxpt = 70;
+  //   maxpt = -1;
  }
  if ( binCutPt == 2) {
+  minpt = 70;
+  maxpt = 100;
+ }
+ if ( binCutPt == 3) {
   minpt = 100;
   maxpt = -1;
  }
+ 
  
  std::ostringstream binjetptDefinition;
  binjetptDefinition << " ( ";
@@ -205,7 +225,7 @@ int GetTop_Macro_forDataCard_Complete(int iWP, std::string suffix = "of", std::s
 //   v_commonCut_Higgs.push_back("detajj>1.0");
   v_commonCut_Higgs.push_back("mjj>200");
   v_commonCut_Higgs.push_back("detajj>0.5");
-  v_commonCut_Higgs.push_back("BDTG_weights_testVariables_MVAWW2jewk > 0.60");
+  v_commonCut_Higgs.push_back("BDTG_weights_testVariables_MVAWW2jewk > 0.55");
  }
  
  if (whatAnalysis == "shape") {
@@ -317,21 +337,38 @@ int GetTop_Macro_forDataCard_Complete(int iWP, std::string suffix = "of", std::s
 //   ///--- A
 //   zoneCut.push_back("nbjettche==0");
 //   
+
+//   ///--- AB
+//   zoneCut.push_back("(nbjettche==0 && jettche1>=0.50 && jettche2>=0.50) || (nbjettche==1 && (((abs(jeteta1)<abs(jeteta2))  && (jettche1>2.10)) || ((abs(jeteta1)>=abs(jeteta2)) && (jettche2>2.10))) )");
+//   ///--- B
+//   zoneCut.push_back("                                                      (nbjettche==1 && (((abs(jeteta1)<abs(jeteta2))  && (jettche1>2.10)) || ((abs(jeteta1)>=abs(jeteta2)) && (jettche2>2.10))) )");
+//   ///--- A
+//   zoneCut.push_back("(nbjettche==0 && jettche1>=0.50 && jettche2>=0.50)");
+
   ///--- AB
-  zoneCut.push_back("(nbjettche==0 && jettche1>=0.50 && jettche2>=0.50) || (nbjettche==1 && (((abs(jeteta1)<abs(jeteta2))  && (jettche1>2.10)) || ((abs(jeteta1)>=abs(jeteta2)) && (jettche2>2.10))) )");
+  zoneCut.push_back("(nbjettche==0 && jettche1>=0.50 && jettche2>=0.50) || (nbjettche==1 && (((abs(jeteta1)<abs(jeteta2))  && (jettche1>2.10)) || ((abs(jeteta1)>=abs(jeteta2)) && (jettche2>2.10)))  &&  (((abs(jeteta1)<abs(jeteta2))  && (jettche2>=0.50)) || ((abs(jeteta1)>=abs(jeteta2)) && (jettche1>=0.50))) )");
   ///--- B
-  zoneCut.push_back("                                                      (nbjettche==1 && (((abs(jeteta1)<abs(jeteta2))  && (jettche1>2.10)) || ((abs(jeteta1)>=abs(jeteta2)) && (jettche2>2.10))) )");
+  zoneCut.push_back("                                                      (nbjettche==1 && (((abs(jeteta1)<abs(jeteta2))  && (jettche1>2.10)) || ((abs(jeteta1)>=abs(jeteta2)) && (jettche2>2.10)))  &&  (((abs(jeteta1)<abs(jeteta2))  && (jettche2>=0.50)) || ((abs(jeteta1)>=abs(jeteta2)) && (jettche1>=0.50))) )");
   ///--- A
   zoneCut.push_back("(nbjettche==0 && jettche1>=0.50 && jettche2>=0.50)");
+  
  }
  
  if (binTCHE == 1) {
+//   ///--- AB
+//   zoneCut.push_back("(nbjettche==0 && jettche1<0.50 && jettche2<0.50) || (nbjettche==1 && (((abs(jeteta1)<abs(jeteta2))  && (jettche1>2.10)) || ((abs(jeteta1)>=abs(jeteta2)) && (jettche2>2.10))) )");
+//   ///--- B
+//   zoneCut.push_back("                                                    (nbjettche==1 && (((abs(jeteta1)<abs(jeteta2))  && (jettche1>2.10)) || ((abs(jeteta1)>=abs(jeteta2)) && (jettche2>2.10))) )");
+//   ///--- A
+//   zoneCut.push_back("(nbjettche==0 && jettche1<0.50 && jettche2<0.50)");
+
   ///--- AB
-  zoneCut.push_back("(nbjettche==0 && jettche1<0.50 && jettche2<0.50) || (nbjettche==1 && (((abs(jeteta1)<abs(jeteta2))  && (jettche1>2.10)) || ((abs(jeteta1)>=abs(jeteta2)) && (jettche2>2.10))) )");
+  zoneCut.push_back("(nbjettche==0 && jettche1<0.50 && jettche2<0.50) || (nbjettche==1 && (((abs(jeteta1)<abs(jeteta2))  && (jettche1>2.10)) || ((abs(jeteta1)>=abs(jeteta2)) && (jettche2>2.10)))  &&  (((abs(jeteta1)<abs(jeteta2))  && (jettche2<0.50)) || ((abs(jeteta1)>=abs(jeteta2)) && (jettche1<0.50)))  )");
   ///--- B
-  zoneCut.push_back("                                                    (nbjettche==1 && (((abs(jeteta1)<abs(jeteta2))  && (jettche1>2.10)) || ((abs(jeteta1)>=abs(jeteta2)) && (jettche2>2.10))) )");
+  zoneCut.push_back("                                                    (nbjettche==1 && (((abs(jeteta1)<abs(jeteta2))  && (jettche1>2.10)) || ((abs(jeteta1)>=abs(jeteta2)) && (jettche2>2.10)))  &&  (((abs(jeteta1)<abs(jeteta2))  && (jettche2<0.50)) || ((abs(jeteta1)>=abs(jeteta2)) && (jettche1<0.50)))  )");
   ///--- A
   zoneCut.push_back("(nbjettche==0 && jettche1<0.50 && jettche2<0.50)");
+  
  }
  
  int nZone = zoneCut.size();

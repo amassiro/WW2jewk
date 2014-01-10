@@ -55,13 +55,25 @@ TGraphAsymmErrors* FilterBins(std::vector<int> binsToSelect, TGraphAsymmErrors* 
 
 void Plot_AM_WW2jewk_Propaganda_Moriond() {
  
-  TString folder = Form("sig/");
-  TString nameChannel = Form ("of_2j/");
-  TString cutNameBefore = Form("sig/%shisto_",nameChannel.Data());
+//  int which = 0;
+ int which = 1;
  
-//  TString folder = Form("init/");
-//  TString nameChannel = Form ("of_2j/");
-//  TString cutNameBefore = Form("init/%shisto_",nameChannel.Data());
+ TString nameChannel;
+ if   (which == 0) { nameChannel = Form ("of_2j/"); }
+ else              { nameChannel = Form ("of_2jtche05/"); }
+ 
+ 
+ std::cout << " which = " << which << std::endl;
+ 
+ 
+//  TString folder = Form("sig/");
+//  TString cutNameBefore = Form("sig/%shisto_",nameChannel.Data());
+
+ TString folder = Form("init/");
+ TString cutNameBefore = Form("init/%shisto_",nameChannel.Data());
+
+ std::cout << " nameChannel   = " << nameChannel.Data() << std::endl;
+ std::cout << " cutNameBefore = " << cutNameBefore.Data() << std::endl;
  
  //  TString folder = Form("bkg/");
  //  TString nameChannel = Form ("of_vh2j/");
@@ -78,6 +90,7 @@ void Plot_AM_WW2jewk_Propaganda_Moriond() {
  TCanvas* c1 = new TCanvas("mll","mll",550,660);
 
  TFile* f[10];
+ bool doSignalInjection;
  
 //  f[0] = new TFile("postFit-WW2jewk/WWewk-error.root");
 //  f[0] = new TFile("postFit-WW2jewk/WWewk-error-signal-injection.root"); --> not working in mkAutopsy.py
@@ -89,7 +102,9 @@ void Plot_AM_WW2jewk_Propaganda_Moriond() {
  
  //  scp amassiro@cmsneu.cern.ch:/home/amassiro/Latinos/Shape/playground/WW2jewkDFshapeTCHE21/postFit/WWewk-error-*.root postFit-WW2jewk-21/
  //   f[0] = new TFile("postFit-WW2jewk-21/WWewk-error-signalInjection.root");  bool doSignalInjection = true;
-   f[0] = new TFile("postFit-WW2jewk-21/WWewk-error-data.root");  bool doSignalInjection = false;
+
+ if      (which == 0)   { f[0] = new TFile("postFit-WW2jewk-21/WWewk-error-data.root");  doSignalInjection = false; }
+ else if (which == 1)   { f[0] = new TFile("postFit-WW2jewk-05/WWewk-error-data.root");  doSignalInjection = false; }
  
  PlotVHqqHggH* hs = new PlotVHqqHggH();
  
@@ -122,7 +137,7 @@ void Plot_AM_WW2jewk_Propaganda_Moriond() {
  std::vector<int> binsToSelect; 
  
 //  int NMAXX = 20;  
- int NMAXX = 9+2-3+1;  //---- variable bin
+ int NMAXX = 9+2-3+1+1;  //---- variable bin
  int NMAXY = 1;  
  
  int minNY = 0;
@@ -242,6 +257,14 @@ void Plot_AM_WW2jewk_Propaganda_Moriond() {
    vectScaleBkg.push_back(0.85);
    vectNormalizationBkg.push_back(5.654);
 
+   name = Form("%sTopPt2%s",cutNameBefore.Data(),cutNameAfter.Data());
+   vectTHBkg.push_back ( FilterBins(binsToSelect, (TH1F*) f[iFile]->Get(name)) );
+   //    vectNameBkg.push_back ("Top");
+   vectNameBkg.push_back ("TopPt2");
+   vectColourBkg.push_back(400+2+2);
+   vectSystBkg.push_back(0.07);
+   vectScaleBkg.push_back(0.85);
+   vectNormalizationBkg.push_back(5.654);
    
    name = Form("%sDYTT%s",cutNameBefore.Data(),cutNameAfter.Data());
    vectTHBkg.push_back ( FilterBins(binsToSelect, (TH1F*) f[iFile]->Get(name)) );
@@ -312,7 +335,7 @@ void Plot_AM_WW2jewk_Propaganda_Moriond() {
  hs->set_vectTHBkg     (vectTHBkg);      
  hs->set_vectNameBkg   (vectNameBkg);    
  hs->set_vectColourBkg (vectColourBkg);  
- hs->set_vectSystBkg   (vectSystBkg);    
+//  hs->set_vectSystBkg   (vectSystBkg);    
 //  hs->set_vectScaleBkg  (vectScaleBkg);   
  
  hs->set_vectTHSig     (vectTHSig);      
@@ -348,7 +371,11 @@ void Plot_AM_WW2jewk_Propaganda_Moriond() {
 //  double vedges[] = {-1.0,-0.9,-0.8,-0.7,-0.6,-0.5,-0.4,-0.3,-0.2,-0.1,0.0,0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9,1.0};
 //  double vedges[] = {-1.0, -0.5, 0.0, 0.2, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0};
 //  double vedges[] = {-1.0, -0.75, -0.5, -0.25, 0.0, 0.25, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0};
- double vedges[] = {-1.0, -0.75, -0.5, -0.25, 0.0, 0.30, 0.50, 0.70, 0.90, 1.0};
+//  double vedges[] = {-1.0, -0.75, -0.5, -0.25, 0.0, 0.30, 0.50, 0.70, 0.90, 1.0};
+//  double vedges[] = {-1.0, -0.75, -0.5, -0.25, 0.0, 0.20, 0.40, 0.60, 0.80, 1.0};
+ double vedges[] = {-1.0, -0.80, -0.60, -0.40, -0.20, 0.00, 0.20, 0.40, 0.60, 0.80, 1.00};
+ 
+ 
  std::vector<double> vEdges (vedges, vedges + sizeof(vedges) / sizeof(double) );
  hs->set_vectEdges(vEdges);
  hs->set_divide(0); //---- if 1 then divide by bin width
