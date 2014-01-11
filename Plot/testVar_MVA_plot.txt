@@ -61,6 +61,8 @@ mth            0    300     20        mth
 mll            0    300     20        mll
 njetvbf        0      4      4        njetvbf
 #
+(abs(jeteta1)<abs(jeteta2))*abs(jeteta1)+(abs(jeteta1)>=abs(jeteta2))*abs(jeteta2)     0    3   30  eta-cj
+#
 #########################################################
 #
 # max number of variables 

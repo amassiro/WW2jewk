@@ -55,10 +55,10 @@ TGraphAsymmErrors* FilterBins(std::vector<int> binsToSelect, TGraphAsymmErrors* 
 
 void Plot_AM_WW2jewk_Propaganda_Moriond() {
  
-//  int which = 0;
+ int which = 0;
 //  int which = 1;
 //  int which = 2;
- int which = 3;
+//  int which = 3;
  
  TString nameChannel;
  if   (which == 0)        { nameChannel = Form ("of_2j/"); }

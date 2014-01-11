@@ -36,7 +36,6 @@ void AMPlotMacroCreator_Moriond() {
   
   
   
-  
   //---- red file "var" ----
   std::vector<std::string> vVar_simple;
   std::vector<std::string> vVar;
