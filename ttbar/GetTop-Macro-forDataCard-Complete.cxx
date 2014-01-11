@@ -184,6 +184,17 @@ int GetTop_Macro_forDataCard_Complete(int iWP, std::string suffix = "of", std::s
  }
  
  
+ if ( binCutPt == 4) {
+  minpt = 30;
+  maxpt = 70;
+ }
+ if ( binCutPt == 5) {
+  minpt = 70;
+  maxpt = -1;
+ }
+
+ 
+ 
  std::ostringstream binjetptDefinition;
  binjetptDefinition << " ( ";
  binjetptDefinition << "((abs(jeteta1)<abs(jeteta2))*(jetpt1)+((abs(jeteta1)>=abs(jeteta2))*(jetpt2))) >= " << minpt;
@@ -325,8 +336,8 @@ int GetTop_Macro_forDataCard_Complete(int iWP, std::string suffix = "of", std::s
  
  
  //---- definition TCHE threshold ----
- //  binTCHE == 0 --> thresholdTCHE = 0.50 - 2.10;
- //  binTCHE == 1 --> thresholdTCHE = 0.50; 
+ //  binTCHE == 0 --> thresholdTCHE = 1.00 - 2.10;
+ //  binTCHE == 1 --> thresholdTCHE = 1.00; 
  
  std::vector <std::string> zoneCut; 
  if (binTCHE == 0) {
@@ -339,35 +350,35 @@ int GetTop_Macro_forDataCard_Complete(int iWP, std::string suffix = "of", std::s
 //   
 
 //   ///--- AB
-//   zoneCut.push_back("(nbjettche==0 && jettche1>=0.50 && jettche2>=0.50) || (nbjettche==1 && (((abs(jeteta1)<abs(jeteta2))  && (jettche1>2.10)) || ((abs(jeteta1)>=abs(jeteta2)) && (jettche2>2.10))) )");
+//   zoneCut.push_back("(nbjettche==0 && jettche1>=1.00 && jettche2>=1.00) || (nbjettche==1 && (((abs(jeteta1)<abs(jeteta2))  && (jettche1>2.10)) || ((abs(jeteta1)>=abs(jeteta2)) && (jettche2>2.10))) )");
 //   ///--- B
 //   zoneCut.push_back("                                                      (nbjettche==1 && (((abs(jeteta1)<abs(jeteta2))  && (jettche1>2.10)) || ((abs(jeteta1)>=abs(jeteta2)) && (jettche2>2.10))) )");
 //   ///--- A
-//   zoneCut.push_back("(nbjettche==0 && jettche1>=0.50 && jettche2>=0.50)");
+//   zoneCut.push_back("(nbjettche==0 && jettche1>=1.00 && jettche2>=1.00)");
 
   ///--- AB
-  zoneCut.push_back("(nbjettche==0 && jettche1>=0.50 && jettche2>=0.50) || (nbjettche==1 && (((abs(jeteta1)<abs(jeteta2))  && (jettche1>2.10)) || ((abs(jeteta1)>=abs(jeteta2)) && (jettche2>2.10)))  &&  (((abs(jeteta1)<abs(jeteta2))  && (jettche2>=0.50)) || ((abs(jeteta1)>=abs(jeteta2)) && (jettche1>=0.50))) )");
+  zoneCut.push_back("(nbjettche==0 && jettche1>=1.00 && jettche2>=1.00) || (nbjettche==1 && (((abs(jeteta1)<abs(jeteta2))  && (jettche1>2.10)) || ((abs(jeteta1)>=abs(jeteta2)) && (jettche2>2.10)))  &&  (((abs(jeteta1)<abs(jeteta2))  && (jettche2>=1.00)) || ((abs(jeteta1)>=abs(jeteta2)) && (jettche1>=1.00))) )");
   ///--- B
-  zoneCut.push_back("                                                      (nbjettche==1 && (((abs(jeteta1)<abs(jeteta2))  && (jettche1>2.10)) || ((abs(jeteta1)>=abs(jeteta2)) && (jettche2>2.10)))  &&  (((abs(jeteta1)<abs(jeteta2))  && (jettche2>=0.50)) || ((abs(jeteta1)>=abs(jeteta2)) && (jettche1>=0.50))) )");
+  zoneCut.push_back("                                                      (nbjettche==1 && (((abs(jeteta1)<abs(jeteta2))  && (jettche1>2.10)) || ((abs(jeteta1)>=abs(jeteta2)) && (jettche2>2.10)))  &&  (((abs(jeteta1)<abs(jeteta2))  && (jettche2>=1.00)) || ((abs(jeteta1)>=abs(jeteta2)) && (jettche1>=1.00))) )");
   ///--- A
-  zoneCut.push_back("(nbjettche==0 && jettche1>=0.50 && jettche2>=0.50)");
+  zoneCut.push_back("(nbjettche==0 && jettche1>=1.00 && jettche2>=1.00)");
   
  }
  
  if (binTCHE == 1) {
 //   ///--- AB
-//   zoneCut.push_back("(nbjettche==0 && jettche1<0.50 && jettche2<0.50) || (nbjettche==1 && (((abs(jeteta1)<abs(jeteta2))  && (jettche1>2.10)) || ((abs(jeteta1)>=abs(jeteta2)) && (jettche2>2.10))) )");
+//   zoneCut.push_back("(nbjettche==0 && jettche1<1.00 && jettche2<1.00) || (nbjettche==1 && (((abs(jeteta1)<abs(jeteta2))  && (jettche1>2.10)) || ((abs(jeteta1)>=abs(jeteta2)) && (jettche2>2.10))) )");
 //   ///--- B
 //   zoneCut.push_back("                                                    (nbjettche==1 && (((abs(jeteta1)<abs(jeteta2))  && (jettche1>2.10)) || ((abs(jeteta1)>=abs(jeteta2)) && (jettche2>2.10))) )");
 //   ///--- A
-//   zoneCut.push_back("(nbjettche==0 && jettche1<0.50 && jettche2<0.50)");
+//   zoneCut.push_back("(nbjettche==0 && jettche1<1.00 && jettche2<1.00)");
 
   ///--- AB
-  zoneCut.push_back("(nbjettche==0 && jettche1<0.50 && jettche2<0.50) || (nbjettche==1 && (((abs(jeteta1)<abs(jeteta2))  && (jettche1>2.10)) || ((abs(jeteta1)>=abs(jeteta2)) && (jettche2>2.10)))  &&  (((abs(jeteta1)<abs(jeteta2))  && (jettche2<0.50)) || ((abs(jeteta1)>=abs(jeteta2)) && (jettche1<0.50)))  )");
+  zoneCut.push_back("(nbjettche==0 && jettche1<1.00 && jettche2<1.00) || (nbjettche==1 && (((abs(jeteta1)<abs(jeteta2))  && (jettche1>2.10)) || ((abs(jeteta1)>=abs(jeteta2)) && (jettche2>2.10)))  &&  (((abs(jeteta1)<abs(jeteta2))  && (jettche2<1.00)) || ((abs(jeteta1)>=abs(jeteta2)) && (jettche1<1.00)))  )");
   ///--- B
-  zoneCut.push_back("                                                    (nbjettche==1 && (((abs(jeteta1)<abs(jeteta2))  && (jettche1>2.10)) || ((abs(jeteta1)>=abs(jeteta2)) && (jettche2>2.10)))  &&  (((abs(jeteta1)<abs(jeteta2))  && (jettche2<0.50)) || ((abs(jeteta1)>=abs(jeteta2)) && (jettche1<0.50)))  )");
+  zoneCut.push_back("                                                    (nbjettche==1 && (((abs(jeteta1)<abs(jeteta2))  && (jettche1>2.10)) || ((abs(jeteta1)>=abs(jeteta2)) && (jettche2>2.10)))  &&  (((abs(jeteta1)<abs(jeteta2))  && (jettche2<1.00)) || ((abs(jeteta1)>=abs(jeteta2)) && (jettche1<1.00)))  )");
   ///--- A
-  zoneCut.push_back("(nbjettche==0 && jettche1<0.50 && jettche2<0.50)");
+  zoneCut.push_back("(nbjettche==0 && jettche1<1.00 && jettche2<1.00)");
   
  }
  
