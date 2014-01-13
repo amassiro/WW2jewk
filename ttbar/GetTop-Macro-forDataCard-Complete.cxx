@@ -165,6 +165,24 @@ int GetTop_Macro_forDataCard_Complete(int iWP, std::string suffix = "of", std::s
 //   maxpt = -1;
 //  }
 
+//  if ( binCutPt == 0) {
+//   minpt = 30;
+//   maxpt = 50;
+//  }
+//  if ( binCutPt == 1) {
+//   minpt = 50;
+//   maxpt = 70;
+//   //   maxpt = -1;
+//  }
+//  if ( binCutPt == 2) {
+//   minpt = 70;
+//   maxpt = 100;
+//  }
+//  if ( binCutPt == 3) {
+//   minpt = 100;
+//   maxpt = -1;
+//  }
+
  if ( binCutPt == 0) {
   minpt = 30;
   maxpt = 50;
@@ -172,16 +190,17 @@ int GetTop_Macro_forDataCard_Complete(int iWP, std::string suffix = "of", std::s
  if ( binCutPt == 1) {
   minpt = 50;
   maxpt = 70;
-  //   maxpt = -1;
  }
  if ( binCutPt == 2) {
   minpt = 70;
-  maxpt = 100;
- }
- if ( binCutPt == 3) {
-  minpt = 100;
   maxpt = -1;
+//   maxpt = 100;
  }
+//  if ( binCutPt == 3) {
+//   minpt = 100;
+//   maxpt = -1;
+//  }
+ 
  
  
  if ( binCutPt == 4) {
