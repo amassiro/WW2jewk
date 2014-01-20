@@ -19,11 +19,11 @@
 #
 #  @WW level
 #
-#  && mjj>200
+#  && mjj>350
 #
-1             &&  ch1*ch2<0 && pt1>20 && pt2>10  && mjj>200     &&  trigger==1.  &&  zveto==1  && bveto_mu==1 && nextra==0 &&    bveto_ip==1  &&   (!sameflav || pfmet > 45.0)  &&   njet>=2      
-sameflav      &&  ch1*ch2<0 && pt1>20 && pt2>10  && mjj>200     &&  trigger==1.  &&  zveto==1  && bveto_mu==1 && nextra==0 &&    bveto_ip==1  &&   (!sameflav || pfmet > 45.0)  &&   njet>=2     
-(!sameflav)   &&  ch1*ch2<0 && pt1>20 && pt2>10  && mjj>200     &&  trigger==1.  &&  zveto==1  && bveto_mu==1 && nextra==0 &&    bveto_ip==1  &&   (!sameflav || pfmet > 45.0)  &&   njet>=2     
+1             &&  ch1*ch2<0 && pt1>20 && pt2>10  && mjj>350     &&  trigger==1.  &&  zveto==1  && bveto_mu==1 && nextra==0 &&    bveto_ip==1  &&   (!sameflav || pfmet > 45.0)  &&   njet>=2      
+sameflav      &&  ch1*ch2<0 && pt1>20 && pt2>10  && mjj>350     &&  trigger==1.  &&  zveto==1  && bveto_mu==1 && nextra==0 &&    bveto_ip==1  &&   (!sameflav || pfmet > 45.0)  &&   njet>=2     
+(!sameflav)   &&  ch1*ch2<0 && pt1>20 && pt2>10  && mjj>350     &&  trigger==1.  &&  zveto==1  && bveto_mu==1 && nextra==0 &&    bveto_ip==1  &&   (!sameflav || pfmet > 45.0)  &&   njet>=2     
 #
 ##################
 #
