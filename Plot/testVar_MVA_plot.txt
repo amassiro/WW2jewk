@@ -31,6 +31,7 @@ detajj          0   6     12        #Delta#eta_{jet-jet}
 MLP_weights_testVariables_MVAWW2jewk      0.0   0.9   20    MLP
 # BDTG_weights_testVariables_MVAWW2jewk      -1   0.9   19    BDTG
 BDTG_weights_testVariables_MVAWW2jewk      -1   0.8   9    BDTG
+# BDTG_weights_testVariables_MVAWW2jewk      -1   0.8   19    BDTG
 BDT_weights_testVariables_MVAWW2jewk     -0.25   0.25  15    BDT
 #
 #########################################################

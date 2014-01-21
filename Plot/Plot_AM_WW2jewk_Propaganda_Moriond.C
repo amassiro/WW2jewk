@@ -302,12 +302,14 @@ void Plot_AM_WW2jewk_Propaganda_Moriond() {
    vectNormalizationBkg.push_back(2.256);
    
    name = Form("%sggWW%s",cutNameBefore.Data(),cutNameAfter.Data());
-   vectTHBkg.push_back ( FilterBins(binsToSelect, (TH1F*) f[iFile]->Get(name)) );
-   vectNameBkg.push_back ("WW");
-   vectColourBkg.push_back(853);
-   vectSystBkg.push_back(0.00);
-   vectScaleBkg.push_back(1.0000);
-   vectNormalizationBkg.push_back(2.256);
+   if (f[iFile]->GetListOfKeys()->Contains(name)) {
+    vectTHBkg.push_back ( FilterBins(binsToSelect, (TH1F*) f[iFile]->Get(name)) );
+    vectNameBkg.push_back ("WW");
+    vectColourBkg.push_back(853);
+    vectSystBkg.push_back(0.00);
+    vectScaleBkg.push_back(1.0000);
+    vectNormalizationBkg.push_back(2.256);
+   }
    
    ///==== background (end)  ====
    
