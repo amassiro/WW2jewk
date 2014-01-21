@@ -124,7 +124,7 @@ int GetTop_Macro_forDataCard_Complete(int iWP, std::string suffix = "of", std::s
  std::vector <std::string> v_commonCut_WW; 
  
  v_commonCut_WW.push_back("pt1>20");
- v_commonCut_WW.push_back("pt2>10");
+ v_commonCut_WW.push_back("pt2>20"); // >10
  v_commonCut_WW.push_back("(ch1*ch2)<0");
  
  v_commonCut_WW.push_back("trigger==1.");
@@ -253,16 +253,16 @@ int GetTop_Macro_forDataCard_Complete(int iWP, std::string suffix = "of", std::s
 //   v_commonCut_Higgs.push_back("njetvbf==0");
 //   v_commonCut_Higgs.push_back("mjj>200");
 //   v_commonCut_Higgs.push_back("detajj>1.0");
-  v_commonCut_Higgs.push_back("mjj>250");
+  v_commonCut_Higgs.push_back("mjj>350");
   v_commonCut_Higgs.push_back("detajj>0.5");
-  v_commonCut_Higgs.push_back("BDTG_weights_testVariables_MVAWW2jewk > 0.55");
+  v_commonCut_Higgs.push_back("BDTG_weights_testVariables_MVAWW2jewk > 0.40");  //---- 0.55   0.30  0.40  -0.10 = crazy test!
  }
  
  if (whatAnalysis == "shape") {
 //   v_commonCut_Higgs.push_back("njetvbf==0");
 //   v_commonCut_Higgs.push_back("mjj>200");
 //   v_commonCut_Higgs.push_back("detajj>1.0");
-  v_commonCut_Higgs.push_back("mjj>250");
+  v_commonCut_Higgs.push_back("mjj>350"); //---- 400
   v_commonCut_Higgs.push_back("detajj>0.5");
  }  
 
