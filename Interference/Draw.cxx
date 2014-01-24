@@ -1,4 +1,12 @@
+//----------------------------
+//---- draw distributions ----
+//----------------------------
+
+
 void Draw(int kind = 0, std::string var = "mWW", int NBIN = 1000, int MIN = 0, int MAX = 1000) {
+ 
+//  kind = 0  ---> me
+//  kind = 1  ---> mm
  
  
  TString name1;
