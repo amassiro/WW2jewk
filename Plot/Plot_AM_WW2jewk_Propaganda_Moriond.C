@@ -58,7 +58,8 @@ void Plot_AM_WW2jewk_Propaganda_Moriond() {
 //  int which = 0;
 //  int which = 1;
 //  int which = 2;
- int which = 3;
+//  int which = 3;
+ int which = 4;
  
  TString nameChannel;
  if   (which == 0)        { nameChannel = Form ("of_2j/"); }
@@ -66,6 +67,9 @@ void Plot_AM_WW2jewk_Propaganda_Moriond() {
 
  if   (which == 2)        { nameChannel = Form ("of_2j/"); }        //---- signal injection
  else if (which == 3)     { nameChannel = Form ("of_2jtche05/"); }  //---- signal injection
+ 
+ 
+ if   (which == 4)        { nameChannel = Form ("of_2j/"); } //---- top enriched phase space
  
  
  std::cout << " which = " << which << std::endl;
@@ -105,13 +109,14 @@ void Plot_AM_WW2jewk_Propaganda_Moriond() {
 //   f[0] = new TFile("postFit-WW2jewk-05/WWewk-error-signalInjection.root");   bool doSignalInjection = true;
 //  f[0] = new TFile("postFit-WW2jewk-05/WWewk-error-data.root");  bool doSignalInjection = false;
  
- //  scp amassiro@cmsneu.cern.ch:/home/amassiro/Latinos/Shape/playground/WW2jewkDFshapeTCHE21/postFit/WWewk-error-*.root postFit-WW2jewk-21/
- //   f[0] = new TFile("postFit-WW2jewk-21/WWewk-error-signalInjection.root");  bool doSignalInjection = true;
-
+ //  scp amassiro@cmsneu.cern.ch:/home/amassiro/Latinos/Shape/playground/WW2jewkDFshapeTopEnriched/postFit/WWewk-error-*.root postFit-WW2jewk-Top/
+ 
  if      (which == 0)   { f[0] = new TFile("postFit-WW2jewk-21/WWewk-error-data.root");  doSignalInjection = false; }
  else if (which == 1)   { f[0] = new TFile("postFit-WW2jewk-05/WWewk-error-data.root");  doSignalInjection = false; }
  else if (which == 2)   { f[0] = new TFile("postFit-WW2jewk-21/WWewk-error-signalInjection.root");  doSignalInjection = true; }
  else if (which == 3)   { f[0] = new TFile("postFit-WW2jewk-05/WWewk-error-signalInjection.root");  doSignalInjection = true; }
+ else if (which == 4)   { f[0] = new TFile("postFit-WW2jewk-Top/WWewk-error-data.root");  doSignalInjection = false; } //---- top enriched background
+ 
  
  PlotVHqqHggH* hs = new PlotVHqqHggH();
  
@@ -145,6 +150,9 @@ void Plot_AM_WW2jewk_Propaganda_Moriond() {
  
 //  int NMAXX = 20;  
  int NMAXX = 9+2-3+1+1;  //---- variable bin
+ if (which == 4) {
+  NMAXX = 40; // 19
+ }
  int NMAXY = 1;  
  
  int minNY = 0;
@@ -224,7 +232,7 @@ void Plot_AM_WW2jewk_Propaganda_Moriond() {
    vectTHBkg.push_back ( FilterBins(binsToSelect, (TH1F*) f[iFile]->Get(name)) );
    vectNameBkg.push_back ("W+jets");
    vectColourBkg.push_back(921);
-   vectSystBkg.push_back(0.36);
+   vectSystBkg.push_back(0.00);
    vectScaleBkg.push_back(1.0000);
    vectNormalizationBkg.push_back(0.667);
    
@@ -252,7 +260,7 @@ void Plot_AM_WW2jewk_Propaganda_Moriond() {
 //    vectNameBkg.push_back ("Top");
    vectNameBkg.push_back ("TopPt0");
    vectColourBkg.push_back(400);
-   vectSystBkg.push_back(0.07);
+   vectSystBkg.push_back(0.10);
    vectScaleBkg.push_back(0.85);
    vectNormalizationBkg.push_back(5.654);
 
@@ -262,7 +270,7 @@ void Plot_AM_WW2jewk_Propaganda_Moriond() {
 //    vectNameBkg.push_back ("Top");
    vectNameBkg.push_back ("TopPt1");
    vectColourBkg.push_back(400+2);
-   vectSystBkg.push_back(0.07);
+   vectSystBkg.push_back(0.10);
    vectScaleBkg.push_back(0.85);
    vectNormalizationBkg.push_back(5.654);
 
@@ -272,7 +280,7 @@ void Plot_AM_WW2jewk_Propaganda_Moriond() {
    //    vectNameBkg.push_back ("Top");
    vectNameBkg.push_back ("TopPt2");
    vectColourBkg.push_back(400+2+2);
-   vectSystBkg.push_back(0.07);
+   vectSystBkg.push_back(0.10);
    vectScaleBkg.push_back(0.85);
    vectNormalizationBkg.push_back(5.654);
 
@@ -356,7 +364,7 @@ void Plot_AM_WW2jewk_Propaganda_Moriond() {
  hs->set_vectTHBkg     (vectTHBkg);      
  hs->set_vectNameBkg   (vectNameBkg);    
  hs->set_vectColourBkg (vectColourBkg);  
-//  hs->set_vectSystBkg   (vectSystBkg);    
+//  if (which == 4) hs->set_vectSystBkg   (vectSystBkg);    
 //  hs->set_vectScaleBkg  (vectScaleBkg);   
  
  hs->set_vectTHSig     (vectTHSig);      
@@ -394,7 +402,24 @@ void Plot_AM_WW2jewk_Propaganda_Moriond() {
 //  double vedges[] = {-1.0, -0.75, -0.5, -0.25, 0.0, 0.25, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0};
 //  double vedges[] = {-1.0, -0.75, -0.5, -0.25, 0.0, 0.30, 0.50, 0.70, 0.90, 1.0};
 //  double vedges[] = {-1.0, -0.75, -0.5, -0.25, 0.0, 0.20, 0.40, 0.60, 0.80, 1.0};
- double vedges[] = {-1.0, -0.80, -0.60, -0.40, -0.20, 0.00, 0.20, 0.40, 0.60, 0.80, 1.00};
+ 
+ 
+//  double vedges[] = {-1.0, -0.80, -0.60, -0.40, -0.20, 0.00, 0.20, 0.40, 0.60, 0.80, 1.00};
+// //  double vedges[] = { -1.0, -0.90, -0.80, -0.70, -0.60, -0.50, -0.40, -0.30, -0.20, -0.10, 0.00, 0.10, 0.20, 0.30, 0.40, 0.50, 0.60, 0.70, 0.80, 0.90, 1.00};
+ 
+ double vedges[] = {-1.0, -0.95, -0.90, -0.85, -0.80, -0.75, -0.70, -0.65, -0.60, -0.55, -0.50, -0.45, -0.40, -0.35, -0.30, -0.25, -0.20, -0.15, -0.10, -0.05, 0.00, 0.05, 0.10, 0.15, 0.20, 0.25, 0.30, 0.35, 0.40, 0.45, 0.50, 0.55, 0.60, 0.65, 0.70, 0.75, 0.80, 0.85, 0.90, 0.95, 1.00};
+//  double vedges[] = { 5.0, 5.2, 5.4, 5.6, 5.8, 6.0, 6.2, 6.4, 6.6, 6.8, 7.0};
+ 
+ 
+ //---- for top enriched phase space
+//  if (which == 4) {
+  //   vedges[] = { -1.0, -0.90, -0.80, -0.70, -0.60, -0.50, -0.40, -0.30, -0.20, -0.10, 0.00, 0.10, 0.20, 0.30, 0.40, 0.50, 0.60, 0.70, 0.80, 0.90, 1.00};
+//   for (int i=0; i<20; i++) {
+//    vedges[i] = -1.0 + 0.10*i; 
+//   }
+//  }
+ 
+ std::cout << "  vedges + sizeof(vedges) / sizeof(double) = " <<  vedges + sizeof(vedges) / sizeof(double) << std::endl;
  
  
  std::vector<double> vEdges (vedges, vedges + sizeof(vedges) / sizeof(double) );

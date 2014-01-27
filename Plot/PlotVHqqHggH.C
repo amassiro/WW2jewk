@@ -2970,9 +2970,10 @@ class PlotVHqqHggH {
                 //      rref->GetYaxis()->SetRangeUser(TMath::Max(0.,1.-absmax), absmax+1.);
                 //      rref->GetYaxis()->SetRangeUser(TMath::Max(0.,1.-absmax), TMath::Min(10.,absmax+1.));
 //                 rref->GetYaxis()->SetRangeUser(0.5, 1.5);
-//                              rref->GetYaxis()->SetRangeUser(0., 3.);
+// 
+                rref->GetYaxis()->SetRangeUser(0., 3.);
                 //              
-                rref->GetYaxis()->SetRangeUser(0., 2.);
+//                 rref->GetYaxis()->SetRangeUser(0., 2.);
                 
                 //                 rref->GetYaxis()->SetRangeUser(0., 2.);
                 //                 rref->GetYaxis()->SetRangeUser(0., 4.);
