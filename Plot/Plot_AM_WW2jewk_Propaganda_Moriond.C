@@ -254,35 +254,129 @@ void Plot_AM_WW2jewk_Propaganda_Moriond() {
     vectNormalizationBkg.push_back(1.000);
    }
    
+// //    name = Form("%sTopPt0%s",cutNameBefore.Data(),cutNameAfter.Data());
+//    name = Form("%sTopPt2%s",cutNameBefore.Data(),cutNameAfter.Data());
+//    vectTHBkg.push_back ( FilterBins(binsToSelect, (TH1F*) f[iFile]->Get(name)) );
+// //    vectNameBkg.push_back ("Top");
+//    vectNameBkg.push_back ("TopPt0");
+//    vectColourBkg.push_back(400);
+//    vectSystBkg.push_back(0.10);
+//    vectScaleBkg.push_back(0.85);
+//    vectNormalizationBkg.push_back(5.654);
+// 
+// //    name = Form("%sTopPt1%s",cutNameBefore.Data(),cutNameAfter.Data());
+//    name = Form("%sTopPt3%s",cutNameBefore.Data(),cutNameAfter.Data());
+//    vectTHBkg.push_back ( FilterBins(binsToSelect, (TH1F*) f[iFile]->Get(name)) );
+// //    vectNameBkg.push_back ("Top");
+//    vectNameBkg.push_back ("TopPt1");
+//    vectColourBkg.push_back(400+2);
+//    vectSystBkg.push_back(0.10);
+//    vectScaleBkg.push_back(0.85);
+//    vectNormalizationBkg.push_back(5.654);
+// 
+// //    name = Form("%sTopPt2%s",cutNameBefore.Data(),cutNameAfter.Data());
+//    name = Form("%sTopPt1%s",cutNameBefore.Data(),cutNameAfter.Data());
+//    vectTHBkg.push_back ( FilterBins(binsToSelect, (TH1F*) f[iFile]->Get(name)) );
+//    //    vectNameBkg.push_back ("Top");
+//    vectNameBkg.push_back ("TopPt2");
+//    vectColourBkg.push_back(400+2+2);
+//    vectSystBkg.push_back(0.10);
+//    vectScaleBkg.push_back(0.85);
+//    vectNormalizationBkg.push_back(5.654);
+
+
+
 //    name = Form("%sTopPt0%s",cutNameBefore.Data(),cutNameAfter.Data());
-   name = Form("%sTopPt2%s",cutNameBefore.Data(),cutNameAfter.Data());
+   name = Form("%sTopPt1%s",cutNameBefore.Data(),cutNameAfter.Data());
    vectTHBkg.push_back ( FilterBins(binsToSelect, (TH1F*) f[iFile]->Get(name)) );
 //    vectNameBkg.push_back ("Top");
-   vectNameBkg.push_back ("TopPt0");
+   vectNameBkg.push_back ("TopPt1");
    vectColourBkg.push_back(400);
    vectSystBkg.push_back(0.10);
    vectScaleBkg.push_back(0.85);
    vectNormalizationBkg.push_back(5.654);
 
 //    name = Form("%sTopPt1%s",cutNameBefore.Data(),cutNameAfter.Data());
-   name = Form("%sTopPt3%s",cutNameBefore.Data(),cutNameAfter.Data());
+   name = Form("%sTopPt2%s",cutNameBefore.Data(),cutNameAfter.Data());
    vectTHBkg.push_back ( FilterBins(binsToSelect, (TH1F*) f[iFile]->Get(name)) );
 //    vectNameBkg.push_back ("Top");
-   vectNameBkg.push_back ("TopPt1");
+   vectNameBkg.push_back ("TopPt2");
    vectColourBkg.push_back(400+2);
    vectSystBkg.push_back(0.10);
    vectScaleBkg.push_back(0.85);
    vectNormalizationBkg.push_back(5.654);
 
-//    name = Form("%sTopPt2%s",cutNameBefore.Data(),cutNameAfter.Data());
-   name = Form("%sTopPt1%s",cutNameBefore.Data(),cutNameAfter.Data());
+   //    name = Form("%sTopPt2%s",cutNameBefore.Data(),cutNameAfter.Data());
+   name = Form("%sTopPt3%s",cutNameBefore.Data(),cutNameAfter.Data());
    vectTHBkg.push_back ( FilterBins(binsToSelect, (TH1F*) f[iFile]->Get(name)) );
    //    vectNameBkg.push_back ("Top");
-   vectNameBkg.push_back ("TopPt2");
+   vectNameBkg.push_back ("TopPt3");
    vectColourBkg.push_back(400+2+2);
    vectSystBkg.push_back(0.10);
    vectScaleBkg.push_back(0.85);
    vectNormalizationBkg.push_back(5.654);
+   
+   //    name = Form("%sTopPt2%s",cutNameBefore.Data(),cutNameAfter.Data());
+   name = Form("%sTopPt4%s",cutNameBefore.Data(),cutNameAfter.Data());
+   vectTHBkg.push_back ( FilterBins(binsToSelect, (TH1F*) f[iFile]->Get(name)) );
+   //    vectNameBkg.push_back ("Top");
+   vectNameBkg.push_back ("TopPt4");
+   vectColourBkg.push_back(400+2+2+2);
+   vectSystBkg.push_back(0.10);
+   vectScaleBkg.push_back(0.85);
+   vectNormalizationBkg.push_back(5.654);
+   
+   //    name = Form("%sTopPt2%s",cutNameBefore.Data(),cutNameAfter.Data());
+   name = Form("%sTopPt5%s",cutNameBefore.Data(),cutNameAfter.Data());
+   vectTHBkg.push_back ( FilterBins(binsToSelect, (TH1F*) f[iFile]->Get(name)) );
+   //    vectNameBkg.push_back ("Top");
+   vectNameBkg.push_back ("TopPt5");
+   vectColourBkg.push_back(400+2+2+2+2);
+   vectSystBkg.push_back(0.10);
+   vectScaleBkg.push_back(0.85);
+   vectNormalizationBkg.push_back(5.654);
+   
+   //    name = Form("%sTopPt2%s",cutNameBefore.Data(),cutNameAfter.Data());
+   name = Form("%sTopPt6%s",cutNameBefore.Data(),cutNameAfter.Data());
+   vectTHBkg.push_back ( FilterBins(binsToSelect, (TH1F*) f[iFile]->Get(name)) );
+   //    vectNameBkg.push_back ("Top");
+   vectNameBkg.push_back ("TopPt6");
+   vectColourBkg.push_back(400+2+2+2+2+2);
+   vectSystBkg.push_back(0.10);
+   vectScaleBkg.push_back(0.85);
+   vectNormalizationBkg.push_back(5.654);
+   
+//    //    name = Form("%sTopPt2%s",cutNameBefore.Data(),cutNameAfter.Data());
+//    name = Form("%sTopPt7%s",cutNameBefore.Data(),cutNameAfter.Data());
+//    vectTHBkg.push_back ( FilterBins(binsToSelect, (TH1F*) f[iFile]->Get(name)) );
+//    //    vectNameBkg.push_back ("Top");
+//    vectNameBkg.push_back ("TopPt7");
+//    vectColourBkg.push_back(400+2+2+2+2+2+2);
+//    vectSystBkg.push_back(0.10);
+//    vectScaleBkg.push_back(0.85);
+//    vectNormalizationBkg.push_back(5.654);
+//    
+//    //    name = Form("%sTopPt2%s",cutNameBefore.Data(),cutNameAfter.Data());
+//    name = Form("%sTopPt8%s",cutNameBefore.Data(),cutNameAfter.Data());
+//    vectTHBkg.push_back ( FilterBins(binsToSelect, (TH1F*) f[iFile]->Get(name)) );
+//    //    vectNameBkg.push_back ("Top");
+//    vectNameBkg.push_back ("TopPt8");
+//    vectColourBkg.push_back(400+2+2+2+2+2+2+2);
+//    vectSystBkg.push_back(0.10);
+//    vectScaleBkg.push_back(0.85);
+//    vectNormalizationBkg.push_back(5.654);
+   
+
+
+
+
+
+
+
+
+
+
+
 
 //    name = Form("%sTopPt3%s",cutNameBefore.Data(),cutNameAfter.Data());
 //    vectTHBkg.push_back ( FilterBins(binsToSelect, (TH1F*) f[iFile]->Get(name)) );
