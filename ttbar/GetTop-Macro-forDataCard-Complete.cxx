@@ -151,20 +151,38 @@ int GetTop_Macro_forDataCard_Complete(int iWP, std::string suffix = "of", std::s
  double maxpt = -1;
  
  // ---- cut based
-//  if ( binCutPt == 0) {
-//   minpt = 30;
-//   maxpt = 70;
-//  }
-//  if ( binCutPt == 1) {
-//   minpt = 70;
+// //  if ( binCutPt == 0) {
+// //   minpt = 30;
+// //   maxpt = 70;
+// //  }
+// //  if ( binCutPt == 1) {
+// //   minpt = 70;
+// // //   maxpt = 100;
+// //   maxpt = -1;
+// //  }
+// //  if ( binCutPt == 2) {
+// //   minpt = 100;
+// //   maxpt = -1;
+// //  }
+// 
+// //  if ( binCutPt == 0) {
+// //   minpt = 30;
+// //   maxpt = 50;
+// //  }
+// //  if ( binCutPt == 1) {
+// //   minpt = 50;
+// //   maxpt = 70;
+// //   //   maxpt = -1;
+// //  }
+// //  if ( binCutPt == 2) {
+// //   minpt = 70;
 // //   maxpt = 100;
-//   maxpt = -1;
-//  }
-//  if ( binCutPt == 2) {
-//   minpt = 100;
-//   maxpt = -1;
-//  }
-
+// //  }
+// //  if ( binCutPt == 3) {
+// //   minpt = 100;
+// //   maxpt = -1;
+// //  }
+// 
 //  if ( binCutPt == 0) {
 //   minpt = 30;
 //   maxpt = 50;
@@ -172,17 +190,32 @@ int GetTop_Macro_forDataCard_Complete(int iWP, std::string suffix = "of", std::s
 //  if ( binCutPt == 1) {
 //   minpt = 50;
 //   maxpt = 70;
-//   //   maxpt = -1;
 //  }
 //  if ( binCutPt == 2) {
 //   minpt = 70;
-//   maxpt = 100;
+//   maxpt = -1;
+// //   maxpt = 100;
 //  }
-//  if ( binCutPt == 3) {
-//   minpt = 100;
+// //  if ( binCutPt == 3) {
+// //   minpt = 100;
+// //   maxpt = -1;
+// //  }
+//  
+//  
+//  
+//  if ( binCutPt == 4) {
+//   minpt = 30;
+//   maxpt = 70;
+//  }
+//  if ( binCutPt == 5) {
+//   minpt = 70;
 //   maxpt = -1;
 //  }
-
+ 
+ 
+ 
+ //---- shape analysis
+ 
  if ( binCutPt == 0) {
   minpt = 30;
   maxpt = 50;
@@ -193,25 +226,32 @@ int GetTop_Macro_forDataCard_Complete(int iWP, std::string suffix = "of", std::s
  }
  if ( binCutPt == 2) {
   minpt = 70;
-  maxpt = -1;
-//   maxpt = 100;
+  maxpt = 110;
  }
-//  if ( binCutPt == 3) {
-//   minpt = 100;
-//   maxpt = -1;
-//  }
- 
- 
- 
+ if ( binCutPt == 3) {
+  minpt = 110;
+  maxpt = 150;
+ }
  if ( binCutPt == 4) {
-  minpt = 30;
-  maxpt = 70;
+  minpt = 150;
+  maxpt = 200;
  }
  if ( binCutPt == 5) {
-  minpt = 70;
+  minpt = 200;
   maxpt = -1;
  }
 
+ 
+ //---- cut based analysis
+ 
+ if ( binCutPt == 10) {
+  minpt = 30;
+  maxpt = 70;
+ }
+ if ( binCutPt == 11) {
+  minpt = 70;
+  maxpt = -1;
+ }
  
  
  std::ostringstream binjetptDefinition;
