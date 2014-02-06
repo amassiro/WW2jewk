@@ -12,8 +12,8 @@
 //  std::string nameFile = "test/WW2jewk/ttbar/result-eff-cut-of-pt-11-tche-1-0.txt";     //  [70,-]  
  
  //---- loose bveto 1.0 < b < 2.1
-//  std::string nameFile = "test/WW2jewk/ttbar/result-eff-cut-of-pt-10-tche-1-0.txt";  //  [30-70]
- std::string nameFile = "test/WW2jewk/ttbar/result-eff-cut-of-pt-11-tche-1-0.txt";     //  [70,-]  
+//  std::string nameFile = "test/WW2jewk/ttbar/result-eff-cut-of-pt-10-tche-0-0.txt";  //  [30-70]
+ std::string nameFile = "test/WW2jewk/ttbar/result-eff-cut-of-pt-11-tche-0-0.txt";     //  [70,-]  
  
  
  
