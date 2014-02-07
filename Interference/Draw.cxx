@@ -2,12 +2,12 @@
 //---- draw distributions ----
 //----------------------------
 
-
-void Draw(int kind = 0, std::string var = "mWW", int NBIN = 1000, int MIN = 0, int MAX = 1000) {
+void Draw(int kind = 0, std::string var = "mWW", int NBIN = 1000, int MIN = 0, int MAX = 1000, std::string varHR = "mWW") {
  
 //  kind = 0  ---> me
 //  kind = 1  ---> mm
  
+ gStyle->SetOptStat(0);
  
  TString name1;
  if (kind == 0) name1 = Form ("EW_jjme.root");
@@ -33,12 +33,20 @@ void Draw(int kind = 0, std::string var = "mWW", int NBIN = 1000, int MIN = 0, i
  TNtuple* t2 = (TNtuple*) f2->Get ("ntu");
  TNtuple* t3 = (TNtuple*) f3->Get ("ntu");
  
- TH1F* h_mWW_1 = new TH1F("h_mWW_1","h_mWW_1",NBIN,0,MAX);
- TH1F* h_mWW_2 = new TH1F("h_mWW_2","h_mWW_2",NBIN,0,MAX);
- TH1F* h_mWW_3 = new TH1F("h_mWW_3","h_mWW_3",NBIN,0,MAX);
+ TH1F* h_mWW_1 = new TH1F("h_mWW_1","",NBIN,0,MAX);
+ TH1F* h_mWW_2 = new TH1F("h_mWW_2","",NBIN,0,MAX);
+ TH1F* h_mWW_3 = new TH1F("h_mWW_3","",NBIN,0,MAX);
  TH1F* h_Ratio = new TH1F("h_mWW_ratio","h_mWW_ratio",NBIN,0,MAX);
  TH1F* h_Subtraction = new TH1F("h_Subtraction","h_Subtraction",NBIN,0,MAX);
  TH1F* h_I = new TH1F("h_I","h_I",NBIN,0,MAX);
+ 
+ h_mWW_1->GetXaxis()->SetTitle(varHR.c_str());
+ h_mWW_2->GetXaxis()->SetTitle(varHR.c_str());
+ h_mWW_3->GetXaxis()->SetTitle(varHR.c_str());
+ h_Ratio->GetXaxis()->SetTitle(varHR.c_str());
+ h_Subtraction->GetXaxis()->SetTitle(varHR.c_str());
+ h_I->GetXaxis()->SetTitle(varHR.c_str());
+ 
  
  //---- me
  if (kind == 0) gROOT->ProcessLine ("float xsecEW[100] = {2.68719361245196228E-002};");
@@ -58,8 +66,9 @@ void Draw(int kind = 0, std::string var = "mWW", int NBIN = 1000, int MIN = 0, i
  
 //  TString cut = Form ("jetpt1>30 && jetpt2>30 && mWW>130");
 //  TString cut = Form ("jetpt1>30 && jetpt2>30");
- TString cut = Form ("jetpt1>30 && jetpt2>30 && mjj>200");
-//  TString cut = Form ("1");
+//  TString cut = Form ("jetpt1>30 && jetpt2>30 && mjj>200");
+ TString cut = Form ("jetpt1>30 && jetpt2>30 && mjj>300");
+ //  TString cut = Form ("1");
  
  int tot_1 = t1 -> GetEntries();
  int tot_2 = t2 -> GetEntries();

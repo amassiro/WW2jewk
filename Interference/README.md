@@ -63,13 +63,13 @@ ew+qcd
     
 Draw:
 
-    r00t  Draw.cxx\(0,\"mWW\",100,0,2000\)
-    r00t  Draw.cxx\(0,\"mjj\",100,0,2000\)
-    r00t  Draw.cxx\(0,\"mll\",100,0,200\)
-    r00t  Draw.cxx\(0,\"jetpt1\",100,0,200\)
-    r00t  Draw.cxx\(0,\"jetpt2\",100,0,200\)
-    r00t  Draw.cxx\(0,\"pt1\",100,0,200\)
-    r00t  Draw.cxx\(0,\"pt2\",100,0,200\)
+    r00t  Draw.cxx\(0,\"mWW\",100,0,2000,\"mWW\ [GeV]\"\)
+    r00t  Draw.cxx\(0,\"mjj\",100,0,2000,\"mjj\ [GeV]\"\)
+    r00t  Draw.cxx\(0,\"mll\",100,0,200,\"mll\ [GeV]\"\)
+    r00t  Draw.cxx\(0,\"jetpt1\",100,0,200\,\"jetpt1\ [GeV]\"\)
+    r00t  Draw.cxx\(0,\"jetpt2\",100,0,200,\"jetpt2\ [GeV]\"\)
+    r00t  Draw.cxx\(0,\"pt1\",100,0,200,\"pt1\ [GeV]\"\)
+    r00t  Draw.cxx\(0,\"pt2\",100,0,200,\"pt2\ [GeV]\"\)
 
 
 
