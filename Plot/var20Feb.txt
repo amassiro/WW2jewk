@@ -1,0 +1,10 @@
+jetpt1             jet-p_{T}^{l1}                             0          0       0       -999         -999
+jetpt2             jet-p_{T}^{l2}                             1          0       0       -999         -999
+#
+detajj          #Delta#eta_{jj}                               2          0       0       -999         -999
+logmjj          logm_{jj}                                     3          0       0       -999         -999
+#
+zepl1           #eta_{lep1}-centrality                        4          0       0       -999         -999
+zepl2           #eta_{lep2}-centrality                        5          0       0       -999         -999
+zepll           #eta_{leplep}-centrality                      6          0       0       -999         -999
+#
