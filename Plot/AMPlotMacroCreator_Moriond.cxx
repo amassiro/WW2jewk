@@ -28,7 +28,7 @@ void AMPlotMacroCreator_Moriond() {
  TString hmass   = Form("125");
  TString lumi    = Form("19.468");
 
- for (int iCut = 0; iCut < 3*1; iCut++) {
+ for (int iCut = 0; iCut < 3*2; iCut++) {
   
 //  for (int iCut = 0; iCut < (3+1)*3; iCut++) {
      
