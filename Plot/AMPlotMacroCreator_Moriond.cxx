@@ -21,7 +21,7 @@ void AMPlotMacroCreator_Moriond() {
  //  //---- mjj/detajj optimization inputs ----
  TString fileVar = Form("var28Feb.txt");
  TString date    = Form("20Feb_WWewk_Moriond_forAN");
- TString file    = Form("out_test_Latinos_22Feb2014_1200_RunABCD-WWewk.root");
+ TString file    = Form("out_test_Latinos_28Feb2014_2300_RunABCD-WWewk.root");
  
 
 
@@ -35,7 +35,7 @@ void AMPlotMacroCreator_Moriond() {
  TString hmass   = Form("125");
  TString lumi    = Form("19.468");
 
- for (int iCut = 0; iCut < 8; iCut++) {
+ for (int iCut = 0; iCut < 9; iCut++) {
 //   for (int iCut = 0; iCut < 3*2; iCut++) {
   
 //  for (int iCut = 0; iCut < (3+1)*3; iCut++) {
@@ -410,17 +410,17 @@ void AMPlotMacroCreator_Moriond() {
    
  
    
-//    myfile << " TCanvas* c3 = new TCanvas(\"" <<  vVar_simple.at(iVar).c_str() << "_cut_opt_right\",\"" <<  vVar_simple.at(iVar).c_str() << "_cut_opt_right\",400,400);" << std::endl;
-//    myfile << " TCanvas* c4 = new TCanvas(\"" <<  vVar_simple.at(iVar).c_str() << "_cut_opt_SoB_right\",\"" <<  vVar_simple.at(iVar).c_str() << "_cut_opt_SoB_right\",400,400);" << std::endl;
-//    myfile << " hs->DrawIntegralRight(c3);" << std::endl;
-//    myfile << " c3->Print(\"" << date.Data() << "_" << iCut << "/" <<  vVar_simple.at(iVar).c_str() << "_cut_opt_right.pdf\");" << std::endl;
-//    myfile << " c3->Print(\"" << date.Data() << "_" << iCut << "/" <<  vVar_simple.at(iVar).c_str() << "_cut_opt_right.png\");" << std::endl;
-//    myfile << std::endl;
-//    
-//    myfile << " hs->DrawIntegralRightSoB(c4);" << std::endl;
-//    myfile << " c4->Print(\"" << date.Data() << "_" << iCut << "/" <<  vVar_simple.at(iVar).c_str() << "_cut_opt_SoB_right.pdf\");" << std::endl;
-//    myfile << " c4->Print(\"" << date.Data() << "_" << iCut << "/" <<  vVar_simple.at(iVar).c_str() << "_cut_opt_SoB_right.png\");" << std::endl;
-//    myfile << std::endl;
+   myfile << " TCanvas* c3 = new TCanvas(\"" <<  vVar_simple.at(iVar).c_str() << "_cut_opt_right\",\"" <<  vVar_simple.at(iVar).c_str() << "_cut_opt_right\",400,400);" << std::endl;
+   myfile << " TCanvas* c4 = new TCanvas(\"" <<  vVar_simple.at(iVar).c_str() << "_cut_opt_SoB_right\",\"" <<  vVar_simple.at(iVar).c_str() << "_cut_opt_SoB_right\",400,400);" << std::endl;
+   myfile << " hs->DrawIntegralRight(c3);" << std::endl;
+   myfile << " c3->Print(\"" << date.Data() << "_" << iCut << "/" <<  vVar_simple.at(iVar).c_str() << "_cut_opt_right.pdf\");" << std::endl;
+   myfile << " c3->Print(\"" << date.Data() << "_" << iCut << "/" <<  vVar_simple.at(iVar).c_str() << "_cut_opt_right.png\");" << std::endl;
+   myfile << std::endl;
+   
+   myfile << " hs->DrawIntegralRightSoB(c4);" << std::endl;
+   myfile << " c4->Print(\"" << date.Data() << "_" << iCut << "/" <<  vVar_simple.at(iVar).c_str() << "_cut_opt_SoB_right.pdf\");" << std::endl;
+   myfile << " c4->Print(\"" << date.Data() << "_" << iCut << "/" <<  vVar_simple.at(iVar).c_str() << "_cut_opt_SoB_right.png\");" << std::endl;
+   myfile << std::endl;
 //    
 //    myfile << " TCanvas* c5 = new TCanvas(\"" <<  vVar_simple.at(iVar).c_str() << "_cut_opt_left\",\"" <<  vVar_simple.at(iVar).c_str() << "_cut_opt_left\",400,400);" << std::endl;
 //    myfile << " hs->DrawIntegralLeft(c5);" << std::endl;
@@ -435,10 +435,10 @@ void AMPlotMacroCreator_Moriond() {
 //    myfile << std::endl;
 
    
-//    myfile << " TCanvas* c7 = new TCanvas(\"" <<  vVar_simple.at(iVar).c_str() << "_norm_bkg\",\"" <<  vVar_simple.at(iVar).c_str() << "_norm_bkg\",400,400);" << std::endl;
-//    myfile << " hs->DrawNormalizedBkgSummed(c7);" << std::endl;
-//    myfile << " c7->Print(\"" << date.Data() << "_" << iCut << "/" <<  vVar_simple.at(iVar).c_str() << "_norm_bkg.pdf\");" << std::endl;
-//    myfile << " c7->Print(\"" << date.Data() << "_" << iCut << "/" <<  vVar_simple.at(iVar).c_str() << "_norm_bkg.png\");" << std::endl;
+   myfile << " TCanvas* c7 = new TCanvas(\"" <<  vVar_simple.at(iVar).c_str() << "_norm_bkg\",\"" <<  vVar_simple.at(iVar).c_str() << "_norm_bkg\",400,400);" << std::endl;
+   myfile << " hs->DrawNormalizedBkgSummed(c7);" << std::endl;
+   myfile << " c7->Print(\"" << date.Data() << "_" << iCut << "/" <<  vVar_simple.at(iVar).c_str() << "_norm_bkg.pdf\");" << std::endl;
+   myfile << " c7->Print(\"" << date.Data() << "_" << iCut << "/" <<  vVar_simple.at(iVar).c_str() << "_norm_bkg.png\");" << std::endl;
 
 //    
 //    myfile << " TCanvas* c8 = new TCanvas(\"" <<  vVar_simple.at(iVar).c_str() << "_sob_bkg\",\"" <<  vVar_simple.at(iVar).c_str() << "_sob_bkg\",400,400);" << std::endl;
