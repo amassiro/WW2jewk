@@ -34,6 +34,22 @@ r00t AMPlotMacroCreator_Moriond.cxx
 
 
 
+############################
+# for MVA: input variables #
+
+./bin/MCDATAComparisonPLOTTool.exe test/WW2jewk/Plot/testPlotInputVariables.cfg
+r00t AMPlotMacroCreator_Moriond.cxx
+
+
+#########################################
+# check possible mjj cut based analysis #
+
+./bin/MCDATAComparisonPLOTTool.exe test/WW2jewk/Plot/testOptimization.cfg
+r00t AMPlotMacroCreator_Moriond.cxx
+
+
+
+
 
 
 
