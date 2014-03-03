@@ -384,3 +384,7 @@ bash test/WW2jewk/DYRinout/dody.sh
 
 
 
+bash doDatacard.sh
+
+
+
