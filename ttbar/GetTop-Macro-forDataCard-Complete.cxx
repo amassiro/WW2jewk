@@ -822,13 +822,20 @@ int GetTop_Macro_forDataCard_Complete(int iWP, std::string suffix = "of", std::s
  ///---- data with MC subtracted ----
  for (int iZone=0; iZone<nZone; iZone++) {
   for (int iBin=0; iBin<nBin; iBin++) {
+   float temp_data = (DATA.at(iZone)).at(iBin);
    (DATA_Sub.at(iZone)).at(iBin)     = ( (DATA.at(iZone)).at(iBin) - (Other.at(iZone)).at(iBin) );
    (err_DATA_Sub.at(iZone)).at(iBin) = sqrt( (err_DATA.at(iZone)).at(iBin)*(err_DATA.at(iZone)).at(iBin) + (err_Other.at(iZone)).at(iBin)*(err_Other.at(iZone)).at(iBin) );
   
    //---- no negative events!!!
    if ((DATA_Sub.at(iZone)).at(iBin) < 0  ||  (DATA.at(iZone)).at(iBin) == 0) {
-    (DATA_Sub.at(iZone)).at(iBin) = 0;
-    (err_DATA_Sub.at(iZone)).at(iBin) = 0;
+    if (temp_data == 0) { //---- if there were at least 1 event in b-tagged region, use it!
+     (DATA_Sub.at(iZone)).at(iBin) = 0;
+     (err_DATA_Sub.at(iZone)).at(iBin) = 0;
+    }
+    else {
+     (DATA_Sub.at(iZone)).at(iBin) = 1; //---- not temp_data because I still need to subtract other backgrounds!
+//      (err_DATA_Sub.at(iZone)).at(iBin) = (err_DATA.at(iZone)).at(iBin);
+     }
    }
   }
  }
