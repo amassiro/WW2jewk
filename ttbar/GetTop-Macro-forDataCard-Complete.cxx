@@ -447,44 +447,40 @@ int GetTop_Macro_forDataCard_Complete(int iWP, std::string suffix = "of", std::s
 
  if (binTCHE == 2) {
   ///--- AB
-  zoneCut.push_back("(nbjettche==0 && (((abs(jeteta1)<abs(jeteta2))  && (jettche1<1.00)) || ((abs(jeteta1)>=abs(jeteta2))  && (jettche2<1.00)))       \
-                                      (((abs(jeteta1)<abs(jeteta2))  && (jettche2>1.00)) || ((abs(jeteta1)>=abs(jeteta2))  && (jettche1>1.00))) \
+  zoneCut.push_back("((nbjettche==0 && (((abs(jeteta1)<abs(jeteta2))  && (jettche1<1.00)) || ((abs(jeteta1)>=abs(jeteta2))  && (jettche2<1.00)))       \
+                                   && (((abs(jeteta1)<abs(jeteta2))  && (jettche2>1.00)) || ((abs(jeteta1)>=abs(jeteta2))  && (jettche1>1.00))) \
                       ) || \
                      (nbjettche==1 && (((abs(jeteta1)<abs(jeteta2))  && (jettche1>2.10)) || ((abs(jeteta1)>=abs(jeteta2))  && (jettche2>2.10)))       \
-                                      (((abs(jeteta1)<abs(jeteta2))  && (jettche2>1.00)) || ((abs(jeteta1)>=abs(jeteta2))  && (jettche1>1.00))) \
-                     )");  
+                                   && (((abs(jeteta1)<abs(jeteta2))  && (jettche2>1.00)) || ((abs(jeteta1)>=abs(jeteta2))  && (jettche1>1.00))) \
+                     ))");  
   ///--- B
   zoneCut.push_back("(nbjettche==1 && (((abs(jeteta1)<abs(jeteta2))  && (jettche1>2.10)) || ((abs(jeteta1)>=abs(jeteta2))  && (jettche2>2.10)))       \
-                                      (((abs(jeteta1)<abs(jeteta2))  && (jettche2>1.00)) || ((abs(jeteta1)>=abs(jeteta2))  && (jettche1>1.00))) \
+                                   && (((abs(jeteta1)<abs(jeteta2))  && (jettche2>1.00)) || ((abs(jeteta1)>=abs(jeteta2))  && (jettche1>1.00))) \
                      )");
   ///--- A
   zoneCut.push_back("(nbjettche==0 && (((abs(jeteta1)<abs(jeteta2))  && (jettche1<1.00)) || ((abs(jeteta1)>=abs(jeteta2))  && (jettche2<1.00)))       \
-                                      (((abs(jeteta1)<abs(jeteta2))  && (jettche2>1.00)) || ((abs(jeteta1)>=abs(jeteta2))  && (jettche1>1.00))) \
+                                   && (((abs(jeteta1)<abs(jeteta2))  && (jettche2>1.00)) || ((abs(jeteta1)>=abs(jeteta2))  && (jettche1>1.00))) \
                      )");  
  }
 
   if (binTCHE == 3) {
   ///--- AB
-  zoneCut.push_back("(nbjettche==0 && (((abs(jeteta1)<abs(jeteta2))  && (jettche2<1.00)) || ((abs(jeteta1)>=abs(jeteta2))  && (jettche1<1.00)))       \
+  zoneCut.push_back("((nbjettche==0 && (((abs(jeteta1)<abs(jeteta2))  && (jettche2<1.00)) || ((abs(jeteta1)>=abs(jeteta2))  && (jettche1<1.00)))       \
                                       (((abs(jeteta1)<abs(jeteta2))  && (jettche1>1.00)) || ((abs(jeteta1)>=abs(jeteta2))  && (jettche2>1.00))) \
                       ) || \
                      (nbjettche==1 && (((abs(jeteta1)<abs(jeteta2))  && (jettche2>2.10)) || ((abs(jeteta1)>=abs(jeteta2))  && (jettche1>2.10)))       \
-                                      (((abs(jeteta1)<abs(jeteta2))  && (jettche1>1.00)) || ((abs(jeteta1)>=abs(jeteta2))  && (jettche2>1.00))) \
-                     )");  
+                                   && (((abs(jeteta1)<abs(jeteta2))  && (jettche1>1.00)) || ((abs(jeteta1)>=abs(jeteta2))  && (jettche2>1.00))) \
+                     ))");  
   ///--- B
   zoneCut.push_back("(nbjettche==1 && (((abs(jeteta1)<abs(jeteta2))  && (jettche2>2.10)) || ((abs(jeteta1)>=abs(jeteta2))  && (jettche1>2.10)))       \
-                                      (((abs(jeteta1)<abs(jeteta2))  && (jettche1>1.00)) || ((abs(jeteta1)>=abs(jeteta2))  && (jettche2>1.00))) \
+                                   && (((abs(jeteta1)<abs(jeteta2))  && (jettche1>1.00)) || ((abs(jeteta1)>=abs(jeteta2))  && (jettche2>1.00))) \
                      )");
   ///--- A
   zoneCut.push_back("(nbjettche==0 && (((abs(jeteta1)<abs(jeteta2))  && (jettche2<1.00)) || ((abs(jeteta1)>=abs(jeteta2))  && (jettche1<1.00)))       \
-                                      (((abs(jeteta1)<abs(jeteta2))  && (jettche1>1.00)) || ((abs(jeteta1)>=abs(jeteta2))  && (jettche2>1.00))) \
+                                   && (((abs(jeteta1)<abs(jeteta2))  && (jettche1>1.00)) || ((abs(jeteta1)>=abs(jeteta2))  && (jettche2>1.00))) \
                      )");  
  }
  int nZone = zoneCut.size();
- 
- 
- 
- 
  
  
  
