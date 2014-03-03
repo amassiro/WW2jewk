@@ -482,7 +482,6 @@ int GetTop_Macro_forDataCard_Complete(int iWP, std::string suffix = "of", std::s
  }
  int nZone = zoneCut.size();
  
- (((abs(jeteta1)<abs(jeteta2))&&(jettche2<1.00))||((abs(jeteta1)>=abs(jeteta2))&&(jettche1<1.00)))(((abs(jeteta1)<abs(jeteta2))&&(jettche1>1.00))||((abs(jeteta1)>=abs(jeteta2))&&(jettche2>1.00)))
  
  
  
