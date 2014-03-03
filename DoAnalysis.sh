@@ -166,6 +166,8 @@ r00t test/createDDAnalysisWW2jewk.cxx\(\"-shape\"\)
 r00t test/createDDAnalysisWW2jewk.cxx
 
 
+bash test/WW2jewk/ttbar/dottbarshape.sh
+bash test/WW2jewk/ttbar/dottbar.sh
 
 
 
