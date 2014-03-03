@@ -57,8 +57,8 @@ echo DY     > test/WW2jewk/DYRinout/result-SF-MC-mumu.txt
 echo DY     > test/WW2jewk/DYRinout/result-R.txt
 
 
-for ((i=1; i<3; i++)) do  echo "root -l  test/WW2jewk/DYRinout/GetDY-Result-forDataCard.cxx\(\\\"out_DYRinout_Latinos_2jet_WW2jewk_20Nov2000-ForResult.root\\\",$i,3,\\"\\"\)" ; done
-for ((i=1; i<3; i++)) do  root -l  test/WW2jewk/DYRinout/GetDY-Result-forDataCard.cxx\(\"out_DYRinout_Latinos_2jet_WW2jewk_20Nov2000-ForResult.root\",$i,3,\"\"\) ; done
+for ((i=1; i<5; i++)) do  echo "root -l  test/WW2jewk/DYRinout/GetDY-Result-forDataCard.cxx\(\\\"out_DYRinout_Latinos_2jet_WW2jewk_20Nov2000-ForResult.root\\\",$i,5,\\"\\"\)" ; done
+for ((i=1; i<5; i++)) do  root -l  test/WW2jewk/DYRinout/GetDY-Result-forDataCard.cxx\(\"out_DYRinout_Latinos_2jet_WW2jewk_20Nov2000-ForResult.root\",$i,5,\"\"\) ; done
 
 
 
@@ -72,11 +72,11 @@ more test/WW2jewk/DYRinout/result-SF-MC-mumu-shape.txt
 ####################
 #### @ WW level ####
 
-for ((i=4; i<5; i++)) do  echo "root -l  test/WW2jewk/DYRinout/GetDY-Result-forDataCard.cxx\(\\\"out_DYRinout_Latinos_2jet_WW2jewk_20Nov2000-ForResult.root\\\",$i,3,\\"-shape\\"\)" ; done
-for ((i=4; i<5; i++)) do  root -l  test/WW2jewk/DYRinout/GetDY-Result-forDataCard.cxx\(\"out_DYRinout_Latinos_2jet_WW2jewk_20Nov2000-ForResult.root\",$i,3,\"-shape\"\) ; done
+for ((i=6; i<7; i++)) do  echo "root -l  test/WW2jewk/DYRinout/GetDY-Result-forDataCard.cxx\(\\\"out_DYRinout_Latinos_2jet_WW2jewk_20Nov2000-ForResult.root\\\",$i,5,\\"-shape\\"\)" ; done
+for ((i=6; i<7; i++)) do  root -l  test/WW2jewk/DYRinout/GetDY-Result-forDataCard.cxx\(\"out_DYRinout_Latinos_2jet_WW2jewk_20Nov2000-ForResult.root\",$i,5,\"-shape\"\) ; done
 
-for ((i=4; i<5; i++)) do  echo "root -l  test/WW2jewk/DYRinout/GetDY-Result-forDataCard.cxx\(\\\"out_DYRinout_Latinos_2jet_WW2jewk_20Nov2000-ForResult.root\\\",$i,3,\\"-shape-WW\\"\)" ; done
-for ((i=4; i<5; i++)) do  root -l  test/WW2jewk/DYRinout/GetDY-Result-forDataCard.cxx\(\"out_DYRinout_Latinos_2jet_WW2jewk_20Nov2000-ForResult.root\",$i,3,\"-shape-WW\"\) ; done
+for ((i=6; i<7; i++)) do  echo "root -l  test/WW2jewk/DYRinout/GetDY-Result-forDataCard.cxx\(\\\"out_DYRinout_Latinos_2jet_WW2jewk_20Nov2000-ForResult.root\\\",$i,5,\\"-shape-WW\\"\)" ; done
+for ((i=6; i<7; i++)) do  root -l  test/WW2jewk/DYRinout/GetDY-Result-forDataCard.cxx\(\"out_DYRinout_Latinos_2jet_WW2jewk_20Nov2000-ForResult.root\",$i,5,\"-shape-WW\"\) ; done
 
 
 ##################################################
