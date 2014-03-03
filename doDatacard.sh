@@ -45,3 +45,34 @@ cd ..
 rm WW2jewkDFcutTCHE21.tgz
 pack.py -p WW2jewkDFcutTCHE21
 
+
+
+
+
+cd WW2jewkSFcutTCHE05CJ
+bash doIt.sh
+cd ..
+rm WW2jewkSFcutTCHE05CJ.tgz
+pack.py -p WW2jewkSFcutTCHE05CJ
+
+cd WW2jewkDFcutTCHE05CJ
+bash doIt.sh
+cd ..
+rm WW2jewkDFcutTCHE05CJ.tgz
+pack.py -p WW2jewkDFcutTCHE05CJ
+
+
+
+cd WW2jewkSFcutTCHE05FJ
+bash doIt.sh
+cd ..
+rm WW2jewkSFcutTCHE05FJ.tgz
+pack.py -p WW2jewkSFcutTCHE05FJ
+
+cd WW2jewkDFcutTCHE05FJ
+bash doIt.sh
+cd ..
+rm WW2jewkDFcutTCHE05FJ.tgz
+pack.py -p WW2jewkDFcutTCHE05FJ
+
+

@@ -245,12 +245,12 @@ int GetTop_Macro_forDataCard_Complete(int iWP, std::string suffix = "of", std::s
  //---- cut based analysis
  
  if ( binCutPt == 10) {
-  minpt = 30;
-  maxpt = 70;
+  minpt =  30;
+  maxpt = 100;
  }
  if ( binCutPt == 11) {
-  minpt = 70;
-  maxpt = -1;
+  minpt = 100;
+  maxpt =  -1;
  }
  
  
