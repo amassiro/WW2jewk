@@ -448,7 +448,7 @@ int GetTop_Macro_forDataCard_Complete(int iWP, std::string suffix = "of", std::s
  if (binTCHE == 2) {
   ///--- AB
   zoneCut.push_back("((nbjettche==0 && (((abs(jeteta1)<abs(jeteta2))  && (jettche1<1.00)) || ((abs(jeteta1)>=abs(jeteta2))  && (jettche2<1.00)))       \
-                                   && (((abs(jeteta1)<abs(jeteta2))  && (jettche2>1.00)) || ((abs(jeteta1)>=abs(jeteta2))  && (jettche1>1.00))) \
+                                    && (((abs(jeteta1)<abs(jeteta2))  && (jettche2>1.00)) || ((abs(jeteta1)>=abs(jeteta2))  && (jettche1>1.00))) \
                       ) || \
                      (nbjettche==1 && (((abs(jeteta1)<abs(jeteta2))  && (jettche1>2.10)) || ((abs(jeteta1)>=abs(jeteta2))  && (jettche2>2.10)))       \
                                    && (((abs(jeteta1)<abs(jeteta2))  && (jettche2>1.00)) || ((abs(jeteta1)>=abs(jeteta2))  && (jettche1>1.00))) \
@@ -466,7 +466,7 @@ int GetTop_Macro_forDataCard_Complete(int iWP, std::string suffix = "of", std::s
   if (binTCHE == 3) {
   ///--- AB
   zoneCut.push_back("((nbjettche==0 && (((abs(jeteta1)<abs(jeteta2))  && (jettche2<1.00)) || ((abs(jeteta1)>=abs(jeteta2))  && (jettche1<1.00)))       \
-                                      (((abs(jeteta1)<abs(jeteta2))  && (jettche1>1.00)) || ((abs(jeteta1)>=abs(jeteta2))  && (jettche2>1.00))) \
+                                    && (((abs(jeteta1)<abs(jeteta2))  && (jettche1>1.00)) || ((abs(jeteta1)>=abs(jeteta2))  && (jettche2>1.00))) \
                       ) || \
                      (nbjettche==1 && (((abs(jeteta1)<abs(jeteta2))  && (jettche2>2.10)) || ((abs(jeteta1)>=abs(jeteta2))  && (jettche1>2.10)))       \
                                    && (((abs(jeteta1)<abs(jeteta2))  && (jettche1>1.00)) || ((abs(jeteta1)>=abs(jeteta2))  && (jettche2>1.00))) \
@@ -481,6 +481,8 @@ int GetTop_Macro_forDataCard_Complete(int iWP, std::string suffix = "of", std::s
                      )");  
  }
  int nZone = zoneCut.size();
+ 
+ (((abs(jeteta1)<abs(jeteta2))&&(jettche2<1.00))||((abs(jeteta1)>=abs(jeteta2))&&(jettche1<1.00)))(((abs(jeteta1)<abs(jeteta2))&&(jettche1>1.00))||((abs(jeteta1)>=abs(jeteta2))&&(jettche2>1.00)))
  
  
  
