@@ -9,6 +9,9 @@ Process:
 
     VBF_Wp_Wm
 
+where:
+
+    /home/amassiro/Generation/MINLO/POWHEG-BOX/VBF_Wp_Wm
 
 # Install
 
@@ -53,19 +56,19 @@ Only em events are produced: now shuffle!
 
 from
 
-   e+m-
+    e+m-
 
 to
 
-   em
-   ee
-   et
-   mm
-   me
-   mt
-   tm
-   te
-   tt
+    em
+    ee
+    et
+    mm
+    me
+    mt
+    tm
+    te
+    tt
 
 
     c++ -o Transform.exe `root-config --glibs --cflags` -lm Transform.cpp
