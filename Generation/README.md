@@ -50,6 +50,9 @@ follow instructions in manual.pdf (4 steps)
 
 merged together in:
 
+    cat pwgevents-0001.lhe | grep -v "/LesHouchesEvents" > tmp.lhe
+    cat tmp.lhe pwgevents-0002.lhe  > pwgevents.lhe
+
     pwgevents.lhe
 
 Only em events are produced: now shuffle!
@@ -71,14 +74,21 @@ to
     tt
 
 
+    cp pwgevents.lhe /afs/cern.ch/user/a/amassiro/work/Generation/CMSSW_5_3_14_patch2/src/WW2jewk/Generation/
     c++ -o Transform.exe `root-config --glibs --cflags` -lm Transform.cpp
-    ./Transform.exe  pwgevents-0001.lhe pwgevents-0001-shuffled.lhe
+    ./Transform.exe  pwgevents.lhe pwgevents-shuffled.lhe
+
+    NB: it helps in cleaning the lhe file as well!
+        removal of unused comments and headers
 
 
-Now hadronize & more 10k events in CMS
+# hadronization and CMSSW
 
+where:
 
+    /afs/cern.ch/user/a/amassiro/work/Generation/CMSSW_5_3_14_patch2/src/WW2jewk/Generation/
 
+look at lxbatch folder
 
 
 
