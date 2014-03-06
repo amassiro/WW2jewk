@@ -15,12 +15,12 @@ where:
 
 # Install
 
-* // cd CMSSW_6_2_0/src/    ---> don't do it!
-* cd CMSSW_5_3_9/src/
-* cmsenv
-* cd ../../
-* cd POWHEG-BOX/VBF_Wp_Wm
-* make -j 4
+    // cd CMSSW_6_2_0/src/    ---> don't do it!
+    cd CMSSW_5_3_9/src/
+    cmsenv
+    cd ../../
+    cd POWHEG-BOX/VBF_Wp_Wm
+    make -j 4
 
 
 since I cannot use the cmssw ones
