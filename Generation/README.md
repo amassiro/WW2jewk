@@ -90,6 +90,9 @@ where:
 
 look at lxbatch folder
 
+First create edm root version:
+
+    cmsDriver.py MCDBtoEDM --conditions START53_V19::All -s NONE --eventcontent RAWSIM --datatier GEN --filein file:pwgevents-shuffled.lhe      --fileout ww2j_NLO_powheg.root  -n -1
 
 
 
