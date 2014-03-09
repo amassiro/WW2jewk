@@ -95,7 +95,7 @@ Decay & hadronize: AODSIM step lxbatch
 
    params_lxbatch_AODSIM.CFG has the following input parameters:
 
-   - BASEDir: complete path of this lxbatch directory, eg:   
+   - BASEDir: complete path of this lxbatch directory, eg:
 
                 /afs/cern.ch/user/a/amassiro/work/Generation/CMSSW_5_3_14_patch2/src/WW2jewk/Generation/lxbatch/
 
