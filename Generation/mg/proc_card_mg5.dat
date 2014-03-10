@@ -1,0 +1,50 @@
+#************************************************************
+#*                     MadGraph5_aMC@NLO                    *
+#*                                                          *
+#*                *                       *                 *
+#*                  *        * *        *                   *
+#*                    * * * * 5 * * * *                     *
+#*                  *        * *        *                   *
+#*                *                       *                 *
+#*                                                          *
+#*                                                          *
+#*         VERSION 2.1.0                 2014-02-21         *
+#*                                                          *
+#*    The MadGraph5_aMC@NLO Development Team - Find us at   *
+#*    https://server06.fynu.ucl.ac.be/projects/madgraph     *
+#*                                                          *
+#************************************************************
+#*                                                          *
+#*               Command File for MadGraph5_aMC@NLO         *
+#*                                                          *
+#*     run as ./bin/mg5_aMC  filename                       *
+#*                                                          *
+#************************************************************
+
+set group_subprocesses Auto
+set ignore_six_quark_processes False
+set loop_optimized_output True
+set gauge unitary
+set complex_mass_scheme False
+import model sm
+define p = g u c d s u~ c~ d~ s~
+define j = g u c d s u~ c~ d~ s~
+define l+ = e+ mu+ tau+
+define l- = e- mu- tau-
+define vl = ve vm vt
+define vl~ = ve~ vm~ vt~
+generate p p > w+ w- p p QED=4 QCD=99, w+ > l+ vl, w- > l- vl~
+output WW2j_EWKQCD_DIR_LO
+
+
+# ewk+qcd
+generate p p > w+ w- p p QED=4 QCD=99, w+ > l+ vl, w- > l- vl~
+output WW2j_EWKQCD_DIR_LO
+
+# ewk
+generate p p > w+ w- p p QED=4 QCD=0, w+ > l+ vl, w- > l- vl~
+output WW2j_EWK_DIR_LO
+
+# qcd
+generate p p > w+ w- p p QED=2 QCD=99, w+ > l+ vl, w- > l- vl~
+output WW2j_QCD_DIR_LO
