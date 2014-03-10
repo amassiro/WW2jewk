@@ -10,3 +10,7 @@ hardcoded in skim.py.
 Then
 
     cmsRun latinosYieldSkim.py.ww2j.py    print  isMC=True globalTag=GR_R_52_V7  outputFile=/tmp/amassiro/latinosYieldSkim_MC_ww2jnlo_100k.root   correctMetPhi=False   doNoFilter=True
+
+
+    cmsRun step3.py print inputFiles=file:/tmp/amassiro/latinosYieldSkim_MC_ww2jnlo_100k.root  label=ww2j id=1234 scale=1 outputFile=latinosStep3_ww2j.root  doNoFilter=True
+
