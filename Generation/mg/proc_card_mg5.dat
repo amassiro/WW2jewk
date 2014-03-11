@@ -29,8 +29,8 @@ set complex_mass_scheme False
 import model sm
 define p = g u c d s u~ c~ d~ s~
 define j = g u c d s u~ c~ d~ s~
-define l+ = e+ mu+ tau+
-define l- = e- mu- tau-
+define l+ = e+ mu+ ta+
+define l- = e- mu- ta-
 define vl = ve vm vt
 define vl~ = ve~ vm~ vt~
 generate p p > w+ w- p p QED=4 QCD=99, w+ > l+ vl, w- > l- vl~
