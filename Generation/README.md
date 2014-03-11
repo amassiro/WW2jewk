@@ -43,6 +43,13 @@ follow instructions in manual.pdf (4 steps)
     cat pwg-3-0001-stat.dat  | grep Total
 
 
+    btilde Total (pos.-|neg.|):  2.467605012301833E-003  +-  8.273806561210325E-005
+    this is only (-11,24)(-14,13) -> e+ mu-
+    then: em, ee, et, mm, me, mt, tm, te, tt  -> x9
+    cross section = 2.467605012301833E-003 * 9 = 2.22084451107164987e-02 pb
+
+
+
 # Result
 
     pwgevents-0001.lhe
