@@ -7,7 +7,7 @@ Create list of files
 
 hardcoded in skim.py.
 
-Then
+Then:
 
     cmsRun latinosYieldSkim.py.ww2j.py    print  isMC=True globalTag=GR_R_52_V7  outputFile=/tmp/amassiro/latinosYieldSkim_MC_ww2jnlo_100k.root   correctMetPhi=False   doNoFilter=True
 
@@ -19,7 +19,7 @@ Then
 
 
 
-change baseW
+Change baseW:
 
     cross section = 2.467605012301833E-003 * 9 = 2.22084451107164987e-02 pb
     total events processed (looking at root file, since it has no events rejected): 24206
