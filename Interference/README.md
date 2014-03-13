@@ -76,6 +76,24 @@ Draw:
     
 # Madgraph    
     
+Generation:
+
+    cd /home/amassiro/Generation/MG5/MG5_aMC_v2_0_0
+    
+    cd WW2j_QCD_DIR_LO/Events/run_02
+    gunzip -d  unweighted_events.lhe.gz
+    cp unweighted_events.lhe /data/amassiro/CMSSWLHE/WW2jetsMadgraph/QCD_1M.lhe
+    cd -
+    
+    cd WW2j_EWK_DIR_LO/Events/run_02
+    gunzip -d  unweighted_events.lhe.gz
+    cp unweighted_events.lhe /data/amassiro/CMSSWLHE/WW2jetsMadgraph/EWK_1M.lhe
+    cd -
+    
+    cd WW2j_EWKQCD_DIR_LO/Events/run_02
+    gunzip -d  unweighted_events.lhe.gz
+    cp unweighted_events.lhe /data/amassiro/CMSSWLHE/WW2jetsMadgraph/EWKQCD_1M.lhe
+    cd -
     
     cmsneu
     /home/amassiro/Generation/MINLO/WW2jewk/Interference/
@@ -95,12 +113,16 @@ Dump:
     ./ntupleMaker.exe   /data/amassiro/CMSSWLHE/WW2jetsMadgraph/QCD.lhe     QCD_MG.root
     ./ntupleMaker.exe   /data/amassiro/CMSSWLHE/WW2jetsMadgraph/EWKQCD.lhe  EWKQCD_MG.root
     
+    ./ntupleMaker.exe   /data/amassiro/CMSSWLHE/WW2jetsMadgraph/EWK_1M.lhe     EWK_MG.root
+    ./ntupleMaker.exe   /data/amassiro/CMSSWLHE/WW2jetsMadgraph/QCD_1M.lhe     QCD_MG.root
+    ./ntupleMaker.exe   /data/amassiro/CMSSWLHE/WW2jetsMadgraph/EWKQCD_1M.lhe  EWKQCD_MG.root
 
 Cross-section:
 
-    0.008021 +- 2.212e-05 pb  EWK
-    0.1663 +- 0.0003664 pb    QCD
-    0.1743 +- 0.0003675 pb    EWKQCD
+         with 10k events                    with 1M events
+    0.008021 +- 2.212e-05 pb  EWK        0.008115 +- 2.12e-06 pb
+    0.1663 +- 0.0003664 pb    QCD        0.1668 +- 5.003e-05 pb
+    0.1743 +- 0.0003675 pb    EWKQCD     0.1754 +- 5.231e-05 pb
 
     
 Draw:
@@ -113,18 +135,13 @@ Draw:
     r00t  DrawMG.cxx\(\"pt1\",10,0,200,\"pt1\ [GeV]\"\)
     r00t  DrawMG.cxx\(\"pt2\",10,0,200,\"pt2\ [GeV]\"\)
 
+
+    
+        
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
+
     
     
     
