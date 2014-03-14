@@ -45,9 +45,15 @@ void DrawMG(std::string var = "mWW", int NBIN = 1000, int MIN = 0, int MAX = 100
 //  0.1663 +- 0.0003664 pb    QCD
 //  0.1743 +- 0.0003675 pb    EWKQCD
  
- gROOT->ProcessLine ("float xsecEW[100] = {0.008021};");
- gROOT->ProcessLine ("float xsecQCD[100] = {0.1663};");
- gROOT->ProcessLine ("float xsecEWQCD[100] = {0.1743};");
+//  with 10k events                    with 1M events
+//  0.008021 +- 2.212e-05 pb  EWK        0.008115 +- 2.12e-06 pb
+//  0.1663 +- 0.0003664 pb    QCD        0.1668 +- 5.003e-05 pb
+//  0.1743 +- 0.0003675 pb    EWKQCD     0.1754 +- 5.231e-05 pb
+ 
+ 
+ gROOT->ProcessLine ("float xsecEW[100] = {0.008115};");
+ gROOT->ProcessLine ("float xsecQCD[100] = {0.1668};");
+ gROOT->ProcessLine ("float xsecEWQCD[100] = {0.1754};");
  
  
 //  TString cut = Form ("jetpt1>30 && jetpt2>30 && mWW>130");
