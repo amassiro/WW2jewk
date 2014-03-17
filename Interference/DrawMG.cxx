@@ -27,11 +27,11 @@ void DrawMG(std::string var = "mWW", int NBIN = 1000, int MIN = 0, int MAX = 100
  TNtuple* t2 = (TNtuple*) f2->Get ("ntu");
  TNtuple* t3 = (TNtuple*) f3->Get ("ntu");
  
- TH1F* h_mWW_1 = new TH1F("h_mWW_1","",NBIN,0,MAX);
- TH1F* h_mWW_2 = new TH1F("h_mWW_2","",NBIN,0,MAX);
- TH1F* h_mWW_3 = new TH1F("h_mWW_3","",NBIN,0,MAX);
- TH1F* h_Ratio = new TH1F("h_mWW_ratio","h_mWW_ratio",NBIN,0,MAX);
- TH1F* h_Subtraction = new TH1F("h_Subtraction","h_Subtraction",NBIN,0,MAX);
+ TH1F* h_mWW_1 = new TH1F("h_mWW_1","EW MG",NBIN,0,MAX);
+ TH1F* h_mWW_2 = new TH1F("h_mWW_2","QCD MG",NBIN,0,MAX);
+ TH1F* h_mWW_3 = new TH1F("h_mWW_3","EW+QCD MG",NBIN,0,MAX);
+ TH1F* h_Ratio = new TH1F("h_mWW_ratio","h_mWW_ratio MG",NBIN,0,MAX);
+ TH1F* h_Subtraction = new TH1F("h_Subtraction","h_Subtraction MG",NBIN,0,MAX);
  TH1F* h_I = new TH1F("h_I","h_I",NBIN,0,MAX);
  
  h_mWW_1->GetXaxis()->SetTitle(varHR.c_str());
@@ -40,6 +40,12 @@ void DrawMG(std::string var = "mWW", int NBIN = 1000, int MIN = 0, int MAX = 100
  h_Ratio->GetXaxis()->SetTitle(varHR.c_str());
  h_Subtraction->GetXaxis()->SetTitle(varHR.c_str());
  h_I->GetXaxis()->SetTitle(varHR.c_str());
+ 
+ h_mWW_1->GetYaxis()->SetTitle("fb");
+ h_mWW_2->GetYaxis()->SetTitle("fb");
+ h_mWW_3->GetYaxis()->SetTitle("fb");
+ h_Subtraction->GetYaxis()->SetTitle("fb");
+ h_I->GetYaxis()->SetTitle("fb");
  
 //  0.008021 +- 2.212e-05 pb  EWK
 //  0.1663 +- 0.0003664 pb    QCD
@@ -59,8 +65,8 @@ void DrawMG(std::string var = "mWW", int NBIN = 1000, int MIN = 0, int MAX = 100
 //  TString cut = Form ("jetpt1>30 && jetpt2>30 && mWW>130");
 //  TString cut = Form ("jetpt1>30 && jetpt2>30");
 //  TString cut = Form ("jetpt1>30 && jetpt2>30 && mjj>200");
-//  TString cut = Form ("jetpt1>30 && jetpt2>30 && mjj>300 && pt1>20 && pt2>20");
- TString cut = Form ("jetpt1>30 && jetpt2>30");
+ TString cut = Form ("jetpt1>30 && jetpt2>30 && mjj>300 && pt1>20 && pt2>20");
+//  TString cut = Form ("jetpt1>30 && jetpt2>30");
  //  TString cut = Form ("1");
  
  int tot_1 = t1 -> GetEntries();

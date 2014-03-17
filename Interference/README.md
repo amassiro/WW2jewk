@@ -130,6 +130,7 @@ Draw:
 
     r00t  DrawMG.cxx\(\"mWW\",100,0,2000,\"mWW\ [GeV]\"\)
     r00t  DrawMG.cxx\(\"mWW\",50,0,2000,\"mWW\ [GeV]\"\)
+    r00t  DrawMG.cxx\(\"mjj\",100,0,4000,\"mjj\ [GeV]\"\)
     r00t  DrawMG.cxx\(\"mjj\",300,0,6000,\"mjj\ [GeV]\"\)
     r00t  DrawMG.cxx\(\"mjj\",100,0,2000,\"mjj\ [GeV]\"\)
     r00t  DrawMG.cxx\(\"mjj\",30,0,4000,\"mjj\ [GeV]\"\)
