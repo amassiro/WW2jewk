@@ -69,6 +69,7 @@ void Draw(int kind = 0, std::string var = "mWW", int NBIN = 1000, int MIN = 0, i
 //  TString cut = Form ("jetpt1>30 && jetpt2>30 && mjj>200");
 //  TString cut = Form ("jetpt1>30 && jetpt2>30 && mjj>300");
  TString cut = Form ("jetpt1>30 && jetpt2>30 && mjj>300 && numb == 0");
+//  TString cut = Form ("jetpt1>30 && jetpt2>30 && numb == 0");
  //  TString cut = Form ("1");
  
  int tot_1 = t1 -> GetEntries();

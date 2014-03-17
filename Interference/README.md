@@ -65,6 +65,7 @@ Draw:
 
     r00t  Draw.cxx\(0,\"mWW\",100,0,2000,\"mWW\ [GeV]\"\)
     r00t  Draw.cxx\(0,\"mjj\",100,0,2000,\"mjj\ [GeV]\"\)
+    r00t  Draw.cxx\(0,\"mjj\",100,0,4000,\"mjj\ [GeV]\"\)
     r00t  Draw.cxx\(0,\"mll\",100,0,200,\"mll\ [GeV]\"\)
     r00t  Draw.cxx\(0,\"jetpt1\",100,0,200\,\"jetpt1\ [GeV]\"\)
     r00t  Draw.cxx\(0,\"jetpt2\",100,0,200,\"jetpt2\ [GeV]\"\)
@@ -128,9 +129,14 @@ Cross-section:
 Draw:
 
     r00t  DrawMG.cxx\(\"mWW\",100,0,2000,\"mWW\ [GeV]\"\)
+    r00t  DrawMG.cxx\(\"mWW\",50,0,2000,\"mWW\ [GeV]\"\)
+    r00t  DrawMG.cxx\(\"mjj\",300,0,6000,\"mjj\ [GeV]\"\)
     r00t  DrawMG.cxx\(\"mjj\",100,0,2000,\"mjj\ [GeV]\"\)
+    r00t  DrawMG.cxx\(\"mjj\",30,0,4000,\"mjj\ [GeV]\"\)
     r00t  DrawMG.cxx\(\"mll\",100,0,200,\"mll\ [GeV]\"\)
+    r00t  DrawMG.cxx\(\"mll\",100,0,2000,\"mll\ [GeV]\"\)
     r00t  DrawMG.cxx\(\"jetpt1\",100,0,200\,\"jetpt1\ [GeV]\"\)
+    r00t  DrawMG.cxx\(\"jetpt1\",100,0,2000\,\"jetpt1\ [GeV]\"\)
     r00t  DrawMG.cxx\(\"jetpt2\",100,0,200,\"jetpt2\ [GeV]\"\)
     r00t  DrawMG.cxx\(\"pt1\",100,0,200,\"pt1\ [GeV]\"\)
     r00t  DrawMG.cxx\(\"pt2\",100,0,200,\"pt2\ [GeV]\"\)

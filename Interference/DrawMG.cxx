@@ -59,7 +59,8 @@ void DrawMG(std::string var = "mWW", int NBIN = 1000, int MIN = 0, int MAX = 100
 //  TString cut = Form ("jetpt1>30 && jetpt2>30 && mWW>130");
 //  TString cut = Form ("jetpt1>30 && jetpt2>30");
 //  TString cut = Form ("jetpt1>30 && jetpt2>30 && mjj>200");
- TString cut = Form ("jetpt1>30 && jetpt2>30 && mjj>300");
+//  TString cut = Form ("jetpt1>30 && jetpt2>30 && mjj>300 && pt1>20 && pt2>20");
+ TString cut = Form ("jetpt1>30 && jetpt2>30");
  //  TString cut = Form ("1");
  
  int tot_1 = t1 -> GetEntries();
