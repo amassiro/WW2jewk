@@ -20,11 +20,58 @@
 #  @WW level
 #
 #
-1             &&  ch1*ch2<0 && pt1>20 && pt2>10  && mjj>200  && detajj>1.0  && jetpt1>30   && jetpt2>30   && njetvbf==0   && mll>70   &&  trigger==1.   && zveto==1  && bveto_mu==1 && nextra==0 &&    bveto_ip==1  &&  nbjettche==0  && mpmet>20.    && pfmet>20   &&   (!sameflav || pfmet > 80.0)  &&   njet>=2      
-sameflav      &&  ch1*ch2<0 && pt1>20 && pt2>10  && mjj>200  && detajj>1.0  && jetpt1>30   && jetpt2>30   && njetvbf==0   && mll>70   &&  trigger==1.   && zveto==1  && bveto_mu==1 && nextra==0 &&    bveto_ip==1  &&  nbjettche==0  && mpmet>20.    && pfmet>20   &&   (!sameflav || pfmet > 80.0)  &&   njet>=2     
-(!sameflav)   &&  ch1*ch2<0 && pt1>20 && pt2>10  && mjj>200  && detajj>1.0  && jetpt1>30   && jetpt2>30   && njetvbf==0   && mll>70   &&  trigger==1.   && zveto==1  && bveto_mu==1 && nextra==0 &&    bveto_ip==1  &&  nbjettche==0  && mpmet>20.    && pfmet>20   &&   (!sameflav || pfmet > 80.0)  &&   njet>=2     
+# 1             &&  ch1*ch2<0 && pt1>20 && pt2>20   && jetpt1>30   && jetpt2>30   && mjj>150 && detajj>0.5 && mll>50     &&  trigger==1.   && zveto==1  && bveto_mu==1 && nextra==0 &&    bveto_ip==1  &&  nbjettche==0  && mpmet>20.    && pfmet>20   &&   (!sameflav || pfmet > 45.0)  &&   njet>=2      
+# sameflav      &&  ch1*ch2<0 && pt1>20 && pt2>20   && jetpt1>30   && jetpt2>30   && mjj>150 && detajj>0.5 && mll>50     &&  trigger==1.   && zveto==1  && bveto_mu==1 && nextra==0 &&    bveto_ip==1  &&  nbjettche==0  && mpmet>20.    && pfmet>20   &&   (!sameflav || pfmet > 45.0)  &&   njet>=2     
+# (!sameflav)   &&  ch1*ch2<0 && pt1>20 && pt2>20   && jetpt1>30   && jetpt2>30   && mjj>150 && detajj>0.5 && mll>50     &&  trigger==1.   && zveto==1  && bveto_mu==1 && nextra==0 &&    bveto_ip==1  &&  nbjettche==0  && mpmet>20.    && pfmet>20   &&   (!sameflav || pfmet > 45.0)  &&   njet>=2     
+#
+#
+# 1             &&  ch1*ch2<0 && pt1>20 && pt2>20  && mjj>350  && detajj>1.0  && jetpt1>30   && jetpt2>30   && njetvbf==0   && mll>50     &&  trigger==1.   && zveto==1  && bveto_mu==1 && nextra==0 &&    bveto_ip==1  &&  nbjettche==0  && mpmet>20.    && pfmet>20   &&   (!sameflav || pfmet > 45.0)  &&   njet>=2      
+# sameflav      &&  ch1*ch2<0 && pt1>20 && pt2>20  && mjj>350  && detajj>1.0  && jetpt1>30   && jetpt2>30   && njetvbf==0   && mll>50     &&  trigger==1.   && zveto==1  && bveto_mu==1 && nextra==0 &&    bveto_ip==1  &&  nbjettche==0  && mpmet>20.    && pfmet>20   &&   (!sameflav || pfmet > 45.0)  &&   njet>=2     
+# (!sameflav)   &&  ch1*ch2<0 && pt1>20 && pt2>20  && mjj>350  && detajj>1.0  && jetpt1>30   && jetpt2>30   && njetvbf==0   && mll>50     &&  trigger==1.   && zveto==1  && bveto_mu==1 && nextra==0 &&    bveto_ip==1  &&  nbjettche==0  && mpmet>20.    && pfmet>20   &&   (!sameflav || pfmet > 45.0)  &&   njet>=2     
+#
+##################
+#
+#  @WW level   +  top suppression vetoed:    0.5 - 2.1
+#
+#
+1             &&  ch1*ch2<0 && pt1>20 && pt2>20  && mjj>350  && detajj>0.5  && jetpt1>30   && jetpt2>30    && mll>50     &&  trigger==1.   && zveto==1  && bveto_mu==1 && nextra==0 &&    bveto_ip==1  &&  jettche1>=1.00 && jettche2>=1.00 && nbjettche==0  && mpmet>20.    && pfmet>20   &&   (!sameflav || pfmet > 45.0)  &&   njet>=2      
+sameflav      &&  ch1*ch2<0 && pt1>20 && pt2>20  && mjj>350  && detajj>0.5  && jetpt1>30   && jetpt2>30    && mll>50     &&  trigger==1.   && zveto==1  && bveto_mu==1 && nextra==0 &&    bveto_ip==1  &&  jettche1>=1.00 && jettche2>=1.00 && nbjettche==0  && mpmet>20.    && pfmet>20   &&   (!sameflav || pfmet > 45.0)  &&   njet>=2     
+(!sameflav)   &&  ch1*ch2<0 && pt1>20 && pt2>20  && mjj>350  && detajj>0.5  && jetpt1>30   && jetpt2>30    && mll>50     &&  trigger==1.   && zveto==1  && bveto_mu==1 && nextra==0 &&    bveto_ip==1  &&  jettche1>=1.00 && jettche2>=1.00 && nbjettche==0  && mpmet>20.    && pfmet>20   &&   (!sameflav || pfmet > 45.0)  &&   njet>=2     
+#
+##################
+#
+#  @WW level + top enriched
+#
+#
+1             &&  ch1*ch2<0 && pt1>20 && pt2>20  && mjj>350  && detajj>0.5  && jetpt1>30   && jetpt2>30   && mll>50     &&  trigger==1.   && zveto==1  &&                nextra==0 &&    bveto_ip==1  &&  nbjettche>=1  && mpmet>20.    && pfmet>20   &&   (!sameflav || pfmet > 45.0)  &&   njet>=2      
+sameflav      &&  ch1*ch2<0 && pt1>20 && pt2>20  && mjj>350  && detajj>0.5  && jetpt1>30   && jetpt2>30   && mll>50     &&  trigger==1.   && zveto==1  &&                nextra==0 &&    bveto_ip==1  &&  nbjettche>=1  && mpmet>20.    && pfmet>20   &&   (!sameflav || pfmet > 45.0)  &&   njet>=2     
+(!sameflav)   &&  ch1*ch2<0 && pt1>20 && pt2>20  && mjj>350  && detajj>0.5  && jetpt1>30   && jetpt2>30   && mll>50     &&  trigger==1.   && zveto==1  &&                nextra==0 &&    bveto_ip==1  &&  nbjettche>=1  && mpmet>20.    && pfmet>20   &&   (!sameflav || pfmet > 45.0)  &&   njet>=2     
+#
+##################
+#
+##################
+#
+#  @WW level   +  tight top suppression
+#
+#
+1             &&  ch1*ch2<0 && pt1>20 && pt2>20  && mjj>350  && detajj>0.5  && jetpt1>30   && jetpt2>30    && mll>50     &&  trigger==1.   && zveto==1  && bveto_mu==1 && nextra==0 &&    bveto_ip==1  &&  jettche1<1.00 && jettche2<1.00 && nbjettche==0  && mpmet>20.    && pfmet>20   &&   (!sameflav || pfmet > 45.0)  &&   njet>=2      
+sameflav      &&  ch1*ch2<0 && pt1>20 && pt2>20  && mjj>350  && detajj>0.5  && jetpt1>30   && jetpt2>30    && mll>50     &&  trigger==1.   && zveto==1  && bveto_mu==1 && nextra==0 &&    bveto_ip==1  &&  jettche1<1.00 && jettche2<1.00 && nbjettche==0  && mpmet>20.    && pfmet>20   &&   (!sameflav || pfmet > 45.0)  &&   njet>=2     
+(!sameflav)   &&  ch1*ch2<0 && pt1>20 && pt2>20  && mjj>350  && detajj>0.5  && jetpt1>30   && jetpt2>30    && mll>50     &&  trigger==1.   && zveto==1  && bveto_mu==1 && nextra==0 &&    bveto_ip==1  &&  jettche1<1.00 && jettche2<1.00 && nbjettche==0  && mpmet>20.    && pfmet>20   &&   (!sameflav || pfmet > 45.0)  &&   njet>=2     
+#
 #
 ##################
 #
 #
-
+#  @WW level + top enriched  :  
+#                               pt 30-50
+#                               pt 50-70
+#                               pt 70-
+#
+#
+(!sameflav)  && (((abs(jeteta1)<abs(jeteta2))*(jetpt1)+((abs(jeteta1)>=abs(jeteta2))*(jetpt2)))<50)                                                                                      &&  ch1*ch2<0 && pt1>20 && pt2>20  && mjj>350  && detajj>0.5  && jetpt1>30   && jetpt2>30   && mll>50     &&  trigger==1.   && zveto==1  &&                nextra==0   &&  nbjettche>=1  && mpmet>20.    && pfmet>20   &&   (!sameflav || pfmet > 45.0)  &&   njet>=2     
+(!sameflav)  && (((abs(jeteta1)<abs(jeteta2))*(jetpt1)+((abs(jeteta1)>=abs(jeteta2))*(jetpt2)))>=50)*(((abs(jeteta1)<abs(jeteta2))*(jetpt1)+((abs(jeteta1)>=abs(jeteta2))*(jetpt2)))<70) &&  ch1*ch2<0 && pt1>20 && pt2>20  && mjj>350  && detajj>0.5  && jetpt1>30   && jetpt2>30   && mll>50     &&  trigger==1.   && zveto==1  &&                nextra==0   &&  nbjettche>=1  && mpmet>20.    && pfmet>20   &&   (!sameflav || pfmet > 45.0)  &&   njet>=2     
+(!sameflav)  && (((abs(jeteta1)<abs(jeteta2))*(jetpt1)+((abs(jeteta1)>=abs(jeteta2))*(jetpt2)))>=70)                                                                                     &&  ch1*ch2<0 && pt1>20 && pt2>20  && mjj>350  && detajj>0.5  && jetpt1>30   && jetpt2>30   && mll>50     &&  trigger==1.   && zveto==1  &&                nextra==0   &&  nbjettche>=1  && mpmet>20.    && pfmet>20   &&   (!sameflav || pfmet > 45.0)  &&   njet>=2     
+#
+#
+#
+#

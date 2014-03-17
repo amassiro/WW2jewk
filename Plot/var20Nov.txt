@@ -12,9 +12,16 @@ BDT             BDT                                           8          0      
 ptll            pt_{ll}                                       9          0       0       -999         -999
 njet            njet                                         10          0       0       -999         -999
 logmjj          logm_{jj}                                    11          0       0       -999         -999
-dphijj          #Delta#phi_{jj}                              12          0       0       -999         -999
-zepl1           #eta_{lep1}-centrality                       13          0       0       -999         -999
-zepl2           #eta_{lep2}-centrality                       14          0       0       -999         -999
-zepll           #eta_{leplep}-centrality                     15          0       0       -999         -999
-events          events                                       16          0       0       -999         -999
-# 
+# dphijj          #Delta#phi_{jj}                              12          0       0       -999         -999
+zepl1           #eta_{lep1}-centrality                       12          0       0       -999         -999
+zepl2           #eta_{lep2}-centrality                       13          0       0       -999         -999
+zepll           #eta_{leplep}-centrality                     14          0       0       -999         -999
+# events          events                                       15          0       0       -999         -999
+#
+mth             mth                                          15          0       0       -999         -999
+mll             mll                                          16          0       0       -999         -999
+njetvbf         njetvbf                                      17          0       0       -999         -999
+#
+etacj            etacj                                       18          0       0       -999         -999
+#
+#

@@ -61,7 +61,7 @@ njet          0    5     5          njet
 #
 #########################################################
 #
-log(mjj)     5     8     20        logM_{jet-jet}
+log(mjj)     5     8     10        logM_{jet-jet}
 #
 #########################################################
 #
@@ -70,14 +70,19 @@ log(mjj)     5     8     20        logM_{jet-jet}
 #########################################################
 #
 abs(eta1-(jeteta1+jeteta2)/2)/detajj     0      2        10     centrality1
-abs(eta2-(jeteta1+jeteta2)/2)/detajj     0      2        10     centrality1
+abs(eta2-(jeteta1+jeteta2)/2)/detajj     0      2        10     centrality2
 abs(yll-(jeteta1+jeteta2)/2)/detajj      0      2        10     centralityll
 #
 #########################################################
 #
-1                0    2      2     events
+# 1                0    2      2     events
 #
-#########################################################
-#
+##########################################################
 # max number of variables 
+#
+#
+#
+#
+#
+#
 #

@@ -1,14 +1,23 @@
 #
-mlj1             mlj1                                          0          0       0       -999         -999
-mlj2             mlj2                                          1          0       0       -999         -999
+# mlj1             mlj1                                          0          0       0       -999         -999
+# mlj2             mlj2                                          1          0       0       -999         -999
 #
-m2lj1            m2lj1                                         2          0       0       -999         -999
-m2lj2            m2lj2                                         3          0       0       -999         -999
+# m2lj1            m2lj1                                         2          0       0       -999         -999
+# m2lj2            m2lj2                                         3          0       0       -999         -999
 #
-Massive2lj1      M2lj1                                         4          0       0       -999         -999
-Massive2lj2      M2lj2                                         5          0       0       -999         -999
+# Massive2lj1      M2lj1                                         4          0       0       -999         -999
+# Massive2lj2      M2lj2                                         5          0       0       -999         -999
 #
-Massivelj1       Mlj1                                          6          0       0       -999         -999
-Massivelj2       Mlj2                                          7          0       0       -999         -999
+# Massivelj1       Mlj1                                          6          0       0       -999         -999
+# Massivelj2       Mlj2                                          7          0       0       -999         -999
+#
+# tchecj           tchecj                                        8          0       0       -999         -999
+#
+############
+#
+tchecj           tchecj                                        0          0       0       -999         -999
+tchefj           tchefj                                        1          0       0       -999         -999
+etacj            etacj                                         2          0       0       -999         -999
+etafj            etafj                                         3          0       0       -999         -999
 #
 #

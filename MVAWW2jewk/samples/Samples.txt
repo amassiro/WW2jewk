@@ -15,12 +15,16 @@
 052_WW2JetsPhantom        1.         WW2j
 #
 #
-000_WWJets2LMad           1.         WW
-001_GluGluToWWTo4L        1.         WW  ggWW
+001_GluGluToWWTo4L        1.0         WW  ggWW
+000_WWJets2LMad           0.33         WW
+002_WWto2L2NuMCatNLO      0.33         WW  bis
+006_WWJets2LPowheg        0.33         WW  bis
 #
+# 010_TTJetsMad             0.5        Top
+# 019_TTTo2L2Nu2B           0.5        Top
 019_TTTo2L2Nu2B           1.         Top
-011_TtWFullDR             1.         Top
-012_TbartWFullDR          1.         Top
+# 011_TtWFullDR             1.         Top
+# 012_TbartWFullDR          1.         Top
 #
 #
 #

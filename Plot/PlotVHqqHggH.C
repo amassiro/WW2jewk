@@ -2970,7 +2970,8 @@ class PlotVHqqHggH {
                 //      rref->GetYaxis()->SetRangeUser(TMath::Max(0.,1.-absmax), absmax+1.);
                 //      rref->GetYaxis()->SetRangeUser(TMath::Max(0.,1.-absmax), TMath::Min(10.,absmax+1.));
 //                 rref->GetYaxis()->SetRangeUser(0.5, 1.5);
-                             rref->GetYaxis()->SetRangeUser(0., 3.);
+// 
+                rref->GetYaxis()->SetRangeUser(0., 3.);
                 //              
 //                 rref->GetYaxis()->SetRangeUser(0., 2.);
                 
@@ -3211,14 +3212,15 @@ class PlotVHqqHggH {
                              std::cout << " >>> Axis = " << TString::Format("%s [%s]",_xLabel.Data(),_units.Data()).Data() << std::endl;
 //                              AxisFonts(temp_vectTHstackSig.at(iSig)->GetXaxis(), "x", TString::Format("%s [%s]",_xLabel.Data(),_units.Data()));
                              temp_vectTHstackSig.at(iSig)->GetXaxis()->SetTitle(TString::Format("%s [%s]",_xLabel.Data(),_units.Data()));
-                            }                             
+                            }       
+                            _titleOffset = 1.5;
                             AxisFonts(temp_vectTHstackSig.at(iSig)->GetYaxis(), "y", "data - background");
                             if (data) {
 //                              temp_vectTHstackSig.at(iSig) ->GetYaxis () -> SetRangeUser(minY - 5 ,maxY*1.5 + 5);
 //                              temp_vectTHstackSig.at(iSig) ->GetYaxis () -> SetRangeUser(-50 ,300); //--- for time evolution
 //                              temp_vectTHstackSig.at(iSig) ->GetYaxis () -> SetRangeUser(-10 ,45); //--- for time evolution
 //                              temp_vectTHstackSig.at(iSig) ->GetYaxis () -> SetRangeUser(-100 ,300); //--- for hww paper
-                             temp_vectTHstackSig.at(iSig) ->GetYaxis () -> SetRangeUser(-20 ,30); //--- for WWewk
+                             temp_vectTHstackSig.at(iSig) ->GetYaxis () -> SetRangeUser(-10 ,15); //--- for WWewk
                             }
                             else {
                                 temp_vectTHstackSig.at(iSig) ->GetYaxis () -> SetRangeUser(0 ,temp_vectTHstackSig.at(temp_vectTHstackSig.size()-1)->GetMaximum() * 1.5 + 5);
@@ -3226,11 +3228,11 @@ class PlotVHqqHggH {
                         }                
                         else {
                          ///---- scale signal ---- (begin)
-                            if (integralGlobalScale != -1) {
-                             temp_vectTHstackSig.at(iSig) -> Scale ( integralGlobalScale );
-                            }
-                            ///---- scale signal ---- (end)                         
-                            temp_vectTHstackSig.at(iSig) -> Draw("same");
+                         if (integralGlobalScale != -1) {
+                          temp_vectTHstackSig.at(iSig) -> Scale ( integralGlobalScale );
+                         }
+                         ///---- scale signal ---- (end)                         
+                         temp_vectTHstackSig.at(iSig) -> Draw("same");
                         }
                         //                if (iSig == 0) temp_vectTHstackSig.at(iSig) -> Draw("hist");
                         //                else           temp_vectTHstackSig.at(iSig) -> Draw("hist,same");
@@ -3634,7 +3636,10 @@ class PlotVHqqHggH {
               if (iBkg == 0) {
                j++;
                j++;
-               DrawLegend(x0+pos[j]*wx, _globalYoffset - off[j]*_yoffset, _vectTHBkg.at(iBkg)         , "background" ,           "f" );
+               TH1F* temp_bkg = (TH1F*) _vectTHBkg.at(iBkg) -> Clone();
+               temp_bkg->SetFillColor(kBlue);
+               temp_bkg->SetLineColor(kBlue);
+               DrawLegend(x0+pos[j]*wx, _globalYoffset - off[j]*_yoffset, temp_bkg  , "background" ,           "f" );
                j++;
               }
              }

@@ -3,7 +3,7 @@
 // 
 
 {
- std::string nameFileR = "test/Latinos12/DYRinout/result-R.txt";
+ std::string nameFileR = "test/WW2jewk/DYRinout/result-R.txt";
  
  std::cout << "cat " << nameFileR << std::endl;
  
@@ -21,7 +21,7 @@
  double errRmumu[100];
  double errSystRmumu[100];
  
- int nMass = 28;
+ int nMass = 2;
  
  std::ifstream FileRate (nameFileR.c_str()); 
  

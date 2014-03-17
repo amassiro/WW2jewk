@@ -1,0 +1,5 @@
+mjj             m_{jj}                                        0          0       0       -999         -999
+detajj          #Delta#eta_{jj}                               1          0       0       -999         -999
+#
+mva             mva                                           2          0       0       -999         -999                             
+#

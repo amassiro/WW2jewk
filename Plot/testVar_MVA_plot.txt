@@ -20,7 +20,7 @@ jetpt2          0   150     10        jet-p_{T}-2
 #
 #########################################################
 #
-mjj            200  1000     20        M_{jet-jet}
+mjj             0  1000     25        M_{jet-jet}
 #
 #########################################################
 #
@@ -29,8 +29,10 @@ detajj          0   6     12        #Delta#eta_{jet-jet}
 #########################################################
 #
 MLP_weights_testVariables_MVAWW2jewk      0.0   0.9   20    MLP
-BDTG_weights_testVariables_MVAWW2jewk      -1   0.9   30    BDTG
-BDT_weights_testVariables_MVAWW2jewk     -0.5   0.3   15    BDT
+# BDTG_weights_testVariables_MVAWW2jewk      -1   0.9   19    BDTG
+BDTG_weights_testVariables_MVAWW2jewk      -1   0.8   9    BDTG
+# BDTG_weights_testVariables_MVAWW2jewk      -1   0.8   19    BDTG
+BDT_weights_testVariables_MVAWW2jewk     -0.25   0.25  15    BDT
 #
 #########################################################
 #
@@ -42,7 +44,7 @@ njet          0    5     5          njet
 #
 #########################################################
 #
-log(mjj)     5     8     20        logM_{jet-jet}
+log(mjj)     2     8     25        logM_{jet-jet}
 #
 #########################################################
 #
@@ -52,7 +54,15 @@ abs(yll-(jeteta1+jeteta2)/2)/detajj      0      2        10     centralityll
 #
 #########################################################
 #
-1                0    2      2     events
+# 1                0    2      2     events
+#
+#########################################################
+#
+mth            0    300     20        mth
+mll            0    300     20        mll
+njetvbf        0      4      4        njetvbf
+#
+(abs(jeteta1)<abs(jeteta2))*abs(jeteta1)+(abs(jeteta1)>=abs(jeteta2))*abs(jeteta2)     0    3   30  eta-cj
 #
 #########################################################
 #

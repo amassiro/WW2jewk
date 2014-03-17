@@ -88,7 +88,16 @@ std::string MoreThan (std::string variable, double value) {
  return result;
 }
 
-int GetTop_Macro_forDataCard(int iWP, std::string suffix = "of", std::string whatAnalysis = "cut", bool doEnrichToGetEvents = false) {
+
+//-------------------------------
+//---- pt and eta dependence ----
+//-------------------------------
+
+//----------------------------------------
+//---- allow tche threshod definition ----
+//----------------------------------------
+
+int GetTop_Macro_forDataCard_Complete(int iWP, std::string suffix = "of", std::string whatAnalysis = "cut", bool doEnrichToGetEvents = false, int binCutPt = 0, int binTCHE = 0) {
  
  std::cout << std::endl;
  std::cout << " ============== " << std::endl;
@@ -115,23 +124,151 @@ int GetTop_Macro_forDataCard(int iWP, std::string suffix = "of", std::string wha
  std::vector <std::string> v_commonCut_WW; 
  
  v_commonCut_WW.push_back("pt1>20");
- v_commonCut_WW.push_back("pt2>10");
+ v_commonCut_WW.push_back("pt2>20"); // >10
  v_commonCut_WW.push_back("(ch1*ch2)<0");
  
  v_commonCut_WW.push_back("trigger==1.");
  v_commonCut_WW.push_back("pfmet>20.");
- v_commonCut_WW.push_back("mll>70");
+ 
+ v_commonCut_WW.push_back("mll>50");
+ 
  v_commonCut_WW.push_back("(zveto==1||!sameflav)");
  v_commonCut_WW.push_back("mpmet>20.");
  v_commonCut_WW.push_back("bveto_mu==1");
  v_commonCut_WW.push_back("nextra==0");
 //  v_commonCut_WW.push_back("(bveto_ip==1 && nbjettche==0)");
  v_commonCut_WW.push_back("bveto_ip==1");
- v_commonCut_WW.push_back("(!sameflav || pfmet > 80.0)");
+ v_commonCut_WW.push_back("(!sameflav || pfmet > 45.0)");
  v_commonCut_WW.push_back("(dphilljetjet<pi/180.*165. || !sameflav )");
+ 
  
  //---- >=2 jets
  v_commonCut_WW.push_back("njet >= 2");
+ 
+ 
+ //---- jet pt ranges (begin) ----
+ double minpt = -1;
+ double maxpt = -1;
+ 
+ // ---- cut based
+// //  if ( binCutPt == 0) {
+// //   minpt = 30;
+// //   maxpt = 70;
+// //  }
+// //  if ( binCutPt == 1) {
+// //   minpt = 70;
+// // //   maxpt = 100;
+// //   maxpt = -1;
+// //  }
+// //  if ( binCutPt == 2) {
+// //   minpt = 100;
+// //   maxpt = -1;
+// //  }
+// 
+// //  if ( binCutPt == 0) {
+// //   minpt = 30;
+// //   maxpt = 50;
+// //  }
+// //  if ( binCutPt == 1) {
+// //   minpt = 50;
+// //   maxpt = 70;
+// //   //   maxpt = -1;
+// //  }
+// //  if ( binCutPt == 2) {
+// //   minpt = 70;
+// //   maxpt = 100;
+// //  }
+// //  if ( binCutPt == 3) {
+// //   minpt = 100;
+// //   maxpt = -1;
+// //  }
+// 
+//  if ( binCutPt == 0) {
+//   minpt = 30;
+//   maxpt = 50;
+//  }
+//  if ( binCutPt == 1) {
+//   minpt = 50;
+//   maxpt = 70;
+//  }
+//  if ( binCutPt == 2) {
+//   minpt = 70;
+//   maxpt = -1;
+// //   maxpt = 100;
+//  }
+// //  if ( binCutPt == 3) {
+// //   minpt = 100;
+// //   maxpt = -1;
+// //  }
+//  
+//  
+//  
+//  if ( binCutPt == 4) {
+//   minpt = 30;
+//   maxpt = 70;
+//  }
+//  if ( binCutPt == 5) {
+//   minpt = 70;
+//   maxpt = -1;
+//  }
+ 
+ 
+ 
+ //---- shape analysis
+ 
+ if ( binCutPt == 0) {
+  minpt = 30;
+  maxpt = 50;
+ }
+ if ( binCutPt == 1) {
+  minpt = 50;
+  maxpt = 70;
+ }
+ if ( binCutPt == 2) {
+  minpt = 70;
+  maxpt = 110;
+ }
+ if ( binCutPt == 3) {
+  minpt = 110;
+  maxpt = 150;
+ }
+ if ( binCutPt == 4) {
+  minpt = 150;
+  maxpt = 200;
+ }
+ if ( binCutPt == 5) {
+  minpt = 200;
+  maxpt = -1;
+ }
+
+ 
+ //---- cut based analysis
+ 
+ if ( binCutPt == 10) {
+  minpt =  30;
+  maxpt = 100;
+ }
+ if ( binCutPt == 11) {
+  minpt = 100;
+  maxpt =  -1;
+ }
+ 
+ 
+ std::ostringstream binjetptDefinition;
+ binjetptDefinition << " ( ";
+ binjetptDefinition << "((abs(jeteta1)<abs(jeteta2))*(jetpt1)+((abs(jeteta1)>=abs(jeteta2))*(jetpt2))) >= " << minpt;
+ binjetptDefinition << " && ";
+ if (maxpt != -1) {
+  binjetptDefinition << "((abs(jeteta1)<abs(jeteta2))*(jetpt1)+((abs(jeteta1)>=abs(jeteta2))*(jetpt2))) < " << maxpt;
+ } 
+ else {
+  binjetptDefinition << " 1 " ;
+ }
+ binjetptDefinition << " ) ";
+ v_commonCut_WW.push_back(binjetptDefinition.str());
+ 
+ //---- jet pt ranges (end) ----
+ 
  
  std::string commonCut_WW = Compact(v_commonCut_WW);
  std::cout << " commonCut_WW = " << commonCut_WW << std::endl;
@@ -144,8 +281,6 @@ int GetTop_Macro_forDataCard(int iWP, std::string suffix = "of", std::string wha
 
  v_commonCut_Higgs.push_back(commonCut_WW); 
  
-
- 
  
  
  //---- what kind of analysis ----
@@ -155,16 +290,20 @@ int GetTop_Macro_forDataCard(int iWP, std::string suffix = "of", std::string wha
  }
  
  if (whatAnalysis == "cut") {
-  v_commonCut_Higgs.push_back("njetvbf==0");
-  v_commonCut_Higgs.push_back("mjj>200");
-  v_commonCut_Higgs.push_back("detajj>1.0");
-  v_commonCut_Higgs.push_back("BDTG_weights_testVariables_MVAWW2jewk > 0.85");
+//   v_commonCut_Higgs.push_back("njetvbf==0");
+//   v_commonCut_Higgs.push_back("mjj>200");
+//   v_commonCut_Higgs.push_back("detajj>1.0");
+  v_commonCut_Higgs.push_back("mjj>350");
+  v_commonCut_Higgs.push_back("detajj>0.5");
+  v_commonCut_Higgs.push_back("BDTG_weights_testVariables_MVAWW2jewk > 0.40");  //---- 0.55   0.30  0.40  -0.10 = crazy test!
  }
  
  if (whatAnalysis == "shape") {
-  v_commonCut_Higgs.push_back("njetvbf==0");
-  v_commonCut_Higgs.push_back("mjj>200");
-  v_commonCut_Higgs.push_back("detajj>1.0");
+//   v_commonCut_Higgs.push_back("njetvbf==0");
+//   v_commonCut_Higgs.push_back("mjj>200");
+//   v_commonCut_Higgs.push_back("detajj>1.0");
+  v_commonCut_Higgs.push_back("mjj>350"); //---- 400
+  v_commonCut_Higgs.push_back("detajj>0.5");
  }  
 
  //---- what kind of analysis (end) ----
@@ -209,7 +348,7 @@ int GetTop_Macro_forDataCard(int iWP, std::string suffix = "of", std::string wha
  etaBins.push_back (0.5);
  etaBins.push_back (1.0);
  etaBins.push_back (1.5);
- //  etaBins.push_back (2.0);
+ etaBins.push_back (2.0); //--> before disabled
  etaBins.push_back (2.5);
  etaBins.push_back (300.0);
  int nBin = etaBins.size() - 1 ;
@@ -254,16 +393,94 @@ int GetTop_Macro_forDataCard(int iWP, std::string suffix = "of", std::string wha
  ///---- A     ---> no jet btagged
  
  
+ 
+ //---- definition TCHE threshold ----
+ //  binTCHE == 0 --> thresholdTCHE = 1.00 - 2.10;
+ //  binTCHE == 1 --> thresholdTCHE = 1.00; 
+
+ //  binTCHE == 2 --> thresholdTCHE = 1.00 for CJ, 1.00-2.10 for FJ 
+ //  binTCHE == 3 --> thresholdTCHE = 1.00 for FJ, 1.00-2.10 for CJ
+ 
+ 
  std::vector <std::string> zoneCut; 
- ///--- AB
- zoneCut.push_back("nbjettche==0 || (nbjettche==1 && (((abs(jeteta1)<abs(jeteta2))  && (jettche1>2.10)) || ((abs(jeteta1)>=abs(jeteta2)) && (jettche2>2.10))) )");
- ///--- B
- zoneCut.push_back("                 nbjettche==1 && (((abs(jeteta1)<abs(jeteta2))  && (jettche1>2.10)) || ((abs(jeteta1)>=abs(jeteta2)) && (jettche2>2.10))) ");
- ///--- A
- zoneCut.push_back("nbjettche==0");
+ if (binTCHE == 0) {
+//   ///--- AB
+//   zoneCut.push_back("nbjettche==0 || (nbjettche==1 && (((abs(jeteta1)<abs(jeteta2))  && (jettche1>2.10)) || ((abs(jeteta1)>=abs(jeteta2)) && (jettche2>2.10))) )");
+//   ///--- B
+//   zoneCut.push_back("                 nbjettche==1 && (((abs(jeteta1)<abs(jeteta2))  && (jettche1>2.10)) || ((abs(jeteta1)>=abs(jeteta2)) && (jettche2>2.10))) ");
+//   ///--- A
+//   zoneCut.push_back("nbjettche==0");
+//   
+
+//   ///--- AB
+//   zoneCut.push_back("(nbjettche==0 && jettche1>=1.00 && jettche2>=1.00) || (nbjettche==1 && (((abs(jeteta1)<abs(jeteta2))  && (jettche1>2.10)) || ((abs(jeteta1)>=abs(jeteta2)) && (jettche2>2.10))) )");
+//   ///--- B
+//   zoneCut.push_back("                                                      (nbjettche==1 && (((abs(jeteta1)<abs(jeteta2))  && (jettche1>2.10)) || ((abs(jeteta1)>=abs(jeteta2)) && (jettche2>2.10))) )");
+//   ///--- A
+//   zoneCut.push_back("(nbjettche==0 && jettche1>=1.00 && jettche2>=1.00)");
+
+  ///--- AB
+  zoneCut.push_back("(nbjettche==0 && jettche1>=1.00 && jettche2>=1.00) || (nbjettche==1 && (((abs(jeteta1)<abs(jeteta2))  && (jettche1>2.10)) || ((abs(jeteta1)>=abs(jeteta2)) && (jettche2>2.10)))  &&  (((abs(jeteta1)<abs(jeteta2))  && (jettche2>=1.00)) || ((abs(jeteta1)>=abs(jeteta2)) && (jettche1>=1.00))) )");
+  ///--- B
+  zoneCut.push_back("                                                      (nbjettche==1 && (((abs(jeteta1)<abs(jeteta2))  && (jettche1>2.10)) || ((abs(jeteta1)>=abs(jeteta2)) && (jettche2>2.10)))  &&  (((abs(jeteta1)<abs(jeteta2))  && (jettche2>=1.00)) || ((abs(jeteta1)>=abs(jeteta2)) && (jettche1>=1.00))) )");
+  ///--- A
+  zoneCut.push_back("(nbjettche==0 && jettche1>=1.00 && jettche2>=1.00)");
+  
+ }
  
+ if (binTCHE == 1) {
+//   ///--- AB
+//   zoneCut.push_back("(nbjettche==0 && jettche1<1.00 && jettche2<1.00) || (nbjettche==1 && (((abs(jeteta1)<abs(jeteta2))  && (jettche1>2.10)) || ((abs(jeteta1)>=abs(jeteta2)) && (jettche2>2.10))) )");
+//   ///--- B
+//   zoneCut.push_back("                                                    (nbjettche==1 && (((abs(jeteta1)<abs(jeteta2))  && (jettche1>2.10)) || ((abs(jeteta1)>=abs(jeteta2)) && (jettche2>2.10))) )");
+//   ///--- A
+//   zoneCut.push_back("(nbjettche==0 && jettche1<1.00 && jettche2<1.00)");
+
+  ///--- AB
+  zoneCut.push_back("(nbjettche==0 && jettche1<1.00 && jettche2<1.00) || (nbjettche==1 && (((abs(jeteta1)<abs(jeteta2))  && (jettche1>2.10)) || ((abs(jeteta1)>=abs(jeteta2)) && (jettche2>2.10)))  &&  (((abs(jeteta1)<abs(jeteta2))  && (jettche2<1.00)) || ((abs(jeteta1)>=abs(jeteta2)) && (jettche1<1.00)))  )");
+  ///--- B
+  zoneCut.push_back("                                                    (nbjettche==1 && (((abs(jeteta1)<abs(jeteta2))  && (jettche1>2.10)) || ((abs(jeteta1)>=abs(jeteta2)) && (jettche2>2.10)))  &&  (((abs(jeteta1)<abs(jeteta2))  && (jettche2<1.00)) || ((abs(jeteta1)>=abs(jeteta2)) && (jettche1<1.00)))  )");
+  ///--- A
+  zoneCut.push_back("(nbjettche==0 && jettche1<1.00 && jettche2<1.00)");
+  
+ }
+
+ if (binTCHE == 2) {
+  ///--- AB
+  zoneCut.push_back("((nbjettche==0 && (((abs(jeteta1)<abs(jeteta2))  && (jettche1<1.00)) || ((abs(jeteta1)>=abs(jeteta2))  && (jettche2<1.00)))       \
+                                    && (((abs(jeteta1)<abs(jeteta2))  && (jettche2>1.00)) || ((abs(jeteta1)>=abs(jeteta2))  && (jettche1>1.00))) \
+                      ) || \
+                     (nbjettche==1 && (((abs(jeteta1)<abs(jeteta2))  && (jettche1>2.10)) || ((abs(jeteta1)>=abs(jeteta2))  && (jettche2>2.10)))       \
+                                   && (((abs(jeteta1)<abs(jeteta2))  && (jettche2>1.00)) || ((abs(jeteta1)>=abs(jeteta2))  && (jettche1>1.00))) \
+                     ))");  
+  ///--- B
+  zoneCut.push_back("(nbjettche==1 && (((abs(jeteta1)<abs(jeteta2))  && (jettche1>2.10)) || ((abs(jeteta1)>=abs(jeteta2))  && (jettche2>2.10)))       \
+                                   && (((abs(jeteta1)<abs(jeteta2))  && (jettche2>1.00)) || ((abs(jeteta1)>=abs(jeteta2))  && (jettche1>1.00))) \
+                     )");
+  ///--- A
+  zoneCut.push_back("(nbjettche==0 && (((abs(jeteta1)<abs(jeteta2))  && (jettche1<1.00)) || ((abs(jeteta1)>=abs(jeteta2))  && (jettche2<1.00)))       \
+                                   && (((abs(jeteta1)<abs(jeteta2))  && (jettche2>1.00)) || ((abs(jeteta1)>=abs(jeteta2))  && (jettche1>1.00))) \
+                     )");  
+ }
+
+  if (binTCHE == 3) {
+  ///--- AB
+  zoneCut.push_back("((nbjettche==0 && (((abs(jeteta1)<abs(jeteta2))  && (jettche2<1.00)) || ((abs(jeteta1)>=abs(jeteta2))  && (jettche1<1.00)))       \
+                                    && (((abs(jeteta1)<abs(jeteta2))  && (jettche1>1.00)) || ((abs(jeteta1)>=abs(jeteta2))  && (jettche2>1.00))) \
+                      ) || \
+                     (nbjettche==1 && (((abs(jeteta1)<abs(jeteta2))  && (jettche2>2.10)) || ((abs(jeteta1)>=abs(jeteta2))  && (jettche1>2.10)))       \
+                                   && (((abs(jeteta1)<abs(jeteta2))  && (jettche1>1.00)) || ((abs(jeteta1)>=abs(jeteta2))  && (jettche2>1.00))) \
+                     ))");  
+  ///--- B
+  zoneCut.push_back("(nbjettche==1 && (((abs(jeteta1)<abs(jeteta2))  && (jettche2>2.10)) || ((abs(jeteta1)>=abs(jeteta2))  && (jettche1>2.10)))       \
+                                   && (((abs(jeteta1)<abs(jeteta2))  && (jettche1>1.00)) || ((abs(jeteta1)>=abs(jeteta2))  && (jettche2>1.00))) \
+                     )");
+  ///--- A
+  zoneCut.push_back("(nbjettche==0 && (((abs(jeteta1)<abs(jeteta2))  && (jettche2<1.00)) || ((abs(jeteta1)>=abs(jeteta2))  && (jettche1<1.00)))       \
+                                   && (((abs(jeteta1)<abs(jeteta2))  && (jettche1>1.00)) || ((abs(jeteta1)>=abs(jeteta2))  && (jettche2>1.00))) \
+                     )");  
+ }
  int nZone = zoneCut.size();
- 
  
  
  
@@ -307,7 +524,7 @@ int GetTop_Macro_forDataCard(int iWP, std::string suffix = "of", std::string wha
  
  ///---- check if efficiencies have already been calculated ---> it saves time!!! x2 speed!!!
  
- TString nameFileInEff = Form ("test/WW2jewk/ttbar/result-eff-%s-%s.txt",whatAnalysis.c_str(),suffix.c_str());
+ TString nameFileInEff = Form ("test/WW2jewk/ttbar/result-eff-%s-%s-pt-%d-tche-%d.txt",whatAnalysis.c_str(),suffix.c_str(),binCutPt,binTCHE);
  std::cout << " cat " << nameFileInEff.Data() << std::endl;
  std::cout << std::endl;
 
@@ -494,7 +711,7 @@ int GetTop_Macro_forDataCard(int iWP, std::string suffix = "of", std::string wha
   std::cout << " save efficiency " << std::endl;
   
   
-  TString nameFileOutEff = Form ("test/WW2jewk/ttbar/result-eff-%s-%s.txt",whatAnalysis.c_str(),suffix.c_str());
+  TString nameFileOutEff = Form ("test/WW2jewk/ttbar/result-eff-%s-%s-pt-%d-tche-%d.txt",whatAnalysis.c_str(),suffix.c_str(),binCutPt,binTCHE);
   std::cout << " cat " << nameFileOutEff.Data() << std::endl;
   std::cout << std::endl;
   
@@ -605,13 +822,20 @@ int GetTop_Macro_forDataCard(int iWP, std::string suffix = "of", std::string wha
  ///---- data with MC subtracted ----
  for (int iZone=0; iZone<nZone; iZone++) {
   for (int iBin=0; iBin<nBin; iBin++) {
+   float temp_data = (DATA.at(iZone)).at(iBin);
    (DATA_Sub.at(iZone)).at(iBin)     = ( (DATA.at(iZone)).at(iBin) - (Other.at(iZone)).at(iBin) );
    (err_DATA_Sub.at(iZone)).at(iBin) = sqrt( (err_DATA.at(iZone)).at(iBin)*(err_DATA.at(iZone)).at(iBin) + (err_Other.at(iZone)).at(iBin)*(err_Other.at(iZone)).at(iBin) );
   
    //---- no negative events!!!
    if ((DATA_Sub.at(iZone)).at(iBin) < 0  ||  (DATA.at(iZone)).at(iBin) == 0) {
-    (DATA_Sub.at(iZone)).at(iBin) = 0;
-    (err_DATA_Sub.at(iZone)).at(iBin) = 0;
+    if (temp_data == 0) { //---- if there were at least 1 event in b-tagged region, use it!
+     (DATA_Sub.at(iZone)).at(iBin) = 0;
+     (err_DATA_Sub.at(iZone)).at(iBin) = 0;
+    }
+    else {
+     (DATA_Sub.at(iZone)).at(iBin) = 1; //---- not temp_data because I still need to subtract other backgrounds!
+//      (err_DATA_Sub.at(iZone)).at(iBin) = (err_DATA.at(iZone)).at(iBin);
+     }
    }
   }
  }
@@ -641,7 +865,7 @@ int GetTop_Macro_forDataCard(int iWP, std::string suffix = "of", std::string wha
   std::cout << std::endl;
   std::cout << " save efficiency " << std::endl;
   
-  TString nameFileOutEffHiggs = Form ("test/WW2jewk/ttbar/result-eff-%s-%s-%d.txt",whatAnalysis.c_str(),suffix.c_str(),iWP);
+  TString nameFileOutEffHiggs = Form ("test/WW2jewk/ttbar/result-eff-%s-%s-pt-%d-tche-%d-%d.txt",whatAnalysis.c_str(),suffix.c_str(),binCutPt,binTCHE,iWP);
   std::cout << " cat " << nameFileOutEffHiggs.Data() << std::endl;
   std::cout << std::endl;
   
@@ -675,10 +899,12 @@ int GetTop_Macro_forDataCard(int iWP, std::string suffix = "of", std::string wha
  for (int iBin=0; iBin<nBin_MAX; iBin++) {
   if (eff_DATA.at(iBin) != 0) {
    if ( (eff_Top.at(iBin) != 0) && (eff_Top_Higgs.at(iBin != 0)) ) {
+    //---- done pt dependent
+    
     double additional_error = eff_DATA.at(iBin) * (eff_Top_Higgs.at(iBin) - eff_Top.at(iBin)) / (eff_Top_Higgs.at(iBin) + eff_Top.at(iBin)) * 2.;
     eff_DATA.at(iBin)     = eff_DATA.at(iBin) * eff_Top_Higgs.at(iBin) / eff_Top.at(iBin);
     err_eff_DATA.at(iBin) = err_eff_DATA.at(iBin) * eff_Top_Higgs.at(iBin) / eff_Top.at(iBin); //---- scale the error according to new efficiency
-    err_eff_DATA.at(iBin) = sqrt( err_eff_DATA.at(iBin)*err_eff_DATA.at(iBin) + additional_error*additional_error ); //---- add the "efficiency variation" as a systematic error on eff_DATA (thus an error on alpha!)
+    err_eff_DATA.at(iBin) = sqrt( err_eff_DATA.at(iBin)*err_eff_DATA.at(iBin) + additional_error/2.*additional_error/2. ); //---- add the "efficiency variation" as a systematic error on eff_DATA (thus an error on alpha!)
    }
   }
  }
@@ -716,8 +942,9 @@ int GetTop_Macro_forDataCard(int iWP, std::string suffix = "of", std::string wha
  for (int iBin=0; iBin<nBin_MAX; iBin++) {
   totalTop_Central        += (       Top.at(0)).at(iBin);
   totalTop_Central_DD     += (    DD_Top.at(0)).at(iBin);
-  err_totalTop_Central_DD += (err_DD_Top.at(0)).at(iBin);
+  err_totalTop_Central_DD += ((err_DD_Top.at(0)).at(iBin)*(err_DD_Top.at(0)).at(iBin));
  }
+ err_totalTop_Central_DD = sqrt(err_totalTop_Central_DD);
  
  double GlobalSF = 1.;
  double err_GlobalSF = 1.;
@@ -779,6 +1006,7 @@ int GetTop_Macro_forDataCard(int iWP, std::string suffix = "of", std::string wha
   std::cout << " err_Alpha  = " << err_Alpha    << std::endl;
    
   //---- add MC subtraction as an error --> 100% error on MC subtraction!!! ----
+  //---- ---> NB: scaled by alpha -> already in "err_Alpha" calculation
   double additional_error_MC_sub = (Ncontrol_Sub - Ncontrol) / (Ncontrol);
   err_Alpha = Alpha * sqrt ( err_Alpha/Alpha*err_Alpha/Alpha + additional_error_MC_sub*additional_error_MC_sub ) ;
  }
@@ -799,7 +1027,7 @@ int GetTop_Macro_forDataCard(int iWP, std::string suffix = "of", std::string wha
 
  
   
- TString nameFileOut = Form ("test/WW2jewk/ttbar/result-%s-%s-%d.txt",whatAnalysis.c_str(),suffix.c_str(), iWP);
+ TString nameFileOut = Form ("test/WW2jewk/ttbar/result-%s-%s-pt-%d-tche-%d-%d.txt",whatAnalysis.c_str(),suffix.c_str(),binCutPt,binTCHE,iWP);
  std::cout << " cat " << nameFileOut.Data() << std::endl;
  std::cout << std::endl;
  
@@ -816,7 +1044,7 @@ int GetTop_Macro_forDataCard(int iWP, std::string suffix = "of", std::string wha
  
  
  
- nameFileOut = Form ("test/WW2jewk/ttbar/result-SF-%s-%s-%d.txt",whatAnalysis.c_str(),suffix.c_str(), iWP);
+ nameFileOut = Form ("test/WW2jewk/ttbar/result-SF-%s-%s-pt-%d-tche-%d-%d.txt",whatAnalysis.c_str(),suffix.c_str(),binCutPt,binTCHE,iWP);
  std::cout << " cat " << nameFileOut.Data() << std::endl;
  std::cout << std::endl;
  
