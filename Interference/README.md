@@ -63,6 +63,7 @@ ew+qcd
     
 Draw:
 
+    r00t  Draw.cxx\(0,\"mWW\",500,0,500,\"mWW\ [GeV]\"\)
     r00t  Draw.cxx\(0,\"mWW\",100,0,2000,\"mWW\ [GeV]\"\)
     r00t  Draw.cxx\(0,\"mjj\",100,0,2000,\"mjj\ [GeV]\"\)
     r00t  Draw.cxx\(0,\"mjj\",100,0,4000,\"mjj\ [GeV]\"\)
@@ -72,8 +73,7 @@ Draw:
     r00t  Draw.cxx\(0,\"pt1\",100,0,200,\"pt1\ [GeV]\"\)
     r00t  Draw.cxx\(0,\"pt2\",100,0,200,\"pt2\ [GeV]\"\)
 
-    
-    
+
     
 # Madgraph    
     
@@ -118,6 +118,9 @@ Dump:
     ./ntupleMaker.exe   /data/amassiro/CMSSWLHE/WW2jetsMadgraph/QCD_1M.lhe     QCD_MG.root
     ./ntupleMaker.exe   /data/amassiro/CMSSWLHE/WW2jetsMadgraph/EWKQCD_1M.lhe  EWKQCD_MG.root
 
+    ./ntupleMaker.exe   /data/amassiro/CMSSWLHE/WW2jetsMadgraph/EWK_100k_BRHWW.lhe     EWK_MG_100k_BRHWW.root
+    
+    
 Cross-section:
 
          with 10k events                    with 1M events
@@ -129,6 +132,7 @@ Cross-section:
 Draw:
 
     r00t  DrawMG.cxx\(\"mWW\",100,0,2000,\"mWW\ [GeV]\"\)
+    r00t  DrawMG.cxx\(\"mWW\",500,0,500,\"mWW\ [GeV]\"\)
     r00t  DrawMG.cxx\(\"mWW\",50,0,2000,\"mWW\ [GeV]\"\)
     r00t  DrawMG.cxx\(\"mjj\",100,0,4000,\"mjj\ [GeV]\"\)
     r00t  DrawMG.cxx\(\"mjj\",300,0,6000,\"mjj\ [GeV]\"\)

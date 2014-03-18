@@ -7,7 +7,8 @@ void DrawMG(std::string var = "mWW", int NBIN = 1000, int MIN = 0, int MAX = 100
  gStyle->SetOptStat(0);
  
  TString name1;
- name1 = Form ("EWK_MG.root");
+//  name1 = Form ("EWK_MG.root");
+ name1 = Form ("EWK_MG_100k_BRHWW.root");
  
  TString name2;
  name2 = Form ("QCD_MG.root");
@@ -57,7 +58,9 @@ void DrawMG(std::string var = "mWW", int NBIN = 1000, int MIN = 0, int MAX = 100
 //  0.1743 +- 0.0003675 pb    EWKQCD     0.1754 +- 5.231e-05 pb
  
  
- gROOT->ProcessLine ("float xsecEW[100] = {0.008115};");
+ 
+ gROOT->ProcessLine ("float xsecEW[100] = {0.0080983};");
+//  gROOT->ProcessLine ("float xsecEW[100] = {0.008115};");
  gROOT->ProcessLine ("float xsecQCD[100] = {0.1668};");
  gROOT->ProcessLine ("float xsecEWQCD[100] = {0.1754};");
  
@@ -65,7 +68,7 @@ void DrawMG(std::string var = "mWW", int NBIN = 1000, int MIN = 0, int MAX = 100
 //  TString cut = Form ("jetpt1>30 && jetpt2>30 && mWW>130");
 //  TString cut = Form ("jetpt1>30 && jetpt2>30");
 //  TString cut = Form ("jetpt1>30 && jetpt2>30 && mjj>200");
- TString cut = Form ("jetpt1>30 && jetpt2>30 && mjj>300 && pt1>20 && pt2>20");
+ TString cut = Form ("jetpt1>30 && jetpt2>30 && mjj>300 && pt1>20 && pt2>20 && mll>8");
 //  TString cut = Form ("jetpt1>30 && jetpt2>30");
  //  TString cut = Form ("1");
  
@@ -78,18 +81,21 @@ void DrawMG(std::string var = "mWW", int NBIN = 1000, int MIN = 0, int MAX = 100
  std::cout << " tot_2 = " << tot_2 << std::endl;
  std::cout << " tot_3 = " << tot_3 << std::endl;
  
- TString weightWithXsecEW    = Form ("(%s) * (%f) * (%f)",cut.Data(),xsecEW[0],1000./tot_2);
- TString weightWithXsecQCD   = Form ("(%s) * (%f) * (%f)",cut.Data(),xsecQCD[0],1000./tot_1);
+ TString weightWithXsecEW    = Form ("(%s) * (%f) * (%f)",cut.Data(),xsecEW[0],1000./tot_1);
+ TString weightWithXsecQCD   = Form ("(%s) * (%f) * (%f)",cut.Data(),xsecQCD[0],1000./tot_2);
  TString weightWithXsecEWQCD = Form ("(%s) * (%f) * (%f)",cut.Data(),xsecEWQCD[0],1000./tot_3);
  
  TString toDraw;
  toDraw = Form ("%s >> h_mWW_1",var.c_str());
+ std::cout << " weight = " << weightWithXsecEW.Data() << std::endl;
  t1->Draw(toDraw.Data(),weightWithXsecEW.Data(),"goff");
  
  toDraw = Form ("%s >> h_mWW_2",var.c_str());
+ std::cout << " weight = " << weightWithXsecQCD.Data() << std::endl;
  t2->Draw(toDraw.Data(),weightWithXsecQCD.Data(), "goff");
  
  toDraw = Form ("%s >> h_mWW_3",var.c_str());
+ std::cout << " weight = " << weightWithXsecEWQCD.Data() << std::endl;
  t3->Draw(toDraw.Data(),weightWithXsecEWQCD.Data(), "goff");
  
  h_mWW_1->SetLineColor(kBlue);  //---- ewk
