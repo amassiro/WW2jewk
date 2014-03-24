@@ -8,13 +8,17 @@ void DrawMG(std::string var = "mWW", int NBIN = 1000, int MIN = 0, int MAX = 100
  
  TString name1;
 //  name1 = Form ("EWK_MG.root");
- name1 = Form ("EWK_MG_100k_BRHWW.root");
+//  name1 = Form ("EWK_MG_100k_BRHWW.root");
+ name1 = Form ("EWK_MG_bquarks.root");
  
  TString name2;
- name2 = Form ("QCD_MG.root");
+//  name2 = Form ("QCD_MG.root");
+ name2 = Form ("QCD_MG_bquarks.root");
  
  TString name3;
- name3 = Form ("EWKQCD_MG.root");
+//  name3 = Form ("EWKQCD_MG.root");
+ name3 = Form ("EWKQCD_MG_bquarks.root");
+ 
  
  TFile* f1 = new TFile (name1.Data(),"READ"); // ---- EW
  TFile* f2 = new TFile (name2.Data(),"READ"); // ---- QCD
@@ -57,12 +61,22 @@ void DrawMG(std::string var = "mWW", int NBIN = 1000, int MIN = 0, int MAX = 100
 //  0.1663 +- 0.0003664 pb    QCD        0.1668 +- 5.003e-05 pb
 //  0.1743 +- 0.0003675 pb    EWKQCD     0.1754 +- 5.231e-05 pb
  
+//  with b-quarks
+//  0.1102 +- 7.409e-05 pb    EWK     
+//  14.62 +- 0.007497 pb      QCD     
+//  14.69 +- 0.007549 pb      EWKQCD  
  
  
- gROOT->ProcessLine ("float xsecEW[100] = {0.0080983};");
-//  gROOT->ProcessLine ("float xsecEW[100] = {0.008115};");
- gROOT->ProcessLine ("float xsecQCD[100] = {0.1668};");
- gROOT->ProcessLine ("float xsecEWQCD[100] = {0.1754};");
+ gROOT->ProcessLine ("float xsecEW[100] = {0.1102};");
+ //  gROOT->ProcessLine ("float xsecEW[100] = {0.008115};");
+ gROOT->ProcessLine ("float xsecQCD[100] = {14.62};");
+ gROOT->ProcessLine ("float xsecEWQCD[100] = {14.69};");
+ 
+ 
+//  gROOT->ProcessLine ("float xsecEW[100] = {0.0080983};");
+// //  gROOT->ProcessLine ("float xsecEW[100] = {0.008115};");
+//  gROOT->ProcessLine ("float xsecQCD[100] = {0.1668};");
+//  gROOT->ProcessLine ("float xsecEWQCD[100] = {0.1754};");
  
  
 //  TString cut = Form ("jetpt1>30 && jetpt2>30 && mWW>130");

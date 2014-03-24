@@ -122,6 +122,7 @@ LHE files here:
 
 Dump sensitive information into a root file
 
+    cd /home/amassiro/Generation/MINLO/WW2jewk/Interference/
     c++ -o ntupleMaker.exe `root-config --glibs --cflags` `lhapdf-config --cppflags  --ldflags` -lm ntupleMaker.cpp
     ./ntupleMaker.exe   blabla.lhe    blabla.root
 
@@ -149,8 +150,23 @@ Cross-section:
     0.1663 +- 0.0003664 pb    QCD        0.1668 +- 5.003e-05 pb
     0.1743 +- 0.0003675 pb    EWKQCD     0.1754 +- 5.231e-05 pb
 
+
+        with b-quarks
     
+    0.1102 +- 7.409e-05 pb    EWK     
+    14.62 +- 0.007497 pb      QCD     
+    14.69 +- 0.007549 pb      EWKQCD  
+
+        with b-quarks and
+           ptb > 20
+           mjj > 200
+           mbb > 200
+
+    
+
 Draw:
+
+    scp amassiro@cmsneu:/home/amassiro/Generation/MINLO/WW2jewk/Interference/*_bquarks.root ./
 
     r00t  DrawMG.cxx\(\"mWW\",100,0,2000,\"mWW\ [GeV]\"\)
     r00t  DrawMG.cxx\(\"mWW\",500,0,500,\"mWW\ [GeV]\"\)
