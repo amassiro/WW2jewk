@@ -183,7 +183,9 @@ Draw:
     r00t  DrawMG.cxx\(\"pt1\",100,0,200,\"pt1\ [GeV]\"\)
     r00t  DrawMG.cxx\(\"pt2\",100,0,200,\"pt2\ [GeV]\"\)
 
+    r00t  DrawMG.cxx\(\"numb\",3,0,3,\"numb\"\)
 
+    
     
         
     
