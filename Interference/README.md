@@ -95,7 +95,24 @@ Generation:
     gunzip -d  unweighted_events.lhe.gz
     cp unweighted_events.lhe /data/amassiro/CMSSWLHE/WW2jetsMadgraph/EWKQCD_1M.lhe
     cd -
+
+with b quarks
+
+    cd WW2j_QCD_DIR_LO/Events/run_01
+    gunzip -d  unweighted_events.lhe.gz
+    cp unweighted_events.lhe /data/amassiro/CMSSWLHE/WW2jetsMadgraph/QCD_100k_bquarks.lhe
+    cd -
     
+    cd WW2j_EWK_DIR_LO/Events/run_01
+    gunzip -d  unweighted_events.lhe.gz
+    cp unweighted_events.lhe /data/amassiro/CMSSWLHE/WW2jetsMadgraph/EWK_100k_bquarks.lhe
+    cd -
+    
+    cd WW2j_EWKQCD_DIR_LO/Events/run_01
+    gunzip -d  unweighted_events.lhe.gz
+    cp unweighted_events.lhe /data/amassiro/CMSSWLHE/WW2jetsMadgraph/EWKQCD_100k_bquarks.lhe
+    cd -
+
     cmsneu
     /home/amassiro/Generation/MINLO/WW2jewk/Interference/
 
@@ -117,6 +134,10 @@ Dump:
     ./ntupleMaker.exe   /data/amassiro/CMSSWLHE/WW2jetsMadgraph/EWK_1M.lhe     EWK_MG.root
     ./ntupleMaker.exe   /data/amassiro/CMSSWLHE/WW2jetsMadgraph/QCD_1M.lhe     QCD_MG.root
     ./ntupleMaker.exe   /data/amassiro/CMSSWLHE/WW2jetsMadgraph/EWKQCD_1M.lhe  EWKQCD_MG.root
+
+    ./ntupleMaker.exe   /data/amassiro/CMSSWLHE/WW2jetsMadgraph/EWK_100k_bquarks.lhe     EWK_MG_bquarks.root
+    ./ntupleMaker.exe   /data/amassiro/CMSSWLHE/WW2jetsMadgraph/QCD_100k_bquarks.lhe     QCD_MG_bquarks.root
+    ./ntupleMaker.exe   /data/amassiro/CMSSWLHE/WW2jetsMadgraph/EWKQCD_100k_bquarks.lhe  EWKQCD_MG_bquarks.root
 
     ./ntupleMaker.exe   /data/amassiro/CMSSWLHE/WW2jetsMadgraph/EWK_100k_BRHWW.lhe     EWK_MG_100k_BRHWW.root
     
