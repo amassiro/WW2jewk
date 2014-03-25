@@ -113,6 +113,16 @@ with b quarks
     cp unweighted_events.lhe /data/amassiro/CMSSWLHE/WW2jetsMadgraph/EWKQCD_100k_bquarks.lhe
     cd -
 
+    cd WW2j_QCD_DIR_LO/Events/run_02
+    gunzip -d  unweighted_events.lhe.gz
+    cp unweighted_events.lhe /data/amassiro/CMSSWLHE/WW2jetsMadgraph/QCD_100k_bquarks_kincuts.lhe
+    cd -
+    
+    cd WW2j_EWKQCD_DIR_LO/Events/run_02
+    gunzip -d  unweighted_events.lhe.gz
+    cp unweighted_events.lhe /data/amassiro/CMSSWLHE/WW2jetsMadgraph/EWKQCD_100k_bquarks_kincuts.lhe
+    cd -
+
     cmsneu
     /home/amassiro/Generation/MINLO/WW2jewk/Interference/
 
@@ -140,6 +150,9 @@ Dump:
     ./ntupleMaker.exe   /data/amassiro/CMSSWLHE/WW2jetsMadgraph/QCD_100k_bquarks.lhe     QCD_MG_bquarks.root
     ./ntupleMaker.exe   /data/amassiro/CMSSWLHE/WW2jetsMadgraph/EWKQCD_100k_bquarks.lhe  EWKQCD_MG_bquarks.root
 
+    ./ntupleMaker.exe   /data/amassiro/CMSSWLHE/WW2jetsMadgraph/QCD_100k_bquarks_kincuts.lhe     QCD_MG_bquarks_kincuts.root
+    ./ntupleMaker.exe   /data/amassiro/CMSSWLHE/WW2jetsMadgraph/EWKQCD_100k_bquarks_kincuts.lhe  EWKQCD_MG_bquarks_kincuts.root
+
     ./ntupleMaker.exe   /data/amassiro/CMSSWLHE/WW2jetsMadgraph/EWK_100k_BRHWW.lhe     EWK_MG_100k_BRHWW.root
     
     
@@ -162,6 +175,8 @@ Cross-section:
            mjj > 200
            mbb > 200
 
+    3.993 +- 0.002638 pb    QCD     
+    4.05 +- 0.002666 pb     EWKQCD  
     
 
 Draw:
