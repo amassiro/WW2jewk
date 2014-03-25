@@ -170,7 +170,7 @@ Cross-section:
     14.62 +- 0.007497 pb      QCD     
     14.69 +- 0.007549 pb      EWKQCD  
 
-        with b-quarks and
+       with b-quarks and
            ptb > 20
            mjj > 200
            mbb > 200
@@ -182,6 +182,7 @@ Cross-section:
 Draw:
 
     scp amassiro@cmsneu:/home/amassiro/Generation/MINLO/WW2jewk/Interference/*_bquarks.root ./
+    scp amassiro@cmsneu:/home/amassiro/Generation/MINLO/WW2jewk/Interference/*_bquarks_kincuts.root ./
 
     r00t  DrawMG.cxx\(\"mWW\",100,0,2000,\"mWW\ [GeV]\"\)
     r00t  DrawMG.cxx\(\"mWW\",500,0,500,\"mWW\ [GeV]\"\)
@@ -190,6 +191,7 @@ Draw:
     r00t  DrawMG.cxx\(\"mjj\",300,0,6000,\"mjj\ [GeV]\"\)
     r00t  DrawMG.cxx\(\"mjj\",100,0,2000,\"mjj\ [GeV]\"\)
     r00t  DrawMG.cxx\(\"mjj\",30,0,4000,\"mjj\ [GeV]\"\)
+    r00t  DrawMG.cxx\(\"mjj\",40,300,4000,\"mjj\ [GeV]\"\)
     r00t  DrawMG.cxx\(\"mll\",100,0,200,\"mll\ [GeV]\"\)
     r00t  DrawMG.cxx\(\"mll\",100,0,2000,\"mll\ [GeV]\"\)
     r00t  DrawMG.cxx\(\"jetpt1\",100,0,200\,\"jetpt1\ [GeV]\"\)
