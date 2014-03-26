@@ -123,6 +123,16 @@ with b quarks
     cp unweighted_events.lhe /data/amassiro/CMSSWLHE/WW2jetsMadgraph/EWKQCD_100k_bquarks_kincuts.lhe
     cd -
 
+    cd WW2j_QCD_DIR_LO/Events/run_03
+    gunzip -d  unweighted_events.lhe.gz
+    cp unweighted_events.lhe /data/amassiro/CMSSWLHE/WW2jetsMadgraph/QCD_100k_bquarks_kincuts.lhe
+    cd -
+    
+    cd WW2j_EWKQCD_DIR_LO/Events/run_03
+    gunzip -d  unweighted_events.lhe.gz
+    cp unweighted_events.lhe /data/amassiro/CMSSWLHE/WW2jetsMadgraph/EWKQCD_100k_bquarks_kincuts.lhe
+    cd -
+
     cmsneu
     /home/amassiro/Generation/MINLO/WW2jewk/Interference/
 
@@ -177,7 +187,16 @@ Cross-section:
 
     3.993 +- 0.002638 pb    QCD     
     4.05 +- 0.002666 pb     EWKQCD  
+
     
+       with b-quarks and
+           ptj > 30
+           ptb > 30
+           mjj > 300
+           mbb > 300
+
+    1.5 +- 0.0009995 pb    QCD     
+    1.544 +- 0.001016 pb     EWKQCD  
 
 Draw:
 

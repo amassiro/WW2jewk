@@ -76,6 +76,14 @@ void DrawMG(std::string var = "mWW", int NBIN = 1000, int MIN = 0, int MAX = 100
 //  3.993 +- 0.002638 pb    QCD     
 //  4.05 +- 0.002666 pb     EWKQCD  
  
+//  with b-quarks and
+//  ptj > 30
+//  ptb > 30
+//  mjj > 300
+//  mbb > 300
+//  
+//  1.5 +- 0.0009995 pb    QCD     
+//  1.544 +- 0.001016 pb     EWKQCD  
  
  
  gROOT->ProcessLine ("float xsecEW[100] = {0.1102};");
@@ -84,8 +92,11 @@ void DrawMG(std::string var = "mWW", int NBIN = 1000, int MIN = 0, int MAX = 100
 //  gROOT->ProcessLine ("float xsecEWQCD[100] = {14.69};");
  
 
- gROOT->ProcessLine ("float xsecQCD[100] = {3.993};");
- gROOT->ProcessLine ("float xsecEWQCD[100] = {4.05};");
+//  gROOT->ProcessLine ("float xsecQCD[100] = {3.993};");
+//  gROOT->ProcessLine ("float xsecEWQCD[100] = {4.05};");
+
+ gROOT->ProcessLine ("float xsecQCD[100] = {1.5};");
+ gROOT->ProcessLine ("float xsecEWQCD[100] = {1.544};");
  
 //  gROOT->ProcessLine ("float xsecEW[100] = {0.0080983};");
 // //  gROOT->ProcessLine ("float xsecEW[100] = {0.008115};");
