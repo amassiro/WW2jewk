@@ -246,9 +246,15 @@ Draw:
 
     
     
-        
-    
-    
+# Madgraph alone
+
+Compare b removal in Madgraph
+
+Draw:
+     
+    r00t  DrawMGtestB.cxx\(\"mjj\",30,0,4000,\"mjj\ [GeV]\"\)
+    r00t  DrawMGtestB.cxx\(\"jetpt1\",100,0,2000\,\"jetpt1\ [GeV]\"\)
+
     
 
     

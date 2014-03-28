@@ -72,6 +72,7 @@ void fillNtuple (std::string fileNameLHE,  TNtuple & ntuple) {
   float mH = 0;
 
   std::vector<int> finalJets ;
+  std::vector<TLorentzVector> v_f_quarks_gluons ;
   std::vector<TLorentzVector> v_f_quarks ;
   std::vector<TLorentzVector> v_f_leptons ;
   std::vector<TLorentzVector> v_f_neutrinos ;
@@ -94,8 +95,8 @@ void fillNtuple (std::string fileNameLHE,  TNtuple & ntuple) {
 
    // outgoing particles
    if (reader.hepeup.ISTUP.at (iPart) == 1) {
-    // quarks
-    if (abs (reader.hepeup.IDUP.at (iPart)) < 7) {
+    // quarks or gluons
+    if (abs (reader.hepeup.IDUP.at (iPart)) < 7 || abs (reader.hepeup.IDUP.at (iPart)) == 21) {
      finalJets.push_back (iPart) ;
      TLorentzVector dummy (
        reader.hepeup.PUP.at (iPart).at (0), // px
@@ -103,8 +104,11 @@ void fillNtuple (std::string fileNameLHE,  TNtuple & ntuple) {
        reader.hepeup.PUP.at (iPart).at (2), // pz
        reader.hepeup.PUP.at (iPart).at (3) // E
        ) ;
-     v_f_quarks.push_back (dummy) ;
-    } // quarks
+     if ( abs (reader.hepeup.IDUP.at (iPart)) != 21 ) {
+       v_f_quarks.push_back (dummy) ;
+     }
+     v_f_quarks_gluons.push_back (dummy) ;
+    } // quarks or gluons
     else if (abs (reader.hepeup.IDUP.at (iPart)) == 11 || abs (reader.hepeup.IDUP.at (iPart)) == 13 || abs (reader.hepeup.IDUP.at (iPart)) == 15) {  // e = 11,   mu = 13,   tau = 15
      TLorentzVector dummy (
        reader.hepeup.PUP.at (iPart).at (0), // px
@@ -149,6 +153,7 @@ void fillNtuple (std::string fileNameLHE,  TNtuple & ntuple) {
 
 
   // sorting in pt
+  sort (v_f_quarks_gluons.rbegin (), v_f_quarks_gluons.rend (), ptsort ()) ;
   sort (v_f_quarks.rbegin (), v_f_quarks.rend (), ptsort ()) ;
   sort (v_f_leptons.rbegin (), v_f_leptons.rend (), ptsort ()) ;
 
@@ -159,17 +164,30 @@ void fillNtuple (std::string fileNameLHE,  TNtuple & ntuple) {
 
   // the sum pf the two quarks
 
-  float jetpt1 = -99;
-  if (v_f_quarks.size()>0) jetpt1 = v_f_quarks.at (0).Pt ();
-  float jetpt2 = -99;
-  if (v_f_quarks.size()>1) jetpt2 = v_f_quarks.at (1).Pt ();
+//   float jetpt1 = -99;
+//   if (v_f_quarks.size()>0) jetpt1 = v_f_quarks.at (0).Pt ();
+//   float jetpt2 = -99;
+//   if (v_f_quarks.size()>1) jetpt2 = v_f_quarks.at (1).Pt ();
+// 
+//   float mjj = -999;
+//   if (v_f_quarks.size()>1) {
+//    TLorentzVector diJet = v_f_quarks.at (0) + v_f_quarks.at (1) ;
+//    mjj = diJet.M();
+//   }
 
+  float jetpt1 = -99;
+  if (v_f_quarks_gluons.size()>0) jetpt1 = v_f_quarks_gluons.at (0).Pt ();
+  float jetpt2 = -99;
+  if (v_f_quarks_gluons.size()>1) jetpt2 = v_f_quarks_gluons.at (1).Pt ();
+  
   float mjj = -999;
-  if (v_f_quarks.size()>1) {
-   TLorentzVector diJet = v_f_quarks.at (0) + v_f_quarks.at (1) ;
+  if (v_f_quarks_gluons.size()>1) {
+   TLorentzVector diJet = v_f_quarks_gluons.at (0) + v_f_quarks_gluons.at (1) ;
    mjj = diJet.M();
   }
-
+  
+  
+  
   ntuple.Fill (
     jetpt1,
     jetpt2,
