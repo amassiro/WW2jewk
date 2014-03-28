@@ -133,6 +133,16 @@ with b quarks
     cp unweighted_events.lhe /data/amassiro/CMSSWLHE/WW2jetsMadgraph/EWKQCD_100k_bquarks_kincuts.lhe
     cd -
 
+    cd WW2j_QCD_DIR_LO/Events/run_04
+    gunzip -d  unweighted_events.lhe.gz
+    cp unweighted_events.lhe /data/amassiro/CMSSWLHE/WW2jetsMadgraph/QCD_1M_bquarks_kincuts.lhe
+    cd -
+    
+    cd WW2j_EWKQCD_DIR_LO/Events/run_04
+    gunzip -d  unweighted_events.lhe.gz
+    cp unweighted_events.lhe /data/amassiro/CMSSWLHE/WW2jetsMadgraph/EWKQCD_1M_bquarks_kincuts.lhe
+    cd -
+
     cmsneu
     /home/amassiro/Generation/MINLO/WW2jewk/Interference/
 
@@ -163,6 +173,11 @@ Dump:
     ./ntupleMaker.exe   /data/amassiro/CMSSWLHE/WW2jetsMadgraph/QCD_100k_bquarks_kincuts.lhe     QCD_MG_bquarks_kincuts.root
     ./ntupleMaker.exe   /data/amassiro/CMSSWLHE/WW2jetsMadgraph/EWKQCD_100k_bquarks_kincuts.lhe  EWKQCD_MG_bquarks_kincuts.root
 
+    ./ntupleMaker.exe   /data/amassiro/CMSSWLHE/WW2jetsMadgraph/QCD_1M_bquarks_kincuts.lhe     QCD_MG_bquarks_kincuts_1M.root
+    ./ntupleMaker.exe   /data/amassiro/CMSSWLHE/WW2jetsMadgraph/EWKQCD_1M_bquarks_kincuts.lhe  EWKQCD_MG_bquarks_kincuts_1M.root
+    
+    
+    
     ./ntupleMaker.exe   /data/amassiro/CMSSWLHE/WW2jetsMadgraph/EWK_100k_BRHWW.lhe     EWK_MG_100k_BRHWW.root
     
     
@@ -202,6 +217,7 @@ Draw:
 
     scp amassiro@cmsneu:/home/amassiro/Generation/MINLO/WW2jewk/Interference/*_bquarks.root ./
     scp amassiro@cmsneu:/home/amassiro/Generation/MINLO/WW2jewk/Interference/*_bquarks_kincuts.root ./
+    scp amassiro@cmsneu:/home/amassiro/Generation/MINLO/WW2jewk/Interference/*_bquarks_kincuts_1M.root ./
 
     r00t  DrawMG.cxx\(\"mWW\",100,0,2000,\"mWW\ [GeV]\"\)
     r00t  DrawMG.cxx\(\"mWW\",500,0,500,\"mWW\ [GeV]\"\)
