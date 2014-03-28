@@ -141,6 +141,10 @@ void DrawMG(std::string var = "mWW", int NBIN = 1000, int MIN = 0, int MAX = 100
  TString weightWithXsecQCD   = Form ("(%s) * (%f) * (%f)",cut.Data(),xsecQCD[0],1000./tot_2);
  TString weightWithXsecEWQCD = Form ("(%s) * (%f) * (%f)",cut.Data(),xsecEWQCD[0],1000./tot_3);
  
+ h_mWW_1->Sumw2();
+ h_mWW_2->Sumw2();
+ h_mWW_3->Sumw2();
+ 
  TString toDraw;
  toDraw = Form ("%s >> h_mWW_1",var.c_str());
  std::cout << " weight = " << weightWithXsecEW.Data() << std::endl;
@@ -157,6 +161,14 @@ void DrawMG(std::string var = "mWW", int NBIN = 1000, int MIN = 0, int MAX = 100
  h_mWW_1->SetLineColor(kBlue);  //---- ewk
  h_mWW_2->SetLineColor(kRed);   //---- qcd
  h_mWW_3->SetLineColor(kGreen); //---- ewk+qcd
+
+ h_mWW_1->SetFillColor(kBlue);
+ h_mWW_2->SetFillColor(kRed); 
+ h_mWW_3->SetFillColor(kGreen);
+ 
+ h_mWW_1->SetFillStyle(3001);
+ h_mWW_2->SetFillStyle(3003); 
+ h_mWW_3->SetFillStyle(3006);
  
  h_mWW_1->SetLineStyle(1);
  h_mWW_2->SetLineStyle(2);
@@ -183,10 +195,18 @@ void DrawMG(std::string var = "mWW", int NBIN = 1000, int MIN = 0, int MAX = 100
   float ewk = h_mWW_1->GetBinContent(iBin+1);
   float qcd = h_mWW_2->GetBinContent(iBin+1);  
   float ewkqcd = h_mWW_3->GetBinContent(iBin+1);
+  float error_qcd = h_mWW_2->GetBinError(iBin+1);  
+  float error_ewkqcd = h_mWW_3->GetBinError(iBin+1);
   h_I -> SetBinContent (iBin+1, ewkqcd - ewk - qcd);
-  if (ewk != 0) h_Ratio -> SetBinContent (iBin+1, (ewkqcd - qcd) / ewk);
-  else h_Ratio -> SetBinContent (iBin+1, 0);
+  if (ewk != 0) {
+   h_Ratio -> SetBinContent (iBin+1, (ewkqcd - qcd) / ewk);
+  }
+  else {
+   h_Ratio -> SetBinContent (iBin+1, 0);
+  }
+  
   h_Subtraction -> SetBinContent (iBin+1, ewkqcd - qcd);
+  h_Subtraction -> SetBinError   (iBin+1, sqrt(error_ewkqcd*error_ewkqcd - error_qcd*error_qcd));
  }
  
  
@@ -196,6 +216,9 @@ void DrawMG(std::string var = "mWW", int NBIN = 1000, int MIN = 0, int MAX = 100
  h_mWW_3 -> Draw();  //---- ewk+qcd
  h_mWW_1 -> Draw("same"); //---- ewk
  h_mWW_2 -> Draw("same"); //---- qcd
+ h_mWW_3 -> Draw("E2same");  //---- ewk+qcd
+ h_mWW_1 -> Draw("E2same"); //---- ewk
+ h_mWW_2 -> Draw("E2same"); //---- qcd
  leg->Draw();
  cc_All->SetGrid();
  
@@ -211,11 +234,15 @@ void DrawMG(std::string var = "mWW", int NBIN = 1000, int MIN = 0, int MAX = 100
  
  TCanvas* cc_Sub = new TCanvas("cc_Sub","cc_Sub",800,600);
  h_Subtraction->GetYaxis()->SetRangeUser(h_Subtraction->GetMinimum()-10.,h_Subtraction->GetMaximum()*2.5);
+ h_Subtraction->SetFillStyle(3005);
+ h_Subtraction->SetFillColor(kMagenta);
  h_Subtraction->SetLineColor(kMagenta);
  h_Subtraction->SetLineStyle(2);
  h_Subtraction->SetLineWidth(3);
  h_Subtraction -> Draw();
  h_mWW_1 -> Draw("same");
+ h_Subtraction -> Draw("E2same");
+ h_mWW_1 -> Draw("E2same");
  leg2->Draw();
  cc_Sub->SetGrid();
 

@@ -227,6 +227,7 @@ Draw:
     r00t  DrawMG.cxx\(\"mjj\",100,0,2000,\"mjj\ [GeV]\"\)
     r00t  DrawMG.cxx\(\"mjj\",30,0,4000,\"mjj\ [GeV]\"\)
     r00t  DrawMG.cxx\(\"mjj\",40,300,4000,\"mjj\ [GeV]\"\)
+    r00t  DrawMG.cxx\(\"mjj\",80,300,4000,\"mjj\ [GeV]\"\)
     r00t  DrawMG.cxx\(\"mll\",100,0,200,\"mll\ [GeV]\"\)
     r00t  DrawMG.cxx\(\"mll\",100,0,2000,\"mll\ [GeV]\"\)
     r00t  DrawMG.cxx\(\"jetpt1\",100,0,200\,\"jetpt1\ [GeV]\"\)
