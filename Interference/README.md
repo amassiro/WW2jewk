@@ -241,6 +241,10 @@ Dump:
     ./ntupleMaker.exe   /tmp/amassiro/unweighted_events_5.lhe     EWKQCD_MG_bquarks_kincuts_5.root
 
     hadd EWKQCD_MG_bquarks_kincuts_600k.root   EWKQCD_MG_bquarks_kincuts_?.root
+    hadd EWKQCD_MG_bquarks_kincuts_200k.root   EWKQCD_MG_bquarks_kincuts_0.root EWKQCD_MG_bquarks_kincuts_1.root
+    hadd EWKQCD_MG_bquarks_kincuts_300k.root   EWKQCD_MG_bquarks_kincuts_0.root EWKQCD_MG_bquarks_kincuts_1.root EWKQCD_MG_bquarks_kincuts_2.root
+    hadd EWKQCD_MG_bquarks_kincuts_400k.root   EWKQCD_MG_bquarks_kincuts_0.root EWKQCD_MG_bquarks_kincuts_1.root EWKQCD_MG_bquarks_kincuts_2.root EWKQCD_MG_bquarks_kincuts_3.root
+    hadd EWKQCD_MG_bquarks_kincuts_500k.root   EWKQCD_MG_bquarks_kincuts_0.root EWKQCD_MG_bquarks_kincuts_1.root EWKQCD_MG_bquarks_kincuts_2.root EWKQCD_MG_bquarks_kincuts_3.root EWKQCD_MG_bquarks_kincuts_4.root
     
     ./ntupleMaker.exe   /data/amassiro/CMSSWLHE/WW2jetsMadgraph/EWK_100k_BRHWW.lhe     EWK_MG_100k_BRHWW.root
     
