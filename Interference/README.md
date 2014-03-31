@@ -143,6 +143,61 @@ with b quarks
     cp unweighted_events.lhe /data/amassiro/CMSSWLHE/WW2jetsMadgraph/EWKQCD_1M_bquarks_kincuts.lhe
     cd -
 
+    
+temporary solution:
+    
+    
+    cd WW2j_EWKQCD_DIR_LO/Events/run_04_0
+    cp  unweighted_events.lhe.gz /tmp/amassiro/unweighted_events.lhe.gz
+    cd /tmp/amassiro/  
+    gunzip -d unweighted_events.lhe.gz
+    mv unweighted_events.lhe unweighted_events_0.lhe.gz
+    cd -
+    cd ../../../
+
+    cd WW2j_EWKQCD_DIR_LO/Events/run_04_1
+    cp  unweighted_events.lhe.gz /tmp/amassiro/unweighted_events.lhe.gz
+    cd /tmp/amassiro/  
+    gunzip -d unweighted_events.lhe.gz
+    mv unweighted_events.lhe unweighted_events_1.lhe.gz
+    cd -
+    cd ../../../
+
+    cd WW2j_EWKQCD_DIR_LO/Events/run_04_2
+    cp  unweighted_events.lhe.gz /tmp/amassiro/unweighted_events.lhe.gz
+    cd /tmp/amassiro/  
+    gunzip -d unweighted_events.lhe.gz
+    mv unweighted_events.lhe unweighted_events_2.lhe.gz
+    cd -
+    cd ../../../
+    
+    cd WW2j_EWKQCD_DIR_LO/Events/run_04_3
+    cp  unweighted_events.lhe.gz /tmp/amassiro/unweighted_events.lhe.gz
+    cd /tmp/amassiro/  
+    gunzip -d unweighted_events.lhe.gz
+    mv unweighted_events.lhe unweighted_events_3.lhe.gz
+    cd -
+    cd ../../../
+    
+    cd WW2j_EWKQCD_DIR_LO/Events/run_04_4
+    cp  unweighted_events.lhe.gz /tmp/amassiro/unweighted_events.lhe.gz
+    cd /tmp/amassiro/  
+    gunzip -d unweighted_events.lhe.gz
+    mv unweighted_events.lhe unweighted_events_4.lhe.gz
+    cd -
+    cd ../../../
+    
+    cd WW2j_EWKQCD_DIR_LO/Events/run_04_5
+    cp  unweighted_events.lhe.gz /tmp/amassiro/unweighted_events.lhe.gz
+    cd /tmp/amassiro/  
+    gunzip -d unweighted_events.lhe.gz
+    mv unweighted_events.lhe unweighted_events_5.lhe.gz
+    cd -
+    cd ../../../
+
+    
+    
+    
     cmsneu
     /home/amassiro/Generation/MINLO/WW2jewk/Interference/
 
