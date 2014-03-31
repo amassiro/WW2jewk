@@ -240,6 +240,7 @@ Dump:
     ./ntupleMaker.exe   /tmp/amassiro/unweighted_events_4.lhe     EWKQCD_MG_bquarks_kincuts_4.root
     ./ntupleMaker.exe   /tmp/amassiro/unweighted_events_5.lhe     EWKQCD_MG_bquarks_kincuts_5.root
 
+    rm EWKQCD_MG_bquarks_kincuts_?00k.root 
     hadd EWKQCD_MG_bquarks_kincuts_600k.root   EWKQCD_MG_bquarks_kincuts_?.root
     hadd EWKQCD_MG_bquarks_kincuts_200k.root   EWKQCD_MG_bquarks_kincuts_0.root EWKQCD_MG_bquarks_kincuts_1.root
     hadd EWKQCD_MG_bquarks_kincuts_300k.root   EWKQCD_MG_bquarks_kincuts_0.root EWKQCD_MG_bquarks_kincuts_1.root EWKQCD_MG_bquarks_kincuts_2.root
@@ -296,6 +297,7 @@ Draw:
     r00t  DrawMG.cxx\(\"mjj\",300,0,6000,\"mjj\ [GeV]\"\)
     r00t  DrawMG.cxx\(\"mjj\",100,0,2000,\"mjj\ [GeV]\"\)
     r00t  DrawMG.cxx\(\"mjj\",30,0,4000,\"mjj\ [GeV]\"\)
+    r00t  DrawMG.cxx\(\"mqq\",20,300,2000,\"mqq\ [GeV]\"\)
     r00t  DrawMG.cxx\(\"mjj\",20,300,2000,\"mjj\ [GeV]\"\)
     r00t  DrawMG.cxx\(\"mjj\",40,300,4000,\"mjj\ [GeV]\"\)
     r00t  DrawMG.cxx\(\"mjj\",80,300,4000,\"mjj\ [GeV]\"\)

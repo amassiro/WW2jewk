@@ -23,10 +23,10 @@ void DrawMG(std::string var = "mWW", int NBIN = 1000, int MIN = 0, int MAX = 100
 //  name3 = Form ("EWKQCD_MG_bquarks_kincuts.root");
 //  name3 = Form ("EWKQCD_MG_bquarks_kincuts_all.root");  //---- 200k
 //   name3 = Form ("EWKQCD_MG_bquarks_kincuts_1M.root");
-//  name3 = Form ("EWKQCD_MG_bquarks_kincuts_600k.root");
+ name3 = Form ("EWKQCD_MG_bquarks_kincuts_600k.root");
 //  name3 = Form ("EWKQCD_MG_bquarks_kincuts_500k.root");
 //  name3 = Form ("EWKQCD_MG_bquarks_kincuts_400k.root");
- name3 = Form ("EWKQCD_MG_bquarks_kincuts_300k.root");
+//  name3 = Form ("EWKQCD_MG_bquarks_kincuts_300k.root");
 //  name3 = Form ("EWKQCD_MG_bquarks_kincuts_200k.root");
  
  
