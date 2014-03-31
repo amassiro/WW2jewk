@@ -151,7 +151,7 @@ temporary solution:
     cp  unweighted_events.lhe.gz /tmp/amassiro/unweighted_events.lhe.gz
     cd /tmp/amassiro/  
     gunzip -d unweighted_events.lhe.gz
-    mv unweighted_events.lhe unweighted_events_0.lhe.gz
+    mv unweighted_events.lhe unweighted_events_0.lhe
     cd -
     cd ../../../
 
@@ -159,7 +159,7 @@ temporary solution:
     cp  unweighted_events.lhe.gz /tmp/amassiro/unweighted_events.lhe.gz
     cd /tmp/amassiro/  
     gunzip -d unweighted_events.lhe.gz
-    mv unweighted_events.lhe unweighted_events_1.lhe.gz
+    mv unweighted_events.lhe unweighted_events_1.lhe
     cd -
     cd ../../../
 
@@ -167,7 +167,7 @@ temporary solution:
     cp  unweighted_events.lhe.gz /tmp/amassiro/unweighted_events.lhe.gz
     cd /tmp/amassiro/  
     gunzip -d unweighted_events.lhe.gz
-    mv unweighted_events.lhe unweighted_events_2.lhe.gz
+    mv unweighted_events.lhe unweighted_events_2.lhe
     cd -
     cd ../../../
     
@@ -175,7 +175,7 @@ temporary solution:
     cp  unweighted_events.lhe.gz /tmp/amassiro/unweighted_events.lhe.gz
     cd /tmp/amassiro/  
     gunzip -d unweighted_events.lhe.gz
-    mv unweighted_events.lhe unweighted_events_3.lhe.gz
+    mv unweighted_events.lhe unweighted_events_3.lhe
     cd -
     cd ../../../
     
@@ -183,7 +183,7 @@ temporary solution:
     cp  unweighted_events.lhe.gz /tmp/amassiro/unweighted_events.lhe.gz
     cd /tmp/amassiro/  
     gunzip -d unweighted_events.lhe.gz
-    mv unweighted_events.lhe unweighted_events_4.lhe.gz
+    mv unweighted_events.lhe unweighted_events_4.lhe
     cd -
     cd ../../../
     
@@ -191,7 +191,7 @@ temporary solution:
     cp  unweighted_events.lhe.gz /tmp/amassiro/unweighted_events.lhe.gz
     cd /tmp/amassiro/  
     gunzip -d unweighted_events.lhe.gz
-    mv unweighted_events.lhe unweighted_events_5.lhe.gz
+    mv unweighted_events.lhe unweighted_events_5.lhe
     cd -
     cd ../../../
 
@@ -233,9 +233,14 @@ Dump:
     
 
     
-    ./ntupleMaker.exe   /tmp/amassiro/unweighted_events.lhe     EWKQCD_MG_bquarks_kincuts_A.root
-    ./ntupleMaker.exe   /tmp/amassiro/unweighted_events_2.lhe     EWKQCD_MG_bquarks_kincuts_B.root
+    ./ntupleMaker.exe   /tmp/amassiro/unweighted_events_0.lhe     EWKQCD_MG_bquarks_kincuts_0.root
+    ./ntupleMaker.exe   /tmp/amassiro/unweighted_events_1.lhe     EWKQCD_MG_bquarks_kincuts_1.root
+    ./ntupleMaker.exe   /tmp/amassiro/unweighted_events_2.lhe     EWKQCD_MG_bquarks_kincuts_2.root
+    ./ntupleMaker.exe   /tmp/amassiro/unweighted_events_3.lhe     EWKQCD_MG_bquarks_kincuts_3.root
+    ./ntupleMaker.exe   /tmp/amassiro/unweighted_events_4.lhe     EWKQCD_MG_bquarks_kincuts_4.root
+    ./ntupleMaker.exe   /tmp/amassiro/unweighted_events_5.lhe     EWKQCD_MG_bquarks_kincuts_5.root
 
+    hadd EWKQCD_MG_bquarks_kincuts_600k.root   EWKQCD_MG_bquarks_kincuts_?.root
     
     ./ntupleMaker.exe   /data/amassiro/CMSSWLHE/WW2jetsMadgraph/EWK_100k_BRHWW.lhe     EWK_MG_100k_BRHWW.root
     
@@ -278,6 +283,7 @@ Draw:
     scp amassiro@cmsneu:/home/amassiro/Generation/MINLO/WW2jewk/Interference/*_bquarks_kincuts.root ./
     scp amassiro@cmsneu:/home/amassiro/Generation/MINLO/WW2jewk/Interference/*_bquarks_kincuts_1M.root ./
     scp amassiro@cmsneu:/home/amassiro/Generation/MINLO/WW2jewk/Interference/*_bquarks_kincuts_all.root ./
+    scp amassiro@cmsneu:/home/amassiro/Generation/MINLO/WW2jewk/Interference/EWKQCD_MG_bquarks_kincuts_600k.root ./
 
     r00t  DrawMG.cxx\(\"mWW\",100,0,2000,\"mWW\ [GeV]\"\)
     r00t  DrawMG.cxx\(\"mWW\",500,0,500,\"mWW\ [GeV]\"\)

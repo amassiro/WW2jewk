@@ -7,22 +7,24 @@ void DrawMG(std::string var = "mWW", int NBIN = 1000, int MIN = 0, int MAX = 100
  gStyle->SetOptStat(0);
  
  TString name1;
- name1 = Form ("EWK_MG.root");
+//  name1 = Form ("EWK_MG.root");
 //  name1 = Form ("EWK_MG_100k_BRHWW.root");
-//  name1 = Form ("EWK_MG_bquarks.root");
+ name1 = Form ("EWK_MG_bquarks.root");
  
  TString name2;
- name2 = Form ("QCD_MG.root");
+//  name2 = Form ("QCD_MG.root");
 //  name2 = Form ("QCD_MG_bquarks.root");
 //  name2 = Form ("QCD_MG_bquarks_kincuts.root");
-//  name2 = Form ("QCD_MG_bquarks_kincuts_1M.root");
+ name2 = Form ("QCD_MG_bquarks_kincuts_1M.root");
  
  TString name3;
- name3 = Form ("EWKQCD_MG.root");
+//  name3 = Form ("EWKQCD_MG.root");
 //  name3 = Form ("EWKQCD_MG_bquarks.root");
 //  name3 = Form ("EWKQCD_MG_bquarks_kincuts.root");
 //  name3 = Form ("EWKQCD_MG_bquarks_kincuts_all.root");  //---- 200k
  //  name3 = Form ("EWKQCD_MG_bquarks_kincuts_1M.root");
+ name3 = Form ("EWKQCD_MG_bquarks_kincuts_600k.root");
+ 
  
  
  TFile* f1 = new TFile (name1.Data(),"READ"); // ---- EW
@@ -66,9 +68,9 @@ void DrawMG(std::string var = "mWW", int NBIN = 1000, int MIN = 0, int MAX = 100
 //  0.1663 +- 0.0003664 pb    QCD        0.1668 +- 5.003e-05 pb
 //  0.1743 +- 0.0003675 pb    EWKQCD     0.1754 +- 5.231e-05 pb
  
-  gROOT->ProcessLine ("float xsecEW[100] = {0.008115};");
-  gROOT->ProcessLine ("float xsecQCD[100] = {0.1668};");
-  gROOT->ProcessLine ("float xsecEWQCD[100] = {0.1754};");
+//   gROOT->ProcessLine ("float xsecEW[100] = {0.008115};");
+//   gROOT->ProcessLine ("float xsecQCD[100] = {0.1668};");
+//   gROOT->ProcessLine ("float xsecEWQCD[100] = {0.1754};");
  
  
 //  with b-quarks
@@ -101,20 +103,35 @@ void DrawMG(std::string var = "mWW", int NBIN = 1000, int MIN = 0, int MAX = 100
 //  1.5 +- 0.0009995 pb    QCD     
 //  1.544 +- 0.001016 pb     EWKQCD  
 
- //  gROOT->ProcessLine ("float xsecEW[100] = {0.1102};");
- //  gROOT->ProcessLine ("float xsecQCD[100] = {1.5};");
-//   gROOT->ProcessLine ("float xsecEWQCD[100] = {1.544};");
+//   gROOT->ProcessLine ("float xsecEW[100] = {0.1102};");
+//   gROOT->ProcessLine ("float xsecQCD[100] = {1.5};");
+ gROOT->ProcessLine ("float xsecEWQCD[100] = {1.544};");
  
  
  //---- 1M events
  //  1.50144           pb    QCD     
  //   ### pb     EWKQCD  
   
-//  gROOT->ProcessLine ("float xsecEW[100] = {0.1102};");
-//  gROOT->ProcessLine ("float xsecQCD[100] = {1.50144};");
+ gROOT->ProcessLine ("float xsecEW[100] = {0.1102};");
+ gROOT->ProcessLine ("float xsecQCD[100] = {1.50144};");
 //  gROOT->ProcessLine ("float xsecEWQCD[100] = {1.###};");
   
 
+ 
+//  #  Integrated weight (pb)  :  .15432E+01
+//  #  Integrated weight (pb)  :  .15443E+01
+//  #  Integrated weight (pb)  :  .15450E+01
+//  #  Integrated weight (pb)  :  .15442E+01
+//  #  Integrated weight (pb)  :  .15434E+01
+//  #  Integrated weight (pb)  :  .15437E+01
+//  
+//  #  Truncated wgt (pb)      :  .53728E-03
+//  #  Truncated wgt (pb)      :  .68578E-03
+//  #  Truncated wgt (pb)      :  .59976E-03
+//  #  Truncated wgt (pb)      :  .59407E-03
+//  #  Truncated wgt (pb)      :  .71166E-03
+//  #  Truncated wgt (pb)      :  .60486E-03
+ 
 
  
 //  gROOT->ProcessLine ("float xsecEW[100] = {0.0080983};");
