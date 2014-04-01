@@ -61,7 +61,8 @@ void fillNtuple (std::string fileNameLHE,  TNtuple & ntuple) {
  std::cout << " reading " << fileNameLHE << std::endl;
 
  int numb;
-
+ int numbInput;
+ 
  // loop over events
  while ( reader.readEvent () ) {
   ieve++;
@@ -145,7 +146,20 @@ void fillNtuple (std::string fileNameLHE,  TNtuple & ntuple) {
    }
   }
 
-
+  numb = 0;
+  // loop over particles in the event
+  for (unsigned int  iPart = 0 ; iPart < reader.hepeup.IDUP.size (); iPart++) {
+   // ingoing particles
+   if (reader.hepeup.ISTUP.at (iPart) == -1) {
+    // b quarks
+    if (abs (reader.hepeup.IDUP.at (iPart)) == 5) {
+     numbInput++;
+    }
+   }
+  }
+  
+  
+  
   if (v_f_leptons.size () != 2) {
    std::cout << " what !?!?!?! Not 2 leptons? Are you kidding?" << std::endl;
    continue;
@@ -202,6 +216,7 @@ void fillNtuple (std::string fileNameLHE,  TNtuple & ntuple) {
     diLepton.M(),
     mjj,
     numb,
+    numbInput,
     mqq
   ) ;
 
@@ -228,7 +243,7 @@ int main (int argc, char **argv) {
  LHAPDF::initPDF (0) ;
 
 
- TNtuple ntu ("ntu", "ntu", "jetpt1:jetpt2:pt1:pt2:mWW:mll:mjj:numb:mqq");
+ TNtuple ntu ("ntu", "ntu", "jetpt1:jetpt2:pt1:pt2:mWW:mll:mjj:numb:numbInput:mqq");
  fillNtuple (argv[1], ntu) ;
 
  TFile output (argv[2], "recreate") ;
