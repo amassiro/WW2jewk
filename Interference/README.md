@@ -332,6 +332,11 @@ Draw:
     r00t  DrawMGtestBEWK.cxx\(\"jetpt1\",100,0,2000\,\"jetpt1\ [GeV]\"\)
     r00t  DrawMGtestBEWK.cxx\(\"numb\",3,0,3,\"numb\"\)
 
+    r00t  DrawMGtestBQCDEWK.cxx\(\"mqq\",30,0,4000,\"mjj\ [GeV]\"\)
+    r00t  DrawMGtestBQCDEWK.cxx\(\"mjj\",30,0,4000,\"mjj\ [GeV]\"\)
+    r00t  DrawMGtestBQCDEWK.cxx\(\"jetpt1\",100,0,2000\,\"jetpt1\ [GeV]\"\)
+    r00t  DrawMGtestBQCDEWK.cxx\(\"numb\",3,0,3,\"numb\"\)
+
     
     
     

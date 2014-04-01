@@ -46,7 +46,7 @@ void DrawMGtestBEWK(std::string var = "mWW", int NBIN = 1000, int MIN = 0, int M
 //  0.1663 +- 0.0003664 pb    QCD        0.1668 +- 5.003e-05 pb
 //  0.1743 +- 0.0003675 pb    EWKQCD     0.1754 +- 5.231e-05 pb
  
- gROOT->ProcessLine ("float xsecQCD[100] = {0.008115};");
+ gROOT->ProcessLine ("float xsecQCD[100] = {0.1102};");
  
  
 //  with b-quarks
@@ -88,7 +88,7 @@ void DrawMGtestBEWK(std::string var = "mWW", int NBIN = 1000, int MIN = 0, int M
  //  1.50144           pb    QCD     
  //   ### pb     EWKQCD  
   
- gROOT->ProcessLine ("float xsecQCDwithoutB[100] = {0.1102};");
+ gROOT->ProcessLine ("float xsecQCDwithoutB[100] = {0.008115};");
 //  gROOT->ProcessLine ("float xsecQCDwithoutB[100] = {1.50144};");
 //  gROOT->ProcessLine ("float xsecEWQCD[100] = {1.###};");
   
@@ -143,8 +143,8 @@ void DrawMGtestBEWK(std::string var = "mWW", int NBIN = 1000, int MIN = 0, int M
  h_mWW_2->SetLineWidth(2);
  
  TLegend* leg = new TLegend(0.5,0.7,0.9,0.9);
- leg->AddEntry(h_mWW_1,"qcd w/  b","l");
- leg->AddEntry(h_mWW_2,"qcd w/o b","l");
+ leg->AddEntry(h_mWW_1,"ewk w/  b","l");
+ leg->AddEntry(h_mWW_2,"ewk w/o b","l");
  leg->SetFillStyle(0);
 
 
