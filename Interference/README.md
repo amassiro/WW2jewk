@@ -321,11 +321,16 @@ Compare b removal in Madgraph
 
 Draw:
      
+    r00t  DrawMGtestB.cxx\(\"mqq\",30,0,4000,\"mjj\ [GeV]\"\)
     r00t  DrawMGtestB.cxx\(\"mjj\",30,0,4000,\"mjj\ [GeV]\"\)
     r00t  DrawMGtestB.cxx\(\"jetpt1\",100,0,2000\,\"jetpt1\ [GeV]\"\)
     r00t  DrawMGtestB.cxx\(\"numb\",3,0,3,\"numb\"\)
 
     
+    r00t  DrawMGtestBEWK.cxx\(\"mqq\",30,0,4000,\"mjj\ [GeV]\"\)
+    r00t  DrawMGtestBEWK.cxx\(\"mjj\",30,0,4000,\"mjj\ [GeV]\"\)
+    r00t  DrawMGtestBEWK.cxx\(\"jetpt1\",100,0,2000\,\"jetpt1\ [GeV]\"\)
+    r00t  DrawMGtestBEWK.cxx\(\"numb\",3,0,3,\"numb\"\)
 
     
     
