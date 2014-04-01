@@ -100,7 +100,7 @@ void DrawMGtestB(std::string var = "mWW", int NBIN = 1000, int MIN = 0, int MAX 
  
  
 //  TString cut = Form ("jetpt1>30 && jetpt2>30 && mjj>300 && pt1>20 && pt2>20 && mll>8");
- TString cut = Form ("jetpt1>30 && jetpt2>30 && mjj>300 && pt1>20 && pt2>20 && mll>8 && numb==0");
+ TString cut = Form ("jetpt1>30 && jetpt2>30 && mjj>300 && pt1>20 && pt2>20 && mll>8 && numb==0 && numbInput==0");");
  
  
  int tot_1 = t1 -> GetEntries();
