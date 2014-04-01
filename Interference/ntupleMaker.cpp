@@ -146,7 +146,7 @@ void fillNtuple (std::string fileNameLHE,  TNtuple & ntuple) {
    }
   }
 
-  numb = 0;
+  numbInput = 0;
   // loop over particles in the event
   for (unsigned int  iPart = 0 ; iPart < reader.hepeup.IDUP.size (); iPart++) {
    // ingoing particles
