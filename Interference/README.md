@@ -290,7 +290,8 @@ Draw:
     scp amassiro@cmsneu:/home/amassiro/Generation/MINLO/WW2jewk/Interference/*_bquarks_kincuts_all.root ./
     scp amassiro@cmsneu:/home/amassiro/Generation/MINLO/WW2jewk/Interference/EWKQCD_MG_bquarks_kincuts_600k.root ./
     scp amassiro@cmsneu:/home/amassiro/Generation/MINLO/WW2jewk/Interference/*_MG.root ./
-
+    scp amassiro@cmsneu:/home/amassiro/Generation/MINLO/WW2jewk/Interference/*.root ./
+    
     
     r00t  DrawMG.cxx\(\"mWW\",100,0,2000,\"mWW\ [GeV]\"\)
     r00t  DrawMG.cxx\(\"mWW\",500,0,500,\"mWW\ [GeV]\"\)
@@ -325,6 +326,7 @@ Draw:
     r00t  DrawMGtestB.cxx\(\"mjj\",30,0,4000,\"mjj\ [GeV]\"\)
     r00t  DrawMGtestB.cxx\(\"jetpt1\",100,0,2000\,\"jetpt1\ [GeV]\"\)
     r00t  DrawMGtestB.cxx\(\"numb\",3,0,3,\"numb\"\)
+    r00t  DrawMGtestB.cxx\(\"numbInput\",3,0,3,\"numbInput\"\)
 
     
     r00t  DrawMGtestBEWK.cxx\(\"mqq\",30,0,4000,\"mjj\ [GeV]\"\)

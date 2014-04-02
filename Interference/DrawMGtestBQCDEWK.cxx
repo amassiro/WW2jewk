@@ -7,7 +7,11 @@ void DrawMGtestBQCDEWK(std::string var = "mWW", int NBIN = 1000, int MIN = 0, in
  gStyle->SetOptStat(0);
  
  TString name1;
- name1 = Form ("EWKQCD_MG_bquarks_kincuts_600k.root");
+//  name1 = Form ("EWKQCD_MG_bquarks_kincuts_600k.root");
+//  gROOT->ProcessLine ("float xsecQCD[100] = {1.544};");
+ 
+ name1 = Form ("EWKQCD_MG_bquarks.root");
+ gROOT->ProcessLine ("float xsecQCD[100] = {14.69};");
  
  TString name2;
  name2 = Form ("EWKQCD_MG.root");
@@ -46,7 +50,6 @@ void DrawMGtestBQCDEWK(std::string var = "mWW", int NBIN = 1000, int MIN = 0, in
 //  0.1663 +- 0.0003664 pb    QCD        0.1668 +- 5.003e-05 pb
 //  0.1743 +- 0.0003675 pb    EWKQCD     0.1754 +- 5.231e-05 pb
  
- gROOT->ProcessLine ("float xsecQCD[100] = {1.544};");
  
  
 //  with b-quarks
@@ -100,7 +103,7 @@ void DrawMGtestBQCDEWK(std::string var = "mWW", int NBIN = 1000, int MIN = 0, in
  
  
 //  TString cut = Form ("jetpt1>30 && jetpt2>30 && mjj>300 && pt1>20 && pt2>20 && mll>8");
- TString cut = Form ("jetpt1>30 && jetpt2>30 && mjj>300 && pt1>20 && pt2>20 && mll>8 && numb==0 && numbInput==0");
+ TString cut = Form ("jetpt1>30 && jetpt2>30 && mqq>300 && pt1>20 && pt2>20 && mll>8 && numb==0 && numbInput==0");
  
  
  int tot_1 = t1 -> GetEntries();
