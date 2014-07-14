@@ -1,6 +1,24 @@
 lxbatch
 =======
 
+
+Preparation
+=======
+
+change weight format to support old cmssw releases
+
+    sed 's/<wgt/#wgt/' </tmp/amassiro/Jasper_unweighted_events.lhe | sed 's/<rwgt/#rwgt/'   | sed 's|</rwgt|#/rwgt|'    | sed 's|</wgt>||'   >/tmp/amassiro/Jasper_unweighted_events_weight.lhe
+
+    sed 's/<wgt/#wgt/' </data/amassiro/CMSSWLHE/WW2jetsMadgraph_aQGC/Jasper_unweighted_events.lhe | sed 's/<rwgt/#rwgt/'   | sed 's|</rwgt|#/rwgt|'    | sed 's|</wgt>||'   > /data/amassiro/CMSSWLHE/WW2jetsMadgraph_aQGC/Jasper_unweighted_events_weight.lhe
+
+from LHE to CMSSW
+
+    cmsDriver.py step1 --filein file:/data/amassiro/CMSSWLHE/WW2jetsMadgraph_aQGC/Jasper_unweighted_events_weight.lhe  --fileout file:/data/amassiro/CMSSWLHE/WW2jetsMadgraph_aQGC/Jasper_unweighted_events.root --mc --eventcontent LHE --datatier GEN --conditions START53_V7C::All --step NONE --python_filename test.py 
+
+    cmsDriver.py step1 --filein file:/tmp/amassiro/Jasper_unweighted_events_weight.lhe  --fileout file:/tmp/amassiro/Jasper_unweighted_events.root --mc --eventcontent LHE --datatier GEN --conditions START53_V7C::All --step NONE --python_filename test.py 
+
+
+
 Decay & hadronize: GEN-SIM step lxbatch
 =======
 
@@ -8,6 +26,7 @@ Decay & hadronize: GEN-SIM step lxbatch
 1. Prepare the jobs to launch on lxbatch:
 
         perl launchJobs_lxbatch_GEN-SIM.pl params_lxbatch_GEN-SIM_hww.CFG
+        perl launchJobs_lxbatch_GEN-SIM.pl params_lxbatch_GEN-SIM_aQGC.CFG
 
     params_lxbatch_GEN-SIM.CFG has the following input parameters:
 
