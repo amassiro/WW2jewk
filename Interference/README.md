@@ -63,18 +63,139 @@ ew+qcd
     
 Draw:
 
+    r00t  Draw.cxx\(0,\"mWW\",500,0,500,\"mWW\ [GeV]\"\)
     r00t  Draw.cxx\(0,\"mWW\",100,0,2000,\"mWW\ [GeV]\"\)
     r00t  Draw.cxx\(0,\"mjj\",100,0,2000,\"mjj\ [GeV]\"\)
+    r00t  Draw.cxx\(0,\"mjj\",100,0,4000,\"mjj\ [GeV]\"\)
     r00t  Draw.cxx\(0,\"mll\",100,0,200,\"mll\ [GeV]\"\)
     r00t  Draw.cxx\(0,\"jetpt1\",100,0,200\,\"jetpt1\ [GeV]\"\)
     r00t  Draw.cxx\(0,\"jetpt2\",100,0,200,\"jetpt2\ [GeV]\"\)
     r00t  Draw.cxx\(0,\"pt1\",100,0,200,\"pt1\ [GeV]\"\)
     r00t  Draw.cxx\(0,\"pt2\",100,0,200,\"pt2\ [GeV]\"\)
 
-    
-    
+
     
 # Madgraph    
+    
+Generation:
+
+    cd /home/amassiro/Generation/MG5/MG5_aMC_v2_0_0
+    
+    cd WW2j_QCD_DIR_LO/Events/run_02
+    gunzip -d  unweighted_events.lhe.gz
+    cp unweighted_events.lhe /data/amassiro/CMSSWLHE/WW2jetsMadgraph/QCD_1M.lhe
+    cd -
+    
+    cd WW2j_EWK_DIR_LO/Events/run_02
+    gunzip -d  unweighted_events.lhe.gz
+    cp unweighted_events.lhe /data/amassiro/CMSSWLHE/WW2jetsMadgraph/EWK_1M.lhe
+    cd -
+    
+    cd WW2j_EWKQCD_DIR_LO/Events/run_02
+    gunzip -d  unweighted_events.lhe.gz
+    cp unweighted_events.lhe /data/amassiro/CMSSWLHE/WW2jetsMadgraph/EWKQCD_1M.lhe
+    cd -
+
+with b quarks
+
+    cd WW2j_QCD_DIR_LO/Events/run_01
+    gunzip -d  unweighted_events.lhe.gz
+    cp unweighted_events.lhe /data/amassiro/CMSSWLHE/WW2jetsMadgraph/QCD_100k_bquarks.lhe
+    cd -
+    
+    cd WW2j_EWK_DIR_LO/Events/run_01
+    gunzip -d  unweighted_events.lhe.gz
+    cp unweighted_events.lhe /data/amassiro/CMSSWLHE/WW2jetsMadgraph/EWK_100k_bquarks.lhe
+    cd -
+    
+    cd WW2j_EWKQCD_DIR_LO/Events/run_01
+    gunzip -d  unweighted_events.lhe.gz
+    cp unweighted_events.lhe /data/amassiro/CMSSWLHE/WW2jetsMadgraph/EWKQCD_100k_bquarks.lhe
+    cd -
+
+    cd WW2j_QCD_DIR_LO/Events/run_02
+    gunzip -d  unweighted_events.lhe.gz
+    cp unweighted_events.lhe /data/amassiro/CMSSWLHE/WW2jetsMadgraph/QCD_100k_bquarks_kincuts.lhe
+    cd -
+    
+    cd WW2j_EWKQCD_DIR_LO/Events/run_02
+    gunzip -d  unweighted_events.lhe.gz
+    cp unweighted_events.lhe /data/amassiro/CMSSWLHE/WW2jetsMadgraph/EWKQCD_100k_bquarks_kincuts.lhe
+    cd -
+
+    cd WW2j_QCD_DIR_LO/Events/run_03
+    gunzip -d  unweighted_events.lhe.gz
+    cp unweighted_events.lhe /data/amassiro/CMSSWLHE/WW2jetsMadgraph/QCD_100k_bquarks_kincuts.lhe
+    cd -
+    
+    cd WW2j_EWKQCD_DIR_LO/Events/run_03
+    gunzip -d  unweighted_events.lhe.gz
+    cp unweighted_events.lhe /data/amassiro/CMSSWLHE/WW2jetsMadgraph/EWKQCD_100k_bquarks_kincuts.lhe
+    cd -
+
+    cd WW2j_QCD_DIR_LO/Events/run_04
+    gunzip -d  unweighted_events.lhe.gz
+    cp unweighted_events.lhe /data/amassiro/CMSSWLHE/WW2jetsMadgraph/QCD_1M_bquarks_kincuts.lhe
+    cd -
+    
+    cd WW2j_EWKQCD_DIR_LO/Events/run_04
+    gunzip -d  unweighted_events.lhe.gz
+    cp unweighted_events.lhe /data/amassiro/CMSSWLHE/WW2jetsMadgraph/EWKQCD_1M_bquarks_kincuts.lhe
+    cd -
+
+    
+temporary solution:
+    
+    
+    cd WW2j_EWKQCD_DIR_LO/Events/run_04_0
+    cp  unweighted_events.lhe.gz /tmp/amassiro/unweighted_events.lhe.gz
+    cd /tmp/amassiro/  
+    gunzip -d unweighted_events.lhe.gz
+    mv unweighted_events.lhe unweighted_events_0.lhe
+    cd -
+    cd ../../../
+
+    cd WW2j_EWKQCD_DIR_LO/Events/run_04_1
+    cp  unweighted_events.lhe.gz /tmp/amassiro/unweighted_events.lhe.gz
+    cd /tmp/amassiro/  
+    gunzip -d unweighted_events.lhe.gz
+    mv unweighted_events.lhe unweighted_events_1.lhe
+    cd -
+    cd ../../../
+
+    cd WW2j_EWKQCD_DIR_LO/Events/run_04_2
+    cp  unweighted_events.lhe.gz /tmp/amassiro/unweighted_events.lhe.gz
+    cd /tmp/amassiro/  
+    gunzip -d unweighted_events.lhe.gz
+    mv unweighted_events.lhe unweighted_events_2.lhe
+    cd -
+    cd ../../../
+    
+    cd WW2j_EWKQCD_DIR_LO/Events/run_04_3
+    cp  unweighted_events.lhe.gz /tmp/amassiro/unweighted_events.lhe.gz
+    cd /tmp/amassiro/  
+    gunzip -d unweighted_events.lhe.gz
+    mv unweighted_events.lhe unweighted_events_3.lhe
+    cd -
+    cd ../../../
+    
+    cd WW2j_EWKQCD_DIR_LO/Events/run_04_4
+    cp  unweighted_events.lhe.gz /tmp/amassiro/unweighted_events.lhe.gz
+    cd /tmp/amassiro/  
+    gunzip -d unweighted_events.lhe.gz
+    mv unweighted_events.lhe unweighted_events_4.lhe
+    cd -
+    cd ../../../
+    
+    cd WW2j_EWKQCD_DIR_LO/Events/run_04_5
+    cp  unweighted_events.lhe.gz /tmp/amassiro/unweighted_events.lhe.gz
+    cd /tmp/amassiro/  
+    gunzip -d unweighted_events.lhe.gz
+    mv unweighted_events.lhe unweighted_events_5.lhe
+    cd -
+    cd ../../../
+
+    
     
     
     cmsneu
@@ -86,6 +207,7 @@ LHE files here:
 
 Dump sensitive information into a root file
 
+    cd /home/amassiro/Generation/MINLO/WW2jewk/Interference/
     c++ -o ntupleMaker.exe `root-config --glibs --cflags` `lhapdf-config --cppflags  --ldflags` -lm ntupleMaker.cpp
     ./ntupleMaker.exe   blabla.lhe    blabla.root
 
@@ -95,36 +217,128 @@ Dump:
     ./ntupleMaker.exe   /data/amassiro/CMSSWLHE/WW2jetsMadgraph/QCD.lhe     QCD_MG.root
     ./ntupleMaker.exe   /data/amassiro/CMSSWLHE/WW2jetsMadgraph/EWKQCD.lhe  EWKQCD_MG.root
     
+    ./ntupleMaker.exe   /data/amassiro/CMSSWLHE/WW2jetsMadgraph/EWK_1M.lhe     EWK_MG.root
+    ./ntupleMaker.exe   /data/amassiro/CMSSWLHE/WW2jetsMadgraph/QCD_1M.lhe     QCD_MG.root
+    ./ntupleMaker.exe   /data/amassiro/CMSSWLHE/WW2jetsMadgraph/EWKQCD_1M.lhe  EWKQCD_MG.root
 
+    ./ntupleMaker.exe   /data/amassiro/CMSSWLHE/WW2jetsMadgraph/EWK_100k_bquarks.lhe     EWK_MG_bquarks.root
+    ./ntupleMaker.exe   /data/amassiro/CMSSWLHE/WW2jetsMadgraph/QCD_100k_bquarks.lhe     QCD_MG_bquarks.root
+    ./ntupleMaker.exe   /data/amassiro/CMSSWLHE/WW2jetsMadgraph/EWKQCD_100k_bquarks.lhe  EWKQCD_MG_bquarks.root
+
+    ./ntupleMaker.exe   /data/amassiro/CMSSWLHE/WW2jetsMadgraph/QCD_100k_bquarks_kincuts.lhe     QCD_MG_bquarks_kincuts.root
+    ./ntupleMaker.exe   /data/amassiro/CMSSWLHE/WW2jetsMadgraph/EWKQCD_100k_bquarks_kincuts.lhe  EWKQCD_MG_bquarks_kincuts.root
+
+    ./ntupleMaker.exe   /data/amassiro/CMSSWLHE/WW2jetsMadgraph/QCD_1M_bquarks_kincuts.lhe     QCD_MG_bquarks_kincuts_1M.root
+//    ./ntupleMaker.exe   /data/amassiro/CMSSWLHE/WW2jetsMadgraph/EWKQCD_1M_bquarks_kincuts.lhe  EWKQCD_MG_bquarks_kincuts_1M.root
+    
+
+    
+    ./ntupleMaker.exe   /tmp/amassiro/unweighted_events_0.lhe     EWKQCD_MG_bquarks_kincuts_0.root
+    ./ntupleMaker.exe   /tmp/amassiro/unweighted_events_1.lhe     EWKQCD_MG_bquarks_kincuts_1.root
+    ./ntupleMaker.exe   /tmp/amassiro/unweighted_events_2.lhe     EWKQCD_MG_bquarks_kincuts_2.root
+    ./ntupleMaker.exe   /tmp/amassiro/unweighted_events_3.lhe     EWKQCD_MG_bquarks_kincuts_3.root
+    ./ntupleMaker.exe   /tmp/amassiro/unweighted_events_4.lhe     EWKQCD_MG_bquarks_kincuts_4.root
+    ./ntupleMaker.exe   /tmp/amassiro/unweighted_events_5.lhe     EWKQCD_MG_bquarks_kincuts_5.root
+
+    rm EWKQCD_MG_bquarks_kincuts_?00k.root 
+    hadd EWKQCD_MG_bquarks_kincuts_600k.root   EWKQCD_MG_bquarks_kincuts_?.root
+    hadd EWKQCD_MG_bquarks_kincuts_200k.root   EWKQCD_MG_bquarks_kincuts_0.root EWKQCD_MG_bquarks_kincuts_1.root
+    hadd EWKQCD_MG_bquarks_kincuts_300k.root   EWKQCD_MG_bquarks_kincuts_0.root EWKQCD_MG_bquarks_kincuts_1.root EWKQCD_MG_bquarks_kincuts_2.root
+    hadd EWKQCD_MG_bquarks_kincuts_400k.root   EWKQCD_MG_bquarks_kincuts_0.root EWKQCD_MG_bquarks_kincuts_1.root EWKQCD_MG_bquarks_kincuts_2.root EWKQCD_MG_bquarks_kincuts_3.root
+    hadd EWKQCD_MG_bquarks_kincuts_500k.root   EWKQCD_MG_bquarks_kincuts_0.root EWKQCD_MG_bquarks_kincuts_1.root EWKQCD_MG_bquarks_kincuts_2.root EWKQCD_MG_bquarks_kincuts_3.root EWKQCD_MG_bquarks_kincuts_4.root
+    
+    ./ntupleMaker.exe   /data/amassiro/CMSSWLHE/WW2jetsMadgraph/EWK_100k_BRHWW.lhe     EWK_MG_100k_BRHWW.root
+    
+    
 Cross-section:
 
-    0.008021 +- 2.212e-05 pb  EWK
-    0.1663 +- 0.0003664 pb    QCD
-    0.1743 +- 0.0003675 pb    EWKQCD
+         with 10k events                    with 1M events
+    0.008021 +- 2.212e-05 pb  EWK        0.008115 +- 2.12e-06 pb
+    0.1663 +- 0.0003664 pb    QCD        0.1668 +- 5.003e-05 pb
+    0.1743 +- 0.0003675 pb    EWKQCD     0.1754 +- 5.231e-05 pb
+
+
+        with b-quarks
+    
+    0.1102 +- 7.409e-05 pb    EWK     
+    14.62 +- 0.007497 pb      QCD     
+    14.69 +- 0.007549 pb      EWKQCD  
+
+       with b-quarks and
+           ptb > 20
+           mjj > 200
+           mbb > 200
+
+    3.993 +- 0.002638 pb    QCD     
+    4.05 +- 0.002666 pb     EWKQCD  
 
     
+       with b-quarks and
+           ptj > 30
+           ptb > 30
+           mjj > 300
+           mbb > 300
+
+    1.5 +- 0.0009995 pb    QCD     
+    1.544 +- 0.001016 pb     EWKQCD  
+
 Draw:
 
-    r00t  DrawMG.cxx\(\"mWW\",10,0,2000,\"mWW\ [GeV]\"\)
-    r00t  DrawMG.cxx\(\"mjj\",10,0,2000,\"mjj\ [GeV]\"\)
-    r00t  DrawMG.cxx\(\"mll\",10,0,200,\"mll\ [GeV]\"\)
-    r00t  DrawMG.cxx\(\"jetpt1\",10,0,200\,\"jetpt1\ [GeV]\"\)
-    r00t  DrawMG.cxx\(\"jetpt2\",10,0,200,\"jetpt2\ [GeV]\"\)
-    r00t  DrawMG.cxx\(\"pt1\",10,0,200,\"pt1\ [GeV]\"\)
-    r00t  DrawMG.cxx\(\"pt2\",10,0,200,\"pt2\ [GeV]\"\)
+    scp amassiro@cmsneu:/home/amassiro/Generation/MINLO/WW2jewk/Interference/*_bquarks.root ./
+    scp amassiro@cmsneu:/home/amassiro/Generation/MINLO/WW2jewk/Interference/*_bquarks_kincuts.root ./
+    scp amassiro@cmsneu:/home/amassiro/Generation/MINLO/WW2jewk/Interference/*_bquarks_kincuts_1M.root ./
+    scp amassiro@cmsneu:/home/amassiro/Generation/MINLO/WW2jewk/Interference/*_bquarks_kincuts_all.root ./
+    scp amassiro@cmsneu:/home/amassiro/Generation/MINLO/WW2jewk/Interference/EWKQCD_MG_bquarks_kincuts_600k.root ./
+    scp amassiro@cmsneu:/home/amassiro/Generation/MINLO/WW2jewk/Interference/*_MG.root ./
+    scp amassiro@cmsneu:/home/amassiro/Generation/MINLO/WW2jewk/Interference/*.root ./
+    
+    
+    r00t  DrawMG.cxx\(\"mWW\",100,0,2000,\"mWW\ [GeV]\"\)
+    r00t  DrawMG.cxx\(\"mWW\",500,0,500,\"mWW\ [GeV]\"\)
+    r00t  DrawMG.cxx\(\"mWW\",50,0,2000,\"mWW\ [GeV]\"\)
+    r00t  DrawMG.cxx\(\"mjj\",100,0,4000,\"mjj\ [GeV]\"\)
+    r00t  DrawMG.cxx\(\"mjj\",300,0,6000,\"mjj\ [GeV]\"\)
+    r00t  DrawMG.cxx\(\"mjj\",100,0,2000,\"mjj\ [GeV]\"\)
+    r00t  DrawMG.cxx\(\"mjj\",30,0,4000,\"mjj\ [GeV]\"\)
+    r00t  DrawMG.cxx\(\"mqq\",20,300,2000,\"mqq\ [GeV]\"\)
+    r00t  DrawMG.cxx\(\"mjj\",20,300,2000,\"mjj\ [GeV]\"\)
+    r00t  DrawMG.cxx\(\"mjj\",40,300,4000,\"mjj\ [GeV]\"\)
+    r00t  DrawMG.cxx\(\"mjj\",80,300,4000,\"mjj\ [GeV]\"\)
+    r00t  DrawMG.cxx\(\"mll\",100,0,200,\"mll\ [GeV]\"\)
+    r00t  DrawMG.cxx\(\"mll\",100,0,2000,\"mll\ [GeV]\"\)
+    r00t  DrawMG.cxx\(\"jetpt1\",100,0,200\,\"jetpt1\ [GeV]\"\)
+    r00t  DrawMG.cxx\(\"jetpt1\",100,0,2000\,\"jetpt1\ [GeV]\"\)
+    r00t  DrawMG.cxx\(\"jetpt2\",100,0,200,\"jetpt2\ [GeV]\"\)
+    r00t  DrawMG.cxx\(\"pt1\",100,0,200,\"pt1\ [GeV]\"\)
+    r00t  DrawMG.cxx\(\"pt2\",100,0,200,\"pt2\ [GeV]\"\)
+
+    r00t  DrawMG.cxx\(\"numb\",3,0,3,\"numb\"\)
 
     
     
+# Madgraph alone
+
+Compare b removal in Madgraph
+
+Draw:
+     
+    r00t  DrawMGtestB.cxx\(\"mqq\",30,0,4000,\"mjj\ [GeV]\"\)
+    r00t  DrawMGtestB.cxx\(\"mjj\",30,0,4000,\"mjj\ [GeV]\"\)
+    r00t  DrawMGtestB.cxx\(\"jetpt1\",100,0,2000\,\"jetpt1\ [GeV]\"\)
+    r00t  DrawMGtestB.cxx\(\"numb\",3,0,3,\"numb\"\)
+    r00t  DrawMGtestB.cxx\(\"numbInput\",3,0,3,\"numbInput\"\)
+
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
+    r00t  DrawMGtestBEWK.cxx\(\"mqq\",30,0,4000,\"mjj\ [GeV]\"\)
+    r00t  DrawMGtestBEWK.cxx\(\"mjj\",30,0,4000,\"mjj\ [GeV]\"\)
+    r00t  DrawMGtestBEWK.cxx\(\"jetpt1\",100,0,2000\,\"jetpt1\ [GeV]\"\)
+    r00t  DrawMGtestBEWK.cxx\(\"numb\",3,0,3,\"numb\"\)
+
+    r00t  DrawMGtestBQCDEWK.cxx\(\"mqq\",30,0,4000,\"mjj\ [GeV]\"\)
+    r00t  DrawMGtestBQCDEWK.cxx\(\"mjj\",30,0,4000,\"mjj\ [GeV]\"\)
+    r00t  DrawMGtestBQCDEWK.cxx\(\"jetpt1\",100,0,2000\,\"jetpt1\ [GeV]\"\)
+    r00t  DrawMGtestBQCDEWK.cxx\(\"numb\",3,0,3,\"numb\"\)
+
     
     
     

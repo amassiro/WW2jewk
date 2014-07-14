@@ -46,6 +46,12 @@ void Draw(int kind = 0, std::string var = "mWW", int NBIN = 1000, int MIN = 0, i
  h_Ratio->GetXaxis()->SetTitle(varHR.c_str());
  h_Subtraction->GetXaxis()->SetTitle(varHR.c_str());
  h_I->GetXaxis()->SetTitle(varHR.c_str());
+
+ h_mWW_1->GetYaxis()->SetTitle("fb");
+ h_mWW_2->GetYaxis()->SetTitle("fb");
+ h_mWW_3->GetYaxis()->SetTitle("fb");
+ h_Subtraction->GetYaxis()->SetTitle("fb");
+ h_I->GetYaxis()->SetTitle("fb");
  
  
  //---- me
@@ -67,8 +73,15 @@ void Draw(int kind = 0, std::string var = "mWW", int NBIN = 1000, int MIN = 0, i
 //  TString cut = Form ("jetpt1>30 && jetpt2>30 && mWW>130");
 //  TString cut = Form ("jetpt1>30 && jetpt2>30");
 //  TString cut = Form ("jetpt1>30 && jetpt2>30 && mjj>200");
- TString cut = Form ("jetpt1>30 && jetpt2>30 && mjj>300");
+//  TString cut = Form ("jetpt1>30 && jetpt2>30 && mjj>300");
+//  TString cut = Form ("jetpt1>30 && jetpt2>30 && mjj>300 && numb == 0");
+//  TString cut = Form ("jetpt1>30 && jetpt2>30 && numb == 0");
  //  TString cut = Form ("1");
+
+//  TString cut = Form ("jetpt1>30 && jetpt2>30 && mjj>300 && pt1>20 && pt2>20 && numb == 0 && mll>8");
+//  TString cut = Form ("jetpt1>30 && jetpt2>30 && mjj>100 && pt1>20 && pt2>20 && numb == 0 && mll>8");
+ //  TString cut = Form ("jetpt1>30 && jetpt2>30 && mjj>100 && pt1>20 && pt2>20 && numb > 0  && mll>8");
+ TString cut = Form ("jetpt1>30 && jetpt2>30 && mjj>100 && pt1>20 && pt2>20              && mll>8");
  
  int tot_1 = t1 -> GetEntries();
  int tot_2 = t2 -> GetEntries();

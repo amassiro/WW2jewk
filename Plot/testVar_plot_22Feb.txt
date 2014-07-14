@@ -12,6 +12,20 @@ abs(eta1-(jeteta1+jeteta2)/2)/detajj      0    2    20    zep1
 abs(eta2-(jeteta1+jeteta2)/2)/detajj      0    2    20    zep2
 abs(yll-(jeteta1+jeteta2)/2)/detajj       0    2    20    zepll
 #
+#####################
+# Wolfram variables #
+#
+# jetpt1*jetpt2/(jetpt1+jetpt2) *        0.5*(5*x^3-3x) = wights * legendre3
+# x = (cos(jetphi1)*cos(jetphi2)+sin(jetphi1)*sin(jetphi2)*cos(jetphi1-jetphi2))
+#
+jetpt1*jetpt2/(jetpt1+jetpt2)/(jetpt1+jetpt2)*0.5*(5*(cos(jetphi1)*cos(jetphi2)+sin(jetphi1)*sin(jetphi2)*cos(jetphi1-jetphi2))*(cos(jetphi1)*cos(jetphi2)+sin(jetphi1)*sin(jetphi2)*cos(jetphi1-jetphi2))*(cos(jetphi1)*cos(jetphi2)+sin(jetphi1)*sin(jetphi2)*cos(jetphi1-jetphi2))-3*(cos(jetphi1)*cos(jetphi2)+sin(jetphi1)*sin(jetphi2)*cos(jetphi1-jetphi2)))    -1    1    100    H3
+# jetpt1*jetpt2/(jetpt1+jetpt2)/(jetpt1+jetpt2)*0.5*(5*(0.5*cos(jetphi1+jetphi2)*(1-cos(jetphi1-jetphi2))+cos(jetphi1-jetphi2)*(1+cos(jetphi1-jetphi2)))*(0.5*cos(jetphi1+jetphi2)*(1-cos(jetphi1-jetphi2))+cos(jetphi1-jetphi2)*(1+cos(jetphi1-jetphi2)))*(0.5*cos(jetphi1+jetphi2)*(1-cos(jetphi1-jetphi2))+cos(jetphi1-jetphi2)*(1+cos(jetphi1-jetphi2)))-3*(0.5*cos(jetphi1+jetphi2)*(1-cos(jetphi1-jetphi2))+cos(jetphi1-jetphi2)*(1+cos(jetphi1-jetphi2))))     -1    1    100    H3
+#
+jetpt1*jetpt2/(jetpt1+jetpt2)/(jetpt1+jetpt2)*0.5*(3*(cos(jetphi1)*cos(jetphi2)+sin(jetphi1)*sin(jetphi2)*cos(jetphi1-jetphi2))*(cos(jetphi1)*cos(jetphi2)+sin(jetphi1)*sin(jetphi2)*cos(jetphi1-jetphi2))-1)   -1    1    100    H2
+#
+jetpt1*jetpt2/(jetpt1+jetpt2)/(jetpt1+jetpt2)*(cos(jetphi1)*cos(jetphi2)+sin(jetphi1)*sin(jetphi2)*cos(jetphi1-jetphi2))  -1    1    100    H1
+#
+#
 #########################################################
 #
 # max number of variables 

@@ -7,13 +7,29 @@ void DrawMG(std::string var = "mWW", int NBIN = 1000, int MIN = 0, int MAX = 100
  gStyle->SetOptStat(0);
  
  TString name1;
- name1 = Form ("EWK_MG.root");
+//  name1 = Form ("EWK_MG.root");
+//  name1 = Form ("EWK_MG_100k_BRHWW.root");
+ name1 = Form ("EWK_MG_bquarks.root");
  
  TString name2;
- name2 = Form ("QCD_MG.root");
+//  name2 = Form ("QCD_MG.root");
+//  name2 = Form ("QCD_MG_bquarks.root");
+//  name2 = Form ("QCD_MG_bquarks_kincuts.root");
+ name2 = Form ("QCD_MG_bquarks_kincuts_1M.root");
  
  TString name3;
- name3 = Form ("EWKQCD_MG.root");
+//  name3 = Form ("EWKQCD_MG.root");
+//  name3 = Form ("EWKQCD_MG_bquarks.root");
+//  name3 = Form ("EWKQCD_MG_bquarks_kincuts.root");
+//  name3 = Form ("EWKQCD_MG_bquarks_kincuts_all.root");  //---- 200k
+//   name3 = Form ("EWKQCD_MG_bquarks_kincuts_1M.root");
+ name3 = Form ("EWKQCD_MG_bquarks_kincuts_600k.root");
+//  name3 = Form ("EWKQCD_MG_bquarks_kincuts_500k.root");
+//  name3 = Form ("EWKQCD_MG_bquarks_kincuts_400k.root");
+//  name3 = Form ("EWKQCD_MG_bquarks_kincuts_300k.root");
+//  name3 = Form ("EWKQCD_MG_bquarks_kincuts_200k.root");
+ 
+ 
  
  TFile* f1 = new TFile (name1.Data(),"READ"); // ---- EW
  TFile* f2 = new TFile (name2.Data(),"READ"); // ---- QCD
@@ -27,12 +43,12 @@ void DrawMG(std::string var = "mWW", int NBIN = 1000, int MIN = 0, int MAX = 100
  TNtuple* t2 = (TNtuple*) f2->Get ("ntu");
  TNtuple* t3 = (TNtuple*) f3->Get ("ntu");
  
- TH1F* h_mWW_1 = new TH1F("h_mWW_1","",NBIN,0,MAX);
- TH1F* h_mWW_2 = new TH1F("h_mWW_2","",NBIN,0,MAX);
- TH1F* h_mWW_3 = new TH1F("h_mWW_3","",NBIN,0,MAX);
- TH1F* h_Ratio = new TH1F("h_mWW_ratio","h_mWW_ratio",NBIN,0,MAX);
- TH1F* h_Subtraction = new TH1F("h_Subtraction","h_Subtraction",NBIN,0,MAX);
- TH1F* h_I = new TH1F("h_I","h_I",NBIN,0,MAX);
+ TH1F* h_mWW_1 = new TH1F("h_mWW_1","EW MG",NBIN,MIN,MAX);
+ TH1F* h_mWW_2 = new TH1F("h_mWW_2","QCD MG",NBIN,MIN,MAX);
+ TH1F* h_mWW_3 = new TH1F("h_mWW_3","EW+QCD MG",NBIN,MIN,MAX);
+ TH1F* h_Ratio = new TH1F("h_mWW_ratio","h_mWW_ratio MG",NBIN,MIN,MAX);
+ TH1F* h_Subtraction = new TH1F("h_Subtraction","h_Subtraction MG",NBIN,MIN,MAX);
+ TH1F* h_I = new TH1F("h_I","h_I",NBIN,MIN,MAX);
  
  h_mWW_1->GetXaxis()->SetTitle(varHR.c_str());
  h_mWW_2->GetXaxis()->SetTitle(varHR.c_str());
@@ -41,19 +57,98 @@ void DrawMG(std::string var = "mWW", int NBIN = 1000, int MIN = 0, int MAX = 100
  h_Subtraction->GetXaxis()->SetTitle(varHR.c_str());
  h_I->GetXaxis()->SetTitle(varHR.c_str());
  
+ h_mWW_1->GetYaxis()->SetTitle("fb");
+ h_mWW_2->GetYaxis()->SetTitle("fb");
+ h_mWW_3->GetYaxis()->SetTitle("fb");
+ h_Subtraction->GetYaxis()->SetTitle("fb");
+ h_I->GetYaxis()->SetTitle("fb");
+ 
 //  0.008021 +- 2.212e-05 pb  EWK
 //  0.1663 +- 0.0003664 pb    QCD
 //  0.1743 +- 0.0003675 pb    EWKQCD
  
- gROOT->ProcessLine ("float xsecEW[100] = {0.008021};");
- gROOT->ProcessLine ("float xsecQCD[100] = {0.1663};");
- gROOT->ProcessLine ("float xsecEWQCD[100] = {0.1743};");
+//  with 10k events                    with 1M events
+//  0.008021 +- 2.212e-05 pb  EWK        0.008115 +- 2.12e-06 pb
+//  0.1663 +- 0.0003664 pb    QCD        0.1668 +- 5.003e-05 pb
+//  0.1743 +- 0.0003675 pb    EWKQCD     0.1754 +- 5.231e-05 pb
+ 
+//   gROOT->ProcessLine ("float xsecEW[100] = {0.008115};");
+//   gROOT->ProcessLine ("float xsecQCD[100] = {0.1668};");
+//   gROOT->ProcessLine ("float xsecEWQCD[100] = {0.1754};");
+ 
+ 
+//  with b-quarks
+//  0.1102 +- 7.409e-05 pb    EWK     
+//  14.62 +- 0.007497 pb      QCD     
+//  14.69 +- 0.007549 pb      EWKQCD  
+
+ //  gROOT->ProcessLine ("float xsecEW[100] = {0.1102};");
+ //  gROOT->ProcessLine ("float xsecQCD[100] = {14.62};");
+ //  gROOT->ProcessLine ("float xsecEWQCD[100] = {14.69};");
+ 
+//  with b-quarks and
+//  ptb > 20
+//  mjj > 200
+//  mbb > 200
+//  
+//  3.993 +- 0.002638 pb    QCD     
+//  4.05 +- 0.002666 pb     EWKQCD  
+
+ //  gROOT->ProcessLine ("float xsecEW[100] = {0.1102};"); 
+ //  gROOT->ProcessLine ("float xsecQCD[100] = {3.993};");
+ //  gROOT->ProcessLine ("float xsecEWQCD[100] = {4.05};");
+  
+//  with b-quarks and
+//  ptj > 30
+//  ptb > 30
+//  mjj > 300
+//  mbb > 300
+//  
+//  1.5 +- 0.0009995 pb    QCD     
+//  1.544 +- 0.001016 pb     EWKQCD  
+
+//   gROOT->ProcessLine ("float xsecEW[100] = {0.1102};");
+//   gROOT->ProcessLine ("float xsecQCD[100] = {1.5};");
+ gROOT->ProcessLine ("float xsecEWQCD[100] = {1.544};");
+ 
+ 
+ //---- 1M events
+ //  1.50144           pb    QCD     
+ //   ### pb     EWKQCD  
+  
+ gROOT->ProcessLine ("float xsecEW[100] = {0.1102};");
+ gROOT->ProcessLine ("float xsecQCD[100] = {1.50144};");
+//  gROOT->ProcessLine ("float xsecEWQCD[100] = {1.###};");
+  
+
+ 
+//  #  Integrated weight (pb)  :  .15432E+01
+//  #  Integrated weight (pb)  :  .15443E+01
+//  #  Integrated weight (pb)  :  .15450E+01
+//  #  Integrated weight (pb)  :  .15442E+01
+//  #  Integrated weight (pb)  :  .15434E+01
+//  #  Integrated weight (pb)  :  .15437E+01
+//  
+//  #  Truncated wgt (pb)      :  .53728E-03
+//  #  Truncated wgt (pb)      :  .68578E-03
+//  #  Truncated wgt (pb)      :  .59976E-03
+//  #  Truncated wgt (pb)      :  .59407E-03
+//  #  Truncated wgt (pb)      :  .71166E-03
+//  #  Truncated wgt (pb)      :  .60486E-03
+ 
+
+ 
+//  gROOT->ProcessLine ("float xsecEW[100] = {0.0080983};");
+// //  gROOT->ProcessLine ("float xsecEW[100] = {0.008115};");
  
  
 //  TString cut = Form ("jetpt1>30 && jetpt2>30 && mWW>130");
 //  TString cut = Form ("jetpt1>30 && jetpt2>30");
 //  TString cut = Form ("jetpt1>30 && jetpt2>30 && mjj>200");
- TString cut = Form ("jetpt1>30 && jetpt2>30 && mjj>300");
+ TString cut = Form ("jetpt1>30 && jetpt2>30 && mjj>300 && pt1>20 && pt2>20 && mll>8");
+//  TString cut = Form ("jetpt1>30 && jetpt2>30 && mjj>300 && pt1>20 && pt2>20 && mll>8 && numb == 0");
+ //  TString cut = Form ("jetpt1>20 && jetpt2>20 && mjj>300 && pt1>20 && pt2>20 && mll>8");
+ //  TString cut = Form ("jetpt1>30 && jetpt2>30");
  //  TString cut = Form ("1");
  
  int tot_1 = t1 -> GetEntries();
@@ -65,23 +160,38 @@ void DrawMG(std::string var = "mWW", int NBIN = 1000, int MIN = 0, int MAX = 100
  std::cout << " tot_2 = " << tot_2 << std::endl;
  std::cout << " tot_3 = " << tot_3 << std::endl;
  
- TString weightWithXsecEW    = Form ("(%s) * (%f) * (%f)",cut.Data(),xsecEW[0],1000./tot_2);
- TString weightWithXsecQCD   = Form ("(%s) * (%f) * (%f)",cut.Data(),xsecQCD[0],1000./tot_1);
+ TString weightWithXsecEW    = Form ("(%s) * (%f) * (%f)",cut.Data(),xsecEW[0],1000./tot_1);
+ TString weightWithXsecQCD   = Form ("(%s) * (%f) * (%f)",cut.Data(),xsecQCD[0],1000./tot_2);
  TString weightWithXsecEWQCD = Form ("(%s) * (%f) * (%f)",cut.Data(),xsecEWQCD[0],1000./tot_3);
+ 
+ h_mWW_1->Sumw2();
+ h_mWW_2->Sumw2();
+ h_mWW_3->Sumw2();
  
  TString toDraw;
  toDraw = Form ("%s >> h_mWW_1",var.c_str());
+ std::cout << " weight = " << weightWithXsecEW.Data() << std::endl;
  t1->Draw(toDraw.Data(),weightWithXsecEW.Data(),"goff");
  
  toDraw = Form ("%s >> h_mWW_2",var.c_str());
+ std::cout << " weight = " << weightWithXsecQCD.Data() << std::endl;
  t2->Draw(toDraw.Data(),weightWithXsecQCD.Data(), "goff");
  
  toDraw = Form ("%s >> h_mWW_3",var.c_str());
+ std::cout << " weight = " << weightWithXsecEWQCD.Data() << std::endl;
  t3->Draw(toDraw.Data(),weightWithXsecEWQCD.Data(), "goff");
  
  h_mWW_1->SetLineColor(kBlue);  //---- ewk
  h_mWW_2->SetLineColor(kRed);   //---- qcd
  h_mWW_3->SetLineColor(kGreen); //---- ewk+qcd
+
+ h_mWW_1->SetFillColor(kBlue);
+ h_mWW_2->SetFillColor(kRed); 
+ h_mWW_3->SetFillColor(kGreen);
+ 
+ h_mWW_1->SetFillStyle(3001);
+ h_mWW_2->SetFillStyle(3003); 
+ h_mWW_3->SetFillStyle(3006);
  
  h_mWW_1->SetLineStyle(1);
  h_mWW_2->SetLineStyle(2);
@@ -108,10 +218,18 @@ void DrawMG(std::string var = "mWW", int NBIN = 1000, int MIN = 0, int MAX = 100
   float ewk = h_mWW_1->GetBinContent(iBin+1);
   float qcd = h_mWW_2->GetBinContent(iBin+1);  
   float ewkqcd = h_mWW_3->GetBinContent(iBin+1);
+  float error_qcd = h_mWW_2->GetBinError(iBin+1);  
+  float error_ewkqcd = h_mWW_3->GetBinError(iBin+1);
   h_I -> SetBinContent (iBin+1, ewkqcd - ewk - qcd);
-  if (ewk != 0) h_Ratio -> SetBinContent (iBin+1, (ewkqcd - qcd) / ewk);
-  else h_Ratio -> SetBinContent (iBin+1, 0);
+  if (ewk != 0) {
+   h_Ratio -> SetBinContent (iBin+1, (ewkqcd - qcd) / ewk);
+  }
+  else {
+   h_Ratio -> SetBinContent (iBin+1, 0);
+  }
+  
   h_Subtraction -> SetBinContent (iBin+1, ewkqcd - qcd);
+  h_Subtraction -> SetBinError   (iBin+1, sqrt(error_ewkqcd*error_ewkqcd - error_qcd*error_qcd));
  }
  
  
@@ -121,6 +239,9 @@ void DrawMG(std::string var = "mWW", int NBIN = 1000, int MIN = 0, int MAX = 100
  h_mWW_3 -> Draw();  //---- ewk+qcd
  h_mWW_1 -> Draw("same"); //---- ewk
  h_mWW_2 -> Draw("same"); //---- qcd
+ h_mWW_3 -> Draw("E2same");  //---- ewk+qcd
+ h_mWW_1 -> Draw("E2same"); //---- ewk
+ h_mWW_2 -> Draw("E2same"); //---- qcd
  leg->Draw();
  cc_All->SetGrid();
  
@@ -136,11 +257,15 @@ void DrawMG(std::string var = "mWW", int NBIN = 1000, int MIN = 0, int MAX = 100
  
  TCanvas* cc_Sub = new TCanvas("cc_Sub","cc_Sub",800,600);
  h_Subtraction->GetYaxis()->SetRangeUser(h_Subtraction->GetMinimum()-10.,h_Subtraction->GetMaximum()*2.5);
+ h_Subtraction->SetFillStyle(3005);
+ h_Subtraction->SetFillColor(kMagenta);
  h_Subtraction->SetLineColor(kMagenta);
  h_Subtraction->SetLineStyle(2);
  h_Subtraction->SetLineWidth(3);
  h_Subtraction -> Draw();
  h_mWW_1 -> Draw("same");
+ h_Subtraction -> Draw("E2same");
+ h_mWW_1 -> Draw("E2same");
  leg2->Draw();
  cc_Sub->SetGrid();
 
