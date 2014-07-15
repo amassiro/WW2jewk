@@ -77,6 +77,7 @@ Decay & hadronize: DIGI step lxbatch
 1. Prepare the jobs to launch on lxbatch:
 
         perl launchJobs_lxbatch_DIGI.pl params_lxbatch_DIGI_hww.CFG
+        perl launchJobs_lxbatch_DIGI.pl params_lxbatch_DIGI_aQGC.CFG
 
     params_lxbatch_GEN-SIM.CFG has the following input parameters:
 
