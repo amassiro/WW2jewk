@@ -7,15 +7,23 @@ Preparation
 
 change weight format to support old cmssw releases
 
+    sed 's/<wgt/#wgt/' </tmp/amassiro/Anton_unweighted_events.lhe | sed 's/<rwgt/#rwgt/'   | sed 's|</rwgt|#/rwgt|'    | sed 's|</wgt>||'   >/tmp/amassiro/Anton_unweighted_events_weight.lhe
+
     sed 's/<wgt/#wgt/' </tmp/amassiro/Jasper_unweighted_events.lhe | sed 's/<rwgt/#rwgt/'   | sed 's|</rwgt|#/rwgt|'    | sed 's|</wgt>||'   >/tmp/amassiro/Jasper_unweighted_events_weight.lhe
 
     sed 's/<wgt/#wgt/' </data/amassiro/CMSSWLHE/WW2jetsMadgraph_aQGC/Jasper_unweighted_events.lhe | sed 's/<rwgt/#rwgt/'   | sed 's|</rwgt|#/rwgt|'    | sed 's|</wgt>||'   > /data/amassiro/CMSSWLHE/WW2jetsMadgraph_aQGC/Jasper_unweighted_events_weight.lhe
 
 from LHE to CMSSW
 
-    cmsDriver.py step1 --filein file:/data/amassiro/CMSSWLHE/WW2jetsMadgraph_aQGC/Jasper_unweighted_events_weight.lhe  --fileout file:/data/amassiro/CMSSWLHE/WW2jetsMadgraph_aQGC/Jasper_unweighted_events.root --mc --eventcontent LHE --datatier GEN --conditions START53_V7C::All --step NONE --python_filename test.py 
+    cmsDriver.py step1 --filein file:/tmp/amassiro/Anton_unweighted_events_weight.lhe  --fileout file:/tmp/amassiro/Anton_unweighted_events.root --mc --eventcontent LHE --datatier GEN --conditions START53_V7C::All --step NONE --python_filename test.py   -n -1
 
-    cmsDriver.py step1 --filein file:/tmp/amassiro/Jasper_unweighted_events_weight.lhe  --fileout file:/tmp/amassiro/Jasper_unweighted_events.root --mc --eventcontent LHE --datatier GEN --conditions START53_V7C::All --step NONE --python_filename test.py 
+    cmsDriver.py step1 --filein file:/data/amassiro/CMSSWLHE/WW2jetsMadgraph_aQGC/Jasper_unweighted_events_weight.lhe  --fileout file:/data/amassiro/CMSSWLHE/WW2jetsMadgraph_aQGC/Jasper_unweighted_events.root --mc --eventcontent LHE --datatier GEN --conditions START53_V7C::All --step NONE --python_filename test.py   -n -1
+
+    cmsDriver.py step1 --filein file:/tmp/amassiro/Jasper_unweighted_events_weight.lhe  --fileout file:/tmp/amassiro/Jasper_unweighted_events.root --mc --eventcontent LHE --datatier GEN --conditions START53_V7C::All --step NONE --python_filename test.py    -n -1
+
+
+    HEPMCinput = /afs/cern.ch/user/a/amassiro/work/public/WW2j/ww2j_LO_mg_Jasper.root
+    HEPMCinput = /afs/cern.ch/user/a/amassiro/work/public/WW2j/ww2j_LO_mg_Anton.root
 
 
 
