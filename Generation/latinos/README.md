@@ -21,6 +21,8 @@ Then:
 
     cmsRun step3.py print inputFiles=file:/tmp/amassiro/latinosYieldSkim_MC_ww2jnlo_100k.root  label=ww2j id=1234 scale=1 outputFile=latinosStep3_ww2j.root  doNoFilter=True  &> tmp.txt
 
+    cmsRun step3.py print inputFiles=file:/tmp/amassiro/latinosYieldSkim_MC_ww2j_s_100k.root  label=ww2j id=1234 scale=1 outputFile=latinosStep3_ww2j_s.root  doNoFilter=True  &> tmp_s.txt
+    cmsRun step3.py print inputFiles=file:/tmp/amassiro/latinosYieldSkim_MC_ww2j_t_100k.root  label=ww2j id=1234 scale=1 outputFile=latinosStep3_ww2j_t.root  doNoFilter=True  &> tmp_t.txt
 
     python ucsd2latino.py latinosStep3_ww2j.root
 
