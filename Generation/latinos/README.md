@@ -19,12 +19,16 @@ Then:
     cmsRun /afs/cern.ch/user/a/amassiro/work/Generation/CMSSW_5_3_14_patch2/src/WW2jewk/Generation/latinos/latinosYieldSkim.py.ww2j_t.py    print  isMC=True globalTag=GR_R_52_V7  outputFile=/tmp/amassiro/latinosYieldSkim_MC_ww2j_t_100k.root   correctMetPhi=False   doNoFilter=True
 
 
+    cd /home/amassiro/Latinos/CMSSW_5_3_11_patch6/src/WWAnalysis/AnalysisStep/test/step3
+
     cmsRun step3.py print inputFiles=file:/tmp/amassiro/latinosYieldSkim_MC_ww2jnlo_100k.root  label=ww2j id=1234 scale=1 outputFile=latinosStep3_ww2j.root  doNoFilter=True  &> tmp.txt
 
-    cmsRun step3.py print inputFiles=file:/tmp/amassiro/latinosYieldSkim_MC_ww2j_s_100k.root  label=ww2j id=1234 scale=1 outputFile=latinosStep3_ww2j_s.root  doNoFilter=True  &> tmp_s.txt
-    cmsRun step3.py print inputFiles=file:/tmp/amassiro/latinosYieldSkim_MC_ww2j_t_100k.root  label=ww2j id=1234 scale=1 outputFile=latinosStep3_ww2j_t.root  doNoFilter=True  &> tmp_t.txt
+    cmsRun step3.py print inputFiles=file:/tmp/amassiro/latinosYieldSkim_MC_ww2j_s_100k.root  label=ww2j id=1234 scale=1 outputFile=latinosStep3_ww2j_s.root  doNoFilter=True doLHE=True    &> tmp_s.txt
+    cmsRun step3.py print inputFiles=file:/tmp/amassiro/latinosYieldSkim_MC_ww2j_t_100k.root  label=ww2j id=1234 scale=1 outputFile=latinosStep3_ww2j_t.root  doNoFilter=True doLHE=True    &> tmp_t.txt
 
     python ucsd2latino.py latinosStep3_ww2j.root
+    python ucsd2latino.py latinosStep3_ww2j_s.root
+    python ucsd2latino.py latinosStep3_ww2j_t.root
 
 
 
