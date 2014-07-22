@@ -23,8 +23,8 @@ Then:
 
     cmsRun step3.py print inputFiles=file:/tmp/amassiro/latinosYieldSkim_MC_ww2jnlo_100k.root  label=ww2j id=1234 scale=1 outputFile=latinosStep3_ww2j.root  doNoFilter=True  &> tmp.txt
 
-    cmsRun step3.py print inputFiles=file:/tmp/amassiro/latinosYieldSkim_MC_ww2j_s_100k.root  label=ww2j id=1234 scale=1 outputFile=latinosStep3_ww2j_s.root  doNoFilter=True doLHE=True    &> tmp_s.txt
-    cmsRun step3.py print inputFiles=file:/tmp/amassiro/latinosYieldSkim_MC_ww2j_t_100k.root  label=ww2j id=1234 scale=1 outputFile=latinosStep3_ww2j_t.root  doNoFilter=True doLHE=True    &> tmp_t.txt
+    cmsRun step3.py print inputFiles=file:/tmp/amassiro/latinosYieldSkim_MC_ww2j_s_100k.root  label=ww2j id=1234 scale=1 outputFile=latinosStep3_ww2j_s.root  doNoFilter=True doLHE=True  typeLHEcomment=1  &> tmp_s.txt
+    cmsRun step3.py print inputFiles=file:/tmp/amassiro/latinosYieldSkim_MC_ww2j_t_100k.root  label=ww2j id=1234 scale=1 outputFile=latinosStep3_ww2j_t.root  doNoFilter=True doLHE=True  typeLHEcomment=1  &> tmp_t.txt
 
     python ucsd2latino.py latinosStep3_ww2j.root
     python ucsd2latino.py latinosStep3_ww2j_s.root
@@ -46,5 +46,62 @@ Change baseW:
 
     gardener.py  adder -v 'baseW/F=9.17476869813951086e-04'     latinolatinosStep3_ww2j.root     latinolatinosStep3_ww2j_new.root
     mv latinolatinosStep3_ww2j_new.root latinolatinosStep3_ww2j.root
+
+
+
+
+Add variables
+====
+
+triggW
+
+    ./gardener.py efftfiller \
+      /home/amassiro/Latinos/CMSSW_5_3_11_patch6/src/WWAnalysis/AnalysisStep/test/step3/latinolatinosStep3_ww2j_s.root  \
+      /home/amassiro/Latinos/CMSSW_5_3_11_patch6/src/WWAnalysis/AnalysisStep/test/step3/latinolatinosStep3_ww2j_s_1.root  \
+      -f ../data/fit_results.txt
+    ./gardener.py efftfiller \
+      /home/amassiro/Latinos/CMSSW_5_3_11_patch6/src/WWAnalysis/AnalysisStep/test/step3/latinolatinosStep3_ww2j_t.root  \
+      /home/amassiro/Latinos/CMSSW_5_3_11_patch6/src/WWAnalysis/AnalysisStep/test/step3/latinolatinosStep3_ww2j_t_1.root  \
+      -f ../data/fit_results.txt
+
+puW
+
+    ./gardener.py  puadder \
+      /home/amassiro/Latinos/CMSSW_5_3_11_patch6/src/WWAnalysis/AnalysisStep/test/step3/latinolatinosStep3_ww2j_s_1.root  \
+      /home/amassiro/Latinos/CMSSW_5_3_11_patch6/src/WWAnalysis/AnalysisStep/test/step3/latinolatinosStep3_ww2j_s_2.root  \
+           --mc=../data/PileupMC_60bin_S10.root    \
+           --data=../data/PUdata2012Final.root   \
+           --HistName=pileup   \
+           --branch=puW  \
+           --kind=trpu
+
+    ./gardener.py  puadder \
+      /home/amassiro/Latinos/CMSSW_5_3_11_patch6/src/WWAnalysis/AnalysisStep/test/step3/latinolatinosStep3_ww2j_t_1.root  \
+      /home/amassiro/Latinos/CMSSW_5_3_11_patch6/src/WWAnalysis/AnalysisStep/test/step3/latinolatinosStep3_ww2j_t_2.root  \
+           --mc=../data/PileupMC_60bin_S10.root    \
+           --data=../data/PUdata2012Final.root   \
+           --HistName=pileup   \
+           --branch=puW  \
+           --kind=trpu
+
+effW
+
+    ./gardener.py effwfiller \
+      /home/amassiro/Latinos/CMSSW_5_3_11_patch6/src/WWAnalysis/AnalysisStep/test/step3/latinolatinosStep3_ww2j_s_2.root  \
+      /home/amassiro/Latinos/CMSSW_5_3_11_patch6/src/WWAnalysis/AnalysisStep/test/step3/latinolatinosStep3_ww2j_s_3.root  \
+        --mufile=../data/muons_scale_factors.root \
+        --elfile=../data/electrons_scale_factors.root \
+        --muname=muonsDATAMCratio_all \
+        --elname=electronsDATAMCratio_All_selec
+
+    ./gardener.py effwfiller \
+      /home/amassiro/Latinos/CMSSW_5_3_11_patch6/src/WWAnalysis/AnalysisStep/test/step3/latinolatinosStep3_ww2j_t_2.root  \
+      /home/amassiro/Latinos/CMSSW_5_3_11_patch6/src/WWAnalysis/AnalysisStep/test/step3/latinolatinosStep3_ww2j_t_3.root  \
+        --mufile=../data/muons_scale_factors.root \
+        --elfile=../data/electrons_scale_factors.root \
+        --muname=muonsDATAMCratio_all \
+        --elname=electronsDATAMCratio_All_selec
+
+
 
 
