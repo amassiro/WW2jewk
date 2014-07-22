@@ -19,6 +19,8 @@ from LHE to CMSSW
 
     cmsDriver.py step1 --filein file:/data/amassiro/CMSSWLHE/WW2jetsMadgraph_aQGC/Jasper_unweighted_events_weight.lhe  --fileout file:/data/amassiro/CMSSWLHE/WW2jetsMadgraph_aQGC/Jasper_unweighted_events.root --mc --eventcontent LHE --datatier GEN --conditions START53_V7C::All --step NONE --python_filename test.py   -n -1
 
+    cmsDriver.py step1 --filein file:/data/amassiro/CMSSWLHE/WW2jetsMadgraph_aQGC/Anton_unweighted_events_weight.lhe  --fileout file:/data/amassiro/CMSSWLHE/WW2jetsMadgraph_aQGC/Anton_unweighted_events.root --mc --eventcontent LHE --datatier GEN --conditions START53_V7C::All --step NONE --python_filename test.py   -n -1
+
     cmsDriver.py step1 --filein file:/tmp/amassiro/Jasper_unweighted_events_weight.lhe  --fileout file:/tmp/amassiro/Jasper_unweighted_events.root --mc --eventcontent LHE --datatier GEN --conditions START53_V7C::All --step NONE --python_filename test.py    -n -1
 
 
