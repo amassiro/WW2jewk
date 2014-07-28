@@ -13,10 +13,17 @@ void AMPlotMacroCreator_Moriond() {
 //  TString file    = Form("out_test_Latinos_20Nov2013_2300_RunABCD-WWewk.root");
 
  //  //---- MVA inputs ----
- TString fileVar = Form("var20Feb.txt");
- TString date    = Form("20Feb_WWewk_Moriond_forAN");
- TString file    = Form("out_test_Latinos_22Feb2014_1200_RunABCD-WWewk.root");
-
+//  TString fileVar = Form("var20Feb.txt");
+//  TString date    = Form("20Feb_WWewk_Moriond_forAN");
+//  TString file    = Form("out_test_Latinos_22Feb2014_1200_RunABCD-WWewk.root");
+ 
+ //  //---- MVA inputs ----
+ TString fileVar = Form("var25Jul.txt");
+ TString date    = Form("25Jul_WWewk_Moriond_forAN");
+ TString file    = Form("out_test_Latinos_25Jul2014_1200_RunABCD-WWewk.root");
+ 
+ 
+ 
 
  //  //---- mjj/detajj optimization inputs ----
 //  TString fileVar = Form("var28Feb.txt");

@@ -1,0 +1,26 @@
+#### Name       Min   Max   NBin    NameHR ####
+#########################################################
+#
+jetpt1          0   300     10        jet-p_{T}-1
+jetpt2          0   300     10        jet-p_{T}-2
+#
+detajj          0   6     12        #Delta#eta_{jet-jet}
+#
+log(mjj)     5     8     10        logM_{jet-jet}
+#
+abs(eta1-(jeteta1+jeteta2)/2)/detajj      0    2    20    zep1
+abs(eta2-(jeteta1+jeteta2)/2)/detajj      0    2    20    zep2
+abs(yll-(jeteta1+jeteta2)/2)/detajj       0    2    20    zepll
+#
+#####################
+# mlj #
+#
+mlj    0   300   10   mlj
+#
+#
+#########################################################
+#
+# max number of variables 
+#
+#
+#
