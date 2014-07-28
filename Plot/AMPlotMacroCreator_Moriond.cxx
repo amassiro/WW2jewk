@@ -43,8 +43,9 @@ void AMPlotMacroCreator_Moriond() {
  TString lumi    = Form("19.468");
 
 //  for (int iCut = 0; iCut < 9; iCut++) {
-  for (int iCut = 0; iCut < 3*2; iCut++) {
-  
+//   for (int iCut = 0; iCut < 3*2; iCut++) {
+   for (int iCut = 0; iCut < 3; iCut++) {
+    
 //  for (int iCut = 0; iCut < (3+1)*3; iCut++) {
      
   TString CommandToExec = Form("rm -r %s_%d",date.Data(),iCut);
