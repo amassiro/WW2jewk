@@ -1,6 +1,34 @@
 lxbatch
 =======
 
+
+Preparation
+=======
+
+change weight format to support old cmssw releases
+
+    sed 's/<wgt/#wgt/' </tmp/amassiro/Anton_unweighted_events.lhe | sed 's/<rwgt/#rwgt/'   | sed 's|</rwgt|#/rwgt|'    | sed 's|</wgt>||'   >/tmp/amassiro/Anton_unweighted_events_weight.lhe
+
+    sed 's/<wgt/#wgt/' </tmp/amassiro/Jasper_unweighted_events.lhe | sed 's/<rwgt/#rwgt/'   | sed 's|</rwgt|#/rwgt|'    | sed 's|</wgt>||'   >/tmp/amassiro/Jasper_unweighted_events_weight.lhe
+
+    sed 's/<wgt/#wgt/' </data/amassiro/CMSSWLHE/WW2jetsMadgraph_aQGC/Jasper_unweighted_events.lhe | sed 's/<rwgt/#rwgt/'   | sed 's|</rwgt|#/rwgt|'    | sed 's|</wgt>||'   > /data/amassiro/CMSSWLHE/WW2jetsMadgraph_aQGC/Jasper_unweighted_events_weight.lhe
+
+from LHE to CMSSW
+
+    cmsDriver.py step1 --filein file:/tmp/amassiro/Anton_unweighted_events_weight.lhe  --fileout file:/tmp/amassiro/Anton_unweighted_events.root --mc --eventcontent LHE --datatier GEN --conditions START53_V7C::All --step NONE --python_filename test.py   -n -1
+
+    cmsDriver.py step1 --filein file:/data/amassiro/CMSSWLHE/WW2jetsMadgraph_aQGC/Jasper_unweighted_events_weight.lhe  --fileout file:/data/amassiro/CMSSWLHE/WW2jetsMadgraph_aQGC/Jasper_unweighted_events.root --mc --eventcontent LHE --datatier GEN --conditions START53_V7C::All --step NONE --python_filename test.py   -n -1
+
+    cmsDriver.py step1 --filein file:/data/amassiro/CMSSWLHE/WW2jetsMadgraph_aQGC/Anton_unweighted_events_weight.lhe  --fileout file:/data/amassiro/CMSSWLHE/WW2jetsMadgraph_aQGC/Anton_unweighted_events.root --mc --eventcontent LHE --datatier GEN --conditions START53_V7C::All --step NONE --python_filename test.py   -n -1
+
+    cmsDriver.py step1 --filein file:/tmp/amassiro/Jasper_unweighted_events_weight.lhe  --fileout file:/tmp/amassiro/Jasper_unweighted_events.root --mc --eventcontent LHE --datatier GEN --conditions START53_V7C::All --step NONE --python_filename test.py    -n -1
+
+
+    HEPMCinput = /afs/cern.ch/user/a/amassiro/work/public/WW2j/ww2j_LO_mg_Jasper.root
+    HEPMCinput = /afs/cern.ch/user/a/amassiro/work/public/WW2j/ww2j_LO_mg_Anton.root
+
+
+
 Decay & hadronize: GEN-SIM step lxbatch
 =======
 
@@ -8,6 +36,7 @@ Decay & hadronize: GEN-SIM step lxbatch
 1. Prepare the jobs to launch on lxbatch:
 
         perl launchJobs_lxbatch_GEN-SIM.pl params_lxbatch_GEN-SIM_hww.CFG
+        perl launchJobs_lxbatch_GEN-SIM.pl params_lxbatch_GEN-SIM_aQGC.CFG
 
     params_lxbatch_GEN-SIM.CFG has the following input parameters:
 
@@ -50,6 +79,7 @@ Decay & hadronize: DIGI step lxbatch
 1. Prepare the jobs to launch on lxbatch:
 
         perl launchJobs_lxbatch_DIGI.pl params_lxbatch_DIGI_hww.CFG
+        perl launchJobs_lxbatch_DIGI.pl params_lxbatch_DIGI_aQGC.CFG
 
     params_lxbatch_GEN-SIM.CFG has the following input parameters:
 
@@ -92,6 +122,7 @@ Decay & hadronize: AODSIM step lxbatch
 1. Prepare the jobs to launch on lxbatch:
 
         perl launchJobs_lxbatch_AODSIM.pl params_lxbatch_AODSIM_hww.CFG
+        perl launchJobs_lxbatch_AODSIM.pl params_lxbatch_AODSIM_aQGC.CFG
 
    params_lxbatch_AODSIM.CFG has the following input parameters:
 

@@ -78,14 +78,16 @@ next;
   
   
     
-  
-  
+    print "cmsLs ...";
+
     $LISTOFFiles = "./list_".$sample1.".txt" ;
+    print "      cmsLs -R ".$INPUTSAVEPath."/".$sample1." | grep root | awk '{print \$5}' > ".$LISTOFFiles."\n";
     system ("cmsLs -R ".$INPUTSAVEPath."/".$sample1." | grep root | awk '{print \$5}' > ".$LISTOFFiles."\n") ;
 
     #$globalPATH = $INPUTSAVEPath."/".$sample1."/" ;
     #system ("rfdir ".$INPUTSAVEPath."/".$sample1." | grep root | awk '{print \"rfio:".$globalPATH."\"\$9}' > ".$LISTOFFiles."\n") ;
   
+   print "cmsLs (done)";
   
   
     $totNumber = 0;
@@ -208,7 +210,8 @@ print SAMPLEJOBFILE $command."\n";
 $command = "cmsRun ".$JOBCfgFile ;
 print SAMPLEJOBFILE $command."\n";
 
-$command = "cmsStage ".$OUTPUTFILEName."_".$jobIt.".root ".$OUTPUTSAVEPath;
+#$command = "cmsStage ".$OUTPUTFILEName."_".$jobIt.".root ".$OUTPUTSAVEPath;
+$command = "cmsStage ".$OUTPUTFILEName."_".$jobIt.".root ".$OUTPUTSAVEPath.$sample1;
 print SAMPLEJOBFILE $command."\n";
 
 
