@@ -23,8 +23,8 @@ Ml2j2    0   300   10   Ml2j2
 Mljcloser    0   300   10   Mljcloser
 Mljfarther   0   300   10   Mljfarther
 #
-sqrt((Ml1j1-100)*(Ml1j1-100)+(Ml1j2-100)*(Ml1j2-100))    0   300   10   Ml1jradius
-sqrt((Ml2j1-100)*(Ml2j1-100)+(Ml2j2-100)*(Ml2j2-100))    0   300   10   Ml2jradius
+sqrt((Ml1j1-100)*(Ml1j1-100)+(Ml1j2-100)*(Ml1j2-100))    0   800   20   Ml1jradius
+sqrt((Ml2j1-100)*(Ml2j1-100)+(Ml2j2-100)*(Ml2j2-100))    0   800   20   Ml2jradius
 #
 #########################################################
 #

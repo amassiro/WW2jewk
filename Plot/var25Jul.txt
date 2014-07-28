@@ -8,5 +8,14 @@ zepl1           #eta_{lep1}-centrality                        4          0      
 zepl2           #eta_{lep2}-centrality                        5          0       0       -999         -999
 zepll           #eta_{leplep}-centrality                      6          0       0       -999         -999
 #
-mlj             mlj                                           7          0       0       -999         -999
+ml1j1             ml1j1                                           7          0       0       -999         -999
+ml1j2             ml1j2                                           8          0       0       -999         -999
+ml2j1             ml2j1                                           9          0       0       -999         -999
+ml2j2             ml2j2                                          10          0       0       -999         -999
+#
+Mljcloser             Mljcloser                                          11          0       0       -999         -999
+Mljfarther            Mljfarther                                         12          0       0       -999         -999
+#
+Ml1jradius             Ml1jradius                                        13          0       0       -999         -999
+Ml2jradius             Ml2jradius                                        14          0       0       -999         -999
 #
