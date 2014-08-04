@@ -1,7 +1,6 @@
 
-############################
-# for MVA: input variables #
-
+# For MVA: input variables #
+====
     ./bin/MCDATAComparisonPLOTTool.exe test/WW2jewk/Plot/testPlotInputVariables.cfg
     r00t AMPlotMacroCreator_Moriond.cxx
     
