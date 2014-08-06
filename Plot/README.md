@@ -7,6 +7,34 @@
      -> new variables
 
      
+
+
+
+# propaganda plot for mll shape analysis
+    
+    scp amassiro@cmsneu.cern.ch:/home/amassiro/Latinos/Shape/playground/WW2jewkDFshapeTCHE21/postFit/WWewk-error-*.root postFit-WW2jewk-21/
+    scp amassiro@cmsneu.cern.ch:/home/amassiro/Latinos/Shape/playground/WW2jewkDFshapeTCHE05/postFit/WWewk-error-*.root postFit-WW2jewk-05/
+ 
+    scp amassiro@cmsneu.cern.ch:/home/amassiro/Latinos/Shape/playground/WW2jewkDFshapeTopEnriched/postFit/WWewk-error-*.root postFit-WW2jewk-Top/
+
+    r00t Plot_AM_WW2jewk_Propaganda_Moriond.C+
+
+
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
      
 backup
 ====
