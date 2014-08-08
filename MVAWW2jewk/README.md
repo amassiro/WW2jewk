@@ -22,6 +22,7 @@ MVA for discrimination background vs signal
 and test
 
    r00t test/TMVAGui.C\(\"outMVA_WWewk.root\"\)
+   r00t test/TMVAGui.C\(\"outMVA_WWewk_improved.root\"\)
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
