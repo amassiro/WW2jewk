@@ -55,6 +55,44 @@ and test
 
 
 
+on CMSNEU
+====
+
+
+
+Filter
+====
+
+How to filter folders with a TFormula string
+
+    ls --color=none /home/amassiro/Latinos/Shape/tree_skim_all/ | awk '{print "gardener.py  filter -f \"njet>=2 && pfmet>20\"   -r  -F  /home/amassiro/Latinos/Shape/tree_skim_all/"$1"  /data/amassiro/LatinosTrees/tree_skim_all_2j/"$1   }'
+
+    
+WW+2j new variable
+====
+
+new variables
+
+
+    ls --color=none /data/amassiro/LatinosTrees/tree_skim_all_2j/ | awk '{print "gardener.py  ww2jVar -r  -F  /data/amassiro/LatinosTrees/tree_skim_all_2j/"$1"  /data/amassiro/LatinosTrees/tree_skim_all_2j_mva/"$1   }'
+
+
+
+WW+2j mva addition
+====
+
+mva addition
+
+    ls --color=none /data/amassiro/LatinosTrees/tree_skim_all_2j_mva/ | awk '{print "gardener.py  wwewkMVAVar -r  -F  /data/amassiro/LatinosTrees/tree_skim_all_2j_mva/"$1"  /data/amassiro/LatinosTrees/tree_skim_all_2j_mva_new/"$1   }'
+
+
+
+
+
+
+
+
+
 
 
 
