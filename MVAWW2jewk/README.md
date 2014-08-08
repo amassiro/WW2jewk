@@ -11,9 +11,9 @@ MVA for discrimination background vs signal
 
 1) filter standard trees (go up to WW level)  -> use "output_Latinos_tree_2012_2orMoreJet2012" or "output_Latinos_tree_2012_234jet"
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 2) Train mva
+====
 
    rm -r output_Latinos_tree_2012_2orMoreJet2012_MVA
    cp -r output_Latinos_tree_2012_2orMoreJet2012 output_Latinos_tree_2012_2orMoreJet2012_MVA
@@ -24,9 +24,9 @@ and test
    r00t test/TMVAGui.C\(\"outMVA_WWewk.root\"\)
    r00t test/TMVAGui.C\(\"outMVA_WWewk_improved.root\"\)
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 3) Add mva value to ntuples (local ... and latinos @cmsneu)
+====
 
    rm -r output_Latinos_tree_2012_2orMoreJet2012_MVA_added
    mkdir output_Latinos_tree_2012_2orMoreJet2012_MVA_added
@@ -42,9 +42,9 @@ and test
    bash test/WW2jewk/ttbar/dottbarshape.sh
    bash test/WW2jewk/ttbar/dottbar.sh
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 4) Draw distributions
+====
 
   ./bin/MCDATAComparisonPLOTTool.exe test/WW2jewk/Plot/testMCDATAComparisonPLOTTool_MVA.cfg
   r00t AMPlotMacroCreator_Moriond.cxx
