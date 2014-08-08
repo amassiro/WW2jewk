@@ -41,17 +41,13 @@ and test
    bash test/WW2jewk/DYRinout/dody.sh
    bash test/WW2jewk/ttbar/dottbarshape.sh
    bash test/WW2jewk/ttbar/dottbar.sh
-   
+
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 4) Draw distributions
 
   ./bin/MCDATAComparisonPLOTTool.exe test/WW2jewk/Plot/testMCDATAComparisonPLOTTool_MVA.cfg
   r00t AMPlotMacroCreator_Moriond.cxx
-
-  
- 
-
 
 
 
