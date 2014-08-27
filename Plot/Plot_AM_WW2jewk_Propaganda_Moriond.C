@@ -56,8 +56,8 @@ TGraphAsymmErrors* FilterBins(std::vector<int> binsToSelect, TGraphAsymmErrors* 
 void Plot_AM_WW2jewk_Propaganda_Moriond() {
  
 //  int which = 0;
-//  int which = 1;
- int which = 2;
+ int which = 1;
+//  int which = 2;
 //  int which = 3;
 //  int which = 4;
  
@@ -100,14 +100,9 @@ void Plot_AM_WW2jewk_Propaganda_Moriond() {
 
  TFile* f[10];
  bool doSignalInjection;
- 
-//  f[0] = new TFile("postFit-WW2jewk/WWewk-error.root");
-//  f[0] = new TFile("postFit-WW2jewk/WWewk-error-signal-injection.root"); --> not working in mkAutopsy.py
- 
- 
+  
+//  scp amassiro@cmsneu.cern.ch:/home/amassiro/Latinos/Shape/playground/WW2jewkDFshapeTCHE21/postFit/WWewk-error-*.root postFit-WW2jewk-21/
 //  scp amassiro@cmsneu.cern.ch:/home/amassiro/Latinos/Shape/playground/WW2jewkDFshapeTCHE05/postFit/WWewk-error-*.root postFit-WW2jewk-05/
-//   f[0] = new TFile("postFit-WW2jewk-05/WWewk-error-signalInjection.root");   bool doSignalInjection = true;
-//  f[0] = new TFile("postFit-WW2jewk-05/WWewk-error-data.root");  bool doSignalInjection = false;
  
  //  scp amassiro@cmsneu.cern.ch:/home/amassiro/Latinos/Shape/playground/WW2jewkDFshapeTopEnriched/postFit/WWewk-error-*.root postFit-WW2jewk-Top/
  
@@ -149,7 +144,9 @@ void Plot_AM_WW2jewk_Propaganda_Moriond() {
  std::vector<int> binsToSelect; 
  
 //  int NMAXX = 20;  
- int NMAXX = 9+2-3+1+1;  //---- variable bin
+ int NMAXX = 4;  //---- variable bin
+//  int NMAXX = 5;  //---- variable bin
+//  int NMAXX = 9+2-3+1+1;  //---- variable bin
  if (which == 4) {
   NMAXX = 40; // 19
  }
@@ -498,8 +495,11 @@ void Plot_AM_WW2jewk_Propaganda_Moriond() {
 //  double vedges[] = {-1.0, -0.75, -0.5, -0.25, 0.0, 0.20, 0.40, 0.60, 0.80, 1.0};
  
  
- double vedges[] = {-1.0, -0.80, -0.60, -0.40, -0.20, 0.00, 0.20, 0.40, 0.60, 0.80, 1.00};  //----> analysis
-//  double vedges[] = { -1.0, -0.90, -0.80, -0.70, -0.60, -0.50, -0.40, -0.30, -0.20, -0.10, 0.00, 0.10, 0.20, 0.30, 0.40, 0.50, 0.60, 0.70, 0.80, 0.90, 1.00};
+//  double vedges[] = {-1.0, -0.80, -0.60, -0.40, -0.20, 0.00, 0.20, 0.40, 0.60, 0.80, 1.00};  //----> analysis
+//  double vedges[] = {-1.0, -0.50, -0.00, 0.30, 0.60, 1.00};  //----> analysis
+ double vedges[] = {-1.0, -0.50, -0.00, 0.50, 1.00};  //----> analysis
+ 
+ //  double vedges[] = { -1.0, -0.90, -0.80, -0.70, -0.60, -0.50, -0.40, -0.30, -0.20, -0.10, 0.00, 0.10, 0.20, 0.30, 0.40, 0.50, 0.60, 0.70, 0.80, 0.90, 1.00};
  
  //---> top enriched
 //  double vedges[] = {-1.0, -0.95, -0.90, -0.85, -0.80, -0.75, -0.70, -0.65, -0.60, -0.55, -0.50, -0.45, -0.40, -0.35, -0.30, -0.25, -0.20, -0.15, -0.10, -0.05, 0.00, 0.05, 0.10, 0.15, 0.20, 0.25, 0.30, 0.35, 0.40, 0.45, 0.50, 0.55, 0.60, 0.65, 0.70, 0.75, 0.80, 0.85, 0.90, 0.95, 1.00};

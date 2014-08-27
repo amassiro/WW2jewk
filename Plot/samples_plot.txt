@@ -12,7 +12,8 @@ DATA                                 -1              DATA
 #
 ####################################################################################
 #
-052_WW2JetsPhantom                  baseW*effW*triggW*puW*(numbLHE==0)*(mjj>100)     WW2j
+052_WW2JetsPhantom                  baseW*effW*triggW*puW*(jetLHEPartonpid1<5)*(jetLHEPartonpid2<5)*(jetLHEPartonpid3<5)*(mjj>100)     WW2j
+# 052_WW2JetsPhantom                  baseW*effW*triggW*puW*(numbLHE==0)*(mjj>100)     WW2j
 000_WWJets2LMad                     baseW*effW*triggW*puW               WW
 001_GluGluToWWTo4L                  baseW*effW*triggW*puW               WW  ggWW
 #
@@ -20,9 +21,18 @@ DATA                                 -1              DATA
 011_TtWFullDR                       baseW*effW*triggW*puW*(sameflav*1.00000+(!sameflav)*1.00000)        Top
 012_TbartWFullDR                    baseW*effW*triggW*puW*(sameflav*1.00000+(!sameflav)*1.00000)        Top
 #
-# 019_TTTo2L2Nu2B                     baseW*effW*triggW*puW*(sameflav*1.16865+(!sameflav)*1.14237)        Top
-# 011_TtWFullDR                       baseW*effW*triggW*puW*(sameflav*1.16865+(!sameflav)*1.14237)        Top
-# 012_TbartWFullDR                    baseW*effW*triggW*puW*(sameflav*1.16865+(!sameflav)*1.14237)        Top
+# 019_TTTo2L2Nu2B                     baseW*effW*triggW*puW*(sameflav*1.00000+(!sameflav)*1.00000)*(((abs(jeteta1)<abs(jeteta2))*(jetpt1)+((abs(jeteta1)>=abs(jeteta2))*(jetpt2)))<50)        TopPt0
+# 011_TtWFullDR                       baseW*effW*triggW*puW*(sameflav*1.00000+(!sameflav)*1.00000)*(((abs(jeteta1)<abs(jeteta2))*(jetpt1)+((abs(jeteta1)>=abs(jeteta2))*(jetpt2)))<50)        TopPt0
+# 012_TbartWFullDR                    baseW*effW*triggW*puW*(sameflav*1.00000+(!sameflav)*1.00000)*(((abs(jeteta1)<abs(jeteta2))*(jetpt1)+((abs(jeteta1)>=abs(jeteta2))*(jetpt2)))<50)        TopPt0
+#
+# 019_TTTo2L2Nu2B                     baseW*effW*triggW*puW*(sameflav*1.00000+(!sameflav)*1.00000)*(((abs(jeteta1)<abs(jeteta2))*(jetpt1)+((abs(jeteta1)>=abs(jeteta2))*(jetpt2)))>=50)*(((abs(jeteta1)<abs(jeteta2))*(jetpt1)+((abs(jeteta1)>=abs(jeteta2))*(jetpt2)))<70)        TopPt1
+# 011_TtWFullDR                       baseW*effW*triggW*puW*(sameflav*1.00000+(!sameflav)*1.00000)*(((abs(jeteta1)<abs(jeteta2))*(jetpt1)+((abs(jeteta1)>=abs(jeteta2))*(jetpt2)))>=50)*(((abs(jeteta1)<abs(jeteta2))*(jetpt1)+((abs(jeteta1)>=abs(jeteta2))*(jetpt2)))<70)        TopPt1
+# 012_TbartWFullDR                    baseW*effW*triggW*puW*(sameflav*1.00000+(!sameflav)*1.00000)*(((abs(jeteta1)<abs(jeteta2))*(jetpt1)+((abs(jeteta1)>=abs(jeteta2))*(jetpt2)))>=50)*(((abs(jeteta1)<abs(jeteta2))*(jetpt1)+((abs(jeteta1)>=abs(jeteta2))*(jetpt2)))<70)        TopPt1
+#
+# 019_TTTo2L2Nu2B                     baseW*effW*triggW*puW*(sameflav*1.00000+(!sameflav)*1.00000)*(((abs(jeteta1)<abs(jeteta2))*(jetpt1)+((abs(jeteta1)>=abs(jeteta2))*(jetpt2)))>=70)        TopPt2
+# 011_TtWFullDR                       baseW*effW*triggW*puW*(sameflav*1.00000+(!sameflav)*1.00000)*(((abs(jeteta1)<abs(jeteta2))*(jetpt1)+((abs(jeteta1)>=abs(jeteta2))*(jetpt2)))>=70)        TopPt2
+# 012_TbartWFullDR                    baseW*effW*triggW*puW*(sameflav*1.00000+(!sameflav)*1.00000)*(((abs(jeteta1)<abs(jeteta2))*(jetpt1)+((abs(jeteta1)>=abs(jeteta2))*(jetpt2)))>=70)        TopPt2
+#
 #
 036_DY10toLLMad                           baseW*effW*triggW*puW*((mctruth==1)*1.8)        DYee
 037_DY50toLLMad                           baseW*effW*triggW*puW*((mctruth==1)*1.8)        DYee
