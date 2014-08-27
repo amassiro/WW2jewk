@@ -13,6 +13,14 @@ change weight format to support old cmssw releases
 
     sed 's/<wgt/#wgt/' </data/amassiro/CMSSWLHE/WW2jetsMadgraph_aQGC/Jasper_unweighted_events.lhe | sed 's/<rwgt/#rwgt/'   | sed 's|</rwgt|#/rwgt|'    | sed 's|</wgt>||'   > /data/amassiro/CMSSWLHE/WW2jetsMadgraph_aQGC/Jasper_unweighted_events_weight.lhe
 
+   (auto)
+   ls /tmp/amassiro/*.lhe | awk '{print "sed @s/<wgt/#wgt/@ <   "$1" | sed @s/<rwgt/#rwgt/@   | sed @s|</rwgt|#/rwgt|@    | sed @s|</wgt>||@   > "$1".correct.lhe" }' | tr "@" "'"
+
+   ls /tmp/amassiro/*correct.lhe  | awk '{print "tail -n +715 "$1" | head -n -1 > "$1".new.lhe"}'
+   cat /tmp/amassiro/*correct.lhe.new.lhe > /tmp/amassiro/joined_temp.lhe
+   cat head.txt /tmp/amassiro/joined_temp.lhe tail.txt > /tmp/amassiro/joined.lhe
+
+
 from LHE to CMSSW
 
     cmsDriver.py step1 --filein file:/tmp/amassiro/Anton_unweighted_events_weight.lhe  --fileout file:/tmp/amassiro/Anton_unweighted_events.root --mc --eventcontent LHE --datatier GEN --conditions START53_V7C::All --step NONE --python_filename test.py   -n -1
@@ -22,6 +30,12 @@ from LHE to CMSSW
     cmsDriver.py step1 --filein file:/data/amassiro/CMSSWLHE/WW2jetsMadgraph_aQGC/Anton_unweighted_events_weight.lhe  --fileout file:/data/amassiro/CMSSWLHE/WW2jetsMadgraph_aQGC/Anton_unweighted_events.root --mc --eventcontent LHE --datatier GEN --conditions START53_V7C::All --step NONE --python_filename test.py   -n -1
 
     cmsDriver.py step1 --filein file:/tmp/amassiro/Jasper_unweighted_events_weight.lhe  --fileout file:/tmp/amassiro/Jasper_unweighted_events.root --mc --eventcontent LHE --datatier GEN --conditions START53_V7C::All --step NONE --python_filename test.py    -n -1
+
+    ls /tmp/amassiro/VBS_LS01*correct.lhe > tmp.txt
+    modify by hand up to a .py file list of files
+    cmsDriver.py step1 --filein tmp.txt  --fileout file:/tmp/amassiro/VBS_LS01.root --mc --eventcontent LHE --datatier GEN --conditions START53_V7C::All --step NONE --python_filename test.py    -n -1
+
+    cmsDriver.py step1 --filein file:/tmp/amassiro/joined.lhe  --fileout file:/tmp/amassiro/VBS_LS01.root --mc --eventcontent LHE --datatier GEN --conditions START53_V7C::All --step NONE --python_filename VBS_LS01.py    -n -1
 
 
     HEPMCinput = /afs/cern.ch/user/a/amassiro/work/public/WW2j/ww2j_LO_mg_Jasper.root
