@@ -58,10 +58,10 @@ open(SAMPLEJOBLISTFILE, ">", $sampleJobListFile);
 # prepare the array containing the root files list #
 ####################################################
 {
-    print("Sample: JOBS_dir \n") ;
+    print("Sample: JOBS_dir_GENSIM \n") ;
 
-    system ("rm -r JOBS_dir \n") ;
-    system ("mkdir JOBS_dir \n") ;
+    system ("rm -r JOBS_dir_GENSIM \n") ;
+    system ("mkdir JOBS_dir_GENSIM \n") ;
    
 
     $jobNumber = 0;
@@ -91,7 +91,7 @@ chomp ($currDir) ;
 $EVENTSPerjob = $EVENTSNumber - $FIRSTEVENT + 1;
         }
     
-$jobDir = $currDir."/JOBS_dir/JOB_".$jobIt ;
+$jobDir = $currDir."/JOBS_dir_GENSIM/JOB_".$jobIt ;
 system ("mkdir ".$jobDir." \n") ;
     
 $tempBjob = $jobDir."/bjob_".$jobIt.".sh" ;
@@ -149,7 +149,7 @@ print SAMPLEJOBFILE $command."\n";
 # submit job
 ############
 
-$command = "bsub -cwd ".$jobDir." -q ".$QUEUE." ".$tempBjob."\n" ;
+$command = "bsub -cwd ".$jobDir." -o ".$jobDir."/log.log -q ".$QUEUE." ".$tempBjob."\n" ;
 print SAMPLEJOBLISTFILE $command."\n";
     
     }

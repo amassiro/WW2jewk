@@ -211,6 +211,10 @@ $command = "cmsRun ".$JOBCfgFile ;
 print SAMPLEJOBFILE $command."\n";
 
 #$command = "cmsStage ".$OUTPUTFILEName."_".$jobIt.".root ".$OUTPUTSAVEPath;
+
+$command = "cmsMkdir ".$OUTPUTSAVEPath.$sample1;
+print SAMPLEJOBFILE $command."\n";
+
 $command = "cmsStage ".$OUTPUTFILEName."_".$jobIt.".root ".$OUTPUTSAVEPath.$sample1;
 print SAMPLEJOBFILE $command."\n";
 
@@ -219,8 +223,9 @@ print SAMPLEJOBFILE $command."\n";
 # submit job
 ############
 
-    $command = "bsub -cwd ".$jobDir." -q ".$QUEUE." ".$tempBjob."\n" ;
-print SAMPLEJOBLISTFILE $command."\n";
+#     $command = "bsub -cwd ".$jobDir." -q ".$QUEUE." ".$tempBjob."\n" ;
+    $command = "bsub -cwd ".$jobDir." -o ".$jobDir."/log.log -q ".$QUEUE." ".$tempBjob."\n" ;
+    print SAMPLEJOBLISTFILE $command."\n";
     
     }
 

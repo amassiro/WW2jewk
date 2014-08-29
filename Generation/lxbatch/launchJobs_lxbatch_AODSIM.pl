@@ -220,8 +220,9 @@ print SAMPLEJOBFILE $command."\n";
 # submit job
 ############
 
-    $command = "bsub -cwd ".$jobDir." -q ".$QUEUE." ".$tempBjob."\n" ;
-print SAMPLEJOBLISTFILE $command."\n";
+#     $command = "bsub -cwd ".$jobDir." -q ".$QUEUE." ".$tempBjob."\n" ;
+    $command = "bsub -cwd ".$jobDir." -o ".$jobDir."/log.log -q ".$QUEUE." ".$tempBjob."\n" ;
+    print SAMPLEJOBLISTFILE $command."\n";
     
     }
 
