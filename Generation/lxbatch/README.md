@@ -95,6 +95,7 @@ Decay & hadronize: GEN-SIM step lxbatch
 1. Launch the jobs (file lancia.sh automatically created):
 
         sh lancia.sh
+        sh lanciaGENSIM.sh
 
 
 Decay & hadronize: DIGI step lxbatch

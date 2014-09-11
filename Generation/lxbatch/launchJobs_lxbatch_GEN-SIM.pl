@@ -50,7 +50,7 @@ print "QUEUE = " .$QUEUE."\n\n" ;
 
 
 
-$sampleJobListFile = "./lancia.sh";
+$sampleJobListFile = "./lanciaGENSIM.sh";
 open(SAMPLEJOBLISTFILE, ">", $sampleJobListFile);
 
 
