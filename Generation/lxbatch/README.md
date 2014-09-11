@@ -13,12 +13,13 @@ change weight format to support old cmssw releases
 
     sed 's/<wgt/#wgt/' </data/amassiro/CMSSWLHE/WW2jetsMadgraph_aQGC/Jasper_unweighted_events.lhe | sed 's/<rwgt/#rwgt/'   | sed 's|</rwgt|#/rwgt|'    | sed 's|</wgt>||'   > /data/amassiro/CMSSWLHE/WW2jetsMadgraph_aQGC/Jasper_unweighted_events_weight.lhe
 
-   (auto)
-   ls /tmp/amassiro/*.lhe | awk '{print "sed @s/<wgt/#wgt/@ <   "$1" | sed @s/<rwgt/#rwgt/@   | sed @s|</rwgt|#/rwgt|@    | sed @s|</wgt>||@   > "$1".correct.lhe" }' | tr "@" "'"
 
-   ls /tmp/amassiro/*correct.lhe  | awk '{print "tail -n +715 "$1" | head -n -1 > "$1".new.lhe"}'
-   cat /tmp/amassiro/*correct.lhe.new.lhe > /tmp/amassiro/joined_temp.lhe
-   cat head.txt /tmp/amassiro/joined_temp.lhe tail.txt > /tmp/amassiro/joined.lhe
+    (auto)
+    ls /tmp/amassiro/*.lhe | awk '{print "sed @s/<wgt/#wgt/@ <   "$1" | sed @s/<rwgt/#rwgt/@   | sed @s|</rwgt|#/rwgt|@    | sed @s|</wgt>||@   > "$1".correct.lhe" }' | tr "@" "'"
+
+    ls /tmp/amassiro/*correct.lhe  | awk '{print "tail -n +715 "$1" | head -n -1 > "$1".new.lhe"}'
+    cat /tmp/amassiro/*correct.lhe.new.lhe > /tmp/amassiro/joined_temp.lhe
+    cat head.txt /tmp/amassiro/joined_temp.lhe tail.txt > /tmp/amassiro/joined.lhe
 
 
 from LHE to CMSSW
