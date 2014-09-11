@@ -15,6 +15,9 @@ change weight format to support old cmssw releases
 
 
     (auto)
+    if needed ->
+        ls -d eos/cms/store/group/phys_higgs/cmshww/astepenn/work/*/ | tr "/" " " | awk '{print "cp eos/cms/store/group/phys_higgs/cmshww/astepenn/work/"$9"/unweighted_events.lhe.tar /tmp/amassiro/unweighted_events.lhe.tar."$9".lhe"}' 
+
     ls /tmp/amassiro/*.lhe | awk '{print "sed @s/<wgt/#wgt/@ <   "$1" | sed @s/<rwgt/#rwgt/@   | sed @s|</rwgt|#/rwgt|@    | sed @s|</wgt>||@   > "$1".correct.lhe" }' | tr "@" "'"
 
     ls /tmp/amassiro/*correct.lhe  | awk '{print "tail -n +715 "$1" | head -n -1 > "$1".new.lhe"}'
