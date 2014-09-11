@@ -21,9 +21,14 @@ change weight format to support old cmssw releases
     ls /tmp/amassiro/*.lhe | awk '{print "sed @s/<wgt/#wgt/@ <   "$1" | sed @s/<rwgt/#rwgt/@   | sed @s|</rwgt|#/rwgt|@    | sed @s|</wgt>||@   > "$1".correct.lhe" }' | tr "@" "'"
 
     ls /tmp/amassiro/*correct.lhe  | awk '{print "tail -n +715 "$1" | head -n -1 > "$1".new.lhe"}'
-    cat /tmp/amassiro/*correct.lhe.new.lhe > /tmp/amassiro/joined_temp.lhe
-    cat head.txt /tmp/amassiro/joined_temp.lhe tail.txt > /tmp/amassiro/joined.lhe
+    if needed ->
+        ls /tmp/amassiro/*correct.lhe  | awk '{print "tail -n +854 "$1" | head -n -1 > "$1".new.lhe"}'
 
+    cat /tmp/amassiro/*correct.lhe.new.lhe > /tmp/amassiro/joined_temp.lhe
+
+    cat head.txt /tmp/amassiro/joined_temp.lhe tail.txt > /tmp/amassiro/joined.lhe
+    if needed ->
+        cat head.S.txt /tmp/amassiro/joined_temp.lhe tail.S.txt > /tmp/amassiro/joined.lhe
 
 from LHE to CMSSW
 
@@ -41,6 +46,7 @@ from LHE to CMSSW
 
     cmsDriver.py step1 --filein file:/tmp/amassiro/joined.lhe  --fileout file:/tmp/amassiro/VBS_LS01.root --mc --eventcontent LHE --datatier GEN --conditions START53_V7C::All --step NONE --python_filename VBS_LS01.py    -n -1
 
+    cmsDriver.py step1 --filein file:/tmp/amassiro/joined.lhe  --fileout file:/tmp/amassiro/VBS_LT01.root --mc --eventcontent LHE --datatier GEN --conditions START53_V7C::All --step NONE --python_filename VBS_LT01.py    -n -1
 
     HEPMCinput = /afs/cern.ch/user/a/amassiro/work/public/WW2j/ww2j_LO_mg_Jasper.root
     HEPMCinput = /afs/cern.ch/user/a/amassiro/work/public/WW2j/ww2j_LO_mg_Anton.root
