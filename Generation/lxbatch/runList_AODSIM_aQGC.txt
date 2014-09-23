@@ -1,2 +1,6 @@
-/store/user/amassiro/WW2j_aQGC/8TeV/WW_DIGI  WW_s
-/store/user/amassiro/WW2j_aQGC/8TeV/WW_DIGI  WW_t
+/store/group/phys_higgs/cmshww/amassiro/WW2j_aQGC/8TeV/WW_DIGI/     WW_GENSIM
+/store/group/phys_higgs/cmshww/amassiro/WW2j_aQGC/8TeV/  WW_T_DIGI
+#
+# /store/user/amassiro/WW2j_aQGC/8TeV/WW_DIGI  WW_s
+# /store/user/amassiro/WW2j_aQGC/8TeV/WW_DIGI  WW_t
+#
