@@ -35,6 +35,11 @@ Then:
     cmsRun step3.py print inputFiles=file:/tmp/amassiro/latinosYieldSkim_MC_ww2j_s_100k.root  label=ww2j id=1234 scale=1 outputFile=latinosStep3_ww2j_s.root  doNoFilter=True doLHE=True  typeLHEcomment=1  &> tmp_s.txt
     cmsRun step3.py print inputFiles=file:/tmp/amassiro/latinosYieldSkim_MC_ww2j_t_100k.root  label=ww2j id=1234 scale=1 outputFile=latinosStep3_ww2j_t.root  doNoFilter=True doLHE=True  typeLHEcomment=1  &> tmp_t.txt
 
+    cmsRun step3.py print inputFiles=file:/tmp/amassiro/latinosYieldSkim_MC_ww2j_s_1M.root  label=ww2j id=1234 scale=1 outputFile=latinosStep3_ww2j_s_1M.root  doNoFilter=True doLHE=True  typeLHEcomment=1  &> tmp_s.txt
+    cmsRun step3.py print inputFiles=file:/tmp/amassiro/latinosYieldSkim_MC_ww2j_t_1M.root  label=ww2j id=1234 scale=1 outputFile=latinosStep3_ww2j_t_1M.root  doNoFilter=True doLHE=True  typeLHEcomment=1  &> tmp_t.txt
+
+
+
     python ucsd2latino.py latinosStep3_ww2j.root
     python ucsd2latino.py latinosStep3_ww2j_s.root
     python ucsd2latino.py latinosStep3_ww2j_t.root
