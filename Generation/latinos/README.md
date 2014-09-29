@@ -64,6 +64,26 @@ Change baseW:
     mv latinolatinosStep3_ww2j_new.root latinolatinosStep3_ww2j.root
 
 
+    1M events:
+
+    cross section = 2.467605012301833E-003 * 9 = 2.22084451107164987e-02 pb
+    s: total events processed (looking at root file, since it has no events rejected): 64953
+    s: baseW = 2.22084451107164987e-02 / 64953 * 1000. = 3.41915617611449811e-04 
+
+    t: total events processed (looking at root file, since it has no events rejected): 64992
+    t: baseW = 2.22084451107164987e-02 / 64992 * 1000. = 3.41710442988621649e-04 
+
+    cd /home/amassiro/Latinos/CMSSW_5_3_11_patch6/src/HWWAnalysis/ShapeAnalysis/
+    eval `scramv1 runtime -sh`
+    source test/env.sh
+    cd -
+
+    gardener.py  adder -v 'baseW/F=3.41915617611449811e-04'     latinolatinosStep3_ww2j_s_1M.root     latinolatinosStep3_ww2j_s_1M_new.root
+    mv latinolatinosStep3_ww2j_s_1M_new.root   latinolatinosStep3_ww2j_s_1M.root
+
+    gardener.py  adder -v 'baseW/F=3.41710442988621649e-04'     latinolatinosStep3_ww2j_t_1M.root     latinolatinosStep3_ww2j_t_1M_new.root
+    mv latinolatinosStep3_ww2j_t_1M_new.root   latinolatinosStep3_ww2j_t_1M.root
+
 
 
 Add variables
@@ -72,6 +92,7 @@ Add variables
 Automatic script:
 
     sh addVariables.sh
+    sh /afs/cern.ch/user/a/amassiro/work/Generation/CMSSW_5_3_14_patch2/src/WW2jewk/Generation/latinos/addVariables.sh
 
 
 triggW
