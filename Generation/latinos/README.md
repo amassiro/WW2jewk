@@ -22,8 +22,8 @@ Then:
     cmsRun /afs/cern.ch/user/a/amassiro/work/Generation/CMSSW_5_3_14_patch2/src/WW2jewk/Generation/latinos/latinosYieldSkim.py.ww2j_s.py    print  isMC=True globalTag=GR_R_52_V7  outputFile=/tmp/amassiro/latinosYieldSkim_MC_ww2j_s_100k.root   correctMetPhi=False   doNoFilter=True
     cmsRun /afs/cern.ch/user/a/amassiro/work/Generation/CMSSW_5_3_14_patch2/src/WW2jewk/Generation/latinos/latinosYieldSkim.py.ww2j_t.py    print  isMC=True globalTag=GR_R_52_V7  outputFile=/tmp/amassiro/latinosYieldSkim_MC_ww2j_t_100k.root   correctMetPhi=False   doNoFilter=True
 
-    cmsRun /afs/cern.ch/user/a/amassiro/work/Generation/CMSSW_5_3_14_patch2/src/WW2jewk/Generation/latinos/latinosYieldSkim.py.ww2j_s.py    print  isMC=True globalTag=GR_R_52_V7  outputFile=/tmp/amassiro/latinosYieldSkim_MC_ww2j_s_1M.root   correctMetPhi=False   doNoFilter=True
-    cmsRun /afs/cern.ch/user/a/amassiro/work/Generation/CMSSW_5_3_14_patch2/src/WW2jewk/Generation/latinos/latinosYieldSkim.py.ww2j_t.py    print  isMC=True globalTag=GR_R_52_V7  outputFile=/tmp/amassiro/latinosYieldSkim_MC_ww2j_t_1M.root   correctMetPhi=False   doNoFilter=True
+    cmsRun /afs/cern.ch/user/a/amassiro/work/Generation/CMSSW_5_3_14_patch2/src/WW2jewk/Generation/latinos/latinosYieldSkim.py.ww2j_s.py    print  isMC=True globalTag=GR_R_52_V7  outputFile=/tmp/amassiro/latinosYieldSkim_MC_ww2j_s_1M.root   correctMetPhi=False   doNoFilter=True      &> tmp_s.txt
+    cmsRun /afs/cern.ch/user/a/amassiro/work/Generation/CMSSW_5_3_14_patch2/src/WW2jewk/Generation/latinos/latinosYieldSkim.py.ww2j_t.py    print  isMC=True globalTag=GR_R_52_V7  outputFile=/tmp/amassiro/latinosYieldSkim_MC_ww2j_t_1M.root   correctMetPhi=False   doNoFilter=True      &> tmp_t.txt
 
 
 
@@ -44,6 +44,8 @@ Then:
     python ucsd2latino.py latinosStep3_ww2j_s.root
     python ucsd2latino.py latinosStep3_ww2j_t.root
 
+    python ucsd2latino.py latinosStep3_ww2j_s_1M.root
+    python ucsd2latino.py latinosStep3_ww2j_t_1M.root
 
 
 Change baseW:
@@ -66,6 +68,11 @@ Change baseW:
 
 Add variables
 ====
+
+Automatic script:
+
+    sh addVariables.sh
+
 
 triggW
 
