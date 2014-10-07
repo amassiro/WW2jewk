@@ -27,6 +27,22 @@ Then:
 
 
 
+    cmsRun /afs/cern.ch/user/a/amassiro/work/Generation/CMSSW_5_3_14_patch2/src/WW2jewk/Generation/latinos/subsamples/latinosYieldSkim.py.ww2j_s_0.py    print  isMC=True globalTag=GR_R_52_V7  outputFile=/tmp/amassiro/latinosYieldSkim_MC_ww2j_s_1M_0.root   correctMetPhi=False   doNoFilter=True      &> tmp_s_0.txt
+    cmsRun /afs/cern.ch/user/a/amassiro/work/Generation/CMSSW_5_3_14_patch2/src/WW2jewk/Generation/latinos/subsamples/latinosYieldSkim.py.ww2j_s_1.py    print  isMC=True globalTag=GR_R_52_V7  outputFile=/tmp/amassiro/latinosYieldSkim_MC_ww2j_s_1M_1.root   correctMetPhi=False   doNoFilter=True      &> tmp_s_1.txt
+    cmsRun /afs/cern.ch/user/a/amassiro/work/Generation/CMSSW_5_3_14_patch2/src/WW2jewk/Generation/latinos/subsamples/latinosYieldSkim.py.ww2j_s_2.py    print  isMC=True globalTag=GR_R_52_V7  outputFile=/tmp/amassiro/latinosYieldSkim_MC_ww2j_s_1M_2.root   correctMetPhi=False   doNoFilter=True      &> tmp_s_2.txt
+    cmsRun /afs/cern.ch/user/a/amassiro/work/Generation/CMSSW_5_3_14_patch2/src/WW2jewk/Generation/latinos/subsamples/latinosYieldSkim.py.ww2j_s_3.py    print  isMC=True globalTag=GR_R_52_V7  outputFile=/tmp/amassiro/latinosYieldSkim_MC_ww2j_s_1M_3.root   correctMetPhi=False   doNoFilter=True      &> tmp_s_3.txt
+    cmsRun /afs/cern.ch/user/a/amassiro/work/Generation/CMSSW_5_3_14_patch2/src/WW2jewk/Generation/latinos/subsamples/latinosYieldSkim.py.ww2j_s_4.py    print  isMC=True globalTag=GR_R_52_V7  outputFile=/tmp/amassiro/latinosYieldSkim_MC_ww2j_s_1M_4.root   correctMetPhi=False   doNoFilter=True      &> tmp_s_4.txt
+    cmsRun /afs/cern.ch/user/a/amassiro/work/Generation/CMSSW_5_3_14_patch2/src/WW2jewk/Generation/latinos/subsamples/latinosYieldSkim.py.ww2j_s_5.py    print  isMC=True globalTag=GR_R_52_V7  outputFile=/tmp/amassiro/latinosYieldSkim_MC_ww2j_s_1M_5.root   correctMetPhi=False   doNoFilter=True      &> tmp_s_5.txt
+
+    cmsRun /afs/cern.ch/user/a/amassiro/work/Generation/CMSSW_5_3_14_patch2/src/WW2jewk/Generation/latinos/subsamples/latinosYieldSkim.py.ww2j_t_0.py    print  isMC=True globalTag=GR_R_52_V7  outputFile=/tmp/amassiro/latinosYieldSkim_MC_ww2j_t_1M_0.root   correctMetPhi=False   doNoFilter=True      &> tmp_t_0.txt
+    cmsRun /afs/cern.ch/user/a/amassiro/work/Generation/CMSSW_5_3_14_patch2/src/WW2jewk/Generation/latinos/subsamples/latinosYieldSkim.py.ww2j_t_1.py    print  isMC=True globalTag=GR_R_52_V7  outputFile=/tmp/amassiro/latinosYieldSkim_MC_ww2j_t_1M_1.root   correctMetPhi=False   doNoFilter=True      &> tmp_t_1.txt
+    cmsRun /afs/cern.ch/user/a/amassiro/work/Generation/CMSSW_5_3_14_patch2/src/WW2jewk/Generation/latinos/subsamples/latinosYieldSkim.py.ww2j_t_2.py    print  isMC=True globalTag=GR_R_52_V7  outputFile=/tmp/amassiro/latinosYieldSkim_MC_ww2j_t_1M_2.root   correctMetPhi=False   doNoFilter=True      &> tmp_t_2.txt
+    cmsRun /afs/cern.ch/user/a/amassiro/work/Generation/CMSSW_5_3_14_patch2/src/WW2jewk/Generation/latinos/subsamples/latinosYieldSkim.py.ww2j_t_3.py    print  isMC=True globalTag=GR_R_52_V7  outputFile=/tmp/amassiro/latinosYieldSkim_MC_ww2j_t_1M_3.root   correctMetPhi=False   doNoFilter=True      &> tmp_t_3.txt
+    cmsRun /afs/cern.ch/user/a/amassiro/work/Generation/CMSSW_5_3_14_patch2/src/WW2jewk/Generation/latinos/subsamples/latinosYieldSkim.py.ww2j_t_4.py    print  isMC=True globalTag=GR_R_52_V7  outputFile=/tmp/amassiro/latinosYieldSkim_MC_ww2j_t_1M_4.root   correctMetPhi=False   doNoFilter=True      &> tmp_t_4.txt
+
+
+
+
 
     cd /home/amassiro/Latinos/CMSSW_5_3_11_patch6/src/WWAnalysis/AnalysisStep/test/step3
 
