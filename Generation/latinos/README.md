@@ -56,6 +56,28 @@ Then:
 
 
 
+
+
+    cmsRun step3.py print inputFiles=file:/tmp/amassiro/latinosYieldSkim_MC_ww2j_s_1M_0.root  label=ww2j id=1234 scale=1 outputFile=latinosStep3_ww2j_s_1M_0.root  doNoFilter=True doLHE=True  typeLHEcomment=1  &> tmp_s_0.txt
+    cmsRun step3.py print inputFiles=file:/tmp/amassiro/latinosYieldSkim_MC_ww2j_s_1M_1.root  label=ww2j id=1234 scale=1 outputFile=latinosStep3_ww2j_s_1M_1.root  doNoFilter=True doLHE=True  typeLHEcomment=1  &> tmp_s_1.txt
+    cmsRun step3.py print inputFiles=file:/tmp/amassiro/latinosYieldSkim_MC_ww2j_s_1M_2.root  label=ww2j id=1234 scale=1 outputFile=latinosStep3_ww2j_s_1M_2.root  doNoFilter=True doLHE=True  typeLHEcomment=1  &> tmp_s_2.txt
+    cmsRun step3.py print inputFiles=file:/tmp/amassiro/latinosYieldSkim_MC_ww2j_s_1M_3.root  label=ww2j id=1234 scale=1 outputFile=latinosStep3_ww2j_s_1M_3.root  doNoFilter=True doLHE=True  typeLHEcomment=1  &> tmp_s_3.txt
+    cmsRun step3.py print inputFiles=file:/tmp/amassiro/latinosYieldSkim_MC_ww2j_s_1M_4.root  label=ww2j id=1234 scale=1 outputFile=latinosStep3_ww2j_s_1M_4.root  doNoFilter=True doLHE=True  typeLHEcomment=1  &> tmp_s_4.txt
+    cmsRun step3.py print inputFiles=file:/tmp/amassiro/latinosYieldSkim_MC_ww2j_s_1M_5.root  label=ww2j id=1234 scale=1 outputFile=latinosStep3_ww2j_s_1M_5.root  doNoFilter=True doLHE=True  typeLHEcomment=1  &> tmp_s_5.txt
+
+    cmsRun step3.py print inputFiles=file:/tmp/amassiro/latinosYieldSkim_MC_ww2j_t_1M_0.root  label=ww2j id=1234 scale=1 outputFile=latinosStep3_ww2j_t_1M_0.root  doNoFilter=True doLHE=True  typeLHEcomment=1  &> tmp_t_0.txt
+    cmsRun step3.py print inputFiles=file:/tmp/amassiro/latinosYieldSkim_MC_ww2j_t_1M_1.root  label=ww2j id=1234 scale=1 outputFile=latinosStep3_ww2j_t_1M_1.root  doNoFilter=True doLHE=True  typeLHEcomment=1  &> tmp_t_1.txt
+    cmsRun step3.py print inputFiles=file:/tmp/amassiro/latinosYieldSkim_MC_ww2j_t_1M_2.root  label=ww2j id=1234 scale=1 outputFile=latinosStep3_ww2j_t_1M_2.root  doNoFilter=True doLHE=True  typeLHEcomment=1  &> tmp_t_2.txt
+    cmsRun step3.py print inputFiles=file:/tmp/amassiro/latinosYieldSkim_MC_ww2j_t_1M_3.root  label=ww2j id=1234 scale=1 outputFile=latinosStep3_ww2j_t_1M_3.root  doNoFilter=True doLHE=True  typeLHEcomment=1  &> tmp_t_3.txt
+    cmsRun step3.py print inputFiles=file:/tmp/amassiro/latinosYieldSkim_MC_ww2j_t_1M_4.root  label=ww2j id=1234 scale=1 outputFile=latinosStep3_ww2j_t_1M_4.root  doNoFilter=True doLHE=True  typeLHEcomment=1  &> tmp_t_4.txt
+
+
+
+
+
+
+
+
     python ucsd2latino.py latinosStep3_ww2j.root
     python ucsd2latino.py latinosStep3_ww2j_s.root
     python ucsd2latino.py latinosStep3_ww2j_t.root
