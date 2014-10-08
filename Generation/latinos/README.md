@@ -74,7 +74,11 @@ Then:
 
 
 
+    hadd latinosStep3_ww2j_t_1M_all.root latinosStep3_ww2j_t_1M_?.root
+    hadd latinosStep3_ww2j_s_1M_all.root latinosStep3_ww2j_s_1M_?.root
 
+    python ucsd2latino.py latinosStep3_ww2j_s_1M_all.root
+    python ucsd2latino.py latinosStep3_ww2j_t_1M_all.root
 
 
 
