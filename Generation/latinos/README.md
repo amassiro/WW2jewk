@@ -90,6 +90,17 @@ Then:
     python ucsd2latino.py latinosStep3_ww2j_t_1M.root
 
 
+    eos ls /store/group/phys_higgs/cmshww/amassiro/WW2j_aQGC/8TeV/WW_AODSIM/WW_GENSIM/  | awk '{print "cmsStage /store/group/phys_higgs/cmshww/amassiro/WW2j_aQGC/8TeV/WNSIM/"$1" ./"}'
+    eos ls /store/group/phys_higgs/cmshww/amassiro/WW2j_aQGC/8TeV/WW_AODSIM/WW_GENSIM/  | awk '{print "eos cp /eos/cms/store/group/phys_higgs/cmshww/amassiro/WW2j_aQGC/8TeV/WW_AODSIM/WW_GENSIM/"$1" ./"}'
+    eos ls /store/group/phys_higgs/cmshww/amassiro/WW2j_aQGC/8TeV/WW_AODSIM/WW_GENSIM/  | awk '{print "/afs/cern.ch/project/eos/installation/0.3.15/bin/eos.select cp /eos/cms/store/group/phys_higgs/cmshww/amassiro/WW2j_aQGC/8TeV/WW_AODSIM/WW_GENSIM/"$1" ./"}'
+
+    /afs/cern.ch/project/eos/installation/0.3.15/bin/eos.select ls /store/group/phys_higgs/cmshww/amassiro/WW2j_aQGC/8TeV/WW_AODSIM/WW_GENSIM/  | awk '{print "/afs/cern.ch/project/eos/installation/0.3.15/bin/eos.select cp /eos/cms/store/group/phys_higgs/cmshww/amassiro/WW2j_aQGC/8TeV/WW_AODSIM/WW_GENSIM/"$1" ./"}'  
+
+    /afs/cern.ch/project/eos/installation/0.3.15/bin/eos.select ls /store/group/phys_higgs/cmshww/amassiro/WW2j_aQGC/8TeV/WW_AODSIM/WW_T_GENSIM/  | awk '{print "/afs/cern.ch/project/eos/installation/0.3.15/bin/eos.select cp /eos/cms/store/group/phys_higgs/cmshww/amassiro/WW2j_aQGC/8TeV/WW_AODSIM/WW_T_GENSIM/"$1" ./"}'  
+
+    /home/amassiro/Latinos/CMSSW_5_3_11_patch6/src/HWWAnalysis/ShapeAnalysis/copyeos.sh
+
+
 
 Change baseW:
 
