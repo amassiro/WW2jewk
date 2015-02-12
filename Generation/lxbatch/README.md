@@ -1,6 +1,10 @@
 lxbatch
 =======
 
+Pre-preparation
+
+    cat eos/cms/store/group/phys_higgs/cmshww/astepenn/work/tau_*/*.tar &> /tmp/amassiro/Anton_unweighted_events.lhe
+
 
 Preparation
 =======
