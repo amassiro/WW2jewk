@@ -28,6 +28,7 @@ change weight format to support old cmssw releases
     ls /tmp/amassiro/*correct.lhe  | awk '{print "tail -n +715 "$1" | head -n -1 > "$1".new.lhe"}'
     if needed ->
         ls /tmp/amassiro/*correct.lhe  | awk '{print "tail -n +854 "$1" | head -n -1 > "$1".new.lhe"}'
+        ls /tmp/amassiro/*correct.lhe  | awk '{print "tail -n +855 "$1" | head -n -1 > "$1".new.lhe"}'
 
     cat /tmp/amassiro/*correct.lhe.new.lhe > /tmp/amassiro/joined_temp.lhe
 
