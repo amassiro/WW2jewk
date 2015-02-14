@@ -1,6 +1,11 @@
 lxbatch
 =======
 
+where:
+
+    /afs/cern.ch/user/a/amassiro/work/Generation/CMSSW_5_3_14_patch2/src/WW2jewk/Generation/lxbatch/
+
+
 Pre-preparation
 
     cat eos/cms/store/group/phys_higgs/cmshww/astepenn/work/tau_*/*.tar &> /tmp/amassiro/Anton_unweighted_events.lhe

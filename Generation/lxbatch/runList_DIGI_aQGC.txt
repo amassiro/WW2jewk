@@ -1,1 +1,1 @@
-/store/group/phys_higgs/cmshww/amassiro/WW2j_aQGC/8TeV/  WW_T_GENSIM
+/store/group/phys_higgs/cmshww/amassiro/WW2j_aQGC/8TeV/  WW_T_tau_GENSIM
